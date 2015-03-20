@@ -141,8 +141,26 @@ function handle_data(map) {
       return ok
     })
 
+    graph.forEach( function (d) {
+      d.latlngs = []
+      d.latlngs.push(L.latLng(d.source.node.nodeinfo.location.latitude, d.source.node.nodeinfo.location.longitude))
+      d.latlngs.push(L.latLng(d.target.node.nodeinfo.location.latitude, d.target.node.nodeinfo.location.longitude))
+
+      d.distance = d.latlngs[0].distanceTo(d.latlngs[1])
+    })
+
+    longlinks = graph.slice().sort( function (a, b) {
+      return a.distance - b.distance
+    }).reverse().slice(0, 10)
+
+    addToLongLinksList(document.getElementById("longlinks"), longlinks)
+
     mkmap(map, newnodes, lostnodes, onlinenodes, graph)
   }
+}
+
+function showDistance(d) {
+  return (new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(d.distance)) + " m"
 }
 
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
@@ -199,24 +217,33 @@ function addLinksToMap(map, graph) {
   var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
 
   var lines = graph.map( function (d) {
-    var latlngs = []
-    latlngs.push(L.latLng(d.source.node.nodeinfo.location.latitude, d.source.node.nodeinfo.location.longitude))
-    latlngs.push(L.latLng(d.target.node.nodeinfo.location.latitude, d.target.node.nodeinfo.location.longitude))
-
     var opts = { color: scale(d.tq).hex(),
                  weight: 3
                }
 
-    var line = L.polyline(latlngs, opts)
+    var line = L.polyline(d.latlngs, opts)
 
-    var distance = new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(latlngs[0].distanceTo(latlngs[1]))
-
-    line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + distance + " m</strong>")
+    line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + showDistance(d) + "</strong>")
 
     return line
   })
 
   var group = L.featureGroup(lines).addTo(map)
+}
+
+function addToLongLinksList(el, links) {
+  links.forEach( function (d) {
+    var row = document.createElement("tr")
+    var td1 = document.createElement("td")
+    td1.textContent = d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname
+    row.appendChild(td1)
+
+    var td2 = document.createElement("td")
+    td2.textContent = showDistance(d)
+    row.appendChild(td2)
+
+    el.appendChild(row)
+  })
 }
 
 function addToList(el, tf, list) {
