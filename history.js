@@ -311,8 +311,10 @@ function addToList(el, showContact, tf, markers, list) {
     a.classList.add("hostname")
     a.classList.add(d.flags.online ? "online" : "offline")
     a.textContent = d.nodeinfo.hostname
-    a.href = "#"
-    a.onclick = markers[d.nodeinfo.node_id]
+    if (d.nodeinfo.node_id in markers) {
+      a.href = "#"
+      a.onclick = markers[d.nodeinfo.node_id]
+    }
     td1.appendChild(a)
 
     if ("location" in d.nodeinfo) {
