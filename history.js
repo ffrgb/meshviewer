@@ -27,7 +27,25 @@ function getJSON(url) {
 }
 
 function main() {
-  getJSON('nodes.json').then(handle_data)
+  var options = { worldCopyJump: true,
+                  zoomControl: false
+                }
+
+  var map = L.map(document.getElementById("map"), options)
+
+  var sh = document.getElementById("sidebarhandle")
+  sh.onclick = function () {
+    var sb = document.getElementById("sidebar")
+
+    if (sb.classList.contains("hidden"))
+      sb.classList.remove("hidden")
+    else
+      sb.classList.add("hidden")
+
+    map.invalidateSize()
+  }
+
+  getJSON('nodes.json').then(handle_data(map))
 }
 
 function sort(key, d) {
@@ -66,38 +84,34 @@ function subtract(a, b) {
   })
 }
 
-function handle_data(data) {
-  var nodes = Object.keys(data.nodes).map(function (key) { return data.nodes[key] })
+function handle_data(map) {
+  return function (data) {
+    var nodes = Object.keys(data.nodes).map(function (key) { return data.nodes[key] })
 
-  nodes = nodes.filter( function (d) {
-    return "firstseen" in d && "lastseen" in d
-  })
+    nodes = nodes.filter( function (d) {
+      return "firstseen" in d && "lastseen" in d
+    })
 
-  nodes.forEach( function(node) {
-    node.firstseen = moment(node.firstseen)
-    node.lastseen = moment(node.lastseen)
-  })
+    nodes.forEach( function(node) {
+      node.firstseen = moment(node.firstseen)
+      node.lastseen = moment(node.lastseen)
+    })
 
-  var age = moment().subtract(14, 'days')
+    var age = moment().subtract(14, 'days')
 
-  var newnodes = limit("firstseen", age, sort("firstseen", nodes).filter(online))
-  var lostnodes = limit("lastseen", age, sort("lastseen", nodes).filter(offline))
+    var newnodes = limit("firstseen", age, sort("firstseen", nodes).filter(online))
+    var lostnodes = limit("lastseen", age, sort("lastseen", nodes).filter(offline))
 
-  var onlinenodes = subtract(nodes.filter(online).filter(has_location), newnodes)
+    var onlinenodes = subtract(nodes.filter(online).filter(has_location), newnodes)
 
-  addToList(document.getElementById("newnodes"), "firstseen", newnodes)
-  addToList(document.getElementById("lostnodes"), "lastseen", lostnodes)
+    addToList(document.getElementById("newnodes"), "firstseen", newnodes)
+    addToList(document.getElementById("lostnodes"), "lastseen", lostnodes)
 
-  mkmap(document.getElementById("map"), newnodes, lostnodes, onlinenodes)
+    mkmap(map, newnodes, lostnodes, onlinenodes)
+  }
 }
 
-function mkmap(el, newnodes, lostnodes, onlinenodes) {
-  var options = { worldCopyJump: true,
-                  zoomControl: false
-                }
-
-  var map = L.map(el, options)
-
+function mkmap(map, newnodes, lostnodes, onlinenodes) {
   L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
