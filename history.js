@@ -92,7 +92,13 @@ function handle_data(data) {
 }
 
 function mkmap(el, newnodes, lostnodes, onlinenodes) {
-  var map = L.map(el)
+  var options = { worldCopyJump: true,
+                  zoomControl: false
+                }
+
+  var map = L.map(el, options)
+
+  L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
     subdomains: "1234",
