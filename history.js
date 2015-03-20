@@ -115,9 +115,6 @@ function handle_data(config, map) {
 
     var onlinenodes = subtract(nodes.filter(online).filter(has_location), newnodes)
 
-    addToList(document.getElementById("newnodes"), config.showContact, "firstseen", newnodes)
-    addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", lostnodes)
-
     var graph = data[1].batadv
     var nodes = data[0].nodes
 
@@ -155,9 +152,13 @@ function handle_data(config, map) {
       return a.distance - b.distance
     }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.length))
 
-    addToLongLinksList(document.getElementById("longlinks"), longlinks)
 
-    mkmap(map, newnodes, lostnodes, onlinenodes, graph)
+    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph)
+      console.log(markers)
+
+    addToList(document.getElementById("newnodes"), config.showContact, "firstseen", markers, newnodes)
+    addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", markers, lostnodes)
+    addToLongLinksList(document.getElementById("longlinks"), markers, longlinks)
   }
 }
 
@@ -173,6 +174,10 @@ function showTq(d) {
   return (new Intl.NumberFormat("de-DE", opts).format(d.tq)) + " TQ"
 }
 
+function linkId(d) {
+  return d.source.node.nodeinfo.node_id + "-" + d.target.node.nodeinfo.node_id
+}
+
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
   L.control.zoom({ position: "topright" }).addTo(map)
 
@@ -183,7 +188,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
     maxZoom: 18
   }).addTo(map)
 
-  addLinksToMap(map, graph)
+  var markersDict = addLinksToMap(map, graph)
 
   var nodes = newnodes.concat(lostnodes).filter( function (d) {
     return "location" in d.nodeinfo
@@ -201,6 +206,8 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
     
     m.bindPopup(d.nodeinfo.hostname)
 
+    markersDict[d.nodeinfo.node_id] = m
+
     return m
   })
 
@@ -216,6 +223,8 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
 
     m.bindPopup(d.nodeinfo.hostname)
 
+    markersDict[d.nodeinfo.node_id] = m
+
     return m
   })
 
@@ -223,9 +232,29 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
   var group_online = L.featureGroup(onlinemarkers).addTo(map)
 
   map.fitBounds(group.getBounds())
+
+  var funcDict = {}
+
+  Object.keys(markersDict).map( function(k) {
+       funcDict[k] = function (d) {
+         var m = markersDict[k]
+         if ("getBounds" in m) {
+           var bounds = m.getBounds()
+           map.fitBounds(bounds)
+           m.openPopup(bounds.getCenter())
+         } else {
+           map.setView(m.getLatLng(), map.getMaxZoom())
+           m.openPopup()
+         }
+       }
+  });
+
+  return funcDict
 }
 
 function addLinksToMap(map, graph) {
+  var markersDict = {}
+
   var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
 
   var lines = graph.map( function (d) {
@@ -237,17 +266,25 @@ function addLinksToMap(map, graph) {
 
     line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + showDistance(d) + "</strong>")
 
+    markersDict[linkId(d)] = line
+
     return line
   })
 
   var group = L.featureGroup(lines).addTo(map)
+
+  return markersDict
 }
 
-function addToLongLinksList(el, links) {
+function addToLongLinksList(el, markers, links) {
   links.forEach( function (d) {
     var row = document.createElement("tr")
     var td1 = document.createElement("td")
-    td1.textContent = d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname
+    var a = document.createElement("a")
+    a.textContent = d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname
+    a.href = "#"
+    a.onclick = markers[linkId(d)]
+    td1.appendChild(a)
     row.appendChild(td1)
 
     var td2 = document.createElement("td")
@@ -262,17 +299,19 @@ function addToLongLinksList(el, links) {
   })
 }
 
-function addToList(el, showContact, tf, list) {
+function addToList(el, showContact, tf, markers, list) {
   list.forEach( function (d) {
     var time = moment(d[tf]).fromNow()
 
     var row = document.createElement("tr")
     var td1 = document.createElement("td")
-    var span = document.createElement("span")
-    span.classList.add("hostname")
-    span.classList.add(d.flags.online ? "online" : "offline")
-    span.textContent = d.nodeinfo.hostname
-    td1.appendChild(span)
+    var a = document.createElement("a")
+    a.classList.add("hostname")
+    a.classList.add(d.flags.online ? "online" : "offline")
+    a.textContent = d.nodeinfo.hostname
+    a.href = "#"
+    a.onclick = markers[d.nodeinfo.node_id]
+    td1.appendChild(a)
 
     if ("location" in d.nodeinfo) {
       var span = document.createElement("span")
