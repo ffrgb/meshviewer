@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Neue und verschwundene Knoten</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto Slab', serif;
+        font-size: 11pt;
+      }
+
+      .hostname {
+      }
+
+      .hostname.online {
+        color: #0A905D;
+      }
+
+      .hostname.offline {
+        color: #E42426;
+      }
+
+      #map {
+        flex-grow: 1;
+      }
+
+      #lists {
+        max-width: 50em;
+        overflow: auto;
+        padding: 0 1em 1em;
+        box-sizing: border-box;
+      }
+
+      #lists, #map {
+        height: 100vh;
+      }
+
+      #lists table {
+        width: 100%;
+      }
+
+      #lists td:nth-child(2) {
+        text-align: right;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      @media screen and (max-width: 80em) {
+        #lists {
+          max-width: 50vw;
+          font-size: 0.8em;
+        }
+      }
+
+      @media screen and (max-width: 60em) {
+        #container {
+          flex-direction: column;
+        }
+
+        #map {
+          height: 60vh;
+        }
+
+        #lists {
+          max-width: none;
+          height: auto;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="Leaflet.MakiMarkers.js"></script>
+    <script src="history.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="map">
+      </div>
+      <div id="lists">
+        <p>
+          Zeigt Knoten an, die in den letzten 14 Tagen dazu gekommen oder verschwunden sind.
+          Funktioniert nur in wirklich modernen Browsern.
+        </p>
+
+        <h2>Neue Knoten</h2>
+        <table>
+          <tbody id="newnodes">
+          </tbody>
+        </table>
+
+        <h2>Verschwundene Knoten</h2>
+        <table>
+          <tbody id="lostnodes">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
