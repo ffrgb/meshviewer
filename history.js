@@ -191,7 +191,9 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
     var icon = L.AwesomeMarkers.icon({ markerColor: d.flags.online ? "green" : "red",
                                        icon: d.flags.online ? "lightbulb" : "bug" })
 
-    var opt = { icon: icon }
+    var opt = { icon: icon,
+                title: d.nodeinfo.hostname
+              }
 
     var m = L.marker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
     
@@ -226,7 +228,7 @@ function addLinksToMap(map, graph) {
 
   var lines = graph.map( function (d) {
     var opts = { color: scale(d.tq).hex(),
-                 weight: 3
+                 weight: 4
                }
 
     var line = L.polyline(d.latlngs, opts)
