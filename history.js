@@ -209,6 +209,10 @@ function addLinksToMap(map, graph) {
 
     var line = L.polyline(latlngs, opts)
 
+    var distance = new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(latlngs[0].distanceTo(latlngs[1]))
+
+    line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + distance + " m</strong>")
+
     return line
   })
 
