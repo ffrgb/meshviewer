@@ -1,3 +1,5 @@
+L.AwesomeMarkers.Icon.prototype.options.prefix = 'ion'
+
 document.addEventListener('DOMContentLoaded', main)
 
 function get(url) {
@@ -133,7 +135,8 @@ function mkmap(map, newnodes, lostnodes, onlinenodes) {
   })
 
   var markers = nodes.map( function (d) {
-    var icon = L.MakiMarkers.icon({ color: d.flags.online ? "#0A905D" : "#E42426" })
+    var icon = L.AwesomeMarkers.icon({ markerColor: d.flags.online ? "green" : "red",
+                                       icon: d.flags.online ? "lightbulb" : "bug" })
 
     var opt = { icon: icon }
 
@@ -145,9 +148,11 @@ function mkmap(map, newnodes, lostnodes, onlinenodes) {
   })
 
   var onlinemarkers = onlinenodes.map( function (d) {
-    var opt = { color: "#0A905D",
-                fillColor: "#0A905D",
-                radius: 5
+    var opt = { color: "#76B22D",
+                fillColor: "#76B22D",
+                radius: 5,
+                opacity: 0.7,
+                fillOpacity: 0.5
               }
 
     var m = L.circleMarker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
