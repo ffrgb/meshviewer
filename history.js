@@ -116,11 +116,36 @@ function handle_data(map) {
     addToList(document.getElementById("newnodes"), "firstseen", newnodes)
     addToList(document.getElementById("lostnodes"), "lastseen", lostnodes)
 
-    mkmap(map, newnodes, lostnodes, onlinenodes)
+    var graph = data[1].batadv
+    var nodes = data[0].nodes
+
+    graph.nodes.forEach( function (d) {
+      if (d.node_id in nodes && "location" in nodes[d.node_id].nodeinfo)
+        d.node = nodes[d.node_id]
+    })
+
+    graph.links.forEach( function (d) {
+      if (graph.nodes[d.source].node)
+        d.source = graph.nodes[d.source]
+      else
+        d.source = undefined
+
+      if (graph.nodes[d.target].node)
+        d.target = graph.nodes[d.target]
+      else
+        d.target = undefined
+    })
+
+    graph = graph.links.filter( function (d) {
+      var ok = d.source !== undefined && d.target !== undefined
+      return ok
+    })
+
+    mkmap(map, newnodes, lostnodes, onlinenodes, graph)
   }
 }
 
-function mkmap(map, newnodes, lostnodes, onlinenodes) {
+function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
   L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
@@ -129,6 +154,8 @@ function mkmap(map, newnodes, lostnodes, onlinenodes) {
     attribution: "Map data Tiles &copy; <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"http://developer.mapquest.com/content/osm/mq_logo.png\" />, Map data © OpenStreetMap contributors, CC-BY-SA",
     maxZoom: 18
   }).addTo(map)
+
+  addLinksToMap(map, graph)
 
   var nodes = newnodes.concat(lostnodes).filter( function (d) {
     return "location" in d.nodeinfo
@@ -166,6 +193,26 @@ function mkmap(map, newnodes, lostnodes, onlinenodes) {
   var group_online = L.featureGroup(onlinemarkers).addTo(map)
 
   map.fitBounds(group.getBounds())
+}
+
+function addLinksToMap(map, graph) {
+  var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
+
+  var lines = graph.map( function (d) {
+    var latlngs = []
+    latlngs.push(L.latLng(d.source.node.nodeinfo.location.latitude, d.source.node.nodeinfo.location.longitude))
+    latlngs.push(L.latLng(d.target.node.nodeinfo.location.latitude, d.target.node.nodeinfo.location.longitude))
+
+    var opts = { color: scale(d.tq).hex(),
+                 weight: 3
+               }
+
+    var line = L.polyline(latlngs, opts)
+
+    return line
+  })
+
+  var group = L.featureGroup(lines).addTo(map)
 }
 
 function addToList(el, tf, list) {
