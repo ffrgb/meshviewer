@@ -151,7 +151,7 @@ function handle_data(map) {
 
     longlinks = graph.slice().sort( function (a, b) {
       return a.distance - b.distance
-    }).reverse().slice(0, 10)
+    }).reverse().slice(0, Math.ceil(0.1 * graph.length))
 
     addToLongLinksList(document.getElementById("longlinks"), longlinks)
 
@@ -161,6 +161,14 @@ function handle_data(map) {
 
 function showDistance(d) {
   return (new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(d.distance)) + " m"
+}
+
+function showTq(d) {
+  var opts = { maximumFractionDigits: 2,
+               minimumFractionDigits: 2
+             }
+
+  return (new Intl.NumberFormat("de-DE", opts).format(d.tq)) + " TQ"
 }
 
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
@@ -241,6 +249,10 @@ function addToLongLinksList(el, links) {
     var td2 = document.createElement("td")
     td2.textContent = showDistance(d)
     row.appendChild(td2)
+
+    var td3 = document.createElement("td")
+    td3.textContent = showTq(d)
+    row.appendChild(td3)
 
     el.appendChild(row)
   })
