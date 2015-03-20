@@ -29,31 +29,33 @@ function getJSON(url) {
 }
 
 function main() {
-  var options = { worldCopyJump: true,
-                  zoomControl: false
-                }
+  getJSON("config.json").then( function (config) {
+    var options = { worldCopyJump: true,
+                    zoomControl: false
+                  }
 
-  var map = L.map(document.getElementById("map"), options)
+    var map = L.map(document.getElementById("map"), options)
 
-  var sh = document.getElementById("sidebarhandle")
-  sh.onclick = function () {
-    var sb = document.getElementById("sidebar")
+    var sh = document.getElementById("sidebarhandle")
+    sh.onclick = function () {
+      var sb = document.getElementById("sidebar")
 
-    if (sb.classList.contains("hidden"))
-      sb.classList.remove("hidden")
-    else
-      sb.classList.add("hidden")
+      if (sb.classList.contains("hidden"))
+        sb.classList.remove("hidden")
+      else
+        sb.classList.add("hidden")
 
-    map.invalidateSize()
-  }
+      map.invalidateSize()
+    }
 
 
-  var urls = [ 'https://map.luebeck.freifunk.net/data/nodes.json',
-               'https://map.luebeck.freifunk.net/data/graph.json'
-             ]
+    var urls = [ config.dataPath + 'nodes.json',
+                 config.dataPath + 'graph.json'
+               ]
 
-  var p = Promise.all(urls.map(getJSON))
-  p.then(handle_data(map))
+    var p = Promise.all(urls.map(getJSON))
+    p.then(handle_data(config, map))
+  })
 }
 
 function sort(key, d) {
@@ -92,7 +94,7 @@ function subtract(a, b) {
   })
 }
 
-function handle_data(map) {
+function handle_data(config, map) {
   return function (data) {
     var nodedict = data[0]
     var nodes = Object.keys(nodedict.nodes).map(function (key) { return nodedict.nodes[key] })
@@ -113,8 +115,8 @@ function handle_data(map) {
 
     var onlinenodes = subtract(nodes.filter(online).filter(has_location), newnodes)
 
-    addToList(document.getElementById("newnodes"), "firstseen", newnodes)
-    addToList(document.getElementById("lostnodes"), "lastseen", lostnodes)
+    addToList(document.getElementById("newnodes"), config.showContact, "firstseen", newnodes)
+    addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", lostnodes)
 
     var graph = data[1].batadv
     var nodes = data[0].nodes
@@ -151,7 +153,7 @@ function handle_data(map) {
 
     longlinks = graph.slice().sort( function (a, b) {
       return a.distance - b.distance
-    }).reverse().slice(0, Math.ceil(0.1 * graph.length))
+    }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.length))
 
     addToLongLinksList(document.getElementById("longlinks"), longlinks)
 
@@ -260,7 +262,7 @@ function addToLongLinksList(el, links) {
   })
 }
 
-function addToList(el, tf, list) {
+function addToList(el, showContact, tf, list) {
   list.forEach( function (d) {
     var time = moment(d[tf]).fromNow()
 
@@ -279,7 +281,7 @@ function addToList(el, tf, list) {
       td1.appendChild(span)
     }
 
-    if ("owner" in d.nodeinfo) {
+    if ("owner" in d.nodeinfo && showContact) {
       var contact = d.nodeinfo.owner.contact
       td1.appendChild(document.createTextNode(" – " + contact + ""))
     }
