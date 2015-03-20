@@ -246,6 +246,8 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
            map.setView(m.getLatLng(), map.getMaxZoom())
            m.openPopup()
          }
+
+         return false
        }
   });
 
