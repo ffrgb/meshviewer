@@ -45,7 +45,13 @@ function main() {
     map.invalidateSize()
   }
 
-  getJSON('nodes.json').then(handle_data(map))
+
+  var urls = [ 'https://map.luebeck.freifunk.net/data/nodes.json',
+               'https://map.luebeck.freifunk.net/data/graph.json'
+             ]
+
+  var p = Promise.all(urls.map(getJSON))
+  p.then(handle_data(map))
 }
 
 function sort(key, d) {
@@ -86,7 +92,8 @@ function subtract(a, b) {
 
 function handle_data(map) {
   return function (data) {
-    var nodes = Object.keys(data.nodes).map(function (key) { return data.nodes[key] })
+    var nodedict = data[0]
+    var nodes = Object.keys(nodedict.nodes).map(function (key) { return nodedict.nodes[key] })
 
     nodes = nodes.filter( function (d) {
       return "firstseen" in d && "lastseen" in d
