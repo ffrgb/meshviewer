@@ -16,10 +16,10 @@
         font-family: sans;
         font-size: 20pt;
         position: absolute;
-        right: -0.9em;
-        top: 2em;
+        right: 1.0em;
+        top: 0.7em;
         z-index: 10;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.7);
         height: 1.8em;
         width: 1.8em;
         border-radius: 0.9em;
@@ -41,12 +41,12 @@
       }
 
       #sidebarhandle span:after {
-        padding-right: 0.125em;
-        content: "\f124";
+        content: "\f12a";
       }
 
-      #sidebar.hidden #sidebarhandle span {
-        transform: scale(-1, 1);
+      #sidebar.hidden #sidebarhandle span:after {
+        padding-left: 0.125em;
+        content: "\f125";
       }
 
       #sidebarhandle:hover {
