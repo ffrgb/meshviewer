@@ -270,6 +270,13 @@ function addToList(el, tf, list) {
     span.textContent = d.nodeinfo.hostname
     td1.appendChild(span)
 
+    if ("location" in d.nodeinfo) {
+      var span = document.createElement("span")
+      span.classList.add("icon")
+      span.classList.add("ion-location")
+      td1.appendChild(span)
+    }
+
     if ("owner" in d.nodeinfo) {
       var contact = d.nodeinfo.owner.contact
       td1.appendChild(document.createTextNode(" – " + contact + ""))
