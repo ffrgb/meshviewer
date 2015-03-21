@@ -235,7 +235,13 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showL
   var group = L.featureGroup(markers).addTo(map)
   var group_online = L.featureGroup(onlinemarkers).addTo(map)
 
-  map.fitBounds(group.getBounds(), {paddingTopLeft: [getSidebarWidth(), 0]})
+  var bounds = group.getBounds()
+
+  if (!bounds.isValid())
+    bounds = group_online.getBounds()
+
+  if (bounds.isValid())
+    map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
 
   var funcDict = {}
 
