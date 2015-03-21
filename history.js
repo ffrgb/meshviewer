@@ -300,11 +300,11 @@ function addToLongLinksList(el, gotoProxy, links) {
     row.appendChild(td1)
 
     var td2 = document.createElement("td")
-    td2.textContent = showDistance(d)
+    td2.textContent = showTq(d)
     row.appendChild(td2)
 
     var td3 = document.createElement("td")
-    td3.textContent = showTq(d)
+    td3.textContent = showDistance(d)
     row.appendChild(td3)
 
     el.appendChild(row)
