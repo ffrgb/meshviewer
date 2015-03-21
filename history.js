@@ -155,9 +155,11 @@ function handle_data(config, map) {
 
     var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph)
 
-    addToList(document.getElementById("newnodes"), config.showContact, "firstseen", markers, newnodes)
-    addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", markers, lostnodes)
-    addToLongLinksList(document.getElementById("longlinks"), markers, longlinks)
+    var gotoAnything = gotoBuilder(markers, showNodeinfo)
+
+    addToList(document.getElementById("newnodes"), config.showContact, "firstseen", gotoAnything.node, newnodes)
+    addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", gotoAnything.node, lostnodes)
+    addToLongLinksList(document.getElementById("longlinks"), gotoAnything.link, longlinks)
 
     showMeshstats(document.getElementById("meshstats"), nodes)
   }
@@ -279,14 +281,14 @@ function addLinksToMap(map, graph) {
   return markersDict
 }
 
-function addToLongLinksList(el, markers, links) {
+function addToLongLinksList(el, gotoProxy, links) {
   links.forEach( function (d) {
     var row = document.createElement("tr")
     var td1 = document.createElement("td")
     var a = document.createElement("a")
     a.textContent = d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname
     a.href = "#"
-    a.onclick = markers[linkId(d)]
+    a.onclick = gotoProxy(d)
     td1.appendChild(a)
     row.appendChild(td1)
 
@@ -302,7 +304,7 @@ function addToLongLinksList(el, markers, links) {
   })
 }
 
-function addToList(el, showContact, tf, markers, list) {
+function addToList(el, showContact, tf, gotoProxy, list) {
   list.forEach( function (d) {
     var time = moment(d[tf]).fromNow()
 
@@ -312,10 +314,8 @@ function addToList(el, showContact, tf, markers, list) {
     a.classList.add("hostname")
     a.classList.add(d.flags.online ? "online" : "offline")
     a.textContent = d.nodeinfo.hostname
-    if (d.nodeinfo.node_id in markers) {
-      a.href = "#"
-      a.onclick = markers[d.nodeinfo.node_id]
-    }
+    a.href = "#"
+    a.onclick = gotoProxy(d)
     td1.appendChild(a)
 
     if ("location" in d.nodeinfo) {
@@ -367,4 +367,24 @@ function showMeshstats(el, nodes) {
 
 function showNodeinfo(d) {
   var object = document.getElementById("nodeinfo")
+}
+
+function gotoBuilder(markers, nodes) {
+  function gotoNode(d) {
+    if (d.nodeinfo.node_id in markers)
+      markers[d.nodeinfo.node_id]()
+
+    return false
+  }
+
+  function gotoLink(d) {
+    if (linkId(d) in markers)
+      markers[linkId(d)]()
+
+    return false
+  }
+
+  return { node: function (d) { return function () { return gotoNode(d) }},
+           link: function (d) { return function () { return gotoLink(d) }}
+         }
 }
