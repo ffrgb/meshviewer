@@ -185,8 +185,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showL
     subdomains: "1234",
     type: "osm",
     attribution: "Map data Tiles &copy; <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"http://developer.mapquest.com/content/osm/mq_logo.png\" />, Map data © OpenStreetMap contributors, CC-BY-SA",
-    maxZoom: 19,
-    maxNativeZoom: 18
+    maxZoom: 18
   }).addTo(map)
 
   var markersDict = addLinksToMap(map, graph, showLinkinfo)
