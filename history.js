@@ -116,11 +116,11 @@ function handle_data(config, map) {
     var onlinenodes = subtract(nodes.filter(online).filter(has_location), newnodes)
 
     var graph = data[1].batadv
-    var nodes = data[0].nodes
+    var graphnodes = data[0].nodes
 
     graph.nodes.forEach( function (d) {
-      if (d.node_id in nodes && "location" in nodes[d.node_id].nodeinfo)
-        d.node = nodes[d.node_id]
+      if (d.node_id in graphnodes && "location" in graphnodes[d.node_id].nodeinfo)
+        d.node = graphnodes[d.node_id]
     })
 
     graph.links.forEach( function (d) {
