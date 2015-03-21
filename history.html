@@ -100,13 +100,16 @@
         z-index: 5;
         width: 50em;
         box-sizing: border-box;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        transition: left 0.5s;
       }
 
       #sidebar.hidden {
-        position: relative;
-        margin-left: -50em;
+        left: -50em;
       }
 
       #sidebardata {
@@ -164,6 +167,7 @@
         }
 
         #sidebar {
+          position: static;
           margin-left: 0em !important;
           width: auto;
           height: auto;

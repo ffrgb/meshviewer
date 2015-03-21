@@ -44,10 +44,7 @@ function main() {
         sb.classList.remove("hidden")
       else
         sb.classList.add("hidden")
-
-      map.invalidateSize()
     }
-
 
     var urls = [ config.dataPath + 'nodes.json',
                  config.dataPath + 'graph.json'
@@ -237,27 +234,32 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showL
   var group = L.featureGroup(markers).addTo(map)
   var group_online = L.featureGroup(onlinemarkers).addTo(map)
 
-  map.fitBounds(group.getBounds())
+  map.fitBounds(group.getBounds(), {paddingTopLeft: [getSidebarWidth(), 0]})
 
   var funcDict = {}
 
   Object.keys(markersDict).map( function(k) {
        funcDict[k] = function (d) {
          var m = markersDict[k]
+         var bounds
          if ("getBounds" in m) {
-           var bounds = m.getBounds()
-           map.fitBounds(bounds)
-           m.openPopup(bounds.getCenter())
+           bounds = m.getBounds()
          } else {
-           map.setView(m.getLatLng(), map.getMaxZoom())
-           m.openPopup()
+           bounds = L.latLngBounds([m.getLatLng()])
          }
 
-         return false
+         map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
+         m.openPopup(bounds.getCenter())
        }
   });
 
   return funcDict
+}
+
+function getSidebarWidth() {
+  var small = window.matchMedia("(max-width: 60em)");
+  var sb = document.getElementById("sidebar")
+  return small.matches ? 0 : sb.offsetWidth
 }
 
 function addLinksToMap(map, graph, showLinkinfo) {
