@@ -30,6 +30,8 @@ function getJSON(url) {
 
 function main() {
   getJSON("config.json").then( function (config) {
+    moment.locale("de")
+
     var options = { worldCopyJump: true,
                     zoomControl: false
                   }
@@ -101,8 +103,8 @@ function handle_data(config, map) {
     })
 
     nodes.forEach( function(node) {
-      node.firstseen = moment(node.firstseen)
-      node.lastseen = moment(node.lastseen)
+      node.firstseen = moment.utc(node.firstseen)
+      node.lastseen = moment.utc(node.lastseen)
     })
 
     var age = moment().subtract(14, 'days')
