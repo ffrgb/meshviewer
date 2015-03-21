@@ -154,7 +154,6 @@ function handle_data(config, map) {
 
 
     var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph)
-      console.log(markers)
 
     addToList(document.getElementById("newnodes"), config.showContact, "firstseen", markers, newnodes)
     addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", markers, lostnodes)
@@ -203,7 +202,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
               }
 
     var m = L.marker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
-    
+
     m.bindPopup(d.nodeinfo.hostname)
 
     markersDict[d.nodeinfo.node_id] = m
