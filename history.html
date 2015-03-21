@@ -24,7 +24,7 @@
 
       button {
         font-family: "ionicons";
-        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.16), 0px 0.5px 2px rgba(0, 0, 0, 0.24);
         border-radius: 0.9em;
         background: rgba(255, 255, 255, 0.7);
         border: none;
@@ -32,10 +32,18 @@
         height: 1.8em;
         width: 1.8em;
         font-size: 20pt;
+        transition: box-shadow 0.5s, color 0.5s;
+        outline: none;
       }
 
       button:hover {
+        background: white;
         color: #dc0067;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      button:active {
+        box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.19), inset 0px 3px 6px rgba(0, 0, 0, 0.23);
       }
 
       button.close {
@@ -57,45 +65,20 @@
       }
 
       #sidebarhandle {
-        cursor: pointer;
-        font-family: sans;
-        font-size: 20pt;
         position: absolute;
         right: -2.5em;
         top: 0.7em;
         z-index: 10;
-        background: rgba(255, 255, 255, 0.7);
-        height: 1.8em;
-        width: 1.8em;
-        border-radius: 0.9em;
-        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
-        text-align: center;
-        display: table;
-        transition: right 0.5s;
+        transition: right 0.5s, box-shadow 0.5s, color 0.5s, transform 0.5s;
       }
 
-      #sidebar.hidden #sidebarhandle {
-      }
-
-      #sidebarhandle span {
-        display: table-cell;
-        vertical-align: middle;
-        font-family: "ionicons";
-        transition: transform 0.5s;
-      }
-
-      #sidebarhandle span:after {
+      #sidebarhandle:after {
         padding-right: 0.125em;
         content: "\f124";
       }
 
-      #sidebar.hidden #sidebarhandle span {
-        transform: rotate(-180deg);
-      }
-
-      #sidebarhandle:hover {
-        background: white;
-        color: #dc0067;
+      #sidebar.hidden #sidebarhandle {
+        transform: scale(-1, 1);
       }
 
       .hostname {
@@ -210,9 +193,9 @@
       <div id="map">
       </div>
       <div id="sidebar">
-        <div id="sidebarhandle">
-          <span></span>
-        </div>
+        <button id="sidebarhandle">
+        </button>
+
         <div id="sidebardata">
           <div id="nodeinfo" class="hidden">
           </div>
