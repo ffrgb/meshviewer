@@ -366,13 +366,38 @@ function showMeshstats(el, nodes) {
 }
 
 function showNodeinfo(d) {
-  var object = document.getElementById("nodeinfo")
+  var el = document.getElementById("nodeinfo")
+
+  destroy()
+  el.classList.remove("hidden")
+  el.scrollIntoView(true)
+
+  var closeButton = document.createElement("button")
+  closeButton.classList.add("close")
+  closeButton.onclick = destroy
+  el.appendChild(closeButton)
+
+  var h2 = document.createElement("h2")
+  h2.textContent = d.nodeinfo.hostname
+  el.appendChild(h2)
+
+  var pre = document.createElement("pre")
+  pre.textContent = JSON.stringify(d, null, ' ')
+  el.appendChild(pre)
+
+  function destroy() {
+    el.classList.add("hidden")
+    while (el.hasChildNodes())
+      el.removeChild(el.childNodes[0])
+  }
 }
 
 function gotoBuilder(markers, nodes) {
   function gotoNode(d) {
     if (d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
+
+    nodes(d)
 
     return false
   }

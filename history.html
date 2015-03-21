@@ -11,6 +11,51 @@
         font-size: 11pt;
       }
 
+      #nodeinfo {
+        position: relative;
+        box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.16), 0px 0.5px 2px rgba(0, 0, 0, 0.24);
+        background: rgba(0, 0, 0, 0.02);
+        padding-top: 0.25em;
+      }
+
+      #nodeinfo.hidden {
+        display: none;
+      }
+
+      button {
+        font-family: "ionicons";
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 0.9em;
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        cursor: pointer;
+        height: 1.8em;
+        width: 1.8em;
+        font-size: 20pt;
+      }
+
+      button:hover {
+        color: #dc0067;
+      }
+
+      button.close {
+        position: absolute;
+        right: 0.7em;
+        top: 0.7em;
+      }
+
+      button.close:after {
+        content: "\f12a";
+      }
+
+      #sidebar h2 {
+        padding: 0 10pt;
+      }
+
+      #sidebar p, #sidebar table, #sidebar pre {
+        padding: 0 10pt 1em;
+      }
+
       #sidebarhandle {
         cursor: pointer;
         font-family: sans;
@@ -83,7 +128,6 @@
 
       #sidebardata {
         overflow: auto;
-        padding: 0 1em 1em;
         box-sizing: border-box;
       }
 
@@ -170,6 +214,9 @@
           <span></span>
         </div>
         <div id="sidebardata">
+          <div id="nodeinfo" class="hidden">
+          </div>
+
           <p>
             Zeigt Knoten an, die in den letzten 14 Tagen dazu gekommen oder verschwunden sind.
             Funktioniert nur in wirklich modernen Browsern.
