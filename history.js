@@ -267,7 +267,7 @@ function addLinksToMap(map, graph) {
 
     var line = L.polyline(d.latlngs, opts)
 
-    line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + showDistance(d) + "</strong>")
+    line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + showDistance(d) + " / " + showTq(d) + "</strong>")
 
     markersDict[linkId(d)] = line
 
