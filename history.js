@@ -153,9 +153,9 @@ function handle_data(config, map) {
     }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.length))
 
 
-    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph)
+    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showLinkinfo)
 
-    var gotoAnything = gotoBuilder(markers, showNodeinfo)
+    var gotoAnything = gotoBuilder(markers, showNodeinfo, showLinkinfo)
 
     addToList(document.getElementById("newnodes"), config.showContact, "firstseen", gotoAnything.node, newnodes)
     addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", gotoAnything.node, lostnodes)
@@ -181,7 +181,7 @@ function linkId(d) {
   return d.source.node.nodeinfo.node_id + "-" + d.target.node.nodeinfo.node_id
 }
 
-function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
+function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showLinkinfo) {
   L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
@@ -191,7 +191,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
     maxZoom: 18
   }).addTo(map)
 
-  var markersDict = addLinksToMap(map, graph)
+  var markersDict = addLinksToMap(map, graph, showLinkinfo)
 
   var nodes = newnodes.concat(lostnodes).filter( function (d) {
     return "location" in d.nodeinfo
@@ -207,6 +207,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
 
     var m = L.marker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
 
+    m.on('click', function () { return showNodeinfo(d) })
     m.bindPopup(d.nodeinfo.hostname)
 
     markersDict[d.nodeinfo.node_id] = m
@@ -224,6 +225,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
 
     var m = L.circleMarker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
 
+    m.on('click', function () { return showNodeinfo(d) })
     m.bindPopup(d.nodeinfo.hostname)
 
     markersDict[d.nodeinfo.node_id] = m
@@ -257,7 +259,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph) {
   return funcDict
 }
 
-function addLinksToMap(map, graph) {
+function addLinksToMap(map, graph, showLinkinfo) {
   var markersDict = {}
 
   var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
@@ -270,6 +272,7 @@ function addLinksToMap(map, graph) {
     var line = L.polyline(d.latlngs, opts)
 
     line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + showDistance(d) + " / " + showTq(d) + "</strong>")
+    line.on('click', function () { return showLinkinfo(d) })
 
     markersDict[linkId(d)] = line
 
@@ -392,7 +395,10 @@ function showNodeinfo(d) {
   }
 }
 
-function gotoBuilder(markers, nodes) {
+function showLinkinfo(d) {
+}
+
+function gotoBuilder(markers, nodes, links) {
   function gotoNode(d) {
     if (d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
@@ -405,6 +411,8 @@ function gotoBuilder(markers, nodes) {
   function gotoLink(d) {
     if (linkId(d) in markers)
       markers[linkId(d)]()
+
+    links(d)
 
     return false
   }
