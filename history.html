@@ -82,29 +82,29 @@
         margin-left: -50em;
       }
 
-      #lists {
+      #sidebardata {
         overflow: auto;
         padding: 0 1em 1em;
         box-sizing: border-box;
       }
 
-      #lists .icon {
+      #sidebardata .icon {
         padding: 0 0.25em;
       }
 
-      #lists, #map {
+      #sidebardata, #map {
         height: 100vh;
       }
 
-      #lists table {
+      #sidebardata table {
         width: 100%;
       }
 
-      #lists td:not(:first-child) {
+      #sidebardata td:not(:first-child) {
         text-align: right;
       }
 
-      #lists a {
+      #sidebardata a {
         color: #1566A9;
       }
 
@@ -124,7 +124,7 @@
           flex-direction: column;
         }
 
-        #lists {
+        #sidebardata {
           overflow: visible;
           height: auto;
         }
@@ -147,7 +147,7 @@
           width: auto;
         }
 
-        #sidebar.hidden #lists {
+        #sidebar.hidden #sidebardata {
           display: block;
         }
       }
@@ -170,7 +170,7 @@
         <div id="sidebarhandle">
           <span></span>
         </div>
-        <div id="lists">
+        <div id="sidebardata">
           <p>
             Zeigt Knoten an, die in den letzten 14 Tagen dazu gekommen oder verschwunden sind.
             Funktioniert nur in wirklich modernen Browsern.
