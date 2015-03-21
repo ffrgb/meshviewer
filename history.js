@@ -373,7 +373,7 @@ function showNodeinfo(d) {
 
   destroy()
   el.classList.remove("hidden")
-  el.scrollIntoView(true)
+  el.scrollIntoView(false)
 
   var closeButton = document.createElement("button")
   closeButton.classList.add("close")
