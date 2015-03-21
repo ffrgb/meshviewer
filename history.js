@@ -158,6 +158,8 @@ function handle_data(config, map) {
     addToList(document.getElementById("newnodes"), config.showContact, "firstseen", markers, newnodes)
     addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", markers, lostnodes)
     addToLongLinksList(document.getElementById("longlinks"), markers, longlinks)
+
+    showMeshstats(document.getElementById("meshstats"), nodes)
   }
 }
 
@@ -335,4 +337,34 @@ function addToList(el, showContact, tf, markers, list) {
     row.appendChild(td2)
     el.appendChild(row)
   })
+}
+
+function sum(a) {
+  return a.reduce( function (a, b) {
+    return a + b
+  }, 0)
+}
+
+function one() {
+  return 1
+}
+
+function showMeshstats(el, nodes) {
+  var totalNodes = sum(nodes.filter(online).map(one))
+
+  var totalClients = sum(nodes.filter(online).map( function (d) {
+    return d.statistics.clients
+  }))
+
+  var totalGateways = sum(nodes.filter(online).filter( function (d) {
+    return d.flags.gateway
+  }).map(one))
+
+  el.textContent = totalNodes + " Knoten (online), " +
+                   totalClients + " Clients, " +
+                   totalGateways + " Gateways"
+}
+
+function showNodeinfo(d) {
+  var object = document.getElementById("nodeinfo")
 }
