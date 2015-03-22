@@ -233,8 +233,8 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   })
 
   var onlinemarkers = onlinenodes.map( function (d) {
-    var opt = { color: "#76B22D",
-                fillColor: "#76B22D",
+    var opt = { color: "#1566A9",
+                fillColor: "#1566A9",
                 radius: 5,
                 opacity: 0.7,
                 fillOpacity: 0.5
