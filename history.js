@@ -164,8 +164,8 @@ function handle_data(config, map) {
 
     gotoAnything.addMarkers(markers)
 
-    addToList(document.getElementById("newnodes"), config.showContact, "firstseen", gotoAnything.node, newnodes)
-    addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", gotoAnything.node, lostnodes)
+    mkNodesList(document.getElementById("sidebardata"), config.showContact, "firstseen", gotoAnything.node, "Neue Knoten", newnodes)
+    mkNodesList(document.getElementById("sidebardata"), config.showContact, "lastseen", gotoAnything.node, "Verschwundene Knoten", lostnodes)
     mkLinkList(document.getElementById("sidebardata"), gotoAnything.link, links)
 
     showMeshstats(document.getElementById("meshstats"), nodes)
@@ -389,7 +389,18 @@ function mkLinkList(el, gotoProxy, links) {
   el.appendChild(table)
 }
 
-function addToList(el, showContact, tf, gotoProxy, list) {
+function mkNodesList(el, showContact, tf, gotoProxy, title, list) {
+  if (list.length == 0)
+    return
+
+  var h2 = document.createElement("h2")
+  h2.textContent = title
+  el.appendChild(h2)
+  var table = document.createElement("table")
+  el.appendChild(table)
+
+  var tbody = document.createElement("tbody")
+
   list.forEach( function (d) {
     var time = moment(d[tf]).fromNow()
 
@@ -420,8 +431,11 @@ function addToList(el, showContact, tf, gotoProxy, list) {
 
     row.appendChild(td1)
     row.appendChild(td2)
-    el.appendChild(row)
+    tbody.appendChild(row)
   })
+
+  table.appendChild(tbody)
+  el.appendChild(table)
 }
 
 function sum(a) {
