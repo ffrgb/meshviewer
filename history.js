@@ -497,6 +497,9 @@ function showNodeinfo(config, gotoAnything, d) {
       a1.onclick = gotoAnything.node(d.node)
       td1.appendChild(a1)
 
+      if (d.link.vpn)
+        td1.appendChild(document.createTextNode(" (VPN)"))
+
       if (has_location(d.node)) {
         var span = document.createElement("span")
         span.classList.add("icon")
@@ -663,6 +666,7 @@ function showLinkinfo(config, gotoAnything, d) {
 
   attributeEntry(attributes, "TQ", showTq(d))
   attributeEntry(attributes, "Entfernung", showDistance(d))
+  attributeEntry(attributes, "VPN", d.vpn ? "ja" : "nein")
 
   el.appendChild(attributes)
 }
