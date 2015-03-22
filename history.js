@@ -392,17 +392,146 @@ function showNodeinfo(d) {
 
   var h2 = document.createElement("h2")
   h2.textContent = d.nodeinfo.hostname
+  var span = document.createElement("span")
+  span.classList.add(d.flags.online ? "online" : "offline")
+  span.textContent = " (" + (d.flags.online ? "online" : "offline, " + d.lastseen.fromNow(true)) + ")"
+  h2.appendChild(span)
   el.appendChild(h2)
 
-  var pre = document.createElement("pre")
-  pre.textContent = JSON.stringify(d, null, ' ')
-  el.appendChild(pre)
+  var attributes = document.createElement("table")
+  attributes.classList.add("attributes")
+
+  attributeEntry(attributes, "Gateway", d.flags.gateway ? "ja" : null)
+  attributeEntry(attributes, "In der Karte", "location" in d.nodeinfo ? "ja" : "nein")
+  attributeEntry(attributes, "Kontakt", dictGet(d.nodeinfo, ["owner", "contact"]))
+  attributeEntry(attributes, "Hardware",  dictGet(d.nodeinfo, ["hardware", "model"]))
+  attributeEntry(attributes, "Primäre MAC", dictGet(d.nodeinfo, ["network", "mac"]))
+  attributeEntry(attributes, "Firmware", showFirmware(d))
+  attributeEntry(attributes, "Uptime", showUptime(d))
+  attributeEntry(attributes, "Teil des Netzes", showFirstseen(d))
+  attributeEntry(attributes, "Arbeitsspeicher", showRAM(d))
+  attributeEntry(attributes, "IP Adressen", showIPs(d))
+  attributeEntry(attributes, "Clients", showClients(d))
+  el.appendChild(attributes)
+
 
   function destroy() {
     el.classList.add("hidden")
     while (el.hasChildNodes())
       el.removeChild(el.childNodes[0])
   }
+
+  function attributeEntry(el, label, value) {
+    if (value === null || value == undefined)
+      return
+
+    var tr = document.createElement("tr")
+    var th = document.createElement("th")
+    th.textContent = label
+    tr.appendChild(th)
+
+    var td = document.createElement("td")
+
+    if (typeof value == "function")
+      value(td)
+    else
+      td.appendChild(document.createTextNode(value))
+
+    tr.appendChild(td)
+
+    el.appendChild(tr)
+
+    return td
+  }
+
+  function showFirmware(d) {
+    var release = dictGet(d.nodeinfo, ["software", "firmware", "release"])
+    var base = dictGet(d.nodeinfo, ["software", "firmware", "base"])
+
+    if (release === null || base === null)
+      return
+
+    return release + " / " + base
+  }
+
+  function showUptime(d) {
+    if (!("uptime" in d.statistics))
+      return
+
+    return moment.duration(d.statistics.uptime, "seconds").humanize()
+  }
+
+  function showFirstseen(d) {
+    if (!("firstseen" in d))
+      return
+
+    return d.firstseen.fromNow(true)
+  }
+
+  function showClients(d) {
+    if (!d.flags.online)
+      return
+
+    return function (el) {
+      el.appendChild(document.createTextNode(d.statistics.clients > 0 ? d.statistics.clients : "keine"))
+      el.appendChild(document.createElement("br"))
+
+      var span = document.createElement("span")
+      span.classList.add("clients")
+      span.textContent = " ".repeat(d.statistics.clients)
+      el.appendChild(span)
+    }
+  }
+
+  function showIPs(d) {
+    var ips = dictGet(d.nodeinfo, ["network", "addresses"])
+    if (ips === null)
+      return
+
+    ips.sort()
+
+    return function (el) {
+      ips.forEach( function (ip, i) {
+        var link = !ip.startsWith("fe80:")
+
+        if (i > 0)
+          el.appendChild(document.createElement("br"))
+
+        if (link) {
+          var a = document.createElement("a")
+          a.href = "http://[" + ip + "]/"
+          a.textContent = ip
+          el.appendChild(a)
+        } else
+          el.appendChild(document.createTextNode(ip))
+      })
+    }
+  }
+
+  function showRAM(d) {
+    if (!("memory_usage" in d.statistics))
+      return
+
+    return function (el) {
+      el.appendChild(showBar("memory-usage", d.statistics.memory_usage))
+    }
+  }
+}
+
+function showBar(className, v) {
+  var span = document.createElement("span")
+  span.classList.add("bar")
+  span.classList.add(className)
+
+  var bar = document.createElement("span")
+  bar.style.width = (v * 100) + "%"
+  span.appendChild(bar)
+
+  var label = document.createElement("label")
+  label.textContent = (Math.round(v * 100)) + " %"
+  span.appendChild(label)
+
+  return span
 }
 
 function showLinkinfo(d) {
@@ -430,4 +559,16 @@ function gotoBuilder(markers, nodes, links) {
   return { node: function (d) { return function () { return gotoNode(d) }},
            link: function (d) { return function () { return gotoLink(d) }}
          }
+}
+
+function dictGet(dict, key) {
+  var k = key.shift()
+
+  if (!(k in dict))
+    return null
+
+  if (key.length == 0)
+    return dict[k]
+
+  return dictGet(dict[k], key)
 }

@@ -12,11 +12,33 @@
         font-size: 11pt;
       }
 
+      table.attributes {
+        width: auto !important;
+      }
+
+      table.attributes th {
+        text-align: left;
+        font-weight: bold;
+        vertical-align: top;
+        padding-right: 1em;
+        white-space: nowrap;
+      }
+
+      table.attributes td {
+        text-align: left !important;
+      }
+
+      #nodeinfo .clients {
+        font-family: "ionicons";
+        color: #1566A9;
+        word-spacing: -0.2em;
+      }
+
       #nodeinfo {
         position: relative;
         box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.16), 0px 0.5px 2px rgba(0, 0, 0, 0.24);
         background: rgba(0, 0, 0, 0.02);
-        padding-top: 0.25em;
+        padding: 0.25em 0;
       }
 
       #nodeinfo.hidden {
@@ -58,11 +80,11 @@
         content: "\f12a";
       }
 
-      #sidebar h2 {
+      #sidebar h2, #sidebar h3 {
         padding: 0 10pt;
       }
 
-      #sidebar p, #sidebar table, #sidebar pre {
+      #sidebar p, #sidebar table, #sidebar pre, #sidebar ul {
         padding: 0 10pt 1em;
       }
 
@@ -86,11 +108,11 @@
       .hostname {
       }
 
-      .hostname.online {
+      .online {
         color: #558020 !important;
       }
 
-      .hostname.offline {
+      .offline {
         color: #D43E2A !important;
       }
 
@@ -133,6 +155,28 @@
 
       #sidebardata a {
         color: #1566A9;
+      }
+
+      .bar {
+        display: inline-block;
+        width: 100%;
+        height: 1.4em;
+        background: rgba(85, 128, 32, 0.5);
+        position: relative;
+      }
+
+      .bar span {
+        display: inline-block;
+        height: 1.4em;
+        background: rgba(85, 128, 32, 0.8);
+      }
+
+      .bar label {
+        font-weight: bold;
+        white-space: nowrap;
+        color: white;
+        position: absolute;
+        right: 0.5em;
       }
 
       @media screen and (max-width: 80em) {
