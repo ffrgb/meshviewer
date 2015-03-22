@@ -152,7 +152,7 @@ function handle_data(config, map) {
     }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.length))
 
 
-    var gotoAnything = gotoBuilder(showNodeinfo, showLinkinfo)
+    var gotoAnything = gotoBuilder(config, showNodeinfo, showLinkinfo)
 
     var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything)
 
@@ -380,7 +380,7 @@ function showMeshstats(el, nodes) {
                    totalGateways + " Gateways"
 }
 
-function showNodeinfo(d) {
+function showNodeinfo(config, d) {
   var el = document.getElementById("nodeinfo")
 
   destroy()
@@ -405,7 +405,10 @@ function showNodeinfo(d) {
 
   attributeEntry(attributes, "Gateway", d.flags.gateway ? "ja" : null)
   attributeEntry(attributes, "In der Karte", "location" in d.nodeinfo ? "ja" : "nein")
-  attributeEntry(attributes, "Kontakt", dictGet(d.nodeinfo, ["owner", "contact"]))
+
+  if (config.showContact)
+    attributeEntry(attributes, "Kontakt", dictGet(d.nodeinfo, ["owner", "contact"]))
+
   attributeEntry(attributes, "Hardware",  dictGet(d.nodeinfo, ["hardware", "model"]))
   attributeEntry(attributes, "Primäre MAC", dictGet(d.nodeinfo, ["network", "mac"]))
   attributeEntry(attributes, "Firmware", showFirmware(d))
@@ -536,11 +539,11 @@ function showBar(className, v) {
   return span
 }
 
-function showLinkinfo(d) {
+function showLinkinfo(config, d) {
   console.log(d)
 }
 
-function gotoBuilder(nodes, links) {
+function gotoBuilder(config, nodes, links) {
   var markers = {}
 
   function gotoNode(d, showMap) {
@@ -549,7 +552,7 @@ function gotoBuilder(nodes, links) {
     if (showMap && d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
 
-    nodes(d)
+    nodes(config, d)
 
     return false
   }
@@ -560,7 +563,7 @@ function gotoBuilder(nodes, links) {
     if (showMap && linkId(d) in markers)
       markers[linkId(d)]()
 
-    links(d)
+    links(config, d)
 
     return false
   }
