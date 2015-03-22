@@ -149,13 +149,9 @@ function handle_data(config, map) {
       d.distance = d.latlngs[0].distanceTo(d.latlngs[1])
     })
 
-    longlinks = graph.slice().filter( function (d) {
-      return "distance" in d
-    }).sort( function (a, b) {
-      return a.distance - b.distance
-    }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.filter( function (d) {
-      return "distance" in d
-    }).length))
+    var links = graph.slice().sort( function (a, b) {
+      return (a.distance !== undefined ? a.distance : -1) - (b.distance !== undefined ? b.distance : -1)
+    }).reverse()
 
     nodes.forEach( function (d) {
       d.neighbours = []
@@ -174,7 +170,7 @@ function handle_data(config, map) {
 
     addToList(document.getElementById("newnodes"), config.showContact, "firstseen", gotoAnything.node, newnodes)
     addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", gotoAnything.node, lostnodes)
-    addToLongLinksList(document.getElementById("longlinks"), gotoAnything.link, longlinks)
+    addToLinksList(document.getElementById("links"), gotoAnything.link, links)
 
     showMeshstats(document.getElementById("meshstats"), nodes)
 
@@ -333,7 +329,7 @@ function addLinksToMap(map, graph, gotoAnything) {
   return markersDict
 }
 
-function addToLongLinksList(el, gotoProxy, links) {
+function addToLinksList(el, gotoProxy, links) {
   links.forEach( function (d) {
     var row = document.createElement("tr")
     var td1 = document.createElement("td")
@@ -343,6 +339,9 @@ function addToLongLinksList(el, gotoProxy, links) {
     a.onclick = gotoProxy(d)
     td1.appendChild(a)
     row.appendChild(td1)
+
+    if (d.vpn)
+      td1.appendChild(document.createTextNode(" (VPN)"))
 
     var td2 = document.createElement("td")
     td2.textContent = showTq(d)

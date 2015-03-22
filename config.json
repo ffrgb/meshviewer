@@ -1,5 +1,4 @@
 {
   "dataPath": "https://map.luebeck.freifunk.net/data/",
-  "longLinkPercentile": 0.1,
   "showContact": true
 }
