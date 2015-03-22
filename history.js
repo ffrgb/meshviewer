@@ -112,7 +112,7 @@ function handle_data(config, map) {
     var newnodes = limit("firstseen", age, sort("firstseen", nodes).filter(online))
     var lostnodes = limit("lastseen", age, sort("lastseen", nodes).filter(offline))
 
-    var onlinenodes = subtract(nodes.filter(online).filter(has_location), newnodes)
+    var onlinenodes = nodes.filter(online)
 
     var graph = data[1].batadv
     var graphnodes = data[0].nodes
@@ -211,6 +211,24 @@ function linkId(d) {
 }
 
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
+  function mkCircleNode(d) {
+    var opt = { color: "#1566A9",
+                  fillColor: "#1566A9",
+                  radius: 5,
+                  opacity: 0.7,
+                  fillOpacity: 0.5
+                }
+
+    var m = L.circleMarker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
+
+    m.on('click', gotoAnything.node(d, false))
+    m.bindPopup(d.nodeinfo.hostname)
+
+    markersDict[d.nodeinfo.node_id] = m
+
+    return m
+  }
+
   L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
@@ -242,23 +260,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
     return m
   })
 
-  var onlinemarkers = onlinenodes.map( function (d) {
-    var opt = { color: "#1566A9",
-                fillColor: "#1566A9",
-                radius: 5,
-                opacity: 0.7,
-                fillOpacity: 0.5
-              }
-
-    var m = L.circleMarker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
-
-    m.on('click', gotoAnything.node(d, false))
-    m.bindPopup(d.nodeinfo.hostname)
-
-    markersDict[d.nodeinfo.node_id] = m
-
-    return m
-  })
+  var onlinemarkers = subtract(onlinenodes.filter(has_location), newnodes).map(mkCircleNode)
 
   var group = L.featureGroup(markers).addTo(map)
   var group_online = L.featureGroup(onlinemarkers).addTo(map)
