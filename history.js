@@ -480,12 +480,28 @@ function showNodeinfo(config, gotoAnything, d) {
     el.appendChild(h3)
 
     var table = document.createElement("table")
+    var thead = document.createElement("thead")
 
-    var neighbours = d.neighbours.slice().sort( function (a, b) {
-      return a.node.nodeinfo.hostname.localeCompare(b.node.nodeinfo.hostname)
-    })
+    var tr = document.createElement("tr")
+    var th1 = document.createElement("th")
+    th1.textContent = "Knoten"
+    th1.classList.add("sort-default")
+    tr.appendChild(th1)
 
-    neighbours.forEach( function (d) {
+    var th2 = document.createElement("th")
+    th2.textContent = "TQ"
+    tr.appendChild(th2)
+
+    var th3 = document.createElement("th")
+    th3.textContent = "Entfernung"
+    tr.appendChild(th3)
+
+    thead.appendChild(tr)
+    table.appendChild(thead)
+
+    var tbody = document.createElement("tbody")
+
+    d.neighbours.forEach( function (d) {
       var tr = document.createElement("tr")
 
       var td1 = document.createElement("td")
@@ -522,10 +538,15 @@ function showNodeinfo(config, gotoAnything, d) {
       a3.textContent = showDistance(d.link)
       a3.onclick = gotoAnything.link(d.link)
       td3.appendChild(a3)
+      td3.setAttribute("data-sort", d.link.distance !== undefined ? d.link.distance : -1)
       tr.appendChild(td3)
 
-      table.appendChild(tr)
+      tbody.appendChild(tr)
     })
+
+    table.appendChild(tbody)
+
+    new Tablesort(table)
 
     el.appendChild(table)
   }

@@ -12,6 +12,34 @@
         font-size: 11pt;
       }
 
+      th.sort-header::selection {
+        background: transparent;
+      }
+
+      th.sort-header {
+        cursor: pointer;
+      }
+
+      table th.sort-header:after {
+        font-family: "ionicons";
+        padding-left: 0.25em;
+        content: '\f10d';
+        visibility: hidden;
+      }
+
+      table th.sort-header:hover:after {
+        visibility: visible;
+      }
+
+      table th.sort-up:after, table th.sort-down:after, table th.sort-down:hover:after {
+        visibility: visible;
+        opacity: 0.4;
+      }
+
+      table th.sort-up:after {
+        content: '\f104';
+      }
+
       table.attributes {
         width: auto !important;
       }
@@ -149,7 +177,11 @@
         width: 100%;
       }
 
-      #sidebardata td:not(:first-child) {
+      #sidebardata table th {
+        text-align: left;
+      }
+
+      #sidebardata td:not(:first-child), #sidebardata th:not(:first-child) {
         text-align: right;
       }
 
@@ -224,6 +256,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/3.0.2/tablesort.min.js"></script>
+    <script src="vendor/tablesort.numeric.js"></script>
     <script src="history.js"></script>
   </head>
   <body>
