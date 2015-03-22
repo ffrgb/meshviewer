@@ -229,9 +229,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
 
   var markersDict = addLinksToMap(map, graph, gotoAnything)
 
-  var nodes = newnodes.concat(lostnodes).filter( function (d) {
-    return "location" in d.nodeinfo
-  })
+  var nodes = newnodes.concat(lostnodes).filter(has_location)
 
   var markers = nodes.map( function (d) {
     var icon = L.AwesomeMarkers.icon({ markerColor: d.flags.online ? "green" : "red",
@@ -372,7 +370,7 @@ function addToList(el, showContact, tf, gotoProxy, list) {
     a.onclick = gotoProxy(d)
     td1.appendChild(a)
 
-    if ("location" in d.nodeinfo) {
+    if (has_location(d)) {
       var span = document.createElement("span")
       span.classList.add("icon")
       span.classList.add("ion-location")
@@ -443,7 +441,7 @@ function showNodeinfo(config, gotoAnything, d) {
   attributes.classList.add("attributes")
 
   attributeEntry(attributes, "Gateway", d.flags.gateway ? "ja" : null)
-  attributeEntry(attributes, "In der Karte", "location" in d.nodeinfo ? "ja" : "nein")
+  attributeEntry(attributes, "In der Karte", has_location(d) ? "ja" : "nein")
 
   if (config.showContact)
     attributeEntry(attributes, "Kontakt", dictGet(d.nodeinfo, ["owner", "contact"]))
