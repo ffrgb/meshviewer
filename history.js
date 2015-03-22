@@ -166,7 +166,7 @@ function handle_data(config, map) {
 
     addToList(document.getElementById("newnodes"), config.showContact, "firstseen", gotoAnything.node, newnodes)
     addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", gotoAnything.node, lostnodes)
-    addToLinksList(document.getElementById("links"), gotoAnything.link, links)
+    mkLinkList(document.getElementById("sidebardata"), gotoAnything.link, links)
 
     showMeshstats(document.getElementById("meshstats"), nodes)
 
@@ -326,7 +326,15 @@ function addLinksToMap(map, graph, gotoAnything) {
   return markersDict
 }
 
-function addToLinksList(el, gotoProxy, links) {
+function mkLinkList(el, gotoProxy, links) {
+  if (links.length == 0)
+    return
+
+  var h2 = document.createElement("h2")
+  h2.textContent = "Verbindungen"
+  el.appendChild(h2)
+
+  var table = document.createElement("table")
   var thead = document.createElement("thead")
 
   var tr = document.createElement("tr")
@@ -345,7 +353,7 @@ function addToLinksList(el, gotoProxy, links) {
 
   thead.appendChild(tr)
 
-  el.appendChild(thead)
+  table.appendChild(thead)
 
   var tbody = document.createElement("tbody")
 
@@ -374,9 +382,11 @@ function addToLinksList(el, gotoProxy, links) {
     tbody.appendChild(row)
   })
 
-  el.appendChild(tbody)
+  table.appendChild(tbody)
 
-  new Tablesort(el)
+  new Tablesort(table)
+
+  el.appendChild(table)
 }
 
 function addToList(el, showContact, tf, gotoProxy, list) {
