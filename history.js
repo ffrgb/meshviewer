@@ -417,18 +417,37 @@ function showMeshstats(el, nodes) {
                    totalGateways + " Gateways"
 }
 
-function showNodeinfo(config, gotoAnything, d) {
+function infobox() {
+  function close() {
+    destroy()
+    pushHistory()
+  }
+
+  function destroy() {
+    el.classList.add("hidden")
+    while (el.hasChildNodes())
+      el.removeChild(el.childNodes[0])
+  }
+
   var el = document.getElementById("nodeinfo")
 
   destroy()
   el.classList.remove("hidden")
   el.scrollIntoView(false)
 
+  el.close = close
+  el.destroy = destroy
+
   var closeButton = document.createElement("button")
   closeButton.classList.add("close")
   closeButton.onclick = close
   el.appendChild(closeButton)
 
+  return el
+}
+
+function showNodeinfo(config, gotoAnything, d) {
+  var el = infobox()
   var h2 = document.createElement("h2")
   h2.textContent = d.nodeinfo.hostname
   var span = document.createElement("span")
@@ -509,40 +528,6 @@ function showNodeinfo(config, gotoAnything, d) {
     el.appendChild(table)
   }
 
-  function close() {
-    destroy()
-    pushHistory()
-  }
-
-  function destroy() {
-    el.classList.add("hidden")
-    while (el.hasChildNodes())
-      el.removeChild(el.childNodes[0])
-  }
-
-  function attributeEntry(el, label, value) {
-    if (value === null || value == undefined)
-      return
-
-    var tr = document.createElement("tr")
-    var th = document.createElement("th")
-    th.textContent = label
-    tr.appendChild(th)
-
-    var td = document.createElement("td")
-
-    if (typeof value == "function")
-      value(td)
-    else
-      td.appendChild(document.createTextNode(value))
-
-    tr.appendChild(td)
-
-    el.appendChild(tr)
-
-    return td
-  }
-
   function showFirmware(d) {
     var release = dictGet(d.nodeinfo, ["software", "firmware", "release"])
     var base = dictGet(d.nodeinfo, ["software", "firmware", "base"])
@@ -617,6 +602,29 @@ function showNodeinfo(config, gotoAnything, d) {
   }
 }
 
+function attributeEntry(el, label, value) {
+  if (value === null || value == undefined)
+    return
+
+  var tr = document.createElement("tr")
+  var th = document.createElement("th")
+  th.textContent = label
+  tr.appendChild(th)
+
+  var td = document.createElement("td")
+
+  if (typeof value == "function")
+    value(td)
+  else
+    td.appendChild(document.createTextNode(value))
+
+  tr.appendChild(td)
+
+  el.appendChild(tr)
+
+  return td
+}
+
 function showBar(className, v) {
   var span = document.createElement("span")
   span.classList.add("bar")
@@ -633,8 +641,30 @@ function showBar(className, v) {
   return span
 }
 
-function showLinkinfo(config, d) {
-  console.log(d)
+function showLinkinfo(config, gotoAnything, d) {
+  var el = infobox()
+
+  var h2 = document.createElement("h2")
+  a1 = document.createElement("a")
+  a1.href = "#"
+  a1.onclick = gotoAnything.node(d.source.node)
+  a1.textContent = d.source.node.nodeinfo.hostname
+  h2.appendChild(a1)
+  h2.appendChild(document.createTextNode(" – "))
+  a2 = document.createElement("a")
+  a2.href = "#"
+  a2.onclick = gotoAnything.node(d.target.node)
+  a2.textContent = d.target.node.nodeinfo.hostname
+  h2.appendChild(a2)
+  el.appendChild(h2)
+
+  var attributes = document.createElement("table")
+  attributes.classList.add("attributes")
+
+  attributeEntry(attributes, "TQ", showTq(d))
+  attributeEntry(attributes, "Entfernung", showDistance(d))
+
+  el.appendChild(attributes)
 }
 
 function pushHistory(d) {
@@ -704,7 +734,7 @@ function gotoBuilder(config, nodes, links) {
     if (showMap && linkId(d) in markers)
       markers[linkId(d)]()
 
-    links(config, d)
+    links(config, self, d)
 
     if (push)
       pushHistory( { link: d })
