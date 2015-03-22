@@ -429,7 +429,7 @@ function infobox() {
       el.removeChild(el.childNodes[0])
   }
 
-  var el = document.getElementById("nodeinfo")
+  var el = document.getElementById("infobox")
 
   destroy()
   el.classList.remove("hidden")
