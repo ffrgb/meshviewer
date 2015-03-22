@@ -134,11 +134,11 @@ function handle_data(config, map) {
         d.target = undefined
     })
 
-    graph = graph.links.filter( function (d) {
+    var links = graph.links.filter( function (d) {
       return d.source !== undefined && d.target !== undefined
     })
 
-    graph.forEach( function (d) {
+    links.forEach( function (d) {
       if (!("location" in d.source.node.nodeinfo && "location" in d.target.node.nodeinfo))
         return
 
@@ -149,22 +149,18 @@ function handle_data(config, map) {
       d.distance = d.latlngs[0].distanceTo(d.latlngs[1])
     })
 
-    var links = graph.slice().sort( function (a, b) {
-      return (a.distance !== undefined ? a.distance : -1) - (b.distance !== undefined ? b.distance : -1)
-    }).reverse()
-
     nodes.forEach( function (d) {
       d.neighbours = []
     })
 
-    graph.forEach( function (d) {
+    links.forEach( function (d) {
       d.source.node.neighbours.push({ node: d.target.node, link: d })
       d.target.node.neighbours.push({ node: d.source.node, link: d })
     })
 
     var gotoAnything = new gotoBuilder(config, showNodeinfo, showLinkinfo)
 
-    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything)
+    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, links, gotoAnything)
 
     gotoAnything.addMarkers(markers)
 
@@ -180,7 +176,7 @@ function handle_data(config, map) {
       historyDict.nodes[d.nodeinfo.node_id] = d
     })
 
-    graph.forEach( function (d) {
+    links.forEach( function (d) {
       historyDict.links[linkId(d)] = d
     })
 
@@ -330,6 +326,28 @@ function addLinksToMap(map, graph, gotoAnything) {
 }
 
 function addToLinksList(el, gotoProxy, links) {
+  var thead = document.createElement("thead")
+
+  var tr = document.createElement("tr")
+  var th1 = document.createElement("th")
+  th1.textContent = "Knoten"
+  tr.appendChild(th1)
+
+  var th2 = document.createElement("th")
+  th2.textContent = "TQ"
+  tr.appendChild(th2)
+
+  var th3 = document.createElement("th")
+  th3.textContent = "Entfernung"
+  th3.classList.add("sort-default")
+  tr.appendChild(th3)
+
+  thead.appendChild(tr)
+
+  el.appendChild(thead)
+
+  var tbody = document.createElement("tbody")
+
   links.forEach( function (d) {
     var row = document.createElement("tr")
     var td1 = document.createElement("td")
@@ -349,10 +367,15 @@ function addToLinksList(el, gotoProxy, links) {
 
     var td3 = document.createElement("td")
     td3.textContent = showDistance(d)
+    td3.setAttribute("data-sort", d.distance !== undefined ? -d.distance : 1)
     row.appendChild(td3)
 
-    el.appendChild(row)
+    tbody.appendChild(row)
   })
+
+  el.appendChild(tbody)
+
+  new Tablesort(el)
 }
 
 function addToList(el, showContact, tf, gotoProxy, list) {
@@ -538,7 +561,7 @@ function showNodeinfo(config, gotoAnything, d) {
       a3.textContent = showDistance(d.link)
       a3.onclick = gotoAnything.link(d.link)
       td3.appendChild(a3)
-      td3.setAttribute("data-sort", d.link.distance !== undefined ? d.link.distance : -1)
+      td3.setAttribute("data-sort", d.link.distance !== undefined ? -d.link.distance : 1)
       tr.appendChild(td3)
 
       tbody.appendChild(tr)
