@@ -163,6 +163,22 @@ function handle_data(config, map) {
     addToLongLinksList(document.getElementById("longlinks"), gotoAnything.link, longlinks)
 
     showMeshstats(document.getElementById("meshstats"), nodes)
+
+    var historyDict = { nodes: {}, links: {} }
+
+    nodes.forEach( function (d) {
+      historyDict.nodes[d.nodeinfo.node_id] = d
+    })
+
+    graph.forEach( function (d) {
+      historyDict.links[linkId(d)] = d
+    })
+
+    gotoHistory(gotoAnything, historyDict, window.location.hash)
+
+    window.onpopstate = function (d) {
+      gotoHistory(gotoAnything, historyDict, d.state)
+    }
   }
 }
 
@@ -389,7 +405,7 @@ function showNodeinfo(config, d) {
 
   var closeButton = document.createElement("button")
   closeButton.classList.add("close")
-  closeButton.onclick = destroy
+  closeButton.onclick = close
   el.appendChild(closeButton)
 
   var h2 = document.createElement("h2")
@@ -419,6 +435,10 @@ function showNodeinfo(config, d) {
   attributeEntry(attributes, "Clients", showClients(d))
   el.appendChild(attributes)
 
+  function close() {
+    destroy()
+    pushHistory()
+  }
 
   function destroy() {
     el.classList.add("hidden")
@@ -543,27 +563,78 @@ function showLinkinfo(config, d) {
   console.log(d)
 }
 
+function pushHistory(d) {
+  var s = "#!"
+
+  if (d) {
+    if ("node" in d)
+      s += "n:" + d.node.nodeinfo.node_id
+
+    if ("link" in d)
+      s += "l:" + linkId(d.link)
+  }
+
+  window.history.pushState(s, undefined, s)
+}
+
+function gotoHistory(gotoAnything, dict, s) {
+  if (!s.startsWith("#!"))
+    return
+
+  s = s.slice(2)
+
+  var args = s.split(":")
+
+  if (args[0] === "n") {
+    var id = args[1]
+
+    if (id in dict.nodes)
+      gotoAnything.node(dict.nodes[id], true, false)()
+  }
+
+  if (args[0] === "l") {
+    var id = args[1]
+
+    if (id in dict.links)
+      gotoAnything.link(dict.links[id], true, false)()
+  }
+}
+
+function trueDefault(d) {
+  return d === undefined ? true : d
+}
+
 function gotoBuilder(config, nodes, links) {
   var markers = {}
 
-  function gotoNode(d, showMap) {
-    showMap = showMap === undefined ? true : false
+  function gotoNode(d, showMap, push) {
+    showMap = trueDefault(showMap)
+    push = trueDefault(push)
 
     if (showMap && d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
 
     nodes(config, d)
 
+    if (push)
+      pushHistory( { node: d })
+
     return false
   }
 
-  function gotoLink(d, showMap) {
-    showMap = showMap === undefined ? true : false
+  function gotoLink(d, showMap, push) {
+    showMap = trueDefault(showMap)
+    push = trueDefault(push)
+
+    console.log(showMap)
 
     if (showMap && linkId(d) in markers)
       markers[linkId(d)]()
 
     links(config, d)
+
+    if (push)
+      pushHistory( { link: d })
 
     return false
   }
@@ -572,8 +643,8 @@ function gotoBuilder(config, nodes, links) {
     markers = d
   }
 
-  return { node: function (d, m) { return function () { return gotoNode(d, m) }},
-           link: function (d, m) { return function () { return gotoLink(d, m) }},
+  return { node: function (d, m, p) { return function () { return gotoNode(d, m, p) }},
+           link: function (d, m, p) { return function () { return gotoLink(d, m, p) }},
            addMarkers: addMarkers
          }
 }
