@@ -170,6 +170,9 @@ function handle_data(config, map) {
 
     showMeshstats(document.getElementById("meshstats"), nodes)
 
+    var timestamp = document.getElementById("timestamp")
+    timestamp.textContent = "Diese Daten sind " + moment.utc(nodes.timestamp).fromNow(true) + " alt."
+
     var historyDict = { nodes: {}, links: {} }
 
     nodes.forEach( function (d) {
