@@ -118,7 +118,7 @@ function handle_data(config, map) {
     var graphnodes = data[0].nodes
 
     graph.nodes.forEach( function (d) {
-      if (d.node_id in graphnodes && "location" in graphnodes[d.node_id].nodeinfo)
+      if (d.node_id in graphnodes)
         d.node = graphnodes[d.node_id]
     })
 
@@ -139,6 +139,9 @@ function handle_data(config, map) {
     })
 
     graph.forEach( function (d) {
+      if (!("location" in d.source.node.nodeinfo && "location" in d.target.node.nodeinfo))
+        return
+
       d.latlngs = []
       d.latlngs.push(L.latLng(d.source.node.nodeinfo.location.latitude, d.source.node.nodeinfo.location.longitude))
       d.latlngs.push(L.latLng(d.target.node.nodeinfo.location.latitude, d.target.node.nodeinfo.location.longitude))
@@ -146,10 +149,22 @@ function handle_data(config, map) {
       d.distance = d.latlngs[0].distanceTo(d.latlngs[1])
     })
 
-    longlinks = graph.slice().sort( function (a, b) {
+    longlinks = graph.slice().filter( function (d) {
+      return "distance" in d
+    }).sort( function (a, b) {
       return a.distance - b.distance
-    }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.length))
+    }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.filter( function (d) {
+      return "distance" in d
+    }).length))
 
+    nodes.forEach( function (d) {
+      d.neighbours = []
+    })
+
+    graph.forEach( function (d) {
+      d.source.node.neighbours.push({ node: d.target.node, link: d })
+      d.target.node.neighbours.push({ node: d.source.node, link: d })
+    })
 
     var gotoAnything = gotoBuilder(config, showNodeinfo, showLinkinfo)
 
@@ -182,6 +197,9 @@ function handle_data(config, map) {
 }
 
 function showDistance(d) {
+  if (isNaN(d.distance))
+    return
+
   return (new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(d.distance)) + " m"
 }
 
@@ -292,6 +310,10 @@ function addLinksToMap(map, graph, gotoAnything) {
   var markersDict = {}
 
   var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
+
+  graph = graph.filter( function (d) {
+    return "distance" in d
+  })
 
   var lines = graph.map( function (d) {
     var opts = { color: scale(d.tq).hex(),
@@ -435,6 +457,41 @@ function showNodeinfo(config, d) {
   attributeEntry(attributes, "IP Adressen", showIPs(d))
   attributeEntry(attributes, "Clients", showClients(d))
   el.appendChild(attributes)
+
+  if (d.neighbours.length > 0) {
+    var h3 = document.createElement("h3")
+    h3.textContent = "Nachbarknoten"
+    el.appendChild(h3)
+
+    var table = document.createElement("table")
+
+    var neighbours = d.neighbours.slice().sort( function (a, b) {
+      return a.link.tq - b.link.tq
+    }).reverse()
+
+    neighbours.forEach( function (d) {
+      var tr = document.createElement("tr")
+
+      var td1 = document.createElement("td")
+      var a = document.createElement("a")
+      // a.href = "#"
+      a.textContent = d.node.nodeinfo.hostname
+      td1.appendChild(a)
+      tr.appendChild(td1)
+
+      var td2 = document.createElement("td")
+      td2.textContent = showTq(d.link)
+      tr.appendChild(td2)
+
+      var td3 = document.createElement("td")
+      td3.textContent = showDistance(d.link)
+      tr.appendChild(td3)
+
+      table.appendChild(tr)
+    })
+
+    el.appendChild(table)
+  }
 
   function close() {
     destroy()
