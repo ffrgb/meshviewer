@@ -469,8 +469,6 @@ function showNodeinfo(config, gotoAnything, d) {
       return a.node.nodeinfo.hostname.localeCompare(b.node.nodeinfo.hostname)
     })
 
-    console.log(gotoAnything)
-
     neighbours.forEach( function (d) {
       var tr = document.createElement("tr")
 
@@ -695,8 +693,6 @@ function gotoBuilder(config, nodes, links) {
   function gotoLink(d, showMap, push) {
     showMap = trueDefault(showMap)
     push = trueDefault(push)
-
-    console.log(showMap)
 
     if (showMap && linkId(d) in markers)
       markers[linkId(d)]()
