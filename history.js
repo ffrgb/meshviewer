@@ -458,7 +458,7 @@ function showNodeinfo(config, gotoAnything, d) {
 
   if (d.neighbours.length > 0) {
     var h3 = document.createElement("h3")
-    h3.textContent = "Nachbarknoten"
+    h3.textContent = "Nachbarknoten (" + d.neighbours.length + ")"
     el.appendChild(h3)
 
     var table = document.createElement("table")
