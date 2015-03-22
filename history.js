@@ -200,7 +200,7 @@ function showTq(d) {
                minimumFractionDigits: 2
              }
 
-  return (new Intl.NumberFormat("de-DE", opts).format(d.tq)) + " TQ"
+  return (new Intl.NumberFormat("de-DE", opts).format(d.tq))
 }
 
 function linkId(d) {
