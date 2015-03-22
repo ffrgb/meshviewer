@@ -195,7 +195,9 @@ function showTq(d) {
 }
 
 function linkId(d) {
-  return d.source.node.nodeinfo.node_id + "-" + d.target.node.nodeinfo.node_id
+  var ids = [d.source.node.nodeinfo.node_id, d.target.node.nodeinfo.node_id]
+
+  return ids.sort().join("-")
 }
 
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
