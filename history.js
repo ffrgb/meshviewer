@@ -212,7 +212,7 @@ function linkId(d) {
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   L.control.zoom({ position: "topright" }).addTo(map)
 
-  L.tileLayer("http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
+  L.tileLayer("https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
     subdomains: "1234",
     type: "osm",
     attribution: "Map data Tiles &copy; <a href=\"https://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"https://developer.mapquest.com/content/osm/mq_logo.png\" />, Map data © OpenStreetMap contributors, CC-BY-SA",
