@@ -472,10 +472,19 @@ function showNodeinfo(config, gotoAnything, d) {
 
       var td1 = document.createElement("td")
       var a1 = document.createElement("a")
-      a1.href = "#"
+      a1.classList.add("hostname")
       a1.textContent = d.node.nodeinfo.hostname
+      a1.href = "#"
       a1.onclick = gotoAnything.node(d.node)
       td1.appendChild(a1)
+
+      if (has_location(d.node)) {
+        var span = document.createElement("span")
+        span.classList.add("icon")
+        span.classList.add("ion-location")
+        td1.appendChild(span)
+      }
+
       tr.appendChild(td1)
 
       var td2 = document.createElement("td")
