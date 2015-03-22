@@ -135,8 +135,7 @@ function handle_data(config, map) {
     })
 
     graph = graph.links.filter( function (d) {
-      var ok = d.source !== undefined && d.target !== undefined
-      return ok
+      return d.source !== undefined && d.target !== undefined
     })
 
     graph.forEach( function (d) {
