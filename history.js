@@ -166,7 +166,7 @@ function handle_data(config, map) {
       d.target.node.neighbours.push({ node: d.source.node, link: d })
     })
 
-    var gotoAnything = gotoBuilder(config, showNodeinfo, showLinkinfo)
+    var gotoAnything = new gotoBuilder(config, showNodeinfo, showLinkinfo)
 
     var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything)
 
@@ -419,7 +419,7 @@ function showMeshstats(el, nodes) {
                    totalGateways + " Gateways"
 }
 
-function showNodeinfo(config, d) {
+function showNodeinfo(config, gotoAnything, d) {
   var el = document.getElementById("nodeinfo")
 
   destroy()
@@ -466,25 +466,36 @@ function showNodeinfo(config, d) {
     var table = document.createElement("table")
 
     var neighbours = d.neighbours.slice().sort( function (a, b) {
-      return a.link.tq - b.link.tq
-    }).reverse()
+      return a.node.nodeinfo.hostname.localeCompare(b.node.nodeinfo.hostname)
+    })
+
+    console.log(gotoAnything)
 
     neighbours.forEach( function (d) {
       var tr = document.createElement("tr")
 
       var td1 = document.createElement("td")
-      var a = document.createElement("a")
-      // a.href = "#"
-      a.textContent = d.node.nodeinfo.hostname
-      td1.appendChild(a)
+      var a1 = document.createElement("a")
+      a1.href = "#"
+      a1.textContent = d.node.nodeinfo.hostname
+      a1.onclick = gotoAnything.node(d.node)
+      td1.appendChild(a1)
       tr.appendChild(td1)
 
       var td2 = document.createElement("td")
-      td2.textContent = showTq(d.link)
+      var a2 = document.createElement("a")
+      a2.href = "#"
+      a2.textContent = showTq(d.link)
+      a2.onclick = gotoAnything.link(d.link)
+      td2.appendChild(a2)
       tr.appendChild(td2)
 
       var td3 = document.createElement("td")
-      td3.textContent = showDistance(d.link)
+      var a3 = document.createElement("a")
+      a3.href = "#"
+      a3.textContent = showDistance(d.link)
+      a3.onclick = gotoAnything.link(d.link)
+      td3.appendChild(a3)
       tr.appendChild(td3)
 
       table.appendChild(tr)
@@ -664,6 +675,7 @@ function trueDefault(d) {
 
 function gotoBuilder(config, nodes, links) {
   var markers = {}
+  var self = this
 
   function gotoNode(d, showMap, push) {
     showMap = trueDefault(showMap)
@@ -672,7 +684,7 @@ function gotoBuilder(config, nodes, links) {
     if (showMap && d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
 
-    nodes(config, d)
+    nodes(config, self, d)
 
     if (push)
       pushHistory( { node: d })
@@ -701,10 +713,13 @@ function gotoBuilder(config, nodes, links) {
     markers = d
   }
 
-  return { node: function (d, m, p) { return function () { return gotoNode(d, m, p) }},
-           link: function (d, m, p) { return function () { return gotoLink(d, m, p) }},
-           addMarkers: addMarkers
-         }
+  this.node = function (d, m, p) { return function () { return gotoNode(d, m, p) }}
+  this.link = function (d, m, p) { return function () { return gotoLink(d, m, p) }}
+  this.addMarkers = function (d) {
+                      markers = d
+                    }
+
+  return this
 }
 
 function dictGet(dict, key) {
