@@ -196,11 +196,9 @@ function showDistance(d) {
 }
 
 function showTq(d) {
-  var opts = { maximumFractionDigits: 2,
-               minimumFractionDigits: 2
-             }
+  var opts = { maximumFractionDigits: 0 }
 
-  return (new Intl.NumberFormat("de-DE", opts).format(d.tq))
+  return (new Intl.NumberFormat("de-DE", opts).format(100/d.tq)) + "%"
 }
 
 function linkId(d) {
@@ -299,7 +297,7 @@ function getSidebarWidth() {
 function addLinksToMap(map, graph, gotoAnything) {
   var markersDict = {}
 
-  var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
+  var scale = chroma.scale(chroma.interpolate.bezier(['green', 'yellow', 'red'])).domain([1, 5])
 
   graph = graph.filter( function (d) {
     return "distance" in d
