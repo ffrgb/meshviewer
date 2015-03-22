@@ -152,9 +152,11 @@ function handle_data(config, map) {
     }).reverse().slice(0, Math.ceil(config.longLinkPercentile * graph.length))
 
 
-    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showLinkinfo)
+    var gotoAnything = gotoBuilder(showNodeinfo, showLinkinfo)
 
-    var gotoAnything = gotoBuilder(markers, showNodeinfo, showLinkinfo)
+    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything)
+
+    gotoAnything.addMarkers(markers)
 
     addToList(document.getElementById("newnodes"), config.showContact, "firstseen", gotoAnything.node, newnodes)
     addToList(document.getElementById("lostnodes"), config.showContact, "lastseen", gotoAnything.node, lostnodes)
@@ -180,7 +182,7 @@ function linkId(d) {
   return d.source.node.nodeinfo.node_id + "-" + d.target.node.nodeinfo.node_id
 }
 
-function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showLinkinfo) {
+function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
@@ -190,7 +192,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showL
     maxZoom: 18
   }).addTo(map)
 
-  var markersDict = addLinksToMap(map, graph, showLinkinfo)
+  var markersDict = addLinksToMap(map, graph, gotoAnything)
 
   var nodes = newnodes.concat(lostnodes).filter( function (d) {
     return "location" in d.nodeinfo
@@ -206,7 +208,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showL
 
     var m = L.marker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
 
-    m.on('click', function () { return showNodeinfo(d) })
+    m.on('click', gotoAnything.node(d, false))
     m.bindPopup(d.nodeinfo.hostname)
 
     markersDict[d.nodeinfo.node_id] = m
@@ -224,7 +226,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, showNodeinfo, showL
 
     var m = L.circleMarker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
 
-    m.on('click', function () { return showNodeinfo(d) })
+    m.on('click', gotoAnything.node(d, false))
     m.bindPopup(d.nodeinfo.hostname)
 
     markersDict[d.nodeinfo.node_id] = m
@@ -269,7 +271,7 @@ function getSidebarWidth() {
   return small.matches ? 0 : sb.offsetWidth
 }
 
-function addLinksToMap(map, graph, showLinkinfo) {
+function addLinksToMap(map, graph, gotoAnything) {
   var markersDict = {}
 
   var scale = chroma.scale(['green', 'orange', 'red']).domain([1, 10])
@@ -282,7 +284,7 @@ function addLinksToMap(map, graph, showLinkinfo) {
     var line = L.polyline(d.latlngs, opts)
 
     line.bindPopup(d.source.node.nodeinfo.hostname + " – " + d.target.node.nodeinfo.hostname + "<br><strong>" + showDistance(d) + " / " + showTq(d) + "</strong>")
-    line.on('click', function () { return showLinkinfo(d) })
+    line.on('click', gotoAnything.link(d, false))
 
     markersDict[linkId(d)] = line
 
@@ -535,11 +537,16 @@ function showBar(className, v) {
 }
 
 function showLinkinfo(d) {
+  console.log(d)
 }
 
-function gotoBuilder(markers, nodes, links) {
-  function gotoNode(d) {
-    if (d.nodeinfo.node_id in markers)
+function gotoBuilder(nodes, links) {
+  var markers = {}
+
+  function gotoNode(d, showMap) {
+    showMap = showMap === undefined ? true : false
+
+    if (showMap && d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
 
     nodes(d)
@@ -547,8 +554,10 @@ function gotoBuilder(markers, nodes, links) {
     return false
   }
 
-  function gotoLink(d) {
-    if (linkId(d) in markers)
+  function gotoLink(d, showMap) {
+    showMap = showMap === undefined ? true : false
+
+    if (showMap && linkId(d) in markers)
       markers[linkId(d)]()
 
     links(d)
@@ -556,8 +565,13 @@ function gotoBuilder(markers, nodes, links) {
     return false
   }
 
-  return { node: function (d) { return function () { return gotoNode(d) }},
-           link: function (d) { return function () { return gotoLink(d) }}
+  function addMarkers(d) {
+    markers = d
+  }
+
+  return { node: function (d, m) { return function () { return gotoNode(d, m) }},
+           link: function (d, m) { return function () { return gotoLink(d, m) }},
+           addMarkers: addMarkers
          }
 }
 
