@@ -105,7 +105,8 @@ function handle_data(config, map) {
       node.lastseen = moment.utc(node.lastseen)
     })
 
-    var age = moment().subtract(14, 'days')
+    var now = moment()
+    var age = moment(now).subtract(14, 'days')
 
     var newnodes = limit("firstseen", age, sort("firstseen", nodes).filter(online))
     var lostnodes = limit("lastseen", age, sort("lastseen", nodes).filter(offline))
@@ -158,7 +159,7 @@ function handle_data(config, map) {
 
     var gotoAnything = new gotoBuilder(config, showNodeinfo, showLinkinfo)
 
-    var markers = mkmap(map, newnodes, lostnodes, onlinenodes, links, gotoAnything)
+    var markers = mkmap(map, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
 
     gotoAnything.addMarkers(markers)
 
@@ -208,7 +209,7 @@ function linkId(d) {
   return ids.sort().join("-")
 }
 
-function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
+function mkmap(map, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   function mkMarker(dict, iconFunc) {
     return function (d) {
       var opt = { icon: iconFunc(d),
@@ -245,6 +246,10 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   iconNew.className = "node-new"
   iconNew = L.icon(iconNew)
 
+  var iconOfflineAlert = Object.assign({}, iconBase)
+  iconOfflineAlert.className = "node-offline node-alert"
+  iconOfflineAlert = L.icon(iconOfflineAlert)
+
   L.control.zoom({ position: "topright" }).addTo(map)
 
   L.tileLayer("https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg", {
@@ -259,7 +264,13 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   var nodes = newnodes.concat(lostnodes).filter(has_location)
 
   var markers = nodes.map(mkMarker(markersDict, function (d) {
-    return d.flags.online ? iconNew : iconOffline
+    if (d.flags.online)
+      return iconNew
+
+    if (d.lastseen.isAfter(moment(now).subtract(1, 'days')))
+      return iconOfflineAlert
+    else
+      return iconOffline
   }))
 
   var onlinemarkers = subtract(onlinenodes.filter(has_location), newnodes)

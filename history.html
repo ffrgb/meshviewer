@@ -218,17 +218,20 @@
       }
 
       .leaflet-marker-icon.node-new {
-        filter: hue-rotate(203deg) brightness(2.5);
-        -webkit-filter: hue-rotate(203deg) brightness(2.5);
+        filter: hue-rotate(88deg) brightness(1.5);
+        -webkit-filter: hue-rotate(88deg) brightness(1.5);
       }
 
       .leaflet-marker-icon.node-offline {
+        filter: saturate(160%);
+        -webkit-filter: saturate(160%);
+      }
+
+      .leaflet-marker-icon.node-alert {
         -webkit-animation: blink 1s linear;
         -webkit-animation-iteration-count: infinite;
         animation: blink 1s linear;
         animation-iteration-count: infinite;
-        filter: saturate(160%);
-        -webkit-filter: saturate(160%);
       }
 
       @-webkit-keyframes blink {
