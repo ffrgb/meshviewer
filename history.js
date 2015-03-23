@@ -163,14 +163,10 @@ function handle_data(config, map) {
 
     gotoAnything.addMarkers(markers)
 
+    showMeshstats(document.getElementById("sidebardata"), nodes)
     mkNodesList(document.getElementById("sidebardata"), config.showContact, "firstseen", gotoAnything.node, "Neue Knoten", newnodes)
     mkNodesList(document.getElementById("sidebardata"), config.showContact, "lastseen", gotoAnything.node, "Verschwundene Knoten", lostnodes)
     mkLinkList(document.getElementById("sidebardata"), gotoAnything.link, links)
-
-    showMeshstats(document.getElementById("meshstats"), nodes)
-
-    var timestamp = document.getElementById("timestamp")
-    timestamp.textContent = "Diese Daten sind " + moment.utc(nodes.timestamp).fromNow(true) + " alt."
 
     var historyDict = { nodes: {}, links: {} }
 
@@ -465,19 +461,27 @@ function one() {
 }
 
 function showMeshstats(el, nodes) {
-  var totalNodes = sum(nodes.filter(online).map(one))
+  var h2 = document.createElement("h2")
+  h2.textContent = "Übersicht"
+  el.appendChild(h2)
 
+  var p = document.createElement("p")
+
+  var totalNodes = sum(nodes.filter(online).map(one))
   var totalClients = sum(nodes.filter(online).map( function (d) {
     return d.statistics.clients
   }))
-
   var totalGateways = sum(nodes.filter(online).filter( function (d) {
     return d.flags.gateway
   }).map(one))
 
-  el.textContent = totalNodes + " Knoten (online), " +
-                   totalClients + " Clients, " +
-                   totalGateways + " Gateways"
+  p.textContent = totalNodes + " Knoten (online), " +
+                  totalClients + " Clients, " +
+                  totalGateways + " Gateways"
+
+  p.appendChild(document.createElement("br"))
+  p.appendChild(document.createTextNode("Diese Daten sind " + moment.utc(nodes.timestamp).fromNow(true) + " alt."))
+  el.appendChild(p)
 }
 
 function infobox() {
