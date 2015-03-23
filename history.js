@@ -39,13 +39,16 @@ function main() {
     document.body.insertBefore(mapDiv, document.body.firstChild)
 
     var map = L.map(mapDiv, options)
+    var sidebar = mkSidebar(document.body)
+    var infobox = new Infobox(sidebar)
+    var gotoAnything = new gotoBuilder(config, infobox, showNodeinfo, showLinkinfo)
 
     var urls = [ config.dataPath + 'nodes.json',
                  config.dataPath + 'graph.json'
                ]
 
     var p = Promise.all(urls.map(getJSON))
-    p.then(handle_data(config, map))
+    p.then(handle_data(config, sidebar, infobox, map, gotoAnything))
   })
 }
 
@@ -85,7 +88,7 @@ function subtract(a, b) {
   })
 }
 
-function handle_data(config, map) {
+function handle_data(config, sidebar, infobox, map, gotoAnything) {
   return function (data) {
     var nodedict = data[0]
     var nodes = Object.keys(nodedict.nodes).map(function (key) { return nodedict.nodes[key] })
@@ -150,11 +153,6 @@ function handle_data(config, map) {
       d.source.node.neighbours.push({ node: d.target.node, link: d })
       d.target.node.neighbours.push({ node: d.source.node, link: d })
     })
-
-    var sidebar = mkSidebar(document.body)
-    var infobox = new Infobox(sidebar)
-
-    var gotoAnything = new gotoBuilder(config, infobox, showNodeinfo, showLinkinfo)
 
     var markers = mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
 
