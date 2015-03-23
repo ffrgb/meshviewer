@@ -157,16 +157,19 @@ function handle_data(config, map) {
       d.target.node.neighbours.push({ node: d.source.node, link: d })
     })
 
-    var gotoAnything = new gotoBuilder(config, showNodeinfo, showLinkinfo)
+    var sidebar = document.getElementById("sidebardata")
+    var infobox = new Infobox(sidebar)
+
+    var gotoAnything = new gotoBuilder(config, infobox, showNodeinfo, showLinkinfo)
 
     var markers = mkmap(map, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
 
     gotoAnything.addMarkers(markers)
 
-    showMeshstats(document.getElementById("sidebardata"), nodes)
-    mkNodesList(document.getElementById("sidebardata"), config.showContact, "firstseen", gotoAnything.node, "Neue Knoten", newnodes)
-    mkNodesList(document.getElementById("sidebardata"), config.showContact, "lastseen", gotoAnything.node, "Verschwundene Knoten", lostnodes)
-    mkLinkList(document.getElementById("sidebardata"), gotoAnything.link, links)
+    showMeshstats(sidebar, nodes)
+    mkNodesList(sidebar, config.showContact, "firstseen", gotoAnything.node, "Neue Knoten", newnodes)
+    mkNodesList(sidebar, config.showContact, "lastseen", gotoAnything.node, "Verschwundene Knoten", lostnodes)
+    mkLinkList(sidebar, gotoAnything.link, links)
 
     var historyDict = { nodes: {}, links: {} }
 
@@ -484,37 +487,47 @@ function showMeshstats(el, nodes) {
   el.appendChild(p)
 }
 
-function infobox() {
+function Infobox(sidebar) {
+  var self = this
+  el = undefined
+
   function close() {
     destroy()
     pushHistory()
   }
 
   function destroy() {
-    el.classList.add("hidden")
-    while (el.hasChildNodes())
-      el.removeChild(el.childNodes[0])
+    if (el && el.parentNode) {
+      el.parentNode.removeChild(el)
+      el = undefined
+    }
   }
 
-  var el = document.getElementById("infobox")
+  self.create = function () {
+    destroy()
 
-  destroy()
-  el.classList.remove("hidden")
-  el.scrollIntoView(false)
+    el = document.createElement("div")
+    sidebar.insertBefore(el, sidebar.firstChild)
 
-  el.close = close
-  el.destroy = destroy
+    el.scrollIntoView(false)
+    el.classList.add("infobox")
+    el.close = close
+    el.destroy = destroy
 
-  var closeButton = document.createElement("button")
-  closeButton.classList.add("close")
-  closeButton.onclick = close
-  el.appendChild(closeButton)
+    var closeButton = document.createElement("button")
+    closeButton.classList.add("close")
+    closeButton.onclick = close
+    el.appendChild(closeButton)
 
-  return el
+    return el
+  }
+
+  return self
 }
 
-function showNodeinfo(config, gotoAnything, d) {
-  var el = infobox()
+function showNodeinfo(config, infobox, gotoAnything, d) {
+  var el = infobox.create()
+
   var h2 = document.createElement("h2")
   h2.textContent = d.nodeinfo.hostname
   var span = document.createElement("span")
@@ -732,8 +745,8 @@ function showBar(className, v) {
   return span
 }
 
-function showLinkinfo(config, gotoAnything, d) {
-  var el = infobox()
+function showLinkinfo(config, infobox, gotoAnything, d) {
+  var el = infobox.create()
 
   var h2 = document.createElement("h2")
   a1 = document.createElement("a")
@@ -800,7 +813,7 @@ function trueDefault(d) {
   return d === undefined ? true : d
 }
 
-function gotoBuilder(config, nodes, links) {
+function gotoBuilder(config, infobox, nodes, links) {
   var markers = {}
   var self = this
 
@@ -811,7 +824,7 @@ function gotoBuilder(config, nodes, links) {
     if (showMap && d.nodeinfo.node_id in markers)
       markers[d.nodeinfo.node_id]()
 
-    nodes(config, self, d)
+    nodes(config, infobox, self, d)
 
     if (push)
       pushHistory( { node: d })
@@ -826,7 +839,7 @@ function gotoBuilder(config, nodes, links) {
     if (showMap && linkId(d) in markers)
       markers[linkId(d)]()
 
-    links(config, self, d)
+    links(config, infobox, self, d)
 
     if (push)
       pushHistory( { link: d })
