@@ -34,7 +34,11 @@ function main() {
                     zoomControl: false
                   }
 
-    var map = L.map(document.getElementById("map"), options)
+    var mapDiv = document.createElement("div")
+    mapDiv.classList.add("map")
+    document.body.insertBefore(mapDiv, document.body.firstChild)
+
+    var map = L.map(mapDiv, options)
 
     var sh = document.getElementById("sidebarhandle")
     sh.onclick = function () {
