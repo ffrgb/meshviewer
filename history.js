@@ -40,16 +40,6 @@ function main() {
 
     var map = L.map(mapDiv, options)
 
-    var sh = document.getElementById("sidebarhandle")
-    sh.onclick = function () {
-      var sb = document.getElementById("sidebar")
-
-      if (sb.classList.contains("hidden"))
-        sb.classList.remove("hidden")
-      else
-        sb.classList.add("hidden")
-    }
-
     var urls = [ config.dataPath + 'nodes.json',
                  config.dataPath + 'graph.json'
                ]
@@ -161,12 +151,12 @@ function handle_data(config, map) {
       d.target.node.neighbours.push({ node: d.source.node, link: d })
     })
 
-    var sidebar = document.getElementById("sidebardata")
+    var sidebar = mkSidebar(document.body)
     var infobox = new Infobox(sidebar)
 
     var gotoAnything = new gotoBuilder(config, infobox, showNodeinfo, showLinkinfo)
 
-    var markers = mkmap(map, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
+    var markers = mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
 
     gotoAnything.addMarkers(markers)
 
@@ -193,6 +183,31 @@ function handle_data(config, map) {
   }
 }
 
+function mkSidebar(el) {
+  var sidebar = document.createElement("div")
+  sidebar.classList.add("sidebar")
+  el.appendChild(sidebar)
+
+  var button = document.createElement("button")
+  sidebar.appendChild(button)
+
+  button.classList.add("sidebarhandle")
+  button.onclick = function () {
+    sidebar.classList.toggle("hidden")
+  }
+
+  var container = document.createElement("div")
+  container.classList.add("container")
+  sidebar.appendChild(container)
+
+  container.getWidth = function () {
+    var small = window.matchMedia("(max-width: 60em)");
+    return small.matches ? 0 : sidebar.offsetWidth
+  }
+
+  return container
+}
+
 function showDistance(d) {
   if (isNaN(d.distance))
     return
@@ -212,7 +227,7 @@ function linkId(d) {
   return ids.sort().join("-")
 }
 
-function mkmap(map, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
+function mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   function mkMarker(dict, iconFunc) {
     return function (d) {
       var opt = { icon: iconFunc(d),
@@ -288,7 +303,7 @@ function mkmap(map, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) 
     bounds = groupOnline.getBounds()
 
   if (bounds.isValid())
-    map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
+    map.fitBounds(bounds, {paddingTopLeft: [sidebar.getWidth(), 0]})
 
   var funcDict = {}
 
@@ -302,18 +317,12 @@ function mkmap(map, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) 
          else
            bounds = L.latLngBounds([m.getLatLng()])
 
-         map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
+         map.fitBounds(bounds, {paddingTopLeft: [sidebar.getWidth(), 0]})
          m.openPopup(bounds.getCenter())
        }
   })
 
   return funcDict
-}
-
-function getSidebarWidth() {
-  var small = window.matchMedia("(max-width: 60em)");
-  var sb = document.getElementById("sidebar")
-  return small.matches ? 0 : sb.offsetWidth
 }
 
 function addLinksToMap(map, graph, gotoAnything) {

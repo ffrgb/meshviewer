@@ -104,15 +104,15 @@
         content: "\f12a";
       }
 
-      #sidebar h2, #sidebar h3 {
+      .sidebar h2, .sidebar h3 {
         padding: 0 10pt;
       }
 
-      #sidebar p, #sidebar table, #sidebar pre, #sidebar ul {
+      .sidebar p, .sidebar table, .sidebar pre, .sidebar ul {
         padding: 0 10pt 1em;
       }
 
-      #sidebarhandle {
+      .sidebarhandle {
         position: absolute;
         right: -2.5em;
         top: 0.7em;
@@ -120,12 +120,12 @@
         transition: right 0.5s, box-shadow 0.5s, color 0.5s, transform 0.5s;
       }
 
-      #sidebarhandle:after {
+      .sidebarhandle:after {
         padding-right: 0.125em;
         content: "\f124";
       }
 
-      #sidebar.hidden #sidebarhandle {
+      .sidebar.hidden .sidebarhandle {
         transform: scale(-1, 1);
       }
 
@@ -140,7 +140,7 @@
         color: #D43E2A !important;
       }
 
-      #sidebar {
+      .sidebar {
         z-index: 5;
         width: 50em;
         box-sizing: border-box;
@@ -152,36 +152,36 @@
         transition: left 0.5s;
       }
 
-      #sidebar.hidden {
+      .sidebar.hidden {
         left: -50em;
       }
 
-      #sidebardata {
+      .sidebar .container {
         overflow: auto;
         box-sizing: border-box;
       }
 
-      #sidebardata, .map {
+      .sidebar .container, .map {
         height: 100vh;
       }
 
-      #sidebar .icon {
+      .sidebar .icon {
         padding: 0 0.25em;
       }
 
-      #sidebar table {
+      .sidebar table {
         width: 100%;
       }
 
-      #sidebar table th {
+      .sidebar table th {
         text-align: left;
       }
 
-      #sidebar td:not(:first-child), #sidebar th:not(:first-child) {
+      .sidebar td:not(:first-child), .sidebar th:not(:first-child) {
         text-align: right;
       }
 
-      #sidebar a {
+      .sidebar a {
         color: #1566A9;
       }
 
@@ -243,18 +243,18 @@
       }
 
       @media screen and (max-width: 80em) {
-        #sidebar {
+        .sidebar {
           font-size: 0.8em;
         }
       }
 
       @media screen and (max-width: 60em) {
-        #sidebardata {
+        .sidebar .container {
           overflow: visible;
           height: auto;
         }
 
-        #sidebarhandle {
+        .sidebarhandle {
           display: none;
         }
 
@@ -262,18 +262,18 @@
           height: 60vh;
         }
 
-        #sidebar {
+        .sidebar {
           position: static;
           margin-left: 0em !important;
           width: auto;
           height: auto;
         }
 
-        #sidebar.hidden {
+        .sidebar.hidden {
           width: auto;
         }
 
-        #sidebar.hidden #sidebardata {
+        .sidebar.hidden .sidebar .container {
           display: block;
         }
       }
@@ -290,12 +290,5 @@
     <script src="history.js"></script>
   </head>
   <body>
-    <div id="sidebar">
-      <button id="sidebarhandle">
-      </button>
-
-      <div id="sidebardata">
-      </div>
-    </div>
   </body>
 </html>
