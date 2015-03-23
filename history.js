@@ -1,31 +1,5 @@
 document.addEventListener('DOMContentLoaded', main)
 
-function get(url) {
-  return new Promise(function(resolve, reject) {
-    var req = new XMLHttpRequest();
-    req.open('GET', url);
-
-    req.onload = function() {
-      if (req.status == 200) {
-        resolve(req.response);
-      }
-      else {
-        reject(Error(req.statusText));
-      }
-    };
-
-    req.onerror = function() {
-      reject(Error("Network Error"));
-    };
-
-    req.send();
-  });
-}
-
-function getJSON(url) {
-  return get(url).then(JSON.parse)
-}
-
 function main() {
   getJSON("config.json").then( function (config) {
     moment.locale("de")
@@ -52,42 +26,6 @@ function main() {
   })
 }
 
-function sort(key, d) {
-  return d.slice().sort( function (a, b) {
-    return a[key] - b[key]
-  }).reverse()
-}
-
-function limit(key, m, d) {
-  return d.filter( function (d) {
-    return d[key].isAfter(m)
-  })
-}
-
-function offline(d) {
-  return !d.flags.online
-}
-
-function online(d) {
-  return d.flags.online
-}
-
-function has_location(d) {
-  return "location" in d.nodeinfo
-}
-
-function subtract(a, b) {
-  var ids = {}
-
-  b.forEach( function (d) {
-    ids[d.nodeinfo.node_id] = true
-  })
-
-  return a.filter( function (d) {
-    return !(d.nodeinfo.node_id in ids)
-  })
-}
-
 function handle_data(config, sidebar, infobox, map, gotoAnything) {
   return function (data) {
     var nodedict = data[0]
@@ -105,8 +43,8 @@ function handle_data(config, sidebar, infobox, map, gotoAnything) {
     var now = moment()
     var age = moment(now).subtract(14, 'days')
 
-    var newnodes = limit("firstseen", age, sort("firstseen", nodes).filter(online))
-    var lostnodes = limit("lastseen", age, sort("lastseen", nodes).filter(offline))
+    var newnodes = limit("firstseen", age, sortByKey("firstseen", nodes).filter(online))
+    var lostnodes = limit("lastseen", age, sortByKey("lastseen", nodes).filter(offline))
 
     var onlinenodes = nodes.filter(online)
 
@@ -204,25 +142,6 @@ function mkSidebar(el) {
   }
 
   return container
-}
-
-function showDistance(d) {
-  if (isNaN(d.distance))
-    return
-
-  return (new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(d.distance)) + " m"
-}
-
-function showTq(d) {
-  var opts = { maximumFractionDigits: 0 }
-
-  return (new Intl.NumberFormat("de-DE", opts).format(100/d.tq)) + "%"
-}
-
-function linkId(d) {
-  var ids = [d.source.node.nodeinfo.node_id, d.target.node.nodeinfo.node_id]
-
-  return ids.sort().join("-")
 }
 
 function mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
@@ -462,16 +381,6 @@ function mkNodesList(el, showContact, tf, gotoProxy, title, list) {
 
   table.appendChild(tbody)
   el.appendChild(table)
-}
-
-function sum(a) {
-  return a.reduce( function (a, b) {
-    return a + b
-  }, 0)
-}
-
-function one() {
-  return 1
 }
 
 function showMeshstats(el, nodes) {
@@ -820,10 +729,6 @@ function gotoHistory(gotoAnything, dict, s) {
   }
 }
 
-function trueDefault(d) {
-  return d === undefined ? true : d
-}
-
 function gotoBuilder(config, infobox, nodes, links) {
   var markers = {}
   var self = this
@@ -869,16 +774,4 @@ function gotoBuilder(config, infobox, nodes, links) {
                     }
 
   return this
-}
-
-function dictGet(dict, key) {
-  var k = key.shift()
-
-  if (!(k in dict))
-    return null
-
-  if (key.length == 0)
-    return dict[k]
-
-  return dictGet(dict[k], key)
 }
