@@ -284,11 +284,11 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
        funcDict[k] = function (d) {
          var m = markersDict[k]
          var bounds
-         if ("getBounds" in m) {
+
+         if ("getBounds" in m)
            bounds = m.getBounds()
-         } else {
+         else
            bounds = L.latLngBounds([m.getLatLng()])
-         }
 
          map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
          m.openPopup(bounds.getCenter())
