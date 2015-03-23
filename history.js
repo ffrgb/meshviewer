@@ -8,6 +8,8 @@ function main() {
                     zoomControl: false
                   }
 
+    var linkScale = chroma.scale(chroma.interpolate.bezier(['green', 'yellow', 'red'])).domain([1, 5])
+
     var mapDiv = document.createElement("div")
     mapDiv.classList.add("map")
     document.body.insertBefore(mapDiv, document.body.firstChild)
@@ -22,11 +24,11 @@ function main() {
                ]
 
     var p = Promise.all(urls.map(getJSON))
-    p.then(handle_data(config, sidebar, infobox, map, gotoAnything))
+    p.then(handle_data(config, linkScale, sidebar, infobox, map, gotoAnything))
   })
 }
 
-function handle_data(config, sidebar, infobox, map, gotoAnything) {
+function handle_data(config, linkScale, sidebar, infobox, map, gotoAnything) {
   return function (data) {
     var nodedict = data[0]
     var nodes = Object.keys(nodedict.nodes).map(function (key) { return nodedict.nodes[key] })
@@ -92,14 +94,14 @@ function handle_data(config, sidebar, infobox, map, gotoAnything) {
       d.target.node.neighbours.push({ node: d.source.node, link: d })
     })
 
-    var markers = mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
+    var markers = mkmap(map, linkScale, sidebar, now, newnodes, lostnodes, onlinenodes, links, gotoAnything)
 
     gotoAnything.addMarkers(markers)
 
     showMeshstats(sidebar, nodes)
     mkNodesList(sidebar, config.showContact, "firstseen", gotoAnything.node, "Neue Knoten", newnodes)
     mkNodesList(sidebar, config.showContact, "lastseen", gotoAnything.node, "Verschwundene Knoten", lostnodes)
-    mkLinkList(sidebar, gotoAnything.link, links)
+    mkLinkList(sidebar, linkScale, gotoAnything.link, links)
 
     var historyDict = { nodes: {}, links: {} }
 
@@ -144,7 +146,7 @@ function mkSidebar(el) {
   return container
 }
 
-function mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
+function mkmap(map, linkScale, sidebar, now, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
   function mkMarker(dict, iconFunc) {
     return function (d) {
       var opt = { icon: iconFunc(d),
@@ -194,7 +196,7 @@ function mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, graph, gotoA
     maxZoom: 18
   }).addTo(map)
 
-  var markersDict = addLinksToMap(map, graph, gotoAnything)
+  var markersDict = addLinksToMap(linkScale, map, graph, gotoAnything)
 
   var nodes = newnodes.concat(lostnodes).filter(has_location)
 
@@ -242,17 +244,15 @@ function mkmap(map, sidebar, now, newnodes, lostnodes, onlinenodes, graph, gotoA
   return funcDict
 }
 
-function addLinksToMap(map, graph, gotoAnything) {
+function addLinksToMap(linkScale, map, graph, gotoAnything) {
   var markersDict = {}
-
-  var scale = chroma.scale(chroma.interpolate.bezier(['green', 'yellow', 'red'])).domain([1, 5])
 
   graph = graph.filter( function (d) {
     return "distance" in d
   })
 
   var lines = graph.map( function (d) {
-    var opts = { color: scale(d.tq).hex(),
+    var opts = { color: linkScale(d.tq).hex(),
                  weight: 4
                }
 
@@ -271,7 +271,7 @@ function addLinksToMap(map, graph, gotoAnything) {
   return markersDict
 }
 
-function mkLinkList(el, gotoProxy, links) {
+function mkLinkList(el, linkScale, gotoProxy, links) {
   if (links.length == 0)
     return
 
@@ -317,6 +317,7 @@ function mkLinkList(el, gotoProxy, links) {
 
     var td2 = document.createElement("td")
     td2.textContent = showTq(d)
+    td2.style.color = linkScale(d.tq)
     row.appendChild(td2)
 
     var td3 = document.createElement("td")
