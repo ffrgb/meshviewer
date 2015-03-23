@@ -1,5 +1,3 @@
-L.AwesomeMarkers.Icon.prototype.options.prefix = 'ion'
-
 document.addEventListener('DOMContentLoaded', main)
 
 function get(url) {
