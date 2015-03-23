@@ -211,6 +211,38 @@
         right: 0.5em;
       }
 
+      .leaflet-marker-icon.node-online {
+        filter: hue-rotate(203deg) brightness(1.5);
+        -webkit-filter: hue-rotate(203deg) brightness(1.5);
+        opacity: 0.9;
+      }
+
+      .leaflet-marker-icon.node-new {
+        filter: hue-rotate(203deg) brightness(2.5);
+        -webkit-filter: hue-rotate(203deg) brightness(2.5);
+      }
+
+      .leaflet-marker-icon.node-offline {
+        -webkit-animation: blink 1s linear;
+        -webkit-animation-iteration-count: infinite;
+        animation: blink 1s linear;
+        animation-iteration-count: infinite;
+        filter: saturate(160%);
+        -webkit-filter: saturate(160%);
+      }
+
+      @-webkit-keyframes blink {
+        0%   { opacity: 1.0; }
+        80%  { opacity: 1.0; }
+        90%  { opacity: 0.0; }
+      }
+
+      @keyframes blink {
+        0%   { opacity: 1.0; }
+        80%  { opacity: 1.0; }
+        90%  { opacity: 0.0; }
+      }
+
       @media screen and (max-width: 80em) {
         #sidebar {
           font-size: 0.8em;

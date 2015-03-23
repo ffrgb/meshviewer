@@ -211,23 +211,41 @@ function linkId(d) {
 }
 
 function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
-  function mkCircleNode(d) {
-    var opt = { color: "#1566A9",
-                  fillColor: "#1566A9",
-                  radius: 5,
-                  opacity: 0.7,
-                  fillOpacity: 0.5
+  function mkMarker(dict, iconFunc) {
+    return function (d) {
+      var opt = { icon: iconFunc(d),
+                  title: d.nodeinfo.hostname
                 }
 
-    var m = L.circleMarker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
+      var m = L.marker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
 
-    m.on('click', gotoAnything.node(d, false))
-    m.bindPopup(d.nodeinfo.hostname)
+      m.on('click', gotoAnything.node(d, false))
+      m.bindPopup(d.nodeinfo.hostname)
 
-    markersDict[d.nodeinfo.node_id] = m
+      dict[d.nodeinfo.node_id] = m
 
-    return m
+      return m
+    }
   }
+
+  var iconBase = { iconUrl: 'img/circlemarker.png',
+                   iconRetinaUrl: 'img/circlemarker@2x.png',
+                   iconSize: [17, 17],
+                   iconAnchor: [8, 8],
+                   popupAnchor: [0, -3]
+                 }
+
+  var iconOnline = Object.assign({}, iconBase)
+  iconOnline.className = "node-online"
+  iconOnline = L.icon(iconOnline)
+
+  var iconOffline = Object.assign({}, iconBase)
+  iconOffline.className = "node-offline"
+  iconOffline = L.icon(iconOffline)
+
+  var iconNew = Object.assign({}, iconBase)
+  iconNew.className = "node-new"
+  iconNew = L.icon(iconNew)
 
   L.control.zoom({ position: "topright" }).addTo(map)
 
@@ -242,25 +260,12 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
 
   var nodes = newnodes.concat(lostnodes).filter(has_location)
 
-  var markers = nodes.map( function (d) {
-    var icon = L.AwesomeMarkers.icon({ markerColor: d.flags.online ? "green" : "red",
-                                       icon: d.flags.online ? "lightbulb" : "bug" })
+  var markers = nodes.map(mkMarker(markersDict, function (d) {
+    return d.flags.online ? iconNew : iconOffline
+  }))
 
-    var opt = { icon: icon,
-                title: d.nodeinfo.hostname
-              }
-
-    var m = L.marker([d.nodeinfo.location.latitude, d.nodeinfo.location.longitude], opt)
-
-    m.on('click', gotoAnything.node(d, false))
-    m.bindPopup(d.nodeinfo.hostname)
-
-    markersDict[d.nodeinfo.node_id] = m
-
-    return m
-  })
-
-  var onlinemarkers = subtract(onlinenodes.filter(has_location), newnodes).map(mkCircleNode)
+  var onlinemarkers = subtract(onlinenodes.filter(has_location), newnodes)
+                      .map(mkMarker(markersDict, function (d) { return iconOnline } ))
 
   var groupOnline = L.featureGroup(onlinemarkers).addTo(map)
   var group = L.featureGroup(markers).addTo(map)
