@@ -262,13 +262,13 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
 
   var onlinemarkers = subtract(onlinenodes.filter(has_location), newnodes).map(mkCircleNode)
 
+  var groupOnline = L.featureGroup(onlinemarkers).addTo(map)
   var group = L.featureGroup(markers).addTo(map)
-  var group_online = L.featureGroup(onlinemarkers).addTo(map)
 
   var bounds = group.getBounds()
 
   if (!bounds.isValid())
-    bounds = group_online.getBounds()
+    bounds = groupOnline.getBounds()
 
   if (bounds.isValid())
     map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
@@ -288,7 +288,7 @@ function mkmap(map, newnodes, lostnodes, onlinenodes, graph, gotoAnything) {
          map.fitBounds(bounds, {paddingTopLeft: [getSidebarWidth(), 0]})
          m.openPopup(bounds.getCenter())
        }
-  });
+  })
 
   return funcDict
 }
