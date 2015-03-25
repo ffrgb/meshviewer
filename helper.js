@@ -108,3 +108,28 @@ function linkId(d) {
 
   return ids.sort().join("-")
 }
+
+/* Infobox stuff (XXX: move to module) */
+
+function attributeEntry(el, label, value) {
+  if (value === null || value == undefined)
+    return
+
+  var tr = document.createElement("tr")
+  var th = document.createElement("th")
+  th.textContent = label
+  tr.appendChild(th)
+
+  var td = document.createElement("td")
+
+  if (typeof value == "function")
+    value(td)
+  else
+    td.appendChild(document.createTextNode(value))
+
+  tr.appendChild(td)
+
+  el.appendChild(tr)
+
+  return td
+}
