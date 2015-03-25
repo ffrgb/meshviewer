@@ -9,6 +9,36 @@
         paint-order: stroke;
       }
 
+      .tabs {
+        list-style: none;
+        display: flex;
+      }
+
+      .tabs li {
+        flex: 1;
+        text-align: center;
+        padding: 0.5em;
+        cursor: pointer;
+      }
+
+      .tabs li:hover {
+        background: rgba(0, 0, 0, 0.03);
+        color: #dc0067;
+      }
+
+      .tabs .visible {
+        font-weight: bold;
+        border-bottom: 2pt solid black;
+      }
+
+      .tab {
+        display: none;
+      }
+
+      .tab.visible {
+        display: block;
+      }
+
       body {
         margin: 0;
         padding: 0;
