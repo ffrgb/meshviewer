@@ -211,6 +211,25 @@
         right: 0.5em;
       }
 
+      .map .node-alert {
+        -webkit-animation: blink 2s linear;
+        -webkit-animation-iteration-count: infinite;
+        animation: blink 2s linear;
+        animation-iteration-count: infinite;
+      }
+
+      @-webkit-keyframes blink {
+        0%   { opacity: 1.0; }
+        80%  { opacity: 1.0; }
+        90%  { opacity: 0.0; }
+      }
+
+      @keyframes blink {
+        0%   { opacity: 1.0; }
+        80%  { opacity: 1.0; }
+        90%  { opacity: 0.0; }
+      }
+
       @media screen and (max-width: 80em) {
         .sidebar {
           font-size: 0.8em;
