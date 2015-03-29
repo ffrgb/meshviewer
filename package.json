@@ -13,6 +13,29 @@
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-eslint": "^1.1.0"
+    "grunt-eslint": "^10.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "amd": true,
+      "es6": true,
+      "node": true
+    },
+    "globals": {
+      "getJSON": false,
+      "has_location": false,
+      "limit": false,
+      "linkId": false,
+      "offline": false,
+      "one": false,
+      "online": false,
+      "showDistance": false,
+      "showTq": false,
+      "sortByKey": false,
+      "subtract": false,
+      "sum": false,
+      "trueDefault": false
+    }
   }
 }

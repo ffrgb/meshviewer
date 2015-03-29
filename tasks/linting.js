@@ -1,5 +1,3 @@
-"use strict"
-
 module.exports = function (grunt) {
   grunt.config.merge({
     checkDependencies: {
@@ -15,10 +13,13 @@ module.exports = function (grunt) {
     },
     eslint: {
       options: {
-        rule: {
-          semi: [2, "never"],
-          strict: [2, "never"],
-          curly: [2, "multi"]
+        rules: {
+          "semi": [2, "never"],
+          "curly": [2, "multi"],
+          "strict": [2, "never"],
+          "no-multi-spaces": 0,
+          "no-new": 0,
+          "no-shadow": 0
         }
       },
       sources: {

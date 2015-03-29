@@ -1,5 +1,3 @@
-"use strict"
-
 module.exports = function(grunt) {
   grunt.config.merge({
     copy: {
@@ -31,7 +29,7 @@ module.exports = function(grunt) {
              ],
         expand: true,
         dest: "build/",
-        cwd: "bower_components/ionicons/",
+        cwd: "bower_components/ionicons/"
       }
     },
     cssmin: {
@@ -61,5 +59,5 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks("grunt-contrib-copy")
   grunt.loadNpmTasks("grunt-contrib-requirejs")
-  grunt.loadNpmTasks('grunt-contrib-cssmin')
+  grunt.loadNpmTasks("grunt-contrib-cssmin")
 }
