@@ -1,2 +1,3 @@
 bower_components/
-app-combined.js
+node_modules/
+build/
