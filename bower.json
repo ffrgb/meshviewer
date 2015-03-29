@@ -1,6 +1,5 @@
 {
   "name": "meshviewer",
-  "version": "0.1",
   "ignore": [
     "node_modules",
     "bower_components",
