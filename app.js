@@ -1,5 +1,4 @@
 require.config({
-  urlArgs: "bust=" + (new Date()).getTime(),
   baseUrl: "lib",
   paths: {
     "leaflet": "../bower_components/leaflet/dist/leaflet",
