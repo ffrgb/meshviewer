@@ -6,15 +6,15 @@ require.config({
     "chroma-js": "../bower_components/chroma-js/chroma.min",
     "moment": "../bower_components/moment/min/moment-with-locales.min",
     "tablesort": "../bower_components/tablesort/tablesort.min",
-    "tablesort.numeric": "../bower_components/tablesort/src/sorts/tablesort.numeric"
+    "tablesort.numeric": "../bower_components/tablesort/src/sorts/tablesort.numeric",
+    "helper": "../helper"
   },
   shim: {
     "leaflet.label": ["leaflet"],
     "tablesort": {
       exports: "Tablesort"
     },
-    "tablesort.numeric": ["tablesort"]
+    "tablesort.numeric": ["tablesort"],
+    "helper": []
   }
 })
-
-require(["main"])
