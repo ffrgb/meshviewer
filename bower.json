@@ -1,0 +1,26 @@
+{
+  "name": "meshviewer",
+  "version": "0.1",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "**/.*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Leaflet.label": "~0.2.1",
+    "chroma-js": "~0.6.1",
+    "intl": "~0.1.4",
+    "leaflet": "~0.7.3",
+    "ionicons": "~2.0.1",
+    "moment": "~2.9.0",
+    "requirejs": "~2.1.16",
+    "tablesort": "https://github.com/tristen/tablesort.git#v3.0.2"
+  },
+  "authors": [
+    "Nils Schneider <nils@nilsschneider.net>"
+  ],
+  "license": "GPL3",
+  "private": true
+}
