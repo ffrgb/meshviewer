@@ -18,3 +18,7 @@ require.config({
     "helper": []
   }
 })
+
+require(["main", "helper"], function (main) {
+  main()
+})
