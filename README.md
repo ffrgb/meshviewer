@@ -1,16 +1,18 @@
-# Installing required modules
+# Dependencies
 
-This software uses bower to manage dependencies. To install all required
-modules, run
+- npm
+- bower
+- grunt-cli
 
+# Installing dependencies
+
+    npm install
     bower install
-
-in its root directory.
 
 # Building
 
 Just run:
 
-    node bower_components/r.js/dist/r.js -o build.js
+    grunt
 
-This will create `app-combined.js`.
+This will generate `build/` containing all requires files.
