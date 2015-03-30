@@ -237,6 +237,31 @@ button.close:after {
   animation-iteration-count: infinite;
 }
 
+.proportion th {
+  font-weight: normal;
+  text-align: right !important;
+  font-size: 0.95em;
+}
+
+.proportion td {
+  text-align: left !important;
+  width: 100%;
+}
+
+.proportion td, .proportion th {
+  white-space: nowrap;
+}
+
+.proportion span {
+  display: inline-block;
+  height: 1.4em;
+  background: black;
+  padding: 0 0.5em;
+  font-weight: bold;
+  min-width: 1.5em;
+  box-sizing: border-box;
+}
+
 @-webkit-keyframes blink {
   0%   { opacity: 1.0; }
   80%  { opacity: 1.0; }
