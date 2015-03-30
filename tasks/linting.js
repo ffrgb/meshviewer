@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         }
       },
       sources: {
-        src: ["app.js", "!Gruntfile.js", "lib/*.js"]
+        src: ["app.js", "!Gruntfile.js", "lib/**/*.js"]
       },
       grunt: {
         src: ["Gruntfile.js", "tasks/*.js"]

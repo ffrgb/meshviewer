@@ -23,6 +23,8 @@
       "node": true
     },
     "globals": {
+      "attributeEntry": false,
+      "dictGet": false,
       "getJSON": false,
       "has_location": false,
       "limit": false,
