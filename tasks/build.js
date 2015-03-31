@@ -32,6 +32,16 @@ module.exports = function(grunt) {
         cwd: "bower_components/ionicons/"
       }
     },
+    sass: {
+      dist: {
+        options: {
+          style: "compressed"
+        },
+        files: {
+          "build/style.css": "scss/main.scss"
+        }
+      }
+    },
     cssmin: {
       target: {
         files: {
@@ -59,5 +69,5 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks("grunt-contrib-copy")
   grunt.loadNpmTasks("grunt-contrib-requirejs")
-  grunt.loadNpmTasks("grunt-contrib-cssmin")
+  grunt.loadNpmTasks("grunt-contrib-sass")
 }
