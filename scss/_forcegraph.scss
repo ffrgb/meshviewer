@@ -55,3 +55,8 @@
   }
 }  
 
+@media screen and (max-width: $minscreenwidth) {
+  .graph {
+    height: 60vh;
+  }
+}

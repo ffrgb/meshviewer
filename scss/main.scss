@@ -1,5 +1,8 @@
 @import '_leaflet';
 @import '_leaflet.label';
+
+$minscreenwidth: 60em;
+
 @import '_forcegraph';
 
 .stroke-first {
@@ -284,7 +287,7 @@ button.close:after {
   }
 }
 
-@media screen and (max-width: 60em) {
+@media screen and (max-width: $minscreenwidth) {
   .sidebar .container {
     overflow: visible;
     height: auto;
