@@ -7,6 +7,7 @@ require.config({
     "moment": "../bower_components/moment/min/moment-with-locales.min",
     "tablesort": "../bower_components/tablesort/tablesort.min",
     "tablesort.numeric": "../bower_components/tablesort/src/sorts/tablesort.numeric",
+    "d3": "../bower_components/d3/d3.min",
     "helper": "../helper"
   },
   shim: {

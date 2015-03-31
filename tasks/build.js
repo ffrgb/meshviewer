@@ -7,6 +7,11 @@ module.exports = function(grunt) {
         cwd: "html/",
         dest: "build/"
       },
+      img: {
+        src: ["img/*"],
+        expand: true,
+        dest: "build/"
+      },
       vendorjs: {
         src: [ "es6-shim/es6-shim.min.js",
                "intl/Intl.complete.js"

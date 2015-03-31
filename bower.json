@@ -19,7 +19,8 @@
     "roboto-slab-fontface": "*",
     "es6-shim": "~0.27.1",
     "almond": "~0.3.1",
-    "r.js": "~2.1.16"
+    "r.js": "~2.1.16",
+    "d3": "~3.5.5"
   },
   "authors": [
     "Nils Schneider <nils@nilsschneider.net>"
