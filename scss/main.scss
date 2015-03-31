@@ -125,6 +125,10 @@ button:active {
   box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.19), inset 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
 button.close {
   position: absolute;
   right: 0.7em;
