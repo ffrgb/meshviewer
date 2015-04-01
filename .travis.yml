@@ -1,0 +1,9 @@
+language: node_js
+before_install:
+  - gem install sass
+  - npm install -g grunt-cli
+  - npm install -g bower
+install:
+  - npm install
+  - bower install
+script: grunt

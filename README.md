@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tcatm/meshviewer.svg?branch=master)](https://travis-ci.org/tcatm/meshviewer)
+
 # Meshviewer
 
 Meshviewer is a frontend for
