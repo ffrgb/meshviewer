@@ -9,6 +9,20 @@ $minscreenwidth: 60em;
   paint-order: stroke;
 }
 
+.contenttoggle {
+  position: absolute;
+  top: 0.7em;
+  right: 0.7em;
+}
+
+.contenttoggle.next-graph:after {
+  content: '\f341';
+}
+
+.contenttoggle.next-map:after {
+  content: '\f203';
+}
+
 .tabs {
   list-style: none;
   display: flex;
