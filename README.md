@@ -24,8 +24,14 @@ Meshviewer is a frontend for
 
 # Building
 
+You may want to tweak `lib/config.js` to point to your data fils. If it's
+served from a different domain, remember to [enable CORS] on your
+webserver. Enabling GZip will reduce bandwidth consumption.
+
 Just run:
 
     grunt
 
-This will generate `build/` containing all requires files.
+This will generate `build/` containing all required files.
+
+[enable CORS]: http://enable-cors.org/server.html
