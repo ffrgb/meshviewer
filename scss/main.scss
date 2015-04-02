@@ -2,6 +2,9 @@
 @import '_leaflet.label';
 
 $minscreenwidth: 60em;
+$sidebarwidth: 420pt;
+$sidebarwidthsmall: 360pt;
+$buttondistance: 12pt;
 
 @import '_forcegraph';
 
@@ -10,9 +13,10 @@ $minscreenwidth: 60em;
 }
 
 .contenttoggle {
+  z-index: 100;
   position: absolute;
-  top: 0.7em;
-  right: 0.7em;
+  top: $buttondistance;
+  right: $buttondistance;
 }
 
 .contenttoggle.next-graph:after {
@@ -23,7 +27,15 @@ $minscreenwidth: 60em;
   content: '\f203';
 }
 
+.content {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
 .tabs {
+  padding-top: 1em !important;
+  margin: 0;
   list-style: none;
   display: flex;
 }
@@ -145,8 +157,8 @@ button::-moz-focus-inner {
 
 button.close {
   position: absolute;
-  right: 0.7em;
-  top: 0.7em;
+  right: $buttondistance;
+  top: $buttondistance;
 }
 
 button.close:after {
@@ -162,11 +174,11 @@ button.close:after {
 }
 
 .sidebarhandle {
-  position: absolute;
-  right: -2.5em;
-  top: 0.7em;
+  position: fixed;
+  left: $sidebarwidth + 2 * $buttondistance;
+  top: $buttondistance;
   z-index: 10;
-  transition: right 0.5s, box-shadow 0.5s, color 0.5s, transform 0.5s;
+  transition: left 0.5s, box-shadow 0.5s, color 0.5s, transform 0.5s;
 }
 
 .sidebarhandle:after {
@@ -176,9 +188,7 @@ button.close:after {
 
 .sidebar.hidden .sidebarhandle {
   transform: scale(-1, 1);
-}
-
-.hostname {
+  left: $buttondistance;
 }
 
 .online {
@@ -191,27 +201,19 @@ button.close:after {
 
 .sidebar {
   z-index: 5;
-  width: 40em;
+  width: $sidebarwidth;
   box-sizing: border-box;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: $buttondistance;
+  left: $buttondistance;
+  margin-bottom: $buttondistance;
   background: white;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
   transition: left 0.5s;
 }
 
 .sidebar.hidden {
-  left: -40em;
-}
-
-.sidebar .container {
-  overflow: auto;
-  box-sizing: border-box;
-}
-
-.sidebar .container, .map {
-  height: 100vh;
+  left: -$sidebarwidth - $buttondistance;
 }
 
 .sidebar .icon {
@@ -255,11 +257,16 @@ button.close:after {
   right: 0.5em;
 }
 
-.map .node-alert {
-  -webkit-animation: blink 2s linear;
-  -webkit-animation-iteration-count: infinite;
-  animation: blink 2s linear;
-  animation-iteration-count: infinite;
+.map {
+  width: 100%;
+  height: 100%;
+
+ .node-alert {
+    -webkit-animation: blink 2s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation: blink 2s linear;
+    animation-iteration-count: infinite;
+  }
 }
 
 .proportion th {
@@ -302,36 +309,38 @@ button.close:after {
 @media screen and (max-width: 80em) {
   .sidebar {
     font-size: 0.8em;
+    top: 0pt;
+    left: 0pt;
+    margin: 0pt;
+    width: $sidebarwidthsmall;
+    min-height: 100vh;
+
+    .sidebarhandle {
+      left: $sidebarwidthsmall + $buttondistance;
+    }
   }
 }
 
 @media screen and (max-width: $minscreenwidth) {
-  .sidebar .container {
-    overflow: visible;
-    height: auto;
-    padding-top: 1em;
-  }
-
   .sidebarhandle {
     display: none;
   }
 
-  .map {
+  .content {
+    position: relative;
+    width: auto;
     height: 60vh;
   }
 
   .sidebar {
     position: static;
-    margin-left: 0em !important;
+    margin: 0em !important;
     width: auto;
     height: auto;
+    min-height: 0;
   }
 
   .sidebar.hidden {
     width: auto;
-  }
-
-  .sidebar.hidden .sidebar .container {
-    display: block;
   }
 }

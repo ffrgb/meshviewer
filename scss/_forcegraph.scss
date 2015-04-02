@@ -1,5 +1,6 @@
 .graph {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   background: url(img/gplaypattern.png);
 
   svg {
@@ -54,9 +55,3 @@
     }
   }
 }  
-
-@media screen and (max-width: $minscreenwidth) {
-  .graph {
-    height: 60vh;
-  }
-}
