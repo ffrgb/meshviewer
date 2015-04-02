@@ -18,7 +18,10 @@ require.config({
     "tablesort": {
       exports: "Tablesort"
     },
-    "numeral-intl": ["numeral"],
+    "numeral-intl": {
+      deps: ["numeral"],
+      exports: "numeral"
+    },
     "tablesort.numeric": ["tablesort"],
     "helper": ["numeral-intl"]
   }
