@@ -10,7 +10,6 @@
   "dependencies": {
     "Leaflet.label": "~0.2.1",
     "chroma-js": "~0.6.1",
-    "intl": "~0.1.4",
     "leaflet": "~0.7.3",
     "ionicons": "~2.0.1",
     "moment": "~2.9.0",
@@ -20,7 +19,8 @@
     "es6-shim": "~0.27.1",
     "almond": "~0.3.1",
     "r.js": "~2.1.16",
-    "d3": "~3.5.5"
+    "d3": "~3.5.5",
+    "numeraljs": "~1.5.3"
   },
   "authors": [
     "Nils Schneider <nils@nilsschneider.net>"

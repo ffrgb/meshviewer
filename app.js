@@ -8,6 +8,8 @@ require.config({
     "tablesort": "../bower_components/tablesort/tablesort.min",
     "tablesort.numeric": "../bower_components/tablesort/src/sorts/tablesort.numeric",
     "d3": "../bower_components/d3/d3.min",
+    "numeral": "../bower_components/numeraljs/min/numeral.min",
+    "numeral-intl": "../bower_components/numeraljs/min/languages.min",
     "helper": "../helper"
   },
   shim: {
@@ -15,8 +17,9 @@ require.config({
     "tablesort": {
       exports: "Tablesort"
     },
+    "numeral-intl": ["numeral"],
     "tablesort.numeric": ["tablesort"],
-    "helper": []
+    "helper": ["numeral-intl"]
   }
 })
 

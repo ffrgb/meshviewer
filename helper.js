@@ -105,13 +105,11 @@ function showDistance(d) {
   if (isNaN(d.distance))
     return
 
-  return (new Intl.NumberFormat("de-DE", {maximumFractionDigits: 0}).format(d.distance)) + " m"
+  return numeral(d.distance).format("0,0") + " m"
 }
 
 function showTq(d) {
-  var opts = { maximumFractionDigits: 0 }
-
-  return (new Intl.NumberFormat("de-DE", opts).format(100/d.tq)) + "%"
+  return numeral(1/d.tq).format("0%")
 }
 
 function linkId(d) {
