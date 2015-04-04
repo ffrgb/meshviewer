@@ -158,6 +158,10 @@ button {
   outline: none;
 }
 
+button.active {
+  color: #dc0067 !important;
+}
+
 button:hover {
   background: white;
   color: #dc0067;
