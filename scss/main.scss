@@ -1,3 +1,5 @@
+@import '_reset';
+@import '_base';
 @import '_leaflet';
 @import '_leaflet.label';
 
@@ -6,6 +8,7 @@ $sidebarwidth: 420pt;
 $sidebarwidthsmall: 360pt;
 $buttondistance: 12pt;
 
+@import '_sidebar';
 @import '_map';
 @import '_forcegraph';
 
@@ -31,27 +34,31 @@ $buttondistance: 12pt;
 }
 
 .tabs {
-  padding-top: 1em !important;
+  padding: 1em 0 0 !important;
   margin: 0;
   list-style: none;
   display: flex;
+  font-family: Roboto;
+  background: rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.16), 0px 0.5px 2px rgba(0, 0, 0, 0.24);
 }
 
 .tabs li {
   flex: 1;
+  text-transform: uppercase;
   text-align: center;
-  padding: 0.5em;
+  padding: 0.5em 0.5em 1em;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .tabs li:hover {
-  background: rgba(0, 0, 0, 0.03);
   color: #dc0067;
 }
 
 .tabs .visible {
-  font-weight: bold;
-  border-bottom: 2pt solid black;
+  border-bottom: 2pt solid #dc0067;
+  color: #dc0067;
 }
 
 .tab {
@@ -103,11 +110,20 @@ table.attributes th {
   vertical-align: top;
   padding-right: 1em;
   white-space: nowrap;
+  line-height: 1.41em;
 }
 
 table.attributes td {
   text-align: left !important;
   width: 100%;
+  line-height: 1.41em;
+}
+
+.sidebar {
+  .infobox, .container {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    background: rgba(255, 255, 255, 0.9);
+  }
 }
 
 .infobox .clients {
@@ -118,9 +134,8 @@ table.attributes td {
 
 .infobox {
   position: relative;
-  box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.16), 0px 0.5px 2px rgba(0, 0, 0, 0.24);
-  background: rgba(0, 0, 0, 0.02);
   padding: 0.25em 0;
+  margin-bottom: $buttondistance;
 }
 
 button {
@@ -153,21 +168,54 @@ button::-moz-focus-inner {
 }
 
 button.close {
-  position: absolute;
-  right: $buttondistance;
-  top: $buttondistance;
-}
+  width: auto;
+  height: auto;
+  font-size: 14pt;
+  float: right;
+  padding: $buttondistance/2 $buttondistance;
+  margin-right: $buttondistance;
+  margin-top: $buttondistance;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Roboto;
 
-button.close:after {
-  content: "\f12a";
+  &:hover {
+    color: #dc0067;
+  }
+
+  &:active {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  &:after {
+    content: "CLOSE";
+  }
 }
 
 .sidebar h2, .sidebar h3 {
-  padding: 0 10pt;
+  padding-left: $buttondistance;
+  padding-right: $buttondistance;
 }
 
 .sidebar p, .sidebar table, .sidebar pre, .sidebar ul {
-  padding: 0 10pt 1em;
+  padding: 0 $buttondistance 1em;
+}
+
+table {
+  border-spacing: 0 0.5em;
+  td, th {
+    line-height: 1.41em;
+  }
+}
+
+.sidebar table {
+  border-collapse: separate;
+}
+
+.sidebar table th {
+  font-weight: bold;
 }
 
 .sidebarhandle {
@@ -204,8 +252,6 @@ button.close:after {
   top: $buttondistance;
   left: $buttondistance;
   margin-bottom: $buttondistance;
-  background: white;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
   transition: left 0.5s;
 }
 
@@ -238,26 +284,28 @@ button.close:after {
   height: 1.4em;
   background: rgba(85, 128, 32, 0.5);
   position: relative;
-}
 
-.bar span {
-  display: inline-block;
-  height: 1.4em;
-  background: rgba(85, 128, 32, 0.8);
-}
+  span {
+    display: inline-block;
+    height: 1.4em;
+    background: rgba(85, 128, 32, 0.8);
+  }
 
-.bar label {
-  font-weight: bold;
-  white-space: nowrap;
-  color: white;
-  position: absolute;
-  right: 0.5em;
+  label {
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+    position: absolute;
+    right: 0.5em;
+    top: 0.1em;
+  }
 }
 
 .proportion th {
-  font-weight: normal;
+  font-weight: normal !important;
   text-align: right !important;
   font-size: 0.95em;
+  padding-right: 0.71em;
 }
 
 .proportion td {
@@ -271,9 +319,8 @@ button.close:after {
 
 .proportion span {
   display: inline-block;
-  height: 1.4em;
   background: black;
-  padding: 0 0.5em;
+  padding: 0.25em 0.5em;
   font-weight: bold;
   min-width: 1.5em;
   box-sizing: border-box;
@@ -287,9 +334,20 @@ button.close:after {
     margin: 0pt;
     width: $sidebarwidthsmall;
     min-height: 100vh;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.19), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    background: white;
 
     .sidebarhandle {
       left: $sidebarwidthsmall + $buttondistance;
+    }
+
+    .container, .infobox {
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .infobox {
+      background: rgba(0, 0, 0, 0.02);
     }
   }
 }

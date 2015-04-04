@@ -18,13 +18,21 @@ module.exports = function(grunt) {
         cwd: "bower_components/",
         dest: "build/vendor/"
       },
-      roboto: {
+      robotoSlab: {
         src: [ "fonts/*",
                "roboto-slab-fontface.css"
              ],
         expand: true,
         dest: "build/",
         cwd: "bower_components/roboto-slab-fontface"
+      },
+      roboto: {
+        src: [ "fonts/*",
+               "roboto-fontface.css"
+             ],
+        expand: true,
+        dest: "build/",
+        cwd: "bower_components/roboto-fontface"
       },
       ionicons: {
         src: [ "fonts/*",

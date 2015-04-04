@@ -20,7 +20,8 @@
     "almond": "~0.3.1",
     "r.js": "~2.1.16",
     "d3": "~3.5.5",
-    "numeraljs": "~1.5.3"
+    "numeraljs": "~1.5.3",
+    "roboto-fontface": "~0.3.0"
   },
   "authors": [
     "Nils Schneider <nils@nilsschneider.net>"
