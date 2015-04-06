@@ -29,7 +29,6 @@
       "getJSON": false,
       "has_location": false,
       "limit": false,
-      "linkId": false,
       "localStorageTest": false,
       "offline": false,
       "one": false,

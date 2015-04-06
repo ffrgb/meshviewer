@@ -112,12 +112,6 @@ function showTq(d) {
   return numeral(1/d.tq).format("0%")
 }
 
-function linkId(d) {
-  var ids = [d.source.node.nodeinfo.node_id, d.target.node.nodeinfo.node_id]
-
-  return ids.sort().join("-")
-}
-
 /* Infobox stuff (XXX: move to module) */
 
 function attributeEntry(el, label, value) {
