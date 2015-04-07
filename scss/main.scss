@@ -44,7 +44,7 @@ $buttondistance: 12pt;
 }
 
 .tabs li {
-  flex: 1;
+  flex: 1 1 auto;
   text-transform: uppercase;
   text-align: center;
   padding: 0.5em 0.5em 1em;
