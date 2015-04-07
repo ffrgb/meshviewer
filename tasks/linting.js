@@ -19,7 +19,8 @@ module.exports = function (grunt) {
           "strict": [2, "never"],
           "no-multi-spaces": 0,
           "no-new": 0,
-          "no-shadow": 0
+          "no-shadow": 0,
+          "no-use-before-define": [1, "nofunc"]
         }
       },
       sources: {
