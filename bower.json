@@ -22,7 +22,8 @@
     "d3": "~3.5.5",
     "numeraljs": "~1.5.3",
     "roboto-fontface": "~0.3.0",
-    "virtual-dom": "~2.0.1"
+    "virtual-dom": "~2.0.1",
+    "leaflet-providers": "~1.0.27"
   },
   "authors": [
     "Nils Schneider <nils@nilsschneider.net>"
