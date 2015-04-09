@@ -27,7 +27,7 @@ Meshviewer is a frontend for
 
 # Building
 
-You may want to tweak `lib/config.js` to point to your data fils. If it's
+You may want to tweak `lib/config.js` to point to your data files. If it's
 served from a different domain, remember to [enable CORS] on your
 webserver. Enabling GZip will reduce bandwidth consumption.
 
