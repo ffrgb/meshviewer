@@ -84,7 +84,9 @@ function online(d) {
 }
 
 function has_location(d) {
-  return "location" in d.nodeinfo
+  return "location" in d.nodeinfo &&
+         Math.abs(d.nodeinfo.location.latitude) < 90 &&
+         Math.abs(d.nodeinfo.location.longitude) < 180
 }
 
 function subtract(a, b) {
