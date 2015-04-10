@@ -3,58 +3,24 @@
   width: 100%;
   background: url(img/gplaypattern.png);
 
-  svg {
+  canvas {
     display: block;
     width: 100%;
     height: 100%;
   }
 
-  .link {
-    stroke-opacity: 0.8;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    line {
-      stroke-width: 2.5px;
+    circle, line {
+      opacity: 0;
+      stroke-width: 16px;
       cursor: pointer;
-    }
-
-    &.highlight line {
-      stroke-width: 7px;
-      stroke-dasharray: 10, 10;
-      opacity: 1;
-    }
-  }
-
-  .node {
-    fill: #fff;
-    stroke-width: 2.5px;
-    stroke: #AEC7E8;
-    
-    &:not(.unknown) {
-      cursor: pointer;
-    }
-
-    &.highlight {
-      stroke: #FFD486;
-      stroke-width: 6px;
-      fill: orange;
-      point-order: stroke;
-    }
-
-    &.unknown {
-      stroke: #d00000;
-    }
-  }
-
-  .labels {
-    text {
-      font-size: 7pt;
-      font-family: Roboto;
-      alignment-baseline: central;
-      text-anchor: middle;
-      fill: rgba(0, 0, 0, 0.6);
-      paint-order: stroke;
-      stroke-width: 3pt;
-      stroke: rgba(255, 255, 255, 0.5);
     }
   }
 }  
