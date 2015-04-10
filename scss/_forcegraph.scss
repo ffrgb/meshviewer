@@ -45,13 +45,16 @@
     }
   }
 
-  .label {
+  .labels {
     text {
-      font-size: 0.8em;
-    }
-
-    rect {
-      fill: rgba(255, 255, 255, 0.8);
+      font-size: 7pt;
+      font-family: Roboto;
+      alignment-baseline: central;
+      text-anchor: middle;
+      fill: rgba(0, 0, 0, 0.6);
+      paint-order: stroke;
+      stroke-width: 3pt;
+      stroke: rgba(255, 255, 255, 0.5);
     }
   }
 }  
