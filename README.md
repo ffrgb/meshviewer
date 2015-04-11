@@ -5,6 +5,9 @@
 Meshviewer is a frontend for
 [ffmap-backend](https://github.com/ffnord/ffmap-backend).
 
+
+[Changelog](CHANGELOG.md)
+
 # Screenshots
 
 ![](doc/mapview.png?raw=true)
