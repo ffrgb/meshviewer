@@ -16,6 +16,22 @@
     animation: blink 2s linear;
     animation-iteration-count: infinite;
   }
+
+  .leaflet-top button.leaflet-control {
+    margin-top: $buttondistance;
+  }
+
+  .leaflet-bottom button.leaflet-control {
+    margin-bottom: $buttondistance;
+  }
+
+  .leaflet-left button.leaflet-control {
+    margin-left: $buttondistance;
+  }
+
+  .leaflet-right button.leaflet-control {
+    margin-right: $buttondistance;
+  }
 }
 
 @-webkit-keyframes blink {
