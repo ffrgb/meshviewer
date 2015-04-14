@@ -11,7 +11,9 @@
 - Improved performance on Firefox
 - Labels in graph view
 - infobox: link to geouri with node's coordinates
+- infobox: show node id
 - map: locate user
+- nodelist: sort by uptime fixed
 
 ### Fixed bugs:
 
