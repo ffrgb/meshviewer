@@ -21,7 +21,7 @@ Meshviewer is a frontend for
 - npm
 - bower
 - grunt-cli
-- Ruby and Sass
+- Sass (>= 3.2)
 
 # Installing dependencies
 
