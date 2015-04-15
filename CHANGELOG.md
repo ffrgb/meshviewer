@@ -13,6 +13,7 @@
 - infobox: link to geouri with node's coordinates
 - infobox: show node id
 - map: locate user
+- map: adding custom layers from leaflet.providers
 - nodelist: sort by uptime fixed
 
 ### Fixed bugs:

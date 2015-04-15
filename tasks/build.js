@@ -41,6 +41,12 @@ module.exports = function(grunt) {
         expand: true,
         dest: "build/",
         cwd: "bower_components/ionicons/"
+      },
+      leafletImages: {
+        src: [ "images/*" ],
+        expand: true,
+        dest: "build/",
+        cwd: "bower_components/leaflet/dist/"
       }
     },
     sass: {
