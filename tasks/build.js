@@ -2,6 +2,11 @@ module.exports = function(grunt) {
   grunt.config.merge({
     copy: {
       html: {
+        options: {
+          process: function (content) {
+            return content.replace("#revision#", grunt.option("gitRevision"))
+          }
+        },
         src: ["*.html"],
         expand: true,
         cwd: "html/",
