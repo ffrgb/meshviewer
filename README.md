@@ -25,8 +25,17 @@ Meshviewer is a frontend for
 
 # Installing dependencies
 
+Install npm with your package-manager. On Debian-like systems run:
+
+    sudo apt-get install npm
+
+Execute these commands on your server as a normal user to prepare the dependencies:
+
+    git clone https://github.com/tcatm/meshviewer.git
+    cd meshviewer
     npm install
-    bower install
+    npm install bower grunt-cli
+    node_modules/.bin/bower install
 
 # Configure
 
@@ -55,9 +64,9 @@ Setting this to `false` will hide contact information for nodes.
 
 # Building
 
-Just run:
+Just run the following command from the meshviewer directory:
 
-    grunt
+    node_modules/.bin/grunt
 
 This will generate `build/` containing all required files.
 
