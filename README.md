@@ -62,6 +62,11 @@ area. Values like 1.0 and 0.5 might be good choices.
 
 Setting this to `false` will hide contact information for nodes.
 
+## maxAge (integer)
+
+Nodes being online for less than maxAge days are considered "new". Likewise,
+nodes being offline for less than than maxAge days are considered "lost".
+
 # Building
 
 Just run the following command from the meshviewer directory:

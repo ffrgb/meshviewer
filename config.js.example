@@ -2,5 +2,6 @@ define({
   "dataPath": "https://map.luebeck.freifunk.net/data/",
   "siteName": "Freifunk Lübeck",
   "mapSigmaScale": 0.5,
-  "showContact": true
+  "showContact": true,
+  "maxAge": 14
 })
