@@ -25,9 +25,9 @@ Meshviewer is a frontend for
 
 # Installing dependencies
 
-Install npm with your package-manager. On Debian-like systems run:
+Install npm and Sass with your package-manager. On Debian-like systems run:
 
-    sudo apt-get install npm
+    sudo apt-get install npm ruby-sass
 
 Execute these commands on your server as a normal user to prepare the dependencies:
 
