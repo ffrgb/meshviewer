@@ -141,6 +141,10 @@ table.attributes td {
   position: relative;
   padding: 0.25em 0;
   margin-bottom: $buttondistance;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 button {
