@@ -212,8 +212,14 @@ button.close {
   padding-right: $buttondistance;
 }
 
-.sidebar p, .sidebar table, .sidebar pre, .sidebar ul {
-  padding: 0 $buttondistance 1em;
+.sidebar {
+  p, pre, ul, h4 {
+    padding: 0 $buttondistance 1em;
+  }
+
+  table {
+    padding: 0 $buttondistance;
+  }
 }
 
 table {
