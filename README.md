@@ -83,7 +83,7 @@ you can use the case-sensitive template string `{NODE_ID}`.
 Examples for `nodeInfos`:
 
     "nodeInfos": [
-      { "name": "Clientstatistik"
+      { "name": "Clientstatistik",
         "href": "nodes/{NODE_ID}.png",
         "thumbnail": "nodes/{NODE_ID}.png",
         "caption": "Knoten {NODE_ID}"
