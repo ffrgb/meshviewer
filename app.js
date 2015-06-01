@@ -13,7 +13,8 @@ require.config({
     "numeral-intl": "../bower_components/numeraljs/min/languages.min",
     "virtual-dom": "../bower_components/virtual-dom/dist/virtual-dom",
     "rbush": "../bower_components/rbush/rbush",
-    "helper": "../helper"
+    "helper": "../helper",
+    "jshashes": "../bower_components/jshashes/hashes"
   },
   shim: {
     "leaflet.label": ["leaflet"],
