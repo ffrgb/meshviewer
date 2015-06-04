@@ -75,7 +75,7 @@ This option allows to show client statistics depending on following case-sensiti
 - `href` absolute or relative URL to statistics image
 - `thumbnail` absolute or relative URL to thumbnail image,
   can be the same like `href`
-- `caption` is shown, if `type` is `link` (no thumbnail in infobox)
+- `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
 
 To insert current node-id in either `href`, `thumbnail` or `caption`
 you can use the case-sensitive template string `{NODE_ID}`.
