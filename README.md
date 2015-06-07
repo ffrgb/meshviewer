@@ -97,6 +97,35 @@ Examples for `nodeInfos`:
 
 In order to have statistics images available, you have to run the backend with parameter `--with-rrd` or generate them in other ways.
 
+## globalInfos (array, optional)
+
+This option allows to show global statistics on statistics page depending on following case-sensitive parameters:
+
+- `name` caption of statistics segment in infobox
+- `href` absolute or relative URL to statistics image
+- `thumbnail` absolute or relative URL to thumbnail image,
+  can be the same like `href`
+- `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
+
+In contrast to `nodeInfos` there is no template substitution in  `href`, `thumbnail` or `caption`.
+
+Examples for `globalInfos`:
+
+    "globalInfos": [
+      { "name": "Wochenstatistik",
+        "href": "nodes/globalGraph.png",
+        "thumbnail": "nodes/globalGraph.png",
+        "caption": "Bild mit Wochenstatistik"
+      },
+      { "name": "Jahresstatistik",
+        "href": "nodes/globalGraph52.png",
+        "thumbnail": "nodes/globalGraph52.png",
+        "caption": "Bild mit Jahresstatistik"
+      }
+    ]
+
+In order to have global statistics available, you have to run the backend with parameter `--with-rrd` (this only creates globalGraph.png) or generate them in other ways.
+
 # Building
 
 Just run the following command from the meshviewer directory:
