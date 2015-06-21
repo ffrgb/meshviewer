@@ -24,7 +24,8 @@
     "roboto-fontface": "~0.3.0",
     "virtual-dom": "~2.0.1",
     "leaflet-providers": "~1.0.27",
-    "rbush": "https://github.com/mourner/rbush.git#~1.3.5"
+    "rbush": "https://github.com/mourner/rbush.git#~1.3.5",
+    "jshashes": "~1.0.5"
   },
   "authors": [
     "Nils Schneider <nils@nilsschneider.net>"
