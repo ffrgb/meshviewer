@@ -6,14 +6,6 @@
   width: 100%;
   height: 100%;
 
-  button.locate-user:after {
-    content: '\f2a7';
-  }
-
-  button.add-layer:after {
-    content: '\f217';
-  }
-
  .node-alert {
     -webkit-animation: blink 2s linear;
     -webkit-animation-iteration-count: infinite;

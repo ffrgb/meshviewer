@@ -13,25 +13,24 @@ $buttondistance: 12pt;
 @import '_map';
 @import '_forcegraph';
 
-.contenttoggle {
-  z-index: 100;
-  position: absolute;
-  top: $buttondistance;
-  right: $buttondistance;
-}
-
-.contenttoggle.next-graph:after {
-  content: '\f341';
-}
-
-.contenttoggle.next-map:after {
-  content: '\f203';
-}
-
 .content {
   position: fixed;
   width: 100%;
   height: 100vh;
+
+  .buttons {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+
+    z-index: 100;
+    position: absolute;
+    top: $buttondistance;
+    right: $buttondistance;
+
+    button {
+      margin-left: $buttondistance;
+    }
+  }
 }
 
 .tabs {
