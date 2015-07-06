@@ -184,27 +184,22 @@ button::-moz-focus-inner {
 button.close {
   width: auto;
   height: auto;
-  font-size: 14pt;
+  font-size: 20pt;
   float: right;
-  padding: $buttondistance/2 $buttondistance;
   margin-right: $buttondistance;
   margin-top: $buttondistance;
   box-shadow: none;
   background: transparent;
   border-radius: 0;
   color: rgba(0, 0, 0, 0.5);
-  font-family: Roboto;
+  font-family: "ionicons";
 
   &:hover {
     color: #dc0067;
   }
 
-  &:active {
-    background: rgba(0, 0, 0, 0.04);
-  }
-
   &:after {
-    content: "CLOSE";
+    content: '\f2d7';
   }
 }
 
