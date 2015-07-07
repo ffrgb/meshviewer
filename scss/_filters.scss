@@ -1,0 +1,28 @@
+.filters {
+  margin: 0;
+  padding: 0 !important;
+
+  li  {
+    display: flex;
+    padding: 6pt 0 6pt 12pt;
+    align-items: center;
+
+    & > div {
+      flex-grow: 1;
+    }
+
+    @include shadow(1);
+  }
+
+  button {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 1.41em;
+
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+}
