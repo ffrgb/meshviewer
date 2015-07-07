@@ -67,6 +67,13 @@ Setting this to `false` will hide contact information for nodes.
 Nodes being online for less than maxAge days are considered "new". Likewise,
 nodes being offline for less than than maxAge days are considered "lost".
 
+## mapLayers (List)
+
+A list of objects describing map layers. Each object has at least `name`
+property and optionally `url` and `config` properties. If no `url` is supplied
+`name` is assumed to name a
+[Leaflet-provider](http://leaflet-extras.github.io/leaflet-providers/preview/).
+
 ## nodeInfos (array, optional)
 
 This option allows to show client statistics depending on following case-sensitive parameters:
