@@ -33,13 +33,16 @@ $buttondistance: 12pt;
   }
 }
 
+.tabs, header {
+  background: rgba(0, 0, 0, 0.02);
+}
+
 .tabs {
   padding: 1em 0 0 !important;
   margin: 0;
   list-style: none;
   display: flex;
   font-family: Roboto;
-  background: rgba(0, 0, 0, 0.02);
   @include shadow(1);
 }
 
