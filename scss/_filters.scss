@@ -1,28 +1,53 @@
 .filters {
   margin: 0;
-  padding: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Roboto;
+  font-size: 0.83em;
+  font-weight: bold;
+  padding: 0 6pt 6pt !important;
 
   li  {
+    border-radius: 20pt;
     display: flex;
-    padding: 6pt 0 6pt 12pt;
+    padding: 0pt 0 0pt 8pt;
+    margin: 3pt;
     align-items: center;
+    background: #009ee0;
+    color: rgba(255, 255, 255, 0.8);
 
-    & > div {
-      flex-grow: 1;
+    label {
+      cursor: pointer;
+
+      strong {
+        color: rgba(255, 255, 255, 1);
+      }
     }
 
-    @include shadow(1);
-  }
+    &.not {
+      background: #dc0067;
+    }
 
-  button {
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    background: none;
-    font-size: 1.41em;
+    button {
+      box-shadow: none;
+      margin: 2pt;
+      padding: 0;
+      width: 18pt;
+      height: 18pt;
+      background: rgba(255, 255, 255, 0.0);
+      font-size: 12pt;
+      vertical-align: middle;
+      color: rgba(255, 255, 255, 0.8);
 
-    &:hover {
-      box-shadow: none !important;
+      &:hover {
+        box-shadow: none !important;
+        color: #dc0067;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      &:active {
+        box-shadow: none;
+      }
     }
   }
 }
