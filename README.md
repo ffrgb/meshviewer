@@ -130,3 +130,21 @@ Examples for `globalInfos` using Grafana server rendering:
         "caption": "Bild mit Wochenstatistik"
       }
     ]
+
+## siteNames (array, optional)
+
+In this array name definitions for site statistics and node info can be saved. This requires one object for each site code. This object must contain:
+
+- `site` the site code
+- `name` the defined written name for this site code
+
+If neither `siteNames` nor `showSites` are set, site statistics and node info won't be displayed
+
+Example for `siteNames`:
+
+    "siteNames": [
+      { "site": "ffhl", "name": "Lübeck" },
+      { "site": "ffeh", "name": "Entenhausen" ),
+      { "site": "ffgt", "name": "Gothamcity" },
+      { "site": "ffal", "name": "Atlantis" }
+    ]
