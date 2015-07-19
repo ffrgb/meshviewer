@@ -1,4 +1,4 @@
-define({
+{
   "dataPath": "https://map.luebeck.freifunk.net/data/",
   "siteName": "Freifunk Lübeck",
   "mapSigmaScale": 0.5,
@@ -18,4 +18,4 @@ define({
       "name": "Stamen.TonerLite"
     }
   ]
-})
+}

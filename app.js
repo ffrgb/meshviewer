@@ -32,5 +32,5 @@ require.config({
 })
 
 require(["main", "helper"], function (main) {
-  main()
+  getJSON("config.json").then(main)
 })

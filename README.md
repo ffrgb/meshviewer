@@ -37,9 +37,17 @@ Execute these commands on your server as a normal user to prepare the dependenci
     npm install bower grunt-cli
     node_modules/.bin/bower install
 
+# Building
+
+Just run the following command from the meshviewer directory:
+
+    node_modules/.bin/grunt
+
+This will generate `build/` containing all required files.
+
 # Configure
 
-Copy `config.js.example` to `config.js` and change it to match your community.
+Copy `config.json.example` to `build/config.json` and change it to match your community.
 
 ## dataPath (string)
 
@@ -132,13 +140,5 @@ Examples for `globalInfos`:
     ]
 
 In order to have global statistics available, you have to run the backend with parameter `--with-rrd` (this only creates globalGraph.png) or generate them in other ways.
-
-# Building
-
-Just run the following command from the meshviewer directory:
-
-    node_modules/.bin/grunt
-
-This will generate `build/` containing all required files.
 
 [CORS enabled]: http://enable-cors.org/server.html
