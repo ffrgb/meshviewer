@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   grunt.config.merge({
+    bowerdir: "bower_components",
     copy: {
       html: {
         options: {
@@ -74,6 +75,19 @@ module.exports = function(grunt) {
         }
       }
     },
+    "bower-install-simple": {
+        options: {
+          directory: "<%=bowerdir%>",
+          color: true,
+          interactive: false,
+          production: true
+        },
+        "prod": {
+          options: {
+            production: true
+          }
+        }
+      },
     requirejs: {
       compile: {
         options: {
@@ -89,6 +103,7 @@ module.exports = function(grunt) {
     }
   })
 
+  grunt.loadNpmTasks("grunt-bower-install-simple")
   grunt.loadNpmTasks("grunt-contrib-copy")
   grunt.loadNpmTasks("grunt-contrib-requirejs")
   grunt.loadNpmTasks("grunt-contrib-sass")
