@@ -29,13 +29,14 @@ Install npm and Sass with your package-manager. On Debian-like systems run:
 
     sudo apt-get install npm ruby-sass
 
+or if you have bundler you can install ruby-sass simply via `bundle install`
+
 Execute these commands on your server as a normal user to prepare the dependencies:
 
     git clone https://github.com/tcatm/meshviewer.git
     cd meshviewer
     npm install
-    npm install bower grunt-cli
-    node_modules/.bin/bower install
+    npm install grunt-cli
 
 # Building
 
