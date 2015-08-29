@@ -4,5 +4,4 @@ before_install:
   - npm install -g grunt-cli
 install:
   - npm install
-  - cp config.js.example config.js
 script: grunt
