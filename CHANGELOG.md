@@ -1,5 +1,22 @@
 # Change Log
 
+## v4
+
+- add a legend (map)
+- new graph theme
+- performance improvements in graph view
+- various UI changes
+- various map fixes
+- moved config from config.js to config.json
+- online/offline statistics
+- define layers for map in config
+- graph: zoom by keyboard (+ and - keys)
+- direct links to graph and map views
+
+### Bugfixes
+
+- map works with little or no nodes
+
 ## v3
 
 ### Implemented enhancements:
