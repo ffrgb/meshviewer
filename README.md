@@ -74,7 +74,7 @@ Setting this to `false` will hide contact information for nodes.
 ## maxAge (integer)
 
 Nodes being online for less than maxAge days are considered "new". Likewise,
-nodes being offline for less than than maxAge days are considered "lost".
+nodes being offline for more than than maxAge days are considered "lost".
 
 ## mapLayers (List)
 
