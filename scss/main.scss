@@ -236,6 +236,14 @@ table {
   font-weight: bold;
 }
 
+.sidebar table th:first-child,
+.sidebar table td:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60%;
+}
+
 .sidebarhandle {
   position: fixed;
   left: $sidebarwidth + 2 * $buttondistance;
@@ -283,6 +291,7 @@ table {
 
 .sidebar table {
   width: 100%;
+  table-layout: fixed;
 }
 
 .sidebar table th {
