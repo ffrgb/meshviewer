@@ -1,5 +1,5 @@
 {
-  "name": "meshviewer",
+  "name": "HopGlass",
   "ignore": [
     "node_modules",
     "bower_components",
@@ -28,8 +28,9 @@
     "jshashes": "~1.0.5"
   },
   "authors": [
+    "Milan Pässler <me@petabyteboy.de>",
     "Nils Schneider <nils@nilsschneider.net>"
   ],
-  "license": "GPL3",
+  "license": "AGPL3",
   "private": true
 }
