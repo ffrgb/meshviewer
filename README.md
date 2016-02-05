@@ -46,9 +46,9 @@ This will generate `build/` containing all required files.
 
 Copy `config.json.example` to `build/config.json` and change it to match your community.
 
-## dataPath (string)
+## dataPath (string/array)
 
-`dataPath` must point to the address of a [HopGlass Server](https://github.com/plumpudding/hopglass-server). 
+`dataPath` can be either a string containing the address of a [HopGlass Server](https://github.com/plumpudding/hopglass-server) or an array containing multiple addresses.
 Don't forget the trailing slash!
 Also, proxying the data through a webserver will allow GZip and thus will greatly reduce bandwidth consumption.
 It may help with firewall problems too.
