@@ -237,8 +237,8 @@ table {
   font-weight: bold;
 }
 
-.sidebar table th:first-child,
-.sidebar table td:first-child {
+.sidebar table th:nth-child(2),
+.sidebar table td:nth-child(2) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -247,10 +247,7 @@ table {
 
 .sidebar table th:first-child,
 .sidebar table td:first-child {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 60%;
+  width: 1.5em;
 }
 
 .sidebarhandle {
@@ -307,7 +304,7 @@ table {
   text-align: left;
 }
 
-.sidebar td:not(:first-child), .sidebar th:not(:first-child) {
+.sidebar td:not(:nth-child(-n+2)), .sidebar th:not(:nth-child(-n+2)) {
   text-align: right;
 }
 
