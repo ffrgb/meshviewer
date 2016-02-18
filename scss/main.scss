@@ -237,16 +237,24 @@ table {
   font-weight: bold;
 }
 
-.sidebar table th:nth-child(2),
-.sidebar table td:nth-child(2) {
+.sidebar table:not(.node-links) th:first-child,
+.sidebar table:not(.node-links) td:first-child {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 60%;
+  width: 50%;
 }
 
-.sidebar table th:first-child,
-.sidebar table td:first-child {
+.sidebar table.node-links th:nth-child(2),
+.sidebar table.node-links td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 45%;
+}
+
+.sidebar table.node-links th:first-child,
+.sidebar table.node-links td:first-child {
   width: 1.5em;
 }
 
@@ -304,7 +312,13 @@ table {
   text-align: left;
 }
 
-.sidebar td:not(:nth-child(-n+2)), .sidebar th:not(:nth-child(-n+2)) {
+.sidebar table:not(.node-links) td:not(:first-child),
+.sidebar table:not(.node-links) th:not(:first-child) {
+  text-align: right;
+}
+
+.sidebar table.node-links td:not(:nth-child(-n+2)),
+.sidebar table.node-links th:not(:nth-child(-n+2)) {
   text-align: right;
 }
 
