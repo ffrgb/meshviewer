@@ -27,6 +27,12 @@ Install npm and Sass with your package-manager. On Debian-like systems run:
 
 or if you have bundler you can install ruby-sass simply via `bundle install`
 
+On Mac you have to install only npm via brew and sass
+
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install node
+    sudo gem install sass
+ 
 Execute these commands on your server as a normal user to prepare the dependencies:
 
     git clone https://github.com/plumpudding/hopglass
