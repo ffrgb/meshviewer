@@ -86,7 +86,7 @@ property and optionally `url` and `config` properties. If no `url` is supplied
 
 ## nodeInfos (array, optional)
 
-This option allows to show client statistics depending on following case-sensitive parameters:
+This option allows to show node statistics depending on following case-sensitive parameters:
 
 - `name` caption of statistics segment in infobox
 - `href` absolute or relative URL to statistics image
@@ -134,6 +134,25 @@ Examples for `globalInfos` using Grafana server rendering:
         "href": "stats/render/render/dashboard-solo/db/global?panelId=1&fullscreen&theme=light&width=600&height=300",
         "thumbnail": "nodes/globalGraph.png",
         "caption": "Bild mit Wochenstatistik"
+      }
+    ]
+
+## linkInfos (array, optional)
+
+This option allows to show link statistics depending on the following case-sensitive parameters:
+
+- `name` caption of statistics segment in infobox
+- `href` absolute or relative URL to statistics image
+- `thumbnail` absolute or relative URL to thumbnail image,
+  can be the same like `href`
+- `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
+
+To insert the source or target node-id in either `href`, `thumbnail` or `caption`
+you can use the case-sensitive template strings `{SOURCE}` and `{TARGET}`.
+
+    "linkInfos": [
+      { "href": "stats/dashboard/db/links?var-source={SOURCE}&var-target={TARGET}",
+        "thumbnail": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE}&var-target={TARGET}"
       }
     ]
 
