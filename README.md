@@ -84,6 +84,22 @@ property and optionally `url` and `config` properties. If no `url` is supplied
 `name` is assumed to name a
 [Leaflet-provider](http://leaflet-extras.github.io/leaflet-providers/preview/).
 
+## fixedCenter (array, optional)
+
+This option allows to fix the map at one specific coordinate depending on following case-sensitive parameters:
+
+- `lat` latitude of the center point
+- `lng` longitude of the center point
+- `radius` visible radius around the center in km
+
+Examples for `fixedCenter`:
+
+    "fixedCenter": {
+      "lat": 50.80,
+      "lng": 12.07,
+      "radius": 30
+    }
+
 ## nodeInfos (array, optional)
 
 This option allows to show node statistics depending on following case-sensitive parameters:
