@@ -26,6 +26,7 @@
       "node": true
     },
     "globals": {
+      "showStat": false,
       "attributeEntry": false,
       "dictGet": false,
       "getJSON": false,
