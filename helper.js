@@ -73,6 +73,13 @@ function localStorageTest() {
   }
 }
 
+function listReplace(s, subst) {
+  for (key in subst) {
+    s = s.replace(key, subst[key])
+  }
+  return s
+}
+
 /* Helpers working with nodes */
 
 function offline(d) {
@@ -138,3 +145,77 @@ function attributeEntry(el, label, value) {
 
   return td
 }
+
+function createIframe(opt, width, height) {
+  el = document.createElement("iframe")
+  width = typeof width !== 'undefined' ? width : '525px';
+  height = typeof height !== 'undefined' ? width : '350px';
+
+  if (opt.src)
+    el.src = opt.src
+  else
+    el.src = opt
+
+  if (opt.frameBorder)
+    el.frameBorder = opt.frameBorder
+  else
+    el.frameBorder = 1
+
+  if (opt.width)
+    el.width = opt.width
+  else
+    el.width = width
+
+  if (opt.height)
+    el.height = opt.height
+  else
+    el.height = height
+
+  el.scrolling = "no"
+  el.seamless = "seamless"
+
+  return el
+}
+
+function showStat(o, subst) {
+  var content, caption
+  subst = typeof subst !== 'undefined' ? subst : {};
+
+  if (o.thumbnail) {
+    content = document.createElement("img")
+    content.src = listReplace(o.thumbnail, subst)
+  }
+
+  if (o.caption) {
+    caption = listReplace(o.caption, subst)
+
+    if (!content)
+    content = document.createTextNode(caption)
+  }
+
+  if (o.iframe) {
+    content = createIframe(o.iframe)
+    if (o.iframe.src)
+    content.src = listReplace(o.iframe.src, subst)
+    else
+    content.src = listReplace(o.iframe, subst)
+  }
+
+  var p = document.createElement("p")
+
+  if (o.href) {
+    var link = document.createElement("a")
+    link.target = "_blank"
+    link.href = listReplace(o.href, subst)
+    link.appendChild(content)
+
+    if (caption && o.thumbnail)
+    link.title = caption
+
+    p.appendChild(link)
+  } else
+    p.appendChild(content)
+
+  return p
+}
+
