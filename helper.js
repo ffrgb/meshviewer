@@ -75,7 +75,8 @@ function localStorageTest() {
 
 function listReplace(s, subst) {
   for (key in subst) {
-    s = s.replace(key, subst[key])
+    var re = new RegExp(key, 'g');
+    s = s.replace(re, subst[key])
   }
   return s
 }
