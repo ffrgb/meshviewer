@@ -150,7 +150,7 @@ function attributeEntry(el, label, value) {
 function createIframe(opt, width, height) {
   el = document.createElement("iframe")
   width = typeof width !== 'undefined' ? width : '525px';
-  height = typeof height !== 'undefined' ? width : '350px';
+  height = typeof height !== 'undefined' ? height : '350px';
 
   if (opt.src)
     el.src = opt.src
@@ -195,7 +195,7 @@ function showStat(o, subst) {
   }
 
   if (o.iframe) {
-    content = createIframe(o.iframe)
+    content = createIframe(o.iframe, o.width, o.height)
     if (o.iframe.src)
     content.src = listReplace(o.iframe.src, subst)
     else
