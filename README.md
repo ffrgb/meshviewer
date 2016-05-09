@@ -119,12 +119,12 @@ Examples for `nodeInfos`:
 
       { "name": "Clientstatistik",
         "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}"
+        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}",
         "caption": "Knoten {NODE_ID}"
       },
       { "name": "Uptime",
         "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}"
+        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}",
         "caption": "Knoten {NODE_ID}"
       }
     ]
