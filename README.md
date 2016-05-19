@@ -21,18 +21,16 @@ HopGlass is a frontend for the [HopGlass Server](https://github.com/plumpudding/
 
 # Installing dependencies
 
-Install npm and Sass with your package-manager. On Debian-like systems run:
+Install npm package-manager. On Debian-like systems run:
 
-    sudo apt-get install npm ruby-sass
-
-or if you have bundler you can install ruby-sass simply via `bundle install`
+    sudo apt-get install npm
 
 On Mac you have to install only npm via brew and sass
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install node
     sudo gem install sass
- 
+
 Execute these commands on your server as a normal user to prepare the dependencies:
 
     git clone https://github.com/plumpudding/hopglass

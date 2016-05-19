@@ -56,13 +56,27 @@ module.exports = function(grunt) {
       }
     },
     sass: {
+      options: {
+        sourceMap: true,
+        outputStyle: "compressed"
+      },
       dist: {
-        options: {
-          style: "compressed"
-        },
         files: {
           "build/style.css": "scss/main.scss"
         }
+      }
+    },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require("autoprefixer")({
+            browsers: ["last 2 versions"]
+          })
+        ]
+      },
+      dist: {
+        src: "build/style.css"
       }
     },
     cssmin: {
@@ -106,5 +120,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-bower-install-simple")
   grunt.loadNpmTasks("grunt-contrib-copy")
   grunt.loadNpmTasks("grunt-contrib-requirejs")
-  grunt.loadNpmTasks("grunt-contrib-sass")
+  grunt.loadNpmTasks("grunt-sass")
+  grunt.loadNpmTasks("grunt-postcss")
 }
