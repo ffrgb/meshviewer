@@ -2,15 +2,15 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 0.83em;
   font-weight: bold;
   padding: 0 6pt 6pt !important;
 
-  li  {
+  li {
     border-radius: 20pt;
     display: flex;
-    padding: 0pt 0 0pt 8pt;
+    padding: 0 0 0 8pt;
     margin: 3pt;
     align-items: center;
     background: #009ee0;

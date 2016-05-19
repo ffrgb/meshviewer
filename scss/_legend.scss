@@ -1,28 +1,23 @@
-.legend .symbol
-{
-	width: 1em;
-	height: 1em;
-	border-radius: 50%;
-	display: inline-block;
-	vertical-align: -5%;
+.legend .symbol {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: -5%;
 }
 
-.legend-new .symbol
-{
-	background-color: #93E929;
+.legend-new .symbol {
+  background-color: #93E929;
 }
 
-.legend-online .symbol
-{
-	background-color: #1566A9;
+.legend-online .symbol {
+  background-color: #1566A9;
 }
 
-.legend-offline .symbol
-{
-	background-color: #D43E2A;
+.legend-offline .symbol {
+  background-color: #D43E2A;
 }
 
-.legend-online, .legend-offline
-{
-	margin-left: 1em;
+.legend-online, .legend-offline {
+  margin-left: 1em;
 }
