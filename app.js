@@ -8,7 +8,7 @@ require.config({
     "moment": "../bower_components/moment/min/moment.min",
     "moment.de": "../bower_components/moment/locale/de",
     "tablesort": "../bower_components/tablesort/tablesort.min",
-    "tablesort.numeric": "../bower_components/tablesort/src/sorts/tablesort.numeric",
+    "tablesort.number": "../bower_components/tablesort/src/sorts/tablesort.number",
     "d3": "../bower_components/d3/d3.min",
     "numeral": "../bower_components/numeraljs/min/numeral.min",
     "numeral-intl": "../bower_components/numeraljs/min/languages.min",
@@ -28,7 +28,7 @@ require.config({
       deps: ["numeral"],
       exports: "numeral"
     },
-    "tablesort.numeric": ["tablesort"],
+    "tablesort.number": ["tablesort"],
     "helper": ["numeral-intl"]
   }
 });
