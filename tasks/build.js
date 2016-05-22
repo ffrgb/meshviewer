@@ -19,7 +19,8 @@ module.exports = function (grunt) {
         dest: "build/"
       },
       vendorjs: {
-        src: ["es6-shim/es6-shim.min.js"],
+        src: ["es6-shim/es6-shim.min.js",
+          "es6-shim/es6-shim.map"],
         expand: true,
         cwd: "bower_components/",
         dest: "build/vendor/"
