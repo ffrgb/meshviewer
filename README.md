@@ -1,23 +1,27 @@
-[![Build Status](https://travis-ci.org/plumpudding/hopglass.svg?branch=master)](https://travis-ci.org/plumpudding/hopglass)
+[![Build Status](https://travis-ci.org/ffrgb/meshviewer.svg?branch=master)](https://travis-ci.org/ffrgb/meshviewer)
 
-# HopGlass
+### Main differences to https://github.com/ffnord/meshviewer
+#### Some features are maybe merged
 
-HopGlass is a frontend for the [HopGlass Server](https://github.com/plumpudding/hopglass-server).
+- Formatted Code
+- Grunt inline for some css and js - less requests
+- Icon font with only needed icons
+- Upgrade to grunt v1.x (NodeJS 6.2+ compatible)
+  - Inline some css and js
+- Bower update all components
+  - Load only german locale from 101 languages from moment.js
+- Right click open layermenu
+- Remove ruby dependency
 
 # Screenshots
 
-![](doc/mapview.png?raw=true)
-![](doc/graphview.png?raw=true)
-![](doc/allnodes.png?raw=true)
-![](doc/links.png?raw=true)
-![](doc/statistics.png?raw=true)
+> TODO new uptodate images
 
 # Dependencies
 
 - npm
 - bower
 - grunt-cli
-- Sass (>= 3.2)
 
 # Installing dependencies
 
@@ -25,22 +29,16 @@ Install npm package-manager. On Debian-like systems run:
 
     sudo apt-get install npm
 
-On Mac you have to install only npm via brew and sass
-
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install node
-    sudo gem install sass
-
 Execute these commands on your server as a normal user to prepare the dependencies:
 
-    git clone https://github.com/plumpudding/hopglass
-    cd hopglass
+    git clone https://github.com/ffrgb/meshviewer.git
+    cd meshviewer
     npm install
     npm install grunt-cli
 
 # Building
 
-Just run the following command from the hopglass directory:
+Just run the following command from the meshviewer directory:
 
     node_modules/.bin/grunt
 
@@ -52,7 +50,7 @@ Copy `config.json.example` to `build/config.json` and change it to match your co
 
 ## dataPath (string/array)
 
-`dataPath` can be either a string containing the address of a [HopGlass Server](https://github.com/plumpudding/hopglass-server) or an array containing multiple addresses.
+`dataPath` can be either a string containing the address of a Nodes.json v2 compatible backend (e.g. ffmap backend) or an array containing multiple addresses.
 Don't forget the trailing slash!
 Also, proxying the data through a webserver will allow GZip and thus will greatly reduce bandwidth consumption.
 It may help with firewall problems too.
