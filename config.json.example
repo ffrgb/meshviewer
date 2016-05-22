@@ -13,9 +13,21 @@
     }
   ],
   "siteNames": [
-    { "site": "ffhl", "name": "Lübeck" },
-    { "site": "ffeh", "name": "Entenhausen" },
-    { "site": "ffgt", "name": "Gothamcity" },
-    { "site": "ffal", "name": "Atlantis" }
+    {
+      "site": "ffhl",
+      "name": "Lübeck"
+    },
+    {
+      "site": "ffeh",
+      "name": "Entenhausen"
+    },
+    {
+      "site": "ffgt",
+      "name": "Gothamcity"
+    },
+    {
+      "site": "ffal",
+      "name": "Atlantis"
+    }
   ]
 }

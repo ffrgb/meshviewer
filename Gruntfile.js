@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask("saveRevision", function() {
+  grunt.registerTask("saveRevision", function () {
     grunt.event.once("git-describe", function (rev) {
       grunt.option("gitRevision", rev);
     });

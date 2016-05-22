@@ -14,7 +14,6 @@ module.exports = function (grunt) {
     eslint: {
       options: {
         rules: {
-          "curly": [2, "multi"],
           "strict": [2, "never"],
           "no-multi-spaces": 0,
           "no-new": 0,

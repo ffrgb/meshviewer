@@ -1,9 +1,9 @@
 function get(url) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     var req = new XMLHttpRequest();
     req.open('GET', url);
 
-    req.onload = function() {
+    req.onload = function () {
       if (req.status == 200) {
         resolve(req.response);
       }
@@ -12,7 +12,7 @@ function get(url) {
       }
     };
 
-    req.onerror = function() {
+    req.onerror = function () {
       reject(Error("Network Error"));
     };
 
@@ -25,19 +25,19 @@ function getJSON(url) {
 }
 
 function sortByKey(key, d) {
-  return d.slice().sort( function (a, b) {
+  return d.slice().sort(function (a, b) {
     return a[key] - b[key]
   }).reverse()
 }
 
 function limit(key, m, d) {
-  return d.filter( function (d) {
+  return d.filter(function (d) {
     return d[key].isAfter(m)
   })
 }
 
 function sum(a) {
-  return a.reduce( function (a, b) {
+  return a.reduce(function (a, b) {
     return a + b
   }, 0)
 }
@@ -53,11 +53,13 @@ function trueDefault(d) {
 function dictGet(dict, key) {
   var k = key.shift();
 
-  if (!(k in dict))
+  if (!(k in dict)) {
     return null;
+    }
 
-  if (key.length == 0)
+  if (key.length == 0) {
     return dict[k];
+    }
 
   return dictGet(dict[k], key)
 }
@@ -68,7 +70,7 @@ function localStorageTest() {
     localStorage.setItem(test, test);
     localStorage.removeItem(test);
     return true
-  } catch(e) {
+  } catch (e) {
     return false
   }
 }
@@ -93,18 +95,18 @@ function online(d) {
 
 function has_location(d) {
   return "location" in d.nodeinfo &&
-         Math.abs(d.nodeinfo.location.latitude) < 90 &&
-         Math.abs(d.nodeinfo.location.longitude) < 180
+    Math.abs(d.nodeinfo.location.latitude) < 90 &&
+    Math.abs(d.nodeinfo.location.longitude) < 180
 }
 
 function subtract(a, b) {
   var ids = {};
 
-  b.forEach( function (d) {
+  b.forEach(function (d) {
     ids[d.nodeinfo.node_id] = true
   });
 
-  return a.filter( function (d) {
+  return a.filter(function (d) {
     return !(d.nodeinfo.node_id in ids)
   })
 }
@@ -112,21 +114,23 @@ function subtract(a, b) {
 /* Helpers working with links */
 
 function showDistance(d) {
-  if (isNaN(d.distance))
+  if (isNaN(d.distance)) {
     return;
+    }
 
   return numeral(d.distance).format("0,0") + " m"
 }
 
 function showTq(d) {
-  return numeral(1/d.tq).format("0%")
+  return numeral(1 / d.tq).format("0%")
 }
 
 /* Infobox stuff (XXX: move to module) */
 
 function attributeEntry(el, label, value) {
-  if (value === null || value == undefined)
+  if (value === null || value == undefined) {
     return;
+    }
 
   var tr = document.createElement("tr");
   var th = document.createElement("th");
@@ -135,10 +139,11 @@ function attributeEntry(el, label, value) {
 
   var td = document.createElement("td");
 
-  if (typeof value == "function")
+  if (typeof value == "function") {
     value(td);
-  else
+  } else {
     td.appendChild(document.createTextNode(value));
+    }
 
   tr.appendChild(td);
 
@@ -152,25 +157,29 @@ function createIframe(opt, width, height) {
   width = typeof width !== 'undefined' ? width : '525px';
   height = typeof height !== 'undefined' ? height : '350px';
 
-  if (opt.src)
+  if (opt.src) {
     el.src = opt.src;
-  else
+  } else {
     el.src = opt;
+    }
 
-  if (opt.frameBorder)
+  if (opt.frameBorder) {
     el.frameBorder = opt.frameBorder;
-  else
+  } else {
     el.frameBorder = 1;
+    }
 
-  if (opt.width)
+  if (opt.width) {
     el.width = opt.width;
-  else
+  } else {
     el.width = width;
+    }
 
-  if (opt.height)
+  if (opt.height) {
     el.height = opt.height;
-  else
+  } else {
     el.height = height;
+    }
 
   el.scrolling = "no";
   el.seamless = "seamless";
@@ -190,16 +199,18 @@ function showStat(o, subst) {
   if (o.caption) {
     caption = listReplace(o.caption, subst);
 
-    if (!content)
-    content = document.createTextNode(caption)
+    if (!content) {
+      content = document.createTextNode(caption)
+      }
   }
 
   if (o.iframe) {
     content = createIframe(o.iframe, o.width, o.height);
-    if (o.iframe.src)
-    content.src = listReplace(o.iframe.src, subst);
-    else
-    content.src = listReplace(o.iframe, subst)
+    if (o.iframe.src) {
+      content.src = listReplace(o.iframe.src, subst);
+    } else {
+      content.src = listReplace(o.iframe, subst)
+      }
   }
 
   var p = document.createElement("p");
@@ -210,12 +221,14 @@ function showStat(o, subst) {
     link.href = listReplace(o.href, subst);
     link.appendChild(content);
 
-    if (caption && o.thumbnail)
-    link.title = caption;
+    if (caption && o.thumbnail) {
+      link.title = caption;
+    }
 
     p.appendChild(link)
-  } else
-    p.appendChild(content);
+  } else {
+        p.appendChild(content);
+    }
 
   return p
 }
