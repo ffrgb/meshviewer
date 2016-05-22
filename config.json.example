@@ -6,10 +6,11 @@
   "maxAge": 14,
   "mapLayers": [
     {
-      "name": "OpenStreetMap.HOT"
+      "name": "OpenStreetMap.HOT",
+      "url": "//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
     },
     {
-      "name": "Stamen.TonerLite"
+      "name": "Esri.WorldImagery"
     }
   ],
   "siteNames": [
