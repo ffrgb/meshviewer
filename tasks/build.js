@@ -3,11 +3,6 @@ module.exports = function (grunt) {
     bowerdir: "bower_components",
     copy: {
       html: {
-        options: {
-          process: function (content) {
-            return content.replace("#revision#", grunt.option("gitRevision"));
-          }
-        },
         src: ["*.html"],
         expand: true,
         cwd: "html/",
