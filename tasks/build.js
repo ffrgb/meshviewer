@@ -85,6 +85,16 @@ module.exports = function (grunt) {
         }
       }
     },
+    inline: {
+      dist: {
+        options: {
+          cssmin: true,
+          uglify: true
+        },
+        src: "build/index.html",
+        dest: "build/index.html"
+      }
+    },
     "bower-install-simple": {
       options: {
         directory: "<%=bowerdir%>",
@@ -118,4 +128,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-requirejs");
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-postcss");
+  grunt.loadNpmTasks("grunt-inline");
 };
