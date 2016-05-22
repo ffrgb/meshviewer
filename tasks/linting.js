@@ -14,7 +14,6 @@ module.exports = function (grunt) {
     eslint: {
       options: {
         rules: {
-          "semi": [2, "never"],
           "curly": [2, "multi"],
           "strict": [2, "never"],
           "no-multi-spaces": 0,
@@ -31,8 +30,8 @@ module.exports = function (grunt) {
         src: ["Gruntfile.js", "tasks/*.js"]
       }
     }
-  })
+  });
 
-  grunt.loadNpmTasks("grunt-check-dependencies")
-  grunt.loadNpmTasks("grunt-eslint")
-}
+  grunt.loadNpmTasks("grunt-check-dependencies");
+  grunt.loadNpmTasks("grunt-eslint");
+};

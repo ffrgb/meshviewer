@@ -24,8 +24,8 @@ module.exports = function (grunt) {
         tasks: []
       }
     }
-  })
+  });
 
-  grunt.loadNpmTasks("grunt-contrib-connect")
-  grunt.loadNpmTasks("grunt-contrib-watch")
-}
+  grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+};

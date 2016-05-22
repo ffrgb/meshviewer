@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     clean: {
       build: ["build/**/*", "node_modules/grunt-newer/.cache"]
     }
-  })
+  });
 
-  grunt.loadNpmTasks("grunt-contrib-clean")
-}
+  grunt.loadNpmTasks("grunt-contrib-clean");
+};

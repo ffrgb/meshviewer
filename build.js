@@ -6,4 +6,4 @@
     wrap: true,
     optimize: "uglify",
     out: "app-combined.js"
-})
+});

@@ -5,7 +5,7 @@ module.exports = function(grunt) {
       html: {
         options: {
           process: function (content) {
-            return content.replace("#revision#", grunt.option("gitRevision"))
+            return content.replace("#revision#", grunt.option("gitRevision"));
           }
         },
         src: ["*.html"],
@@ -115,11 +115,11 @@ module.exports = function(grunt) {
         }
       }
     }
-  })
+  });
 
-  grunt.loadNpmTasks("grunt-bower-install-simple")
-  grunt.loadNpmTasks("grunt-contrib-copy")
-  grunt.loadNpmTasks("grunt-contrib-requirejs")
-  grunt.loadNpmTasks("grunt-sass")
-  grunt.loadNpmTasks("grunt-postcss")
-}
+  grunt.loadNpmTasks("grunt-bower-install-simple");
+  grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-contrib-requirejs");
+  grunt.loadNpmTasks("grunt-sass");
+  grunt.loadNpmTasks("grunt-postcss");
+};

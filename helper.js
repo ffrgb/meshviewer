@@ -51,22 +51,22 @@ function trueDefault(d) {
 }
 
 function dictGet(dict, key) {
-  var k = key.shift()
+  var k = key.shift();
 
   if (!(k in dict))
-    return null
+    return null;
 
   if (key.length == 0)
-    return dict[k]
+    return dict[k];
 
   return dictGet(dict[k], key)
 }
 
 function localStorageTest() {
-  var test = 'test'
+  var test = 'test';
   try {
-    localStorage.setItem(test, test)
-    localStorage.removeItem(test)
+    localStorage.setItem(test, test);
+    localStorage.removeItem(test);
     return true
   } catch(e) {
     return false
@@ -98,11 +98,11 @@ function has_location(d) {
 }
 
 function subtract(a, b) {
-  var ids = {}
+  var ids = {};
 
   b.forEach( function (d) {
     ids[d.nodeinfo.node_id] = true
-  })
+  });
 
   return a.filter( function (d) {
     return !(d.nodeinfo.node_id in ids)
@@ -113,7 +113,7 @@ function subtract(a, b) {
 
 function showDistance(d) {
   if (isNaN(d.distance))
-    return
+    return;
 
   return numeral(d.distance).format("0,0") + " m"
 }
@@ -126,96 +126,96 @@ function showTq(d) {
 
 function attributeEntry(el, label, value) {
   if (value === null || value == undefined)
-    return
+    return;
 
-  var tr = document.createElement("tr")
-  var th = document.createElement("th")
-  th.textContent = label
-  tr.appendChild(th)
+  var tr = document.createElement("tr");
+  var th = document.createElement("th");
+  th.textContent = label;
+  tr.appendChild(th);
 
-  var td = document.createElement("td")
+  var td = document.createElement("td");
 
   if (typeof value == "function")
-    value(td)
+    value(td);
   else
-    td.appendChild(document.createTextNode(value))
+    td.appendChild(document.createTextNode(value));
 
-  tr.appendChild(td)
+  tr.appendChild(td);
 
-  el.appendChild(tr)
+  el.appendChild(tr);
 
   return td
 }
 
 function createIframe(opt, width, height) {
-  el = document.createElement("iframe")
+  el = document.createElement("iframe");
   width = typeof width !== 'undefined' ? width : '525px';
   height = typeof height !== 'undefined' ? height : '350px';
 
   if (opt.src)
-    el.src = opt.src
+    el.src = opt.src;
   else
-    el.src = opt
+    el.src = opt;
 
   if (opt.frameBorder)
-    el.frameBorder = opt.frameBorder
+    el.frameBorder = opt.frameBorder;
   else
-    el.frameBorder = 1
+    el.frameBorder = 1;
 
   if (opt.width)
-    el.width = opt.width
+    el.width = opt.width;
   else
-    el.width = width
+    el.width = width;
 
   if (opt.height)
-    el.height = opt.height
+    el.height = opt.height;
   else
-    el.height = height
+    el.height = height;
 
-  el.scrolling = "no"
-  el.seamless = "seamless"
+  el.scrolling = "no";
+  el.seamless = "seamless";
 
   return el
 }
 
 function showStat(o, subst) {
-  var content, caption
+  var content, caption;
   subst = typeof subst !== 'undefined' ? subst : {};
 
   if (o.thumbnail) {
-    content = document.createElement("img")
+    content = document.createElement("img");
     content.src = listReplace(o.thumbnail, subst)
   }
 
   if (o.caption) {
-    caption = listReplace(o.caption, subst)
+    caption = listReplace(o.caption, subst);
 
     if (!content)
     content = document.createTextNode(caption)
   }
 
   if (o.iframe) {
-    content = createIframe(o.iframe, o.width, o.height)
+    content = createIframe(o.iframe, o.width, o.height);
     if (o.iframe.src)
-    content.src = listReplace(o.iframe.src, subst)
+    content.src = listReplace(o.iframe.src, subst);
     else
     content.src = listReplace(o.iframe, subst)
   }
 
-  var p = document.createElement("p")
+  var p = document.createElement("p");
 
   if (o.href) {
-    var link = document.createElement("a")
-    link.target = "_blank"
-    link.href = listReplace(o.href, subst)
-    link.appendChild(content)
+    var link = document.createElement("a");
+    link.target = "_blank";
+    link.href = listReplace(o.href, subst);
+    link.appendChild(content);
 
     if (caption && o.thumbnail)
-    link.title = caption
+    link.title = caption;
 
     p.appendChild(link)
   } else
-    p.appendChild(content)
+    p.appendChild(content);
 
   return p
 }

@@ -29,8 +29,8 @@ require.config({
     "tablesort.numeric": ["tablesort"],
     "helper": ["numeral-intl"]
   }
-})
+});
 
 require(["main", "helper"], function (main) {
-  getJSON("config.json").then(main)
-})
+  getJSON("config.json").then(main);
+});
