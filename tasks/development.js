@@ -3,7 +3,12 @@ module.exports = function (grunt) {
     connect: {
       server: {
         options: {
-          base: "build/", //TODO: once grunt-contrib-connect 0.9 is released, set index file
+          base: {
+            path: 'build',
+            options: {
+              index: 'index.html'
+            }
+          },
           livereload: true
         }
       }
