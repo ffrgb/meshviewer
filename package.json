@@ -1,5 +1,5 @@
 {
-  "name": "hopglass",
+  "name": "ffrgb/meshviewer",
   "scripts": {
     "test": "node -e \"require('grunt').cli()\" '' clean lint"
   },
