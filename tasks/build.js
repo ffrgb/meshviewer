@@ -109,15 +109,25 @@ module.exports = function (grunt) {
       }
     },
     requirejs: {
-      compile: {
+      default: {
         options: {
           baseUrl: "lib",
           name: "../bower_components/almond/almond",
           mainConfigFile: "app.js",
           include: "../app",
-          wrap: true,
-          optimize: "uglify",
-          out: "build/app.js"
+          out: "build/app.js",
+          build: false
+        }
+      },
+      dev: {
+        options: {
+          baseUrl: "lib",
+          name: "../bower_components/almond/almond",
+          mainConfigFile: "app.js",
+          include: "../app",
+          optimize: "none",
+          out: "build/app.js",
+          build: false
         }
       }
     }

@@ -44,6 +44,10 @@ Just run the following command from the meshviewer directory:
 
 This will generate `build/` containing all required files.
 
+## Development
+
+Use `grunt serve` for development.
+
 # Configure
 
 Copy `config.json.example` to `build/config.json` and change it to match your community.

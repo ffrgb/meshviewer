@@ -19,7 +19,7 @@ module.exports = function (grunt) {
           livereload: true
         },
         files: ["*.css", "app.js", "lib/**/*.js", "*.html"],
-        tasks: ["default"]
+        tasks: ["dev"]
       },
       config: {
         options: {
