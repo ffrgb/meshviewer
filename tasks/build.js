@@ -116,7 +116,7 @@ module.exports = function (grunt) {
           mainConfigFile: "app.js",
           include: "../app",
           out: "build/app.js",
-          build: false
+          build: true
         }
       },
       dev: {
