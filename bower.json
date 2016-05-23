@@ -1,5 +1,5 @@
 {
-  "name": "ffrgb/meshviewer",
+  "name": "ffrgb-meshviewer",
   "ignore": [
     "node_modules",
     "bower_components",
