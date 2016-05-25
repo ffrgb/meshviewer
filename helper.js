@@ -118,11 +118,11 @@ function showDistance(d) {
     return;
     }
 
-  return numeral(d.distance).format("0,0") + " m"
+  return d.distance.toFixed(0) + " m"
 }
 
 function showTq(d) {
-  return numeral(1 / d.tq).format("0%")
+  return (1 / d.tq * 100).toFixed(0) + "%"
 }
 
 /* Infobox stuff (XXX: move to module) */

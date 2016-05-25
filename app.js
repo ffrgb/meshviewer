@@ -10,8 +10,6 @@ require.config({
     "tablesort": "../bower_components/tablesort/tablesort.min",
     "tablesort.number": "../bower_components/tablesort/src/sorts/tablesort.number",
     "d3": "../bower_components/d3/d3.min",
-    "numeral": "../bower_components/numeraljs/min/numeral.min",
-    "numeral.de": "../bower_components/numeraljs/min/languages/de.min",
     "virtual-dom": "../bower_components/virtual-dom/dist/virtual-dom",
     "rbush": "../bower_components/rbush/rbush",
     "helper": "../helper",
@@ -24,12 +22,7 @@ require.config({
     "tablesort": {
       exports: "Tablesort"
     },
-    "numeral.de": {
-      deps: ["numeral"],
-      exports: "numeral"
-    },
-    "tablesort.number": ["tablesort"],
-    "helper": ["numeral.de"]
+    "tablesort.number": ["tablesort"]
   }
 });
 

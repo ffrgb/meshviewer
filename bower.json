@@ -18,7 +18,6 @@
     "es6-shim": "~0.35.1",
     "almond": "~0.3.2",
     "d3": "~3.5.17",
-    "numeraljs": "~1.5.3",
     "roboto-fontface": "~0.3.0",
     "virtual-dom": "~2.1.1",
     "leaflet-providers": "~1.1.10",
