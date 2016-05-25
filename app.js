@@ -12,8 +12,7 @@ require.config({
     "d3": "../bower_components/d3/d3.min",
     "virtual-dom": "../bower_components/virtual-dom/dist/virtual-dom",
     "rbush": "../bower_components/rbush/rbush",
-    "helper": "../helper",
-    "jshashes": "../bower_components/jshashes/hashes"
+    "helper": "../helper"
   },
   shim: {
     "leaflet.label": ["leaflet"],

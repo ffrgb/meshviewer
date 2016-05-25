@@ -21,8 +21,7 @@
     "roboto-fontface": "~0.3.0",
     "virtual-dom": "~2.1.1",
     "leaflet-providers": "~1.1.10",
-    "rbush": "https://github.com/mourner/rbush.git#~1.4.3",
-    "jshashes": "~1.0.5"
+    "rbush": "https://github.com/mourner/rbush.git#~1.4.3"
   },
   "authors": [
     "Milan Pässler <me@petabyteboy.de>",
