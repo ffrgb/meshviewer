@@ -7,8 +7,7 @@ require.config({
     "chroma-js": "../bower_components/chroma-js/chroma.min",
     "moment": "../bower_components/moment/min/moment.min",
     "moment.de": "../bower_components/moment/locale/de",
-    "tablesort": "../bower_components/tablesort/tablesort.min",
-    "tablesort.number": "../bower_components/tablesort/src/sorts/tablesort.number",
+    "tablesort": "../bower_components/tablesort/src/tablesort",
     "d3": "../bower_components/d3/d3.min",
     "virtual-dom": "../bower_components/virtual-dom/dist/virtual-dom",
     "rbush": "../bower_components/rbush/rbush",
@@ -20,8 +19,7 @@ require.config({
     "moment.de": ["moment"],
     "tablesort": {
       exports: "Tablesort"
-    },
-    "tablesort.number": ["tablesort"]
+    }
   }
 });
 
