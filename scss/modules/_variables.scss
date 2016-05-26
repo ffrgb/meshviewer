@@ -1,0 +1,22 @@
+$color-white: #fff !default;
+$color-black: #000 !default;
+
+$color-gray-light: darken($color-white, 30%) !default;
+$color-gray-dark: lighten($color-black, 20%) !default;
+
+$color-primary: #dc0067 !default;
+
+$color-new: #459c18 !default;
+$color-online: #1566a9 !default;
+$color-offline: #cf3e2a !default;
+
+$font-family: 'Roboto Slab', serif !default;
+$font-family-secondary: Roboto, sans-serif !default;
+$font-family-icons: ionicons !default;
+$font-family-monospace: monospace !default;
+$font-size: 11pt !default;
+
+$minscreenwidth: 630pt !default;
+$sidebarwidth: 420pt !default;
+$sidebarwidthsmall: 320pt !default;
+$buttondistance: 12pt !default;

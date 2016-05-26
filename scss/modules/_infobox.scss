@@ -1,0 +1,27 @@
+.infobox {
+  .clients {
+    color: $color-online;
+    font-family: $font-family-icons;
+  }
+
+  input, textarea {
+    border: 1px solid $color-gray-light;
+    font-family: $font-family-monospace;
+    font-size: 1.15em;
+    line-height: 1.67em;
+    margin-right: .7em;
+    max-width: 500px;
+    min-height: 42px;
+    padding: 3px 6px;
+    vertical-align: bottom;
+    width: calc(100% - 80px);
+  }
+
+  textarea {
+    font-size: .8em;
+    height: 100px;
+    max-height: 300px;
+    overflow: auto;
+    resize: vertical;
+  }
+}

@@ -1,22 +1,21 @@
 .leaflet-control-layers {
-  box-shadow: none;
-  border-radius: 0;
   background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .leaflet-control-layers-toggle {
   background: none;
+
   &::before {
-    content: "\f229";
+    color: $color-primary;
+    content: '\f229';
     display: inline-block;
-    font-family: "ionicons" !important;
+    font-family: $font-family-icons;
     font-size: 2.3rem;
+    line-height: 1;
     speak: none;
     text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #e32d6d;
   }
 }
 
@@ -25,8 +24,10 @@
 }
 
 .leaflet-control-layers-list {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba($color-white, .9);
+  color: $color-gray-dark;
   padding: 10px;
+
   label {
     cursor: pointer;
   }

@@ -1,10 +1,10 @@
 .graph {
+  background: $color-gray-dark;
   height: 100%;
   width: 100%;
-  background: #2B2B2B;
 
   canvas {
     display: block;
     position: absolute;
   }
-}  
+}

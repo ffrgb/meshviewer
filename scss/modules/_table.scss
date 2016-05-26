@@ -1,0 +1,76 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0 .5em;
+  padding: 0 $buttondistance;
+  width: 100%;
+
+  &.attributes {
+    line-height: 1.41em;
+
+    th {
+      font-weight: bold;
+      padding-right: 1em;
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    td {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
+
+td, th {
+  line-height: 1.41em;
+  text-align: right;
+
+  &:first-child {
+    text-align: left;
+  }
+}
+
+th {
+  font-weight: bold;
+
+  &.sort-header {
+    cursor: pointer;
+
+    &::selection {
+      background: transparent;
+    }
+
+    &::after {
+      content: '\f10d';
+      font-family: $font-family-icons;
+      padding-left: .25em;
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::after {
+        visibility: visible;
+      }
+    }
+  }
+
+  &.sort-up {
+    &::after {
+      content: '\f104';
+    }
+  }
+
+  &.sort-up, &.sort-down {
+    &:after {
+      opacity: .4;
+      visibility: visible;
+    }
+  }
+}
+
+.tab {
+  table {
+    table-layout: fixed;
+  }
+}

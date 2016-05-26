@@ -1,0 +1,56 @@
+body {
+  background: $color-white;
+  color: $color-black;
+  font-family: $font-family;
+  font-size: $font-size;
+  overflow-y: scroll;
+}
+
+header {
+  background: rgba($color-black, .02);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  padding: .67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding: .83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  padding: 1em 0;
+}
+
+h2, h3 {
+  padding-left: $buttondistance;
+  padding-right: $buttondistance;
+}
+
+p, pre, ul, h4 {
+  padding: 0 $buttondistance 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $color-online;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.67em;
+}
+
+strong {
+  font-weight: bold;
+}

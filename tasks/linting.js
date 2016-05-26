@@ -13,6 +13,12 @@ module.exports = function (grunt) {
       },
       npm: {}
     },
+    sasslint: {
+      options: {
+        configFile: '.sass-lint.yml'
+      },
+      target: ['scss/main.scss', 'scss/*/*.scss']
+    },
     eslint: {
       sources: {
         src: ["app.js", "!Gruntfile.js", "lib/**/*.js"]
@@ -24,5 +30,6 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks("grunt-check-dependencies");
+  grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks("grunt-eslint");
 };

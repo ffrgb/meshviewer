@@ -1,0 +1,41 @@
+.content {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+
+  .buttons {
+    direction: rtl;
+    position: absolute;
+    right: $buttondistance;
+    top: $buttondistance;
+    unicode-bidi: bidi-override;
+    z-index: 100;
+
+    button {
+      margin-left: $buttondistance;
+    }
+    @media screen and (max-width: $minscreenwidth) {
+      right: 0;
+      transform: scale(.8);
+    }
+  }
+
+  @media screen and (max-width: $minscreenwidth) {
+    height: 60vh;
+    position: relative;
+    width: auto;
+  }
+}
+
+.stroke-first {
+  paint-order: stroke;
+}
+
+.pick-coordinates {
+  cursor: crosshair;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}

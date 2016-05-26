@@ -1,0 +1,127 @@
+.sidebar {
+  box-sizing: border-box;
+  position: absolute;
+  transition: left .5s;
+  width: $sidebarwidth;
+  z-index: 5;
+
+  &.hidden {
+    left: -$sidebarwidth - $buttondistance;
+
+    .sidebarhandle {
+      left: $buttondistance;
+      transform: scale(-1, 1);
+    }
+    @media screen and (max-width: $minscreenwidth) {
+      width: auto;
+    }
+  }
+
+  .node-list, .node-links {
+    th, td {
+      &:first-child {
+        width: 25px;
+      }
+
+      &:nth-child(2) {
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 50%;
+      }
+    }
+  }
+
+  .node-links {
+    th, td {
+      &:first-child {
+        width: 50px;
+      }
+    }
+  }
+
+  .link-list {
+    th, td {
+      &:nth-child(1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 66%;
+      }
+    }
+  }
+
+  .infobox, .container {
+    @include shadow(2);
+    background: rgba($color-white, .97);
+    min-height: 100vh;
+    overflow-y: visible;
+  }
+
+  .container {
+    &.hidden {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 80em) {
+    @include shadow(2);
+    background: $color-white;
+    font-size: .8em;
+    margin: 0;
+    width: $sidebarwidthsmall;
+
+    .sidebarhandle {
+      left: $sidebarwidthsmall + $buttondistance;
+    }
+
+    .container, .infobox {
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: $minscreenwidth) {
+    height: auto;
+    min-height: 0;
+    position: static;
+    width: auto;
+
+    .sidebarhandle {
+      display: none;
+    }
+
+    .content {
+      height: 60vh;
+      position: relative;
+      width: auto;
+    }
+  }
+}
+
+.sidebarhandle {
+  left: $sidebarwidth + 2 * $buttondistance;
+  position: fixed;
+  top: $buttondistance;
+  transition: left .5s, box-shadow .5s, color .5s, transform .5s;
+  z-index: 10;
+
+  &::after {
+    content: '\f124';
+    padding-right: .125em;
+  }
+}
+
+.online {
+  color: $color-new;
+}
+
+.offline {
+  color: $color-offline;
+}
+
+.unseen {
+  color: #d89100;
+}

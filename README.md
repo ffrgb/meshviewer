@@ -13,6 +13,7 @@
 - Right click open layermenu
 - Remove ruby dependency
 - FixedCenter is required
+- Rewrite Scss, SASS lint and variables for easy customization/adjustments
 
 # Screenshots
 
@@ -52,6 +53,11 @@ Use `grunt serve` for development.
 # Configure
 
 Copy `config.json.example` to `build/config.json` and change it to match your community.
+
+
+## Customize style
+
+Start your development and edit files in `scss/custom/`. Additional information in comments.
 
 ## dataPath (string/array)
 

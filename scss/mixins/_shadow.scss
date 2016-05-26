@@ -1,0 +1,14 @@
+// Original is in LESS and can be found here: https://gist.github.com/gefangenimnetz/3ef3e18364edf105c5af
+@mixin shadow($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0 1px 3px rgba($color-black, .12), 0 1px 2px rgba($color-black, .24);
+  } @else if $level == 2 {
+    box-shadow: 0 3px 6px rgba($color-black, .16), 0 3px 6px rgba($color-black, .23);
+  } @else if $level == 3 {
+    box-shadow: 0 10px 20px rgba($color-black, .19), 0 6px 6px rgba($color-black, .23);
+  } @else if $level == 4 {
+    box-shadow: 0 14px 28px rgba($color-black, .25), 0 10px 10px rgba($color-black, .22);
+  } @else if $level == 5 {
+    box-shadow: 0 19px 38px rgba($color-black, .3), 0 15px 12px rgba($color-black, .22);
+  }
+}

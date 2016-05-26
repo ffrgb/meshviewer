@@ -1,0 +1,10 @@
+// Example of overwriting variables. Take a look at modules/variables
+// .node-links {
+//    color: $color-primary;
+// }
+
+// You can also include additional files for style example https://github.com/ffrgb/meshviewer/tree/ffrgb-config/scss/custom
+// Include syntax: @include "name" -> Filename: _name.scss
+
+// SCSS supports css with a lot of additional features like variables or mixins.
+// Autoprefixer runs in postcss, no need to add browser-prefixes like -webkit, -moz or -ms

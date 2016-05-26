@@ -1,0 +1,40 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: .83em;
+  padding: 0 6pt 6pt;
+
+  li {
+    align-items: center;
+    background: transparent;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    display: flex;
+    margin: 3pt;
+    padding: 0 0 0 8pt;
+
+    label {
+      cursor: pointer;
+    }
+
+    button {
+      background: none;
+      color: $color-gray-light;
+      font-size: 12pt;
+      height: 18pt;
+      margin: 2pt;
+      width: 18pt;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    &.not {
+      label {
+        color: $color-primary;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

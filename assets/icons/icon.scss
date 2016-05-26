@@ -1,0 +1,45 @@
+// Needed for standalone scss
+// @import 'icon-mixin';
+
+@font-face {
+  font-family: 'ionicons';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/icon.woff2') format('woff2'),
+  url('fonts/icon.woff') format('woff'),
+  url('fonts/icon.ttf') format('truetype');
+}
+
+[class^='ion-'], [class*=' ion-'] {
+  &:before {
+    display: inline-block;
+    font-family: $font-family-icons;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    vertical-align: 0;
+  }
+}
+
+@include icon('android-add', '\f2c7');
+@include icon('chevron-left', '\f124');
+@include icon('chevron-right', '\f125');
+@include icon('pin', '\f3a3');
+@include icon('wifi', '\f25c');
+@include icon('eye', '\f133');
+@include icon('ios-arrow-thin-left', '\f3d5');
+@include icon('ios-arrow-thin-right', '\f3d6');
+@include icon('arrow-up-b', '\f10d');
+@include icon('arrow-down-b', '\f104');
+@include icon('android-locate', '\f2e9');
+@include icon('android-close', '\f2d7');
+@include icon('android-lock', '\f392');
+@include icon('ios-copy', '\f41c');
+@include icon('location', '\f456');
+@include icon('android-remove', '\f2f4');
+@include icon('ios-person', '\f47e');
+@include icon('layer', '\f229');

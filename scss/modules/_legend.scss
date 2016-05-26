@@ -1,0 +1,32 @@
+.legend {
+  .symbol {
+    border-radius: 50%;
+    display: inline-block;
+    height: 1em;
+    vertical-align: -5%;
+    width: 1em;
+  }
+}
+
+// Dot looks compared to thin font a bit darker - lighten it 10%
+.legend-new {
+  .symbol {
+    background-color: lighten($color-new, 10%);
+  }
+}
+
+.legend-online {
+  .symbol {
+    background-color: lighten($color-online, 10%);
+  }
+}
+
+.legend-offline {
+  .symbol {
+    background-color: lighten($color-offline, 10%);
+  }
+}
+
+.legend-online, .legend-offline {
+  margin-left: 1em;
+}

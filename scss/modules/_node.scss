@@ -1,0 +1,21 @@
+.bar {
+  background: rgba($color-new, .5);
+  display: block;
+  height: 1.4em;
+  position: relative;
+
+  span {
+    background: rgba($color-new, .8);
+    display: inline-block;
+    height: 1.4em;
+  }
+
+  label {
+    color: $color-white;
+    font-weight: bold;
+    position: absolute;
+    right: .5em;
+    top: .1em;
+    white-space: nowrap;
+  }
+}

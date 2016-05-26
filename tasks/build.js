@@ -39,9 +39,7 @@ module.exports = function (grunt) {
         cwd: "bower_components/roboto-fontface"
       },
       ionicons: {
-        src: ["fonts/*",
-          "hopglass-icons.css"
-        ],
+        src: ["fonts/*"],
         expand: true,
         dest: "build/",
         cwd: "assets/icons/"
@@ -75,16 +73,6 @@ module.exports = function (grunt) {
       },
       dist: {
         src: "build/style.css"
-      }
-    },
-    cssmin: {
-      target: {
-        files: {
-          "build/style.css": ["bower_components/leaflet/dist/leaflet.css",
-            "bower_components/Leaflet.label/dist/leaflet.label.css",
-            "style.css"
-          ]
-        }
       }
     },
     inline: {
