@@ -4,9 +4,9 @@ module.exports = function (grunt) {
       server: {
         options: {
           base: {
-            path: 'build',
+            path: "build",
             options: {
-              index: 'index.html'
+              index: "index.html"
             }
           },
           livereload: true
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         options: {
           livereload: true
         },
-        files: ["*.css", "app.js", "helper.js", "lib/**/*.js", "*.html"],
+        files: ["*.css", "app.js", "lib/**/*.js", "*.html"],
         tasks: ["dev"]
       },
       config: {

@@ -11,7 +11,7 @@ require.config({
     "d3": "../bower_components/d3/d3.min",
     "virtual-dom": "../bower_components/virtual-dom/dist/virtual-dom",
     "rbush": "../bower_components/rbush/rbush",
-    "helper": "../helper"
+    "helper": "utils/helper"
   },
   shim: {
     "leaflet.label": ["leaflet"],
@@ -23,6 +23,6 @@ require.config({
   }
 });
 
-require(["main", "helper"], function (main) {
-  getJSON("config.json").then(main);
+require(["main", "helper"], function (main, helper) {
+  helper.getJSON("config.json").then(main);
 });

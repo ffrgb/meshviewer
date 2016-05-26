@@ -5,6 +5,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
+    "eslint": "^2.10.2",
+    "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-bower-install-simple": "^1.2.3",
     "grunt-check-dependencies": "^0.12.0",
@@ -26,24 +28,6 @@
       "amd": true,
       "es6": true,
       "node": true
-    },
-    "globals": {
-      "showStat": false,
-      "attributeEntry": false,
-      "dictGet": false,
-      "getJSON": false,
-      "has_location": false,
-      "limit": false,
-      "localStorageTest": false,
-      "offline": false,
-      "one": false,
-      "online": false,
-      "showDistance": false,
-      "showTq": false,
-      "sortByKey": false,
-      "subtract": false,
-      "sum": false,
-      "trueDefault": false
     }
   }
 }

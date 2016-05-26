@@ -1,0 +1,8 @@
+---
+"extends":
+  - "defaults/configurations/eslint"
+
+rules:
+  "semi": ["error", "always"]
+  "no-undef": 0
+  "no-console": ["error", { allow: ["warn", "error"] }]
