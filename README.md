@@ -12,6 +12,7 @@
   - Load only german locale from 101 languages from moment.js
 - Right click open layermenu
 - Remove ruby dependency
+- FixedCenter is required
 
 # Screenshots
 
