@@ -1,0 +1,33 @@
+.leaflet-control-layers {
+  box-shadow: none;
+  border-radius: 0;
+  background: none;
+}
+
+.leaflet-control-layers-toggle {
+  background: none;
+  &::before {
+    content: "\f229";
+    display: inline-block;
+    font-family: "ionicons" !important;
+    font-size: 2.3rem;
+    speak: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #e32d6d;
+  }
+}
+
+.leaflet-control-layers-expanded {
+  padding: 0;
+}
+
+.leaflet-control-layers-list {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  label {
+    cursor: pointer;
+  }
+}
