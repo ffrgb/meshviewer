@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+  "use strict";
+
   grunt.config.merge({
     bowerdir: "bower_components",
     copy: {

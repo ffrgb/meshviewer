@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+  "use strict";
+
   grunt.loadTasks("tasks");
 
   grunt.registerTask("default", ["bower-install-simple", "lint", "copy", "sass", "postcss", "requirejs:default", "inline"]);
