@@ -1,5 +1,13 @@
 {
   "name": "ffrgb-meshviewer",
+  "license": "AGPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ffrgb/meshviewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ffrgb/meshviewer/issues"
+  },
   "scripts": {
     "test": "node -e \"require('grunt').cli()\" '' clean lint"
   },
