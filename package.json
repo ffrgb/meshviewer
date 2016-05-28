@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "eslint": "^2.10.2",
+    "eslint": "^2.11.0",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-bower-install-simple": "^1.2.3",
