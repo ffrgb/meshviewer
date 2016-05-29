@@ -10,11 +10,6 @@ module.exports = function (grunt) {
         cwd: "html/",
         dest: "build/"
       },
-      img: {
-        src: ["img/*"],
-        expand: true,
-        dest: "build/"
-      },
       vendorjs: {
         src: ["es6-shim/es6-shim.min.js",
           "es6-shim/es6-shim.map"],
@@ -43,12 +38,6 @@ module.exports = function (grunt) {
         expand: true,
         dest: "build/",
         cwd: "assets/icons/"
-      },
-      leafletImages: {
-        src: ["images/*"],
-        expand: true,
-        dest: "build/",
-        cwd: "bower_components/leaflet/dist/"
       }
     },
     sass: {
