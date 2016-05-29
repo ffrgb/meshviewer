@@ -1,21 +1,30 @@
 .leaflet-control-layers {
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
+  &.leaflet-control {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    opacity: .7;
+  }
 }
 
-.leaflet-control-layers-toggle {
-  background: none;
+.leaflet-control-container {
+  .leaflet-control-layers-toggle {
+    background: none;
+    height: auto;
+    width: auto;
 
-  &::before {
-    color: $color-primary;
-    content: '\f229';
-    display: inline-block;
-    font-family: $font-family-icons;
-    font-size: 2.3rem;
-    line-height: 1;
-    speak: none;
-    text-rendering: auto;
+    &::before {
+      color: $color-primary;
+      content: '\f229';
+      display: inline-block;
+      font-family: $font-family-icons;
+      font-size: 2.3rem;
+      line-height: 1;
+      speak: none;
+      text-rendering: auto;
+    }
   }
 }
 

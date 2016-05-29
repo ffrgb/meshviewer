@@ -15,7 +15,8 @@
       margin-left: $buttondistance;
     }
     @media screen and (max-width: $minscreenwidth) {
-      right: 0;
+      right: -1rem;
+      top: 0;
       transform: scale(.8);
     }
   }
