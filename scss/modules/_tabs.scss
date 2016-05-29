@@ -1,5 +1,10 @@
 .tabs {
-  @include shadow(1);
+  @if $shadows == 1 {
+    @include shadow(1);
+  } @else {
+    border: solid darken($color-white, 10%);
+    border-width: 1px 0;
+  }
   background: rgba($color-black, .02);
   display: flex;
   font-family: $font-family;
