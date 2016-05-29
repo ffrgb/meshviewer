@@ -2,37 +2,42 @@ module.exports = function (grunt) {
   "use strict";
 
   grunt.config.merge({
-    connect: {
-      server: {
+    "browserSync": {
+      dev: {
+        bsFiles: {
+          src: [
+            'build/*.css',
+            'build/*.js',
+            'build/*.html'
+          ]
+        },
         options: {
-          base: {
-            path: "build",
-            options: {
-              index: "index.html"
-            }
-          },
-          livereload: true
+          open: 'local',
+          watchTask: true,
+          injectChanges: true,
+          server: {
+            baseDir: "build",
+            index: "index.html"
+          }
         }
       }
     },
     watch: {
-      sources: {
-        options: {
-          livereload: true
-        },
-        files: ["*.css", "app.js", "lib/**/*.js", "*.html", "scss/**/*.scss"],
-        tasks: ["dev"]
+      html: {
+        files: ["html/index.html"],
+        tasks: ["copy"]
       },
-      config: {
-        options: {
-          reload: true
-        },
-        files: ["Gruntfile.js", "tasks/*.js"],
-        tasks: []
+      sass: {
+        files: ["scss/**/*.scss"],
+        tasks: ["sasslint", "sass"]
+      },
+      js: {
+        files: ["app.js", "lib/**/*.js"],
+        tasks: ["eslint", "requirejs:dev"]
       }
     }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks("grunt-browser-sync");
   grunt.loadNpmTasks("grunt-contrib-watch");
 };
