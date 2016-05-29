@@ -1,7 +1,24 @@
+sudo: false
+
 language: node_js
+
+node_js:
+  - "6"
+  - "5"
+  - "4"
+  - "0.12"
+  - "0.11"
+  - "iojs"
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
 before_install:
-  - gem install sass
   - npm install -g grunt-cli
+
 install:
   - npm install
+
 script: grunt
