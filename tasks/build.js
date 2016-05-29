@@ -120,6 +120,16 @@ module.exports = function (grunt) {
           build: false
         }
       }
+    },
+    cachebreaker: {
+      default: {
+        options: {
+          match: ['app.js']
+        },
+        files: {
+          src: ['build/index.html']
+        }
+      }
     }
   });
 
@@ -129,4 +139,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-inline");
+  grunt.loadNpmTasks("grunt-cache-breaker");
 };
