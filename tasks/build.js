@@ -31,8 +31,8 @@ module.exports = function (grunt) {
         cwd: "bower_components/roboto-slab-fontface"
       },
       roboto: {
-        src: ["fonts/*",
-          "roboto-fontface.css"
+        src: ["fonts/*-Regular.*",
+          "css/roboto-fontface-regular.css"
         ],
         expand: true,
         dest: "build/",
