@@ -10,7 +10,7 @@
   "dependencies": {
     "Leaflet.label": "~0.2.1",
     "chroma-js": "~1.1.1",
-    "leaflet": "~0.7.7",
+    "leaflet": "https://github.com/davojta/Leaflet.git#v0.7.7.1",
     "moment": "~2.13.0",
     "requirejs": "~2.2.0",
     "tablesort": "https://github.com/tristen/tablesort.git#v4.0.1",
