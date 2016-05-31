@@ -5,7 +5,6 @@ require.config({
   paths: {
     "leaflet": "../bower_components/leaflet/dist/leaflet",
     "leaflet.label": "../bower_components/Leaflet.label/dist/leaflet.label",
-    "leaflet.providers": "../bower_components/leaflet-providers/leaflet-providers",
     "chroma-js": "../bower_components/chroma-js/chroma.min",
     "moment": "../bower_components/moment/min/moment.min",
     "moment.de": "../bower_components/moment/locale/de",
@@ -17,7 +16,6 @@ require.config({
   },
   shim: {
     "leaflet.label": ["leaflet"],
-    "leaflet.providers": ["leaflet"],
     "moment.de": ["moment"],
     "tablesort": {
       exports: "Tablesort"

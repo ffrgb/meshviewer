@@ -20,7 +20,6 @@
     "d3": "~3.5.17",
     "roboto-fontface": "~0.4.5",
     "virtual-dom": "~2.1.1",
-    "leaflet-providers": "~1.1.10",
     "rbush": "https://github.com/mourner/rbush.git#~1.4.3"
   },
   "authors": [
