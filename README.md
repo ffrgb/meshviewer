@@ -52,7 +52,7 @@ Use `grunt serve` for development.
 
 # Configure
 
-Copy `config.json.example` to `build/config.json` and change it to match your community.
+Change `config.json`to match your community.
 
 
 ## Customize style

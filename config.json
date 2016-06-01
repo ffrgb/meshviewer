@@ -1,0 +1,77 @@
+{
+  "nodeInfos": [
+    {
+      "name": "Clientstatistik",
+      "href": "https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/",
+      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=1&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light",
+      "caption": "Knoten {NODE_ID} - weiteren Statistiken"
+    },
+    {
+      "name": "Trafficstatistik",
+      "href": "https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/",
+      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=2&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light",
+      "caption": "Knoten {NODE_ID} - weiteren Statistiken"
+    }
+  ],
+  "globalInfos": [
+    {
+      "name": "Statistik",
+      "href": "https://regensburg.freifunk.net/netz/statistik/",
+      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-network-wide-stats?panelId=11&from=now-1y&width=600&height=350&theme=light",
+      "caption": "Jahresstatistik - weiteren Statistiken"
+    }
+  ],
+  "dataPath": "https://regensburg.freifunk.net/data/",
+  "siteName": "Freifunk Regensburg",
+  "mapSigmaScale": 0.5,
+  "showContact": false,
+  "maxAge": 14,
+  "mapLayers": [
+    {
+      "name": "HERE",
+      "url": "https://{s}.base.maps.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?app_id=Q40ik5rnMQOpOQ6RrHCr&app_code=kIPJpCtUZMTiQQJiCemX6Q&lg=deu",
+      "config": {
+        "attribution": "Map &copy; 1987-2014 <a href=\"http://developer.here.com\">HERE</a>",
+        "subdomains": "1234",
+        "maxZoom": 20
+      }
+    },
+    {
+      "name": "OpenStreetMap.HOT",
+      "url": "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+      "config": {
+        "maxZoom": 19,
+        "attribution": "&copy; Openstreetmap France | &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
+      }
+    },
+    {
+      "name": "Esri.WorldImagery",
+      "url": "//server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      "config": {
+        "maxZoom": 20,
+        "attribution": "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+      }
+    },
+    {
+      "name": "HERE.hybridDay",
+      "url": "https://{s}.aerial.maps.api.here.com/maptile/2.1/maptile/newest/{variant}/{z}/{x}/{y}/256/png8?app_id=Q40ik5rnMQOpOQ6RrHCr&app_code=kIPJpCtUZMTiQQJiCemX6Q&lg=deu",
+      "config": {
+        "attribution": "Map &copy; 1987-2014 <a href=\"http://developer.here.com\">HERE</a>",
+        "subdomains": "1234",
+        "variant": "hybrid.day",
+        "maxZoom": 20
+      }
+    }
+  ],
+  "fixedCenter": {
+    "lat": 49.01722,
+    "lng": 12.0969,
+    "radius": 45
+  },
+  "siteNames": [
+    {
+      "site": "ffrgb-bat15",
+      "name": "Regensburg"
+    }
+  ]
+}
