@@ -1,0 +1,23 @@
+.loader {
+  color: $color-primary;
+  font-size: 1.8em;
+  line-height: 2;
+  margin: 30vh auto;
+  text-align: center;
+}
+
+.spinner {
+  animation: .6s spinner ease-in-out infinite alternate;
+  border-bottom: 2px solid $color-primary;
+  border-radius: 50%;
+  display: inline-block;
+  height: 64px;
+  margin-top: 10px;
+  width: 64px;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
