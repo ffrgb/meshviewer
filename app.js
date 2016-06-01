@@ -23,6 +23,6 @@ require.config({
   }
 });
 
-require(["main", "helper"], function (main, helper) {
-  helper.getJSON("config.json").then(main);
+require(["main"], function (main) {
+  main(jsonData);
 });

@@ -17,6 +17,12 @@ module.exports = function (grunt) {
         cwd: "bower_components/",
         dest: "build/vendor/"
       },
+      config: {
+        src: ["config.json"],
+        expand: true,
+        cwd: ".",
+        dest: "build/"
+      },
       robotoSlab: {
         src: ["fonts/*",
           "roboto-slab-fontface.css"
@@ -74,6 +80,14 @@ module.exports = function (grunt) {
         dest: "build/index.html"
       }
     },
+    inlinedata: {
+      injs: {
+        expand: true,
+        cwd: '.',
+        src: ['build/*.html'],
+        ext: '.html'
+      }
+    },
     "bower-install-simple": {
       options: {
         directory: "<%=bowerdir%>",
@@ -128,5 +142,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-inline");
+  grunt.loadNpmTasks('grunt-inline-data');
   grunt.loadNpmTasks("grunt-cache-breaker");
 };
