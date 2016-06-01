@@ -5,7 +5,7 @@
     border: solid darken($color-white, 10%);
     border-width: 1px 0;
   }
-  background: rgba($color-black, .02);
+  background: transparentize($color-black, .98);
   display: flex;
   font-family: $font-family-secondary;
   list-style: none;
@@ -13,7 +13,7 @@
   padding: 0;
 
   li {
-    color: rgba($color-black, .5);
+    color: transparentize($color-black, .5);
     cursor: pointer;
     flex: 1 1 auto;
     padding: 1.3em .5em 1em;

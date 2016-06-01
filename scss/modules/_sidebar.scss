@@ -58,7 +58,7 @@
     } @else {
       border-right: 1px solid darken($color-white, 10%);
     }
-    background: rgba($color-white, .97);
+    background: transparentize($color-white, .03);
     min-height: 100vh;
     overflow-y: visible;
   }

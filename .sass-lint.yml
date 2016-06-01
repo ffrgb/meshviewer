@@ -1,5 +1,4 @@
 rules:
-  no-color-literals: 0
   single-line-per-selector: 0
   # Allow for new prefixes like -webkit-tap-highlight-color or antialiasing
   # Can maybe be enabled again with sass-lint 1.8 https://github.com/sasstools/sass-lint/pull/709

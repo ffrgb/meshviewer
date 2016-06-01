@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background: rgba($color-black, .02);
+  background: transparentize($color-black, .98);
 }
 
 h1, h2, h3, h4, h5, h6 {

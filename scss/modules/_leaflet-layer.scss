@@ -5,7 +5,7 @@
     border-radius: 0;
     box-shadow: none;
     margin: 0;
-    opacity: .7;
+    opacity: .8;
   }
 }
 
@@ -33,7 +33,7 @@
 }
 
 .leaflet-control-layers-list {
-  background: rgba($color-white, .9);
+  background: transparentize($color-white, .1);
   color: $color-gray-dark;
   padding: 10px;
 
