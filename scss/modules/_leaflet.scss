@@ -1,0 +1,19 @@
+.leaflet-label {
+  &.leaflet-label-right {
+    background-color: $color-white;
+    border: 2px solid $color-primary;
+    border-radius: 0;
+    display: block;
+    font-weight: normal;
+    opacity: .8;
+    padding: 1px 6px;
+    position: absolute;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 6;
+
+    &:before {
+      display: none;
+    }
+  }
+}
