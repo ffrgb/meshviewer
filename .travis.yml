@@ -22,3 +22,9 @@ install:
   - npm install
 
 script: grunt
+
+notifications:
+  irc:
+    channels: "irc.hackint.org#freifunkR"
+    nick: ci
+    use_notice: true
