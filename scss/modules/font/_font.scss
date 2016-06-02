@@ -1,0 +1,7 @@
+$font-path: 'fonts';
+
+@if $use-included-font == 1 {
+  @include load-font('Roboto', 'Regular', 400, normal);
+  @include load-font('RobotoSlab', 'Regular', 400, normal, 'Roboto Slab');
+  @include load-font('RobotoSlab', 'Bold', 700, normal, 'Roboto Slab');
+}

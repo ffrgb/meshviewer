@@ -14,7 +14,7 @@
     "moment": "~2.13.0",
     "requirejs": "~2.2.0",
     "tablesort": "https://github.com/tristen/tablesort.git#v4.0.1",
-    "roboto-slab-fontface": "*",
+    "roboto-slab-fontface-kit": "*",
     "es6-shim": "~0.35.1",
     "almond": "~0.3.2",
     "d3": "~3.5.17",

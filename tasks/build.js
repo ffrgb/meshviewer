@@ -24,16 +24,17 @@ module.exports = function (grunt) {
         dest: "build/"
       },
       robotoSlab: {
-        src: ["fonts/*",
-          "roboto-slab-fontface.css"
+        src: ["**/*-Regular.*",
+          "**/*-Bold.*"
         ],
         expand: true,
-        dest: "build/",
-        cwd: "bower_components/roboto-slab-fontface"
+        dest: "build/fonts/",
+        filter: 'isFile',
+        flatten: true,
+        cwd: "bower_components/roboto-slab-fontface-kit/fonts"
       },
       roboto: {
-        src: ["fonts/*-Regular.*",
-          "css/roboto-fontface-regular.css"
+        src: ["fonts/*-Regular.*"
         ],
         expand: true,
         dest: "build/",

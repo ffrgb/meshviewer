@@ -1,13 +1,18 @@
 // Set variables
 @import 'modules/variables';
 @import 'custom/variables';
-// Add modules
-@import 'modules/loader';
+
+// Mixins
 @import 'mixins/shadow';
-@import 'mixins/icon-mixin';
+@import 'mixins/icon';
+@import 'mixins/font';
+
+// Add modules
 @import 'modules/reset';
+@import 'modules/font/font';
 @import 'modules/base';
-@import 'modules/icon';
+@import 'modules/font/icon';
+@import 'modules/loader';
 @import 'leaflet';
 @import 'modules/leaflet';
 @import 'modules/leaflet-layer';
