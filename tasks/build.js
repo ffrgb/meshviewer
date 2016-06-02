@@ -48,11 +48,19 @@ module.exports = function (grunt) {
       }
     },
     sass: {
+      dev: {
       options: {
         sourceMap: true,
-        outputStyle: "compressed"
+        outputStyle: "expanded"
+      },
+        files: {
+          "build/style.css": "scss/main.scss"
+        }
       },
       dist: {
+        options: {
+          outputStyle: "compressed"
+        },
         files: {
           "build/style.css": "scss/main.scss"
         }
@@ -121,7 +129,8 @@ module.exports = function (grunt) {
           include: "../app",
           optimize: "none",
           out: "build/app.js",
-          build: false
+          build: false,
+          generateSourceMaps: true
         }
       }
     },
