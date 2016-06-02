@@ -26,7 +26,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^18.1.0",
     "grunt-inline": "^0.3.6",
-    "grunt-inline-data": "0.0.6",
+    "grunt-inline-data": "git://github.com/xiaokaike/grunt-inline-data.git#2eeb08f",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.2.0",
     "grunt-sass-lint": "^0.2.0"
