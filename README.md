@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ffrgb/meshviewer.svg?branch=master)](https://travis-ci.org/ffrgb/meshviewer)
+[![Build Status](https://travis-ci.org/ffrgb/meshviewer.svg?branch=develop)](https://travis-ci.org/ffrgb/meshviewer)
 
 ### Main differences to https://github.com/ffnord/meshviewer
 #### Some features are maybe merged
