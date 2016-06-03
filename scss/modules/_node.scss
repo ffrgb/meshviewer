@@ -4,6 +4,14 @@
   height: 1.4em;
   position: relative;
 
+  &.warning {
+    background: mix($color-offline, $color-white, 60);
+
+    span {
+      background: $color-offline;
+    }
+  }
+
   span {
     background: $color-new;
     display: inline-block;

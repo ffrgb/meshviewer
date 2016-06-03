@@ -22,9 +22,18 @@
   }
 
   @media screen and (max-width: $minscreenwidth) {
-    height: 60vh;
+    height: calc(100vh - 150px);
+    min-height: 240px;
     position: relative;
     width: auto;
+  }
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    height: 800px;
+  }
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    height: 400px;
   }
 }
 
