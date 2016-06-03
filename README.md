@@ -196,3 +196,9 @@ Example for `siteNames`:
       { "site": "ffgt", "name": "Gothamcity" },
       { "site": "ffal", "name": "Atlantis" }
     ]
+
+## Sponsoring / Supporting
+- [BrowserStack](https://www.browserstack.com/) for providing a awesome testing service for hundreds of browsers
+- [Travis CI](https://travis-ci.org/) for testing every push and pull request
+
+These tools need a lot of infrastructure behind and don't charge open source software
