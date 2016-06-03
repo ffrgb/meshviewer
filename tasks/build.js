@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         ],
         expand: true,
         dest: "build/fonts/",
-        filter: 'isFile',
+        filter: "isFile",
         flatten: true,
         cwd: "bower_components/roboto-slab-fontface-kit/fonts"
       },
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         map: true,
         processors: [
           require("autoprefixer")({
-            browsers: ["last 2 versions"]
+            browsers: ["> 1% in DE"]
           })
         ]
       },
@@ -92,9 +92,9 @@ module.exports = function (grunt) {
     inlinedata: {
       injs: {
         expand: true,
-        cwd: '.',
-        src: ['build/*.html'],
-        ext: '.html'
+        cwd: ".",
+        src: ["build/*.html"],
+        ext: ".html"
       }
     },
     "bower-install-simple": {
@@ -137,10 +137,10 @@ module.exports = function (grunt) {
     cachebreaker: {
       default: {
         options: {
-          match: ['app.js']
+          match: ["app.js"]
         },
         files: {
-          src: ['build/index.html']
+          src: ["build/index.html"]
         }
       }
     }
@@ -152,6 +152,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-inline");
-  grunt.loadNpmTasks('grunt-inline-data');
+  grunt.loadNpmTasks("grunt-inline-data");
   grunt.loadNpmTasks("grunt-cache-breaker");
 };

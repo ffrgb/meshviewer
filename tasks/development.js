@@ -6,13 +6,13 @@ module.exports = function (grunt) {
       dev: {
         bsFiles: {
           src: [
-            'build/*.css',
-            'build/*.js',
-            'build/*.html'
+            "build/*.css",
+            "build/*.js",
+            "build/*.html"
           ]
         },
         options: {
-          open: 'local',
+          open: "local",
           watchTask: true,
           injectChanges: true,
           server: {
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ["scss/**/*.scss"],
-        tasks: ["sasslint", "sass"]
+        tasks: ["sasslint", "sass",  "postcss"]
       },
       js: {
         files: ["app.js", "lib/**/*.js"],

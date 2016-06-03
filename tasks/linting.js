@@ -15,13 +15,13 @@ module.exports = function (grunt) {
     },
     sasslint: {
       options: {
-        configFile: '.sass-lint.yml'
+        configFile: ".sass-lint.yml"
       },
       target: ['scss/main.scss', 'scss/*/*.scss']
     },
     eslint: {
       sources: {
-        src: ["app.js", "!Gruntfile.js", "lib/**/*.js"]
+        src: ["app.js", "!Gruntfile.js", "lib/**/*.js", "tasks/**/*.js"]
       },
       grunt: {
         src: ["Gruntfile.js", "tasks/*.js"]
