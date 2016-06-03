@@ -1,11 +1,11 @@
 .bar {
-  background: transparentize($color-new, .5);
+  background: mix($color-new, $color-white, 60);
   display: block;
   height: 1.4em;
   position: relative;
 
   span {
-    background: transparentize($color-new, .92);
+    background: $color-new;
     display: inline-block;
     height: 1.4em;
   }
