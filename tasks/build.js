@@ -49,10 +49,10 @@ module.exports = function (grunt) {
     },
     sass: {
       dev: {
-      options: {
-        sourceMap: true,
-        outputStyle: "expanded"
-      },
+        options: {
+          sourceMap: true,
+          outputStyle: "expanded"
+        },
         files: {
           "build/style.css": "scss/main.scss"
         }
@@ -87,6 +87,18 @@ module.exports = function (grunt) {
         },
         src: "build/index.html",
         dest: "build/index.html"
+      }
+    },
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyJS: true
+        },
+        files: {
+          'build/index.html': 'build/index.html'
+        }
       }
     },
     inlinedata: {
@@ -153,5 +165,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-inline");
   grunt.loadNpmTasks("grunt-inline-data");
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks("grunt-cache-breaker");
 };

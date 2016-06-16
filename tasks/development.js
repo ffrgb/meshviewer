@@ -24,8 +24,8 @@ module.exports = function (grunt) {
     },
     watch: {
       html: {
-        files: ["html/index.html"],
-        tasks: ["copy", "inlinedata"]
+        files: ["html/index.html", "config.json"],
+        tasks: ["copy", "inlinedata", "htmlmin"]
       },
       sass: {
         files: ["scss/**/*.scss"],

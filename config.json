@@ -1,4 +1,6 @@
+// Grunt will remove all comments
 {
+  // Variables are NODE_ID and NODE_NAME (only a-z0-9\- other chars are replaced with _)
   "nodeInfos": [
     {
       "name": "Clientstatistik",
@@ -21,6 +23,7 @@
       "caption": "Jahresstatistik - weiteren Statistiken"
     }
   ],
+  // String or array of data provider are supported
   "dataPath": "https://regensburg.freifunk.net/data/",
   "siteName": "Freifunk Regensburg",
   "mapSigmaScale": 0.5,
@@ -29,7 +32,8 @@
   "mapLayers": [
     {
       "name": "HERE",
-      "url": "https://{s}.base.maps.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?app_id=Q40ik5rnMQOpOQ6RrHCr&app_code=kIPJpCtUZMTiQQJiCemX6Q&lg=deu",
+      // Please use your own API key - Free plan is on right side after the pay plans
+      "url": "https://{s}.base.maps.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?app_id=YOUR_KEY&app_code=YOUR_CODE&lg=deu",
       "config": {
         "attribution": "Map &copy; 1987-2014 <a href=\"http://developer.here.com\">HERE</a>",
         "subdomains": "1234",
@@ -54,7 +58,8 @@
     },
     {
       "name": "HERE.hybridDay",
-      "url": "https://{s}.aerial.maps.api.here.com/maptile/2.1/maptile/newest/{variant}/{z}/{x}/{y}/256/png8?app_id=Q40ik5rnMQOpOQ6RrHCr&app_code=kIPJpCtUZMTiQQJiCemX6Q&lg=deu",
+      // Please use your own API key - Free plan is on right side after the pay plans
+      "url": "https://{s}.aerial.maps.api.here.com/maptile/2.1/maptile/newest/{variant}/{z}/{x}/{y}/256/png8?app_id=YOUR_KEY&app_code=YOUR_CODE&lg=deu",
       "config": {
         "attribution": "Map &copy; 1987-2014 <a href=\"http://developer.here.com\">HERE</a>",
         "subdomains": "1234",
