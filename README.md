@@ -6,7 +6,7 @@
 - Formatted Code
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
-- Upgrade to grunt v1.x (NodeJS 6.2+ compatible)
+- Upgrade to grunt v1.x (NodeJS 0.11 - 6.2+ compatible)
   - Inline some css and js
 - Bower update all components
   - Load only german locale from 101 languages from moment.js
@@ -14,6 +14,9 @@
 - Remove ruby dependency
 - FixedCenter is required
 - Rewrite Scss, SASS lint and variables for easy customization/adjustments
+- Improved cross browser/device support THX@BrowserStack
+- Leaflet with patch to avoid IE/Edge crashes
+- [A lot more in commit history](https://github.com/ffrgb/meshviewer/commits/develop)
 
 # Screenshots
 
@@ -50,6 +53,11 @@ This will generate `build/` containing all required files.
 
 Use `grunt serve` for development.
 
+## Support/Help
+
+- IRC: irc.hackint.org #freifunkRGB
+- Feel free to open an issue for a problem or a idea.
+
 # Configure
 
 Change `config.json`to match your community.
@@ -69,11 +77,6 @@ It may help with firewall problems too.
 ## siteName (string)
 
 Change this to match your communities' name. It will be used in various places.
-
-## mapSigmaScale (float)
-
-This affects the initial scale of the map. Greater values will show a larger
-area. Values like 1.0 and 0.5 might be good choices.
 
 ## showContact (bool)
 

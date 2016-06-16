@@ -26,7 +26,6 @@
   // String or array of data provider are supported
   "dataPath": "https://regensburg.freifunk.net/data/",
   "siteName": "Freifunk Regensburg",
-  "mapSigmaScale": 0.5,
   "showContact": false,
   "maxAge": 14,
   "mapLayers": [
