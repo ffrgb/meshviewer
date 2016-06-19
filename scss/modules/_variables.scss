@@ -15,12 +15,15 @@ $font-family: 'Roboto Slab', serif !default;
 $font-family-secondary: Roboto, sans-serif !default;
 $font-family-icons: ionicons !default;
 $font-family-monospace: monospace !default;
-$font-size: 11pt !default;
+$font-size: 15px !default;
+$font-size-small: $font-size / 1.4 !default;
 
-$minscreenwidth: 630pt !default;
-$sidebarwidth: 420pt !default;
-$sidebarwidthsmall: 320pt !default;
-$buttondistance: 12pt !default;
+$button-font-size: 1.6rem !default;
+$button-distance: 16px !default;
+
+$min-screen-width: 840px !default;
+$sidebar-width: 560px !default;
+$sidebar-width-small: 426px !default;
 
 // En/disable box-shadows
 $shadows: 1 !default;

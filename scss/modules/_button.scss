@@ -5,7 +5,7 @@ button {
   color: $color-black;
   cursor: pointer;
   font-family: $font-family-icons;
-  font-size: 20pt;
+  font-size: $button-font-size;
   height: 1.8em;
   opacity: .7;
   outline: none;
@@ -44,9 +44,9 @@ button {
     }
     color: transparentize($color-black, .5);
     float: right;
-    font-size: 20pt;
+    font-size: $button-font-size;
     height: auto;
-    margin: $buttondistance;
+    margin: $button-distance;
     width: auto;
   }
 }

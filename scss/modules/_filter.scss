@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   font-size: .83em;
-  padding: 0 6pt 6pt;
+  padding: 0 8px 8px;
 
   li {
     align-items: center;
@@ -10,8 +10,8 @@
     border: 1px solid $color-primary;
     color: $color-primary;
     display: flex;
-    margin: 3pt;
-    padding: 0 0 0 8pt;
+    margin: 4px;
+    padding: 0 0 0 10px;
 
     label {
       cursor: pointer;
@@ -20,10 +20,10 @@
     button {
       background: none;
       color: $color-gray-light;
-      font-size: 12pt;
-      height: 18pt;
-      margin: 2pt;
-      width: 18pt;
+      font-size: $font-size-small;
+      height: 24px;
+      margin: 3px;
+      width: 24px;
 
       &:hover {
         color: $color-primary;

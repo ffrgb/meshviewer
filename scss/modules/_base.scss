@@ -30,12 +30,12 @@ h3 {
 }
 
 h2, h3 {
-  padding-left: $buttondistance;
-  padding-right: $buttondistance;
+  padding-left: $button-distance;
+  padding-right: $button-distance;
 }
 
 p, pre, ul, h4 {
-  padding: 0 $buttondistance 1em;
+  padding: 0 $button-distance 1em;
 }
 
 img {

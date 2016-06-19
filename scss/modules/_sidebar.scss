@@ -2,17 +2,17 @@
   box-sizing: border-box;
   position: absolute;
   transition: left .5s;
-  width: $sidebarwidth;
+  width: $sidebar-width;
   z-index: 5;
 
   &.hidden {
-    left: -$sidebarwidth - $buttondistance;
+    left: -$sidebar-width - $button-distance;
 
     .sidebarhandle {
-      left: $buttondistance;
+      left: $button-distance;
       transform: scale(-1, 1);
     }
-    @media screen and (max-width: $minscreenwidth) {
+    @media screen and (max-width: $min-screen-width) {
       width: auto;
     }
   }
@@ -73,10 +73,10 @@
     background: $color-white;
     font-size: .8em;
     margin: 0;
-    width: $sidebarwidthsmall;
+    width: $sidebar-width-small;
 
     .sidebarhandle {
-      left: $sidebarwidthsmall + $buttondistance;
+      left: $sidebar-width-small + $button-distance;
     }
 
     .container, .infobox {
@@ -88,7 +88,7 @@
     }
   }
 
-  @media screen and (max-width: $minscreenwidth) {
+  @media screen and (max-width: $min-screen-width) {
     height: auto;
     min-height: 0;
     position: static;
@@ -107,9 +107,9 @@
 }
 
 .sidebarhandle {
-  left: $sidebarwidth + 2 * $buttondistance;
+  left: $sidebar-width + 2 * $button-distance;
   position: fixed;
-  top: $buttondistance;
+  top: $button-distance;
   transition: left .5s, box-shadow .5s, color .5s, transform .5s;
   z-index: 10;
 
