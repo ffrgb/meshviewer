@@ -30,6 +30,14 @@
   "maxAge": 14,
   "mapLayers": [
     {
+      "name": "OpenStreetMap.HOT",
+      "url": "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+      "config": {
+        "maxZoom": 19,
+        "attribution": "&copy; Openstreetmap France | &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
+      }
+    },
+    {
       "name": "HERE",
       // Please use your own API key - Free plan is on right side after the pay plans
       "url": "https://{s}.base.maps.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?app_id=YOUR_KEY&app_code=YOUR_CODE&lg=deu",
@@ -37,14 +45,6 @@
         "attribution": "Map &copy; 1987-2014 <a href=\"http://developer.here.com\">HERE</a>",
         "subdomains": "1234",
         "maxZoom": 20
-      }
-    },
-    {
-      "name": "OpenStreetMap.HOT",
-      "url": "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-      "config": {
-        "maxZoom": 19,
-        "attribution": "&copy; Openstreetmap France | &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
       }
     },
     {
@@ -75,6 +75,10 @@
   "siteNames": [
     {
       "site": "ffrgb-bat15",
+      "name": "Regensburg"
+    },
+    {
+      "site": "ffrgb",
       "name": "Regensburg"
     }
   ]
