@@ -5,13 +5,13 @@
     {
       "name": "Clientstatistik",
       "href": "https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/",
-      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=1&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light",
+      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=1&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light&_t={TIME}",
       "caption": "Knoten {NODE_ID} - weiteren Statistiken"
     },
     {
       "name": "Trafficstatistik",
       "href": "https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/",
-      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=2&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light",
+      "thumbnail": "https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=2&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light&_t={TIME}",
       "caption": "Knoten {NODE_ID} - weiteren Statistiken"
     }
   ],

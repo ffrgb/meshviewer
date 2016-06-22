@@ -3,6 +3,7 @@
 ### Main differences to https://github.com/ffnord/meshviewer
 #### Some features are maybe merged
 
+- Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
 - Formatted Code
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
@@ -121,7 +122,7 @@ This option allows to show node statistics depending on following case-sensitive
 - `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
 
 To insert current node-id in either `href`, `thumbnail` or `caption`
-you can use the case-sensitive template string `{NODE_ID}`.
+you can use the case-sensitive template string `{NODE_ID}`, `{NODE_NAME}` and `{TIME}` as cache-breaker.
 
 Examples for `nodeInfos`:
 
@@ -129,12 +130,12 @@ Examples for `nodeInfos`:
 
       { "name": "Clientstatistik",
         "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}",
+        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&var-host={NODE_NAME}&_t={TIME}",
         "caption": "Knoten {NODE_ID}"
       },
       { "name": "Uptime",
         "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}",
+        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&_t={TIME}",
         "caption": "Knoten {NODE_ID}"
       }
     ]
@@ -174,11 +175,11 @@ This option allows to show link statistics depending on the following case-sensi
 - `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
 
 To insert the source or target node-id in either `href`, `thumbnail` or `caption`
-you can use the case-sensitive template strings `{SOURCE}` and `{TARGET}`.
+you can use the case-sensitive template strings `{SOURCE}`, `{TARGET}` and `{TIME}` as cache-breaker.
 
     "linkInfos": [
       { "href": "stats/dashboard/db/links?var-source={SOURCE}&var-target={TARGET}",
-        "thumbnail": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE}&var-target={TARGET}"
+        "thumbnail": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE}&var-target={TARGET}&_t={TIME}"
       }
     ]
 
