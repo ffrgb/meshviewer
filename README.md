@@ -4,6 +4,7 @@
 #### Some features are maybe merged
 
 - Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
+- Zoom level for nodes (`nodeZoom`)
 - Formatted Code
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
@@ -87,6 +88,11 @@ Setting this to `false` will hide contact information for nodes.
 
 Nodes being online for less than maxAge days are considered "new". Likewise,
 nodes being offline for more than than maxAge days are considered "lost".
+
+## nodeZoom (integer)
+
+Max level to be applied by clicking a node or open a node. With value `18` near by buildings and streets should be visible.
+Interesting if one of configured map provider has zoom-level under `18`.
 
 ## mapLayers (List)
 

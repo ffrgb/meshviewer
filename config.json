@@ -28,6 +28,7 @@
   "siteName": "Freifunk Regensburg",
   "showContact": false,
   "maxAge": 14,
+  "nodeZoom": 18,
   "mapLayers": [
     {
       "name": "OpenStreetMap.HOT",
