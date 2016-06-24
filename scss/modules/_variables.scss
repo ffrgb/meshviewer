@@ -20,9 +20,23 @@ $font-size-small: 11px !default;
 $button-font-size: 1.6rem !default;
 $button-distance: 16px !default;
 
-$min-screen-width: 840px !default;
-$sidebar-width: 560px !default;
-$sidebar-width-small: 426px !default;
+// Bootstrap breakpoints
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 544px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+) !default;
+
+// 45% sidebar - based on viewport
+$sidebar-width: map-get($grid-breakpoints, xl) * .45 !default;
+$sidebar-width-small: map-get($grid-breakpoints, lg) * .45 !default;
 
 // En/disable box-shadows
 $shadows: 1 !default;

@@ -12,7 +12,7 @@
       left: $button-distance;
       transform: scale(-1, 1);
     }
-    @media screen and (max-width: $min-screen-width) {
+    @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
       width: auto;
     }
   }
@@ -69,7 +69,7 @@
     }
   }
 
-  @media screen and (max-width: 80em) {
+  @media screen and (max-width: map-get($grid-breakpoints, xl) - 1) {
     background: $color-white;
     font-size: .8em;
     margin: 0;
@@ -88,7 +88,7 @@
     }
   }
 
-  @media screen and (max-width: $min-screen-width) {
+  @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
     height: auto;
     min-height: 0;
     position: static;

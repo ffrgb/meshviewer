@@ -14,14 +14,15 @@
     button {
       margin-left: $button-distance;
     }
-    @media screen and (max-width: $min-screen-width) {
+
+    @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
       right: -1rem;
       top: 0;
       transform: scale(.8);
     }
   }
 
-  @media screen and (max-width: $min-screen-width) {
+  @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
     height: calc(100vh - 150px);
     min-height: 240px;
     position: relative;
