@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "eslint": "^2.11.0",
+    "eslint": "^3.0.1",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-bower-install-simple": "^1.2.3",
@@ -25,7 +25,7 @@
     "grunt-contrib-htmlmin": "^1.4.0",
     "grunt-contrib-requirejs": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-eslint": "^18.1.0",
+    "grunt-eslint": "^19.0.0",
     "grunt-inline": "^0.3.6",
     "grunt-inline-data": "git://github.com/xiaokaike/grunt-inline-data.git#2eeb08f",
     "grunt-postcss": "^0.8.0",
