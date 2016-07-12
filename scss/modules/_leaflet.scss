@@ -12,7 +12,7 @@
     white-space: nowrap;
     z-index: 6;
 
-    &:before {
+    &::before {
       display: none;
     }
   }

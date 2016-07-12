@@ -62,7 +62,7 @@ th {
   }
 
   &.sort-up, &.sort-down {
-    &:after {
+    &::after {
       opacity: .4;
       visibility: visible;
     }
