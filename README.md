@@ -3,8 +3,9 @@
 ### Main differences to https://github.com/ffnord/meshviewer
 #### Some features are maybe merged
 
+- Add modes - For example add a night layer and style
 - Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
-- Zoom level for nodes (`nodeZoom`)
+- Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, bit it is to close for a click
 - Formatted Code
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
@@ -19,6 +20,10 @@
 - Improved cross browser/device support THX@BrowserStack
 - Leaflet with patch to avoid IE/Edge crashes
 - [A lot more in commit history](https://github.com/ffrgb/meshviewer/commits/develop)
+
+# Demo (embedded):
+
+https://regensburg.freifunk.net/netz/karte/
 
 # Screenshots
 

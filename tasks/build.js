@@ -43,7 +43,8 @@ module.exports = function (grunt) {
           outputStyle: "expanded"
         },
         files: {
-          "build/style.css": "scss/main.scss"
+          "build/style.css": "scss/main.scss",
+          "build/night.css": "scss/night.scss"
         }
       },
       dist: {
@@ -51,13 +52,14 @@ module.exports = function (grunt) {
           outputStyle: "compressed"
         },
         files: {
-          "build/style.css": "scss/main.scss"
+          "build/style.css": "scss/main.scss",
+          "build/night.css": "scss/night.scss"
         }
       }
     },
     postcss: {
       options: {
-        map: true,
+        map: false,
         processors: [
           require("autoprefixer")({
             browsers: ["> 1% in DE"]
@@ -65,7 +67,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: "build/style.css"
+        src: "build/*.css"
       }
     },
     inline: {

@@ -17,7 +17,7 @@ module.exports = function (grunt) {
       options: {
         configFile: ".sass-lint.yml"
       },
-      target: ['scss/main.scss', 'scss/*/*.scss']
+      target: ['scss/main.scss', 'scss/night.scss', 'scss/*/*.scss']
     },
     eslint: {
       sources: {

@@ -1,0 +1,101 @@
+// Overwrite normal style (colors) - shadows are ignored
+@import 'modules/variables';
+@import 'custom/variables';
+
+$color-white: #111;
+$color-black: #fefefe;
+
+.night {
+  //@import 'modules/base';
+  body {
+    background: $color-white;
+    color: lighten($color-black, 100);
+  }
+
+  header {
+    background: transparentize($color-black, .98);
+  }
+
+  //@import 'leaflet';
+  .leaflet-container {
+    background: adjust-color($color-white, $blue: 10);
+  }
+
+  //@import 'modules/leaflet';
+  .leaflet-label {
+    &.leaflet-label-right {
+      background-color: $color-white;
+    }
+  }
+
+  //@import 'modules/leaflet-layer';
+  .leaflet-control-layers {
+    &.leaflet-control {
+      opacity: .9;
+    }
+  }
+
+  //@import 'modules/sidebar';
+  .sidebar {
+    .infobox, .container {
+      background: transparentize($color-white, .03);
+      border-right: 1px solid darken($color-white, 10%);
+    }
+
+    img {
+      filter: invert(100%);
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, xl) - 1) {
+      background: $color-white;
+    }
+  }
+
+  //@import 'modules/proportion';
+  .proportion {
+    span {
+      filter: invert(100%);
+    }
+  }
+
+  //@import 'modules/tabs';
+  .tabs {
+    background: transparentize($color-black, .98);
+    border-color: lighten($color-white, 10%);
+
+    li {
+      color: transparentize($color-black, .5);
+
+      &:hover {
+        color: $color-black;
+      }
+    }
+  }
+
+  //@import 'modules/node';
+  .bar {
+    background: mix($color-new, $color-white, 60);
+
+    &.warning {
+      background: mix($color-offline, $color-white, 60);
+    }
+
+    label {
+      color: $color-white;
+    }
+  }
+
+  //@import 'modules/button';
+  button {
+    background: lighten($color-white, 10);
+    color: $color-black;
+
+    &:hover {
+      background: $color-white;
+    }
+
+    &.close {
+      color: transparentize($color-black, .5);
+    }
+  }
+}
