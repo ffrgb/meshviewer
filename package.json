@@ -12,8 +12,8 @@
     "test": "node -e \"require('grunt').cli()\" '' clean lint"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "eslint": "^3.0.1",
+    "autoprefixer": "^6.4.1",
+    "eslint": "^3.5.0",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-bower-install-simple": "^1.2.3",
@@ -29,7 +29,7 @@
     "grunt-inline": "^0.3.6",
     "grunt-inline-data": "git://github.com/xiaokaike/grunt-inline-data.git#2eeb08f",
     "grunt-postcss": "^0.8.0",
-    "grunt-sass": "^1.2.0",
+    "grunt-sass": "^1.2.1",
     "grunt-sass-lint": "^0.2.0"
   },
   "eslintConfig": {
