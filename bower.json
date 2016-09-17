@@ -12,7 +12,7 @@
     "chroma-js": "~1.1.1",
     "leaflet": "https://github.com/davojta/Leaflet.git#v0.7.7.1",
     "moment": "~2.13.0",
-    "requirejs": "~2.2.0",
+    "requirejs": "~2.3.1",
     "tablesort": "https://github.com/tristen/tablesort.git#v4.0.1",
     "es6-shim": "~0.35.1",
     "almond": "~0.3.2",
