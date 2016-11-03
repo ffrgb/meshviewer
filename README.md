@@ -9,7 +9,7 @@
 - Formatted Code
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
-- Upgrade to grunt v1.x (NodeJS 4 - 6.3+ compatible)
+- Upgrade to grunt v1.x (Tested with Node.js 4 LTS,6 LTS,7 Linux,OSX,W**)
   - Inline some css and js
 - Bower update all components
   - Load only german locale from 101 languages from moment.js
