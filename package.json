@@ -12,14 +12,14 @@
     "test": "node -e \"require('grunt').cli()\" '' clean lint"
   },
   "devDependencies": {
-    "autoprefixer": "^6.4.1",
-    "eslint": "^3.5.0",
+    "autoprefixer": "^6.5.1",
+    "eslint": "^3.9.1",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-bower-install-simple": "^1.2.3",
     "grunt-browser-sync": "^2.2.0",
     "grunt-cache-breaker": "^2.0.1",
-    "grunt-check-dependencies": "^0.12.0",
+    "grunt-check-dependencies": "^1.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-htmlmin": "^2.0.0",
