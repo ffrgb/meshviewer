@@ -4,7 +4,7 @@
   position: absolute;
   transition: left .5s;
   width: $sidebar-width;
-  z-index: 5;
+  z-index: 1005;
 
   &.hidden {
     left: -$sidebar-width - $button-distance;
@@ -124,7 +124,7 @@
   position: fixed;
   top: $button-distance;
   transition: left .5s, box-shadow .5s, color .5s, transform .5s;
-  z-index: 10;
+  z-index: 1010;
 
   &::after {
     content: '\f124';

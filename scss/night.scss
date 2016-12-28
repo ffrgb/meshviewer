@@ -28,6 +28,13 @@ html {
     }
   }
 
+  .leaflet-control-container {
+    .leaflet-control-layers-toggle {
+      background: lighten($color-white, 10);
+      color: $color-black;
+    }
+  }
+
   .leaflet-control-zoom {
     a {
       background: lighten($color-white, 10);
