@@ -5,7 +5,7 @@
 
 - Add modes - For example add a night layer and style
 - Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
-- Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, bit it is to close for a click
+- Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
