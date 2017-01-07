@@ -106,6 +106,22 @@ property and optionally `url` and `config` properties. If no `url` is supplied
 `name` is assumed to name a
 [Leaflet-provider](http://leaflet-extras.github.io/leaflet-providers/preview/).
 
+### Additional arguments
+
+#### mode (string)
+
+Allows to load a additional style for a night mode or similar use case. Style is attached to the mapLayer.
+
+#### start (integer)
+
+Start a time range to put this mapLayer on first position.
+
+#### end (integer)
+
+End a time range for first map. Stops sort this mapLayer.
+
+#### end (integer)
+
 ## fixedCenter (array, optional)
 
 This option allows to fix the map at one specific coordinate depending on following case-sensitive parameters:
