@@ -101,10 +101,7 @@ Interesting if one of configured map provider has zoom-level under `18`.
 
 ## mapLayers (List)
 
-A list of objects describing map layers. Each object has at least `name`
-property and optionally `url` and `config` properties. If no `url` is supplied
-`name` is assumed to name a
-[Leaflet-provider](http://leaflet-extras.github.io/leaflet-providers/preview/).
+A list of objects describing map layers. Each object has at least `name`, `url` and `config` properties. [Example layers and configuration](http://leaflet-extras.github.io/leaflet-providers/preview/) (map against config.json).
 
 ### Additional arguments
 
@@ -119,8 +116,6 @@ Start a time range to put this mapLayer on first position.
 #### end (integer)
 
 End a time range for first map. Stops sort this mapLayer.
-
-#### end (integer)
 
 ## fixedCenter (array, optional)
 
