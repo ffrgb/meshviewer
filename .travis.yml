@@ -28,5 +28,6 @@ script: grunt
 notifications:
   irc:
     channels: "irc.hackint.org#freifunkR"
+    channels: "irc.hackint.org#meshviewer"
     nick: ci
     use_notice: true
