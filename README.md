@@ -19,6 +19,7 @@
 - Rewrite Scss, SASS lint and variables for easy customization/adjustments
 - Improved cross browser/device support THX@BrowserStack
 - Leaflet with patch to avoid IE/Edge crashes
+- Add yarn package manager in favor of npm (npm still works)
 - [A lot more in commit history](https://github.com/ffrgb/meshviewer/commits/develop)
 
 # Demo (embedded):
@@ -31,28 +32,31 @@ https://regensburg.freifunk.net/netz/karte/
 
 # Dependencies
 
-- npm
+- yarn
 - bower
 - grunt-cli
 
 # Installing dependencies
 
-Install npm package-manager. On Debian-like systems run:
+### npm is still possible, but yarn is much faster https://yarnpkg.com/
 
-    sudo apt-get install npm
+Install yarn package-manager:
+
+    Chosse your OS and install yarn https://yarnpkg.com/en/docs/install
 
 Execute these commands on your server as a normal user to prepare the dependencies:
 
     git clone https://github.com/ffrgb/meshviewer.git
     cd meshviewer
-    npm install
-    npm install grunt-cli
+    yarn
+    # Only needed when no global grunt exists
+    yarn global add grunt-cli
 
 # Building
 
 Just run the following command from the meshviewer directory:
 
-    node_modules/.bin/grunt
+    grunt
 
 This will generate `build/` containing all required files.
 
