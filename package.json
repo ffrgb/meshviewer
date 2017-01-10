@@ -12,8 +12,8 @@
     "test": "node -e \"require('grunt').cli()\" '' clean lint"
   },
   "devDependencies": {
-    "autoprefixer": "^6.6.0",
-    "eslint": "^3.12.2",
+    "autoprefixer": "^6.6.1",
+    "eslint": "^3.13.1",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-bower-install-simple": "^1.2.3",
