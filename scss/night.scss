@@ -95,6 +95,7 @@ $color-black: #fefefe;
     }
 
     &.close {
+      background: transparent;
       color: transparentize($color-black, .5);
     }
   }
