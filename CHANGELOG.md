@@ -1,5 +1,10 @@
 # Change Log
 
+## Switched to rolling release
+
+- All major changes can be found in README.md and everything else in git history https://github.com/ffrgb/meshviewer
+- Lot of parts of codebase have been changed
+
 ## v4
 
 - add a legend (map)
