@@ -11,8 +11,7 @@ module.exports = function (grunt) {
         dest: "build/"
       },
       vendorjs: {
-        src: ["es6-shim/es6-shim.min.js",
-          "es6-shim/es6-shim.map"],
+        src: ["promise-polyfill/promise.js"],
         expand: true,
         cwd: "bower_components/",
         dest: "build/vendor/"
