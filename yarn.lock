@@ -3420,9 +3420,9 @@ table@^3.7.8:
     slice-ansi "0.0.4"
     string-width "^2.0.0"
 
-tablesort@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/tablesort/-/tablesort-4.0.1.tgz#faa528cfa715382e8e5a5ed4f2e84482f28245aa"
+tablesort@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/tablesort/-/tablesort-5.0.0.tgz#66b4c3a4603bd8b5f67e2696f28dd784a1cbb00b"
 
 tar-pack@~3.3.0:
   version "3.3.0"
