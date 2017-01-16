@@ -16,7 +16,6 @@
     "eslint": "^3.13.1",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
-    "grunt-bower-install-simple": "^1.2.3",
     "grunt-browser-sync": "^2.2.0",
     "grunt-cache-breaker": "^2.0.1",
     "grunt-check-dependencies": "^1.0.0",
@@ -39,5 +38,18 @@
       "es6": true,
       "node": true
     }
+  },
+  "dependencies": {
+    "almond": "^0.3.3",
+    "chroma-js": "^1.2.1",
+    "d3": "3.5",
+    "leaflet": "https://github.com/davojta/Leaflet.git#v0.7.7.1",
+    "leaflet-label": "^0.2.1-0",
+    "moment": "^2.17.1",
+    "promise-polyfill": "^6.0.2",
+    "rbush": "1.4.3",
+    "requirejs": "^2.3.2",
+    "tablesort": "4.0.1",
+    "virtual-dom": "^2.1.1"
   }
 }

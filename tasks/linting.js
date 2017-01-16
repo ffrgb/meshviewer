@@ -5,13 +5,7 @@ module.exports = function (grunt) {
     checkDependencies: {
       options: {
         install: true
-      },
-      bower: {
-        options: {
-          packageManager: "bower"
-        }
-      },
-      npm: {}
+      }
     },
     sasslint: {
       options: {

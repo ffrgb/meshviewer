@@ -11,7 +11,7 @@
 - Icon font with only needed icons
 - Upgrade to grunt v1.x (Tested with Node.js 4 LTS,6 LTS,7 Linux,OSX,W**)
   - Inline some css and js
-- Bower update all components
+- Remove bower in favour of npm/yarn
   - Load only german locale from 101 languages from moment.js
 - Right click open layermenu
 - Remove ruby dependency
@@ -33,7 +33,6 @@ https://regensburg.freifunk.net/netz/karte/
 # Dependencies
 
 - yarn
-- bower
 - grunt-cli
 
 # Installing dependencies

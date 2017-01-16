@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   "use strict";
 
   grunt.config.merge({
-    bowerdir: "bower_components",
+    nodedir: "node_modules",
     copy: {
       html: {
         src: ["*.html"],
@@ -13,7 +13,7 @@ module.exports = function (grunt) {
       vendorjs: {
         src: ["promise-polyfill/promise.js"],
         expand: true,
-        cwd: "bower_components/",
+        cwd: "<%=nodedir%>/",
         dest: "build/vendor/"
       },
       config: {
@@ -99,24 +99,11 @@ module.exports = function (grunt) {
         ext: ".html"
       }
     },
-    "bower-install-simple": {
-      options: {
-        directory: "<%=bowerdir%>",
-        color: true,
-        interactive: false,
-        production: true
-      },
-      "prod": {
-        options: {
-          production: true
-        }
-      }
-    },
     requirejs: {
       default: {
         options: {
           baseUrl: "lib",
-          name: "../bower_components/almond/almond",
+          name: "../<%=nodedir%>/almond/almond",
           mainConfigFile: "app.js",
           include: "../app",
           out: "build/app.js",
@@ -126,7 +113,7 @@ module.exports = function (grunt) {
       dev: {
         options: {
           baseUrl: "lib",
-          name: "../bower_components/almond/almond",
+          name: "../<%=nodedir%>/almond/almond",
           mainConfigFile: "app.js",
           include: "../app",
           optimize: "none",
@@ -148,7 +135,6 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks("grunt-bower-install-simple");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-requirejs");
   grunt.loadNpmTasks("grunt-sass");

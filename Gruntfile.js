@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
   grunt.loadTasks("tasks");
 
-  grunt.registerTask("default", ["bower-install-simple", "lint", "copy", "sass:dist", "postcss", "requirejs:default", "inlinedata", "cachebreaker", "inline", "htmlmin", "clean:release"]);
+  grunt.registerTask("default", ["lint", "copy", "sass:dist", "postcss", "requirejs:default", "inlinedata", "cachebreaker", "inline", "htmlmin", "clean:release"]);
   grunt.registerTask("lint", ["sasslint", "eslint"]);
-  grunt.registerTask("serve", ["bower-install-simple", "lint", "copy", "sass:dev", "postcss", "requirejs:dev", "inlinedata", "htmlmin", "browserSync", "watch"]);
+  grunt.registerTask("serve", ["lint", "copy", "sass:dev", "postcss", "requirejs:dev", "inlinedata", "htmlmin", "browserSync", "watch"]);
 };

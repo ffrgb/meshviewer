@@ -16,7 +16,6 @@ cache:
   yarn: true
   directories:
     - node_modules
-    - bower_components
 
 script: grunt
 
