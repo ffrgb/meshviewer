@@ -21,7 +21,7 @@
     "grunt-check-dependencies": "^1.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-htmlmin": "^2.0.0",
+    "grunt-contrib-htmlmin": "^2.1.0",
     "grunt-contrib-requirejs": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
