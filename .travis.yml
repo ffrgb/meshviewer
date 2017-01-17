@@ -4,13 +4,18 @@ language: node_js
 
 node_js:
   - "7"
-  - "6"
-  - "4"
 
 os:
   - linux
   - macosx
   - windows
+
+matrix:
+  include:
+  - node_js: 6
+    os: linux
+  - node_js: 4
+    os: linux
 
 cache:
   yarn: true
@@ -21,7 +26,8 @@ script: grunt
 
 notifications:
   irc:
-    channels: "irc.hackint.org#freifunkR"
-    channels: "irc.hackint.org#meshviewer"
+    channels:
+    - "irc.hackint.org#freifunkR"
+    - "irc.hackint.org#meshviewer"
     nick: ci
     use_notice: true
