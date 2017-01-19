@@ -2070,9 +2070,9 @@ leaflet-label@^0.2.1-0:
   version "0.2.1-0"
   resolved "https://registry.yarnpkg.com/leaflet-label/-/leaflet-label-0.2.1-0.tgz#b91a678a4d78ac4c47cb230d3926254fd2a7e612"
 
-"leaflet@https://github.com/davojta/Leaflet.git#v0.7.7.1":
-  version "0.7.7.1"
-  resolved "https://github.com/davojta/Leaflet.git#57c85cbf0f1e495bce4f1a11be26766b48c08cbc"
+"leaflet@https://github.com/davojta/Leaflet.git#stable_0_7_7_1_release":
+  version "0.7.7"
+  resolved "https://github.com/davojta/Leaflet.git#bf3bcd089bea98d3f75bda08a79d8260f27eb3bf"
 
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"

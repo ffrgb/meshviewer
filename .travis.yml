@@ -12,6 +12,9 @@ os:
 
 matrix:
   include:
+  - node_js: 7
+    os: linux
+    env: USE_NPM=true
   - node_js: 6
     os: linux
   - node_js: 4
@@ -19,10 +22,15 @@ matrix:
 
 cache:
   yarn: true
-  directories:
-    - node_modules
 
-script: grunt
+before_install:
+  - if [ "$USE_NPM" == "true" ]; then rm yarn.lock; fi
+
+before_script:
+  - if git status | grep -q "modified.   \.travis\.yml"; then echo "Dirty yarn.lock"; exit 1; fi
+
+script:
+  - grunt
 
 notifications:
   irc:
