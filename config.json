@@ -25,6 +25,7 @@
   ],
   // String or array of data provider are supported
   "dataPath": "https://regensburg.freifunk.net/data/",
+  "reverseGeocodingApi": "https://nominatim.openstreetmap.org/reverse",
   "siteName": "Freifunk Regensburg",
   "showContact": false,
   "maxAge": 14,

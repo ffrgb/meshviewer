@@ -20,6 +20,7 @@
 - Improved cross browser/device support THX@BrowserStack
 - Leaflet with patch to avoid IE/Edge crashes
 - Add yarn package manager in favor of npm (npm still works)
+- Configurable reverse geocoding server
 - [A lot more in commit history](https://github.com/ffrgb/meshviewer/commits/develop)
 
 # Demo (embedded):
