@@ -27,9 +27,12 @@
   "dataPath": "https://regensburg.freifunk.net/data/",
   "reverseGeocodingApi": "https://nominatim.openstreetmap.org/reverse",
   "siteName": "Freifunk Regensburg",
-  "showContact": false,
   "maxAge": 14,
   "nodeZoom": 18,
+  "nodeInfobox": {
+    "contact": false,
+    "hardwareUsage": true
+  },
   "mapLayers": [
     {
       "name": "Freifunk Regensburg",
