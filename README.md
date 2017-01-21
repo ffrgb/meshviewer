@@ -101,17 +101,13 @@ Interesting if one of configured map provider has zoom-level under `18`.
 
 ## nodeInfobox
 
-#### showContact (bool)
+#### contact (bool)
 
 Setting this to `false` will hide contact information for nodes.
 
-#### hideMemory (bool)
+#### hardwareUsage (bool)
 
-Setting this to `true` will hide memory usage bar of nodes.
-
-#### hideLoad (bool)
-
-Setting this to `true` will hide load bar of nodes.
+Setting this to `false` will hide bars of memory usage and load avg for nodes.
 
 ## mapLayers (List)
 

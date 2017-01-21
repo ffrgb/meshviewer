@@ -30,9 +30,8 @@
   "maxAge": 14,
   "nodeZoom": 18,
   "nodeInfobox": {
-    "showContact": false,
-    "hideMemory": false,
-    "hideLoad": false
+    "contact": false,
+    "hardwareUsage": true
   },
   "mapLayers": [
     {
