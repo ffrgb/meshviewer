@@ -89,10 +89,6 @@ It may help with firewall problems too.
 
 Change this to match your communities' name. It will be used in various places.
 
-## showContact (bool)
-
-Setting this to `false` will hide contact information for nodes.
-
 ## maxAge (integer)
 
 Nodes being online for less than maxAge days are considered "new". Likewise,
@@ -102,6 +98,20 @@ nodes being offline for more than than maxAge days are considered "lost".
 
 Max level to be applied by clicking a node or open a node. With value `18` near by buildings and streets should be visible.
 Interesting if one of configured map provider has zoom-level under `18`.
+
+## nodeInfobox
+
+#### showContact (bool)
+
+Setting this to `false` will hide contact information for nodes.
+
+#### hideMemory (bool)
+
+Setting this to `true` will hide memory usage bar of nodes.
+
+#### hideLoad (bool)
+
+Setting this to `true` will hide load bar of nodes.
 
 ## mapLayers (List)
 
