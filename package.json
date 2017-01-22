@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
-    "eslint": "^3.13.1",
+    "eslint": "^3.14.0",
     "eslint-config-defaults": "^9.0.0",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
