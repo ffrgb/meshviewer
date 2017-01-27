@@ -23,7 +23,6 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks("grunt-check-dependencies");
   grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks("grunt-eslint");
 };
