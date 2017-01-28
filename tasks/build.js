@@ -33,6 +33,12 @@ module.exports = function (grunt) {
         expand: true,
         dest: "build/",
         cwd: "assets/"
+      },
+      locale: {
+        src: ["locale/*"],
+        expand: true,
+        dest: "build/",
+        cwd: "."
       }
     },
     sass: {
@@ -123,6 +129,11 @@ module.exports = function (grunt) {
         }
       }
     },
+    'json-minify': {
+      build: {
+        files: 'build/locale/*.json'
+      }
+    },
     cachebreaker: {
       default: {
         options: {
@@ -142,5 +153,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-inline");
   grunt.loadNpmTasks("grunt-inline-data");
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-json-minify');
   grunt.loadNpmTasks("grunt-cache-breaker");
 };

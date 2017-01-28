@@ -1,0 +1,51 @@
+{
+  "node": {
+    "all": "Alle Knoten",
+    "nodes": "Knoten",
+    "uptime": "Uptime",
+    "links": "Verbindungen",
+    "clients": "Nutzer"
+  },
+  "stats": {
+    "status": "Status",
+    "firmware": "Firmware-Version",
+    "hardware": "Geräte-Modell",
+    "visible": "Auf der Karte sichtbar",
+    "update": "Auto-Update",
+    "site": "Site",
+    "deactivated": "deaktiviert"
+  },
+  "location": {
+    "location": "Standort",
+    "latitude": "Breitengrad",
+    "longitude": "Längengrad",
+    "copy": "Kopieren"
+  },
+  "momentjs": {
+    "calendar": {
+      "sameDay": "[heute um] LT [Uhr]",
+      "sameElse": "L",
+      "nextDay": "[morgen um] LT [Uhr]",
+      "nextWeek": "dddd [um] LT [Uhr]",
+      "lastDay": "[gestern um] LT [Uhr]",
+      "lastWeek": "[letzten] dddd [um] LT [Uhr]"
+    },
+    "relativeTime": {
+      "future": "in %s",
+      "past": "vor %s",
+      "s": "ein paar Sekunden",
+      "m": "einer Minute",
+      "mm": "%d Minuten",
+      "h": "einer Stunde",
+      "hh": "%d Stunden",
+      "d": "einem Tag",
+      "dd": "%d Tagen",
+      "M": "einem Monat",
+      "MM": "%d Monate",
+      "y": "einem Jahr",
+      "yy": "%d Jahre"
+    }
+  },
+  "yes": "ja",
+  "no": "nein"
+}

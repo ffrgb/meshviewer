@@ -24,12 +24,12 @@ module.exports = function (grunt) {
     },
     watch: {
       html: {
-        files: ["html/index.html", "config.json"],
-        tasks: ["copy", "inlinedata", "htmlmin"]
+        files: ["html/index.html", "config.json", "locale/*.json"],
+        tasks: ["copy", "inlinedata", "htmlmin", "json-minify"]
       },
       sass: {
         files: ["scss/**/*.scss"],
-        tasks: ["sasslint", "sass",  "postcss"]
+        tasks: ["sasslint", "sass", "postcss"]
       },
       js: {
         files: ["app.js", "lib/**/*.js"],
