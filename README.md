@@ -7,6 +7,7 @@
 - Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
 - Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
+- Translation support - https://crowdin.com/project/meshviewer
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
 - Upgrade to grunt v1.x (Tested with Node.js 4 LTS,6 LTS,7 Linux,OSX,W**)
