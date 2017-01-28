@@ -1,0 +1,29 @@
+{
+  "legend": {
+    "": ""
+  },
+  "node": {
+    "all": "All nodes",
+    "nodes": "Nodes",
+    "uptime": "Uptime",
+    "links": "Links",
+    "clients": "Clients"
+  },
+  "stats": {
+    "status": "Status",
+    "firmware": "Firmware version",
+    "hardware": "Hardware model",
+    "visible": "Visible on the map",
+    "update": "Auto update",
+    "site": "Site",
+    "deactivated": "deactivated"
+  },
+  "location": {
+    "location": "Location",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "copy": "Copy"
+  },
+  "yes": "yes",
+  "no": "no"
+}
