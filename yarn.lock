@@ -1503,6 +1503,10 @@ grunt-inline@^0.3.6:
     datauri "~0.2.0"
     uglify-js "2.4.1"
 
+grunt-json-minify@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/grunt-json-minify/-/grunt-json-minify-1.1.0.tgz#a20b9a3016d1e8fed0c79560c77b94701f64f6fb"
+
 grunt-known-options@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grunt-known-options/-/grunt-known-options-1.1.0.tgz#a4274eeb32fa765da5a7a3b1712617ce3b144149"
