@@ -1,29 +1,51 @@
 {
-  "legend":{
-    "":""
-  },
   "node":{
-    "all":"All nodes",
-    "nodes":"Nodes",
+    "all":"Alle Knoten",
+    "nodes":"Knoten",
     "uptime":"Uptime",
-    "links":"Links",
-    "clients":"Clients"
+    "links":"Verbindungen",
+    "clients":"Nutzer"
   },
   "stats":{
     "status":"Status",
-    "firmware":"Firmware version",
-    "hardware":"Hardware model",
-    "visible":"Visible on the map",
-    "update":"Auto update",
+    "firmware":"Firmware-Version",
+    "hardware":"Geräte-Modell",
+    "visible":"Auf der Karte sichtbar",
+    "update":"Auto-Update",
     "site":"Site",
-    "deactivated":"deactivated"
+    "deactivated":"deaktiviert"
   },
   "location":{
-    "location":"Location",
-    "latitude":"Latitude",
-    "longitude":"Longitude",
-    "copy":"Copy"
+    "location":"Standort",
+    "latitude":"Breitengrad",
+    "longitude":"Längengrad",
+    "copy":"Kopieren"
   },
-  "yes":"yes",
-  "no":"no"
+  "momentjs":{
+    "calendar":{
+      "sameDay":"[heute um] LT [Uhr]",
+      "nextDay":"[morgen um] LT [Uhr]",
+      "nextWeek":"dddd [um] LT [Uhr]",
+      "lastDay":"[gestern um] LT [Uhr]",
+      "lastWeek":"[letzten] dddd [um] LT [Uhr]",
+      "sameElse":"L"
+    },
+    "relativeTime":{
+      "future":"in %s",
+      "past":"vor %s",
+      "s":"ein paar Sekunden",
+      "m":"einer Minute",
+      "mm":"%d Minuten",
+      "h":"einer Stunde",
+      "hh":"%d Stunden",
+      "d":"einem Tag",
+      "dd":"%d Tagen",
+      "M":"einem Monat",
+      "MM":"%d Monate",
+      "y":"einem Jahr",
+      "yy":"%d Jahre"
+    }
+  },
+  "yes":"ja",
+  "no":"nein"
 }
