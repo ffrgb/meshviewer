@@ -7,6 +7,7 @@
 - Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
 - Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
+- Translation support - https://crowdin.com/project/meshviewer
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
 - Upgrade to grunt v1.x (Tested with Node.js 4 LTS,6 LTS,7 Linux,OSX,W**)
@@ -154,7 +155,7 @@ This option allows to show node statistics depending on following case-sensitive
 - `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
 
 To insert current node-id in either `href`, `thumbnail` or `caption`
-you can use the case-sensitive template string `{NODE_ID}`, `{NODE_NAME}` and `{TIME}` as cache-breaker.
+you can use the case-sensitive template string `{NODE_ID}`, `{NODE_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
 
 Examples for `nodeInfos`:
 
@@ -207,7 +208,7 @@ This option allows to show link statistics depending on the following case-sensi
 - `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
 
 To insert the source or target node-id in either `href`, `thumbnail` or `caption`
-you can use the case-sensitive template strings `{SOURCE}`, `{TARGET}` and `{TIME}` as cache-breaker.
+you can use the case-sensitive template strings `{SOURCE}`, `{LOCALE}`, `{TARGET}` and `{TIME}` as cache-breaker.
 
     "linkInfos": [
       { "href": "stats/dashboard/db/links?var-source={SOURCE}&var-target={TARGET}",
@@ -231,6 +232,18 @@ Example for `siteNames`:
       { "site": "ffeh", "name": "Entenhausen" ),
       { "site": "ffgt", "name": "Gothamcity" },
       { "site": "ffal", "name": "Atlantis" }
+    ]
+    
+    
+## supportedLocale (array)
+
+Add supported locale (with matching language file in locales/*.json) and it will be matched against the browser language setting. Fallback is the first language in the array.
+
+Example for `supportedLocale`:
+
+    "supportedLocale": [
+      "en",
+      "de"
     ]
 
 ## Sponsoring / Supporting

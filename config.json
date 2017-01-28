@@ -110,5 +110,9 @@
       "site": "ffrgb",
       "name": "Regensburg"
     }
+  ],
+  "supportedLocale": [
+    "en",
+    "de"
   ]
 }

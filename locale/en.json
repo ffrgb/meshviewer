@@ -1,0 +1,83 @@
+{
+  "node": {
+    "all": "All nodes",
+    "nodes": "Nodes",
+    "uptime": "Uptime",
+    "links": "Links",
+    "clients": "Clients",
+    "distance": "Distance",
+    "tq": "TQ",
+    "lastOnline": "online, last message %{time} (%{date})",
+    "lastOffline": "offline, last message %{time} (%{date})",
+    "activated": "activated (%{branch})",
+    "deactivated": "deactivated",
+    "status": "Status",
+    "firmware": "Firmware version",
+    "hardware": "Hardware model",
+    "visible": "Visible on the map",
+    "update": "Auto update",
+    "site": "Site",
+    "gateway": "Gateway",
+    "coordinates": "Coordinates",
+    "contact": "Contact",
+    "primaryMac": "Primary MAC",
+    "id": "Node ID",
+    "firstSeen": "First seen",
+    "systemLoad": "Load average",
+    "ram": "Memory usage",
+    "ipAddresses": "IP addresses",
+    "selectedGateway": "Selected gateway",
+    "link": "Link |||| Links",
+    "node": "Node |||| Nodes",
+    "new": "New nodes",
+    "missing": "Disappeared nodes"
+  },
+  "location": {
+    "location": "Location",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "copy": "Copy"
+  },
+  "sidebar": {
+    "nodes": "%{total} nodes, including %{online} nodes online",
+    "clients": "with %{smart_count} client |||| with %{smart_count} clients",
+    "gateway": "on %{smart_count} gateway |||| on %{smart_count} gateways",
+    "lastUpdate": "Last update",
+    "nodeNew": "Node is new",
+    "nodeOnline": "Node is online",
+    "nodeOffline": "Node is offline",
+    "aboutInfo": "<h2>About Meshviewer</h2><p>You can zoom in with double-click and zoom out with shift+double-click</p>",
+    "actual": "Actual",
+    "stats": "Statistics",
+    "about": "About"
+  },
+  "momentjs": {
+    "calendar": {
+      "sameDay": "[Today at] LT",
+      "nextDay": "[Tomorrow at] LT",
+      "nextWeek": "dddd [at] LT",
+      "lastDay": "[Yesterday at] LT",
+      "lastWeek": "[Last] dddd [at] LT",
+      "sameElse": "L"
+    },
+    "relativeTime": {
+      "future": "in %s",
+      "past": "%s ago",
+      "s": "a few seconds",
+      "m": "a minute",
+      "mm": "%d minutes",
+      "h": "an hour",
+      "hh": "%d hours",
+      "d": "a day",
+      "dd": "%d days",
+      "M": "a month",
+      "MM": "%d months",
+      "y": "a year",
+      "yy": "%d years"
+    }
+  },
+  "yes": "yes",
+  "no": "no",
+  "unknown": "unknown",
+  "none": "none"
+}

@@ -26,6 +26,7 @@
     "grunt-eslint": "^19.0.0",
     "grunt-inline": "^0.3.6",
     "grunt-inline-data": "git://github.com/xiaokaike/grunt-inline-data.git#2eeb08f",
+    "grunt-json-minify": "^1.1.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",
     "grunt-sass-lint": "^0.2.2"
@@ -48,6 +49,7 @@
     "leaflet": "https://github.com/davojta/Leaflet.git#stable_0_7_7_1_release",
     "leaflet-label": "^0.2.1-0",
     "moment": "^2.17.1",
+    "node-polyglot": "airbnb/polyglot.js",
     "promise-polyfill": "^6.0.2",
     "rbush": "1.4.3",
     "requirejs": "^2.3.2",
