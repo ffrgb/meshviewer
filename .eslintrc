@@ -1,8 +1,12 @@
 ---
 "extends":
-  - "defaults/configurations/eslint"
+  - "eslint-config-airbnb-es5"
 
 rules:
-  "semi": ["error", "always"]
   "no-undef": 0
   "no-console": ["warn", { allow: ["warn", "error"] }]
+  "no-param-reassign": 0
+  "func-names": 0
+  "guard-for-in": 0
+  "no-undefined": 0
+  "no-nested-ternary": 0

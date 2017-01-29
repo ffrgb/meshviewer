@@ -1,58 +1,58 @@
-module.exports = function (grunt) {
-  "use strict";
+module.exports = function exports(grunt) {
+  'use strict';
 
   grunt.config.merge({
-    nodedir: "node_modules",
+    nodedir: 'node_modules',
     copy: {
       html: {
-        src: ["*.html"],
+        src: ['*.html'],
         expand: true,
-        cwd: "html/",
-        dest: "build/"
+        cwd: 'html/',
+        dest: 'build/'
       },
       vendorjs: {
-        src: ["promise-polyfill/promise.js"],
+        src: ['promise-polyfill/promise.js'],
         expand: true,
-        cwd: "<%=nodedir%>/",
-        dest: "build/vendor/"
+        cwd: '<%=nodedir%>/',
+        dest: 'build/vendor/'
       },
       config: {
-        src: ["config.json"],
+        src: ['config.json'],
         expand: true,
-        cwd: ".",
-        dest: "build/"
+        cwd: '.',
+        dest: 'build/'
       },
       ionicons: {
-        src: ["fonts/*"],
+        src: ['fonts/*'],
         expand: true,
-        dest: "build/",
-        cwd: "assets/icons/"
+        dest: 'build/',
+        cwd: 'assets/icons/'
       },
       assistantFont: {
-        src: ["fonts/*"],
+        src: ['fonts/*'],
         expand: true,
-        dest: "build/",
-        cwd: "assets/"
+        dest: 'build/',
+        cwd: 'assets/'
       }
     },
     sass: {
       dev: {
         options: {
           sourceMap: true,
-          outputStyle: "expanded"
+          outputStyle: 'expanded'
         },
         files: {
-          "build/style.css": "scss/main.scss",
-          "build/night.css": "scss/night.scss"
+          'build/style.css': 'scss/main.scss',
+          'build/night.css': 'scss/night.scss'
         }
       },
       dist: {
         options: {
-          outputStyle: "compressed"
+          outputStyle: 'compressed'
         },
         files: {
-          "build/style.css": "scss/main.scss",
-          "build/night.css": "scss/night.scss"
+          'build/style.css': 'scss/main.scss',
+          'build/night.css': 'scss/night.scss'
         }
       }
     },
@@ -60,13 +60,13 @@ module.exports = function (grunt) {
       options: {
         map: false,
         processors: [
-          require("autoprefixer")({
-            browsers: ["> 1% in DE"]
+          require('autoprefixer')({
+            browsers: ['> 1% in DE']
           })
         ]
       },
       dist: {
-        src: "build/*.css"
+        src: 'build/*.css'
       }
     },
     inline: {
@@ -75,8 +75,8 @@ module.exports = function (grunt) {
           cssmin: true,
           uglify: true
         },
-        src: "build/index.html",
-        dest: "build/index.html"
+        src: 'build/index.html',
+        dest: 'build/index.html'
       }
     },
     htmlmin: {
@@ -94,30 +94,30 @@ module.exports = function (grunt) {
     inlinedata: {
       injs: {
         expand: true,
-        cwd: ".",
-        src: ["build/*.html"],
-        ext: ".html"
+        cwd: '.',
+        src: ['build/*.html'],
+        ext: '.html'
       }
     },
     requirejs: {
       default: {
         options: {
-          baseUrl: "lib",
-          name: "../<%=nodedir%>/almond/almond",
-          mainConfigFile: "app.js",
-          include: "../app",
-          out: "build/app.js",
+          baseUrl: 'lib',
+          name: '../<%=nodedir%>/almond/almond',
+          mainConfigFile: 'app.js',
+          include: '../app',
+          out: 'build/app.js',
           build: true
         }
       },
       dev: {
         options: {
-          baseUrl: "lib",
-          name: "../<%=nodedir%>/almond/almond",
-          mainConfigFile: "app.js",
-          include: "../app",
-          optimize: "none",
-          out: "build/app.js",
+          baseUrl: 'lib',
+          name: '../<%=nodedir%>/almond/almond',
+          mainConfigFile: 'app.js',
+          include: '../app',
+          optimize: 'none',
+          out: 'build/app.js',
           build: false,
           generateSourceMaps: true
         }
@@ -126,21 +126,21 @@ module.exports = function (grunt) {
     cachebreaker: {
       default: {
         options: {
-          match: ["app.js"]
+          match: ['app.js']
         },
         files: {
-          src: ["build/index.html"]
+          src: ['build/index.html']
         }
       }
     }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-copy");
-  grunt.loadNpmTasks("grunt-contrib-requirejs");
-  grunt.loadNpmTasks("grunt-sass");
-  grunt.loadNpmTasks("grunt-postcss");
-  grunt.loadNpmTasks("grunt-inline");
-  grunt.loadNpmTasks("grunt-inline-data");
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-inline');
+  grunt.loadNpmTasks('grunt-inline-data');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks("grunt-cache-breaker");
+  grunt.loadNpmTasks('grunt-cache-breaker');
 };
