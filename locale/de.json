@@ -1,53 +1,83 @@
 {
-  "node": {
-    "all": "Alle Knoten",
-    "nodes": "Knoten",
-    "uptime": "Uptime",
-    "links": "Verbindungen",
-    "clients": "Nutzer",
-    "status": "Status",
-    "firmware": "Firmware-Version",
-    "hardware": "Geräte-Modell",
-    "visible": "Auf der Karte sichtbar",
-    "update": "Auto-Update",
-    "site": "Site",
-    "deactivated": "deaktiviert"
+  "node":{
+    "all":"Alle Knoten",
+    "nodes":"Knoten",
+    "uptime":"Uptime",
+    "links":"Verbindungen",
+    "clients":"Nutzer",
+    "distance":"Distance",
+    "tq":"TQ",
+    "lastOnline":"online, last message %{time} (%{date})",
+    "lastOffline":"offline, last message %{time} (%{date})",
+    "activated":"activated (%{branch})",
+    "deactivated":"deaktiviert",
+    "status":"Status",
+    "firmware":"Firmware-Version",
+    "hardware":"Geräte-Modell",
+    "visible":"Auf der Karte sichtbar",
+    "update":"Auto-Update",
+    "site":"Site",
+    "gateway":"Gateway",
+    "coordinates":"Coordinates",
+    "contact":"Contact",
+    "primaryMac":"Primary MAC",
+    "id":"Node ID",
+    "firstSeen":"First seen",
+    "systemLoad":"Load average",
+    "ram":"Memory usage",
+    "ipAddresses":"IP addresses",
+    "selectedGateway":"Selected gateway",
+    "link":"Link |||| Links",
+    "node":"Node |||| Nodes",
+    "new":"New nodes",
+    "missing":"Disappeared nodes"
   },
-  "location": {
-    "location": "Standort",
-    "latitude": "Breitengrad",
-    "longitude": "Längengrad",
-    "copy": "Kopieren"
+  "location":{
+    "location":"Standort",
+    "latitude":"Breitengrad",
+    "longitude":"Längengrad",
+    "copy":"Kopieren"
   },
-  "sidebar": {
-    "nodes": "%{total} Knoten, davon %{online} Knoten online",
-    "aboutInfo": "<h2>Über Meshviewer</h2><p>Mit Doppelklick und Shift+Doppelklick kann man in der Karte auch zoomen.</p>"
+  "sidebar":{
+    "nodes":"%{total} Knoten, davon %{online} Knoten online",
+    "clients":"with %{smart_count} client |||| with %{smart_count} clients",
+    "gateway":"on %{smart_count} gateway |||| on %{smart_count} gateways",
+    "lastUpdate":"Last update",
+    "nodeNew":"Node is new",
+    "nodeOnline":"Node is online",
+    "nodeOffline":"Node is offline",
+    "aboutInfo":"<h2>Über Meshviewer</h2><p>Mit Doppelklick kann man in die Karte hinein zoomen und Shift+Doppelklick heraus zoomen.</p>",
+    "actual":"Actual",
+    "stats":"Statistics",
+    "about":"Über"
   },
-  "momentjs": {
-    "calendar": {
-      "sameDay": "[heute um] LT [Uhr]",
-      "sameElse": "L",
-      "nextDay": "[morgen um] LT [Uhr]",
-      "nextWeek": "dddd [um] LT [Uhr]",
-      "lastDay": "[gestern um] LT [Uhr]",
-      "lastWeek": "[letzten] dddd [um] LT [Uhr]"
+  "momentjs":{
+    "calendar":{
+      "sameDay":"[heute um] LT [Uhr]",
+      "nextDay":"[morgen um] LT [Uhr]",
+      "nextWeek":"dddd [um] LT [Uhr]",
+      "lastDay":"[gestern um] LT [Uhr]",
+      "lastWeek":"[letzten] dddd [um] LT [Uhr]",
+      "sameElse":"L"
     },
-    "relativeTime": {
-      "future": "in %s",
-      "past": "vor %s",
-      "s": "ein paar Sekunden",
-      "m": "einer Minute",
-      "mm": "%d Minuten",
-      "h": "einer Stunde",
-      "hh": "%d Stunden",
-      "d": "einem Tag",
-      "dd": "%d Tagen",
-      "M": "einem Monat",
-      "MM": "%d Monate",
-      "y": "einem Jahr",
-      "yy": "%d Jahre"
+    "relativeTime":{
+      "future":"in %s",
+      "past":"vor %s",
+      "s":"ein paar Sekunden",
+      "m":"einer Minute",
+      "mm":"%d Minuten",
+      "h":"einer Stunde",
+      "hh":"%d Stunden",
+      "d":"einem Tag",
+      "dd":"%d Tagen",
+      "M":"einem Monat",
+      "MM":"%d Monate",
+      "y":"einem Jahr",
+      "yy":"%d Jahre"
     }
   },
-  "yes": "ja",
-  "no": "nein"
+  "yes":"ja",
+  "no":"nein",
+  "unknown":"unknown",
+  "none":"none"
 }
