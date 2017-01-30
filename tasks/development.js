@@ -25,7 +25,7 @@ module.exports = function exports(grunt) {
     watch: {
       html: {
         files: ['html/index.html', 'config.json', 'locale/*.json'],
-        tasks: ['copy', 'inlinedata', 'htmlmin', 'json-minify']
+        tasks: ['copy', 'inline:dev', 'htmlmin', 'json-minify']
       },
       sass: {
         files: ['scss/**/*.scss'],

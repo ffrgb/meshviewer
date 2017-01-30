@@ -76,8 +76,17 @@ module.exports = function exports(grunt) {
       }
     },
     inline: {
+      dev: {
+        options: {
+          cssmin: true,
+          uglify: true
+        },
+        src: 'build/index.html',
+        dest: 'build/index.html'
+      },
       dist: {
         options: {
+          tag: '__build',
           cssmin: true,
           uglify: true
         },
@@ -95,14 +104,6 @@ module.exports = function exports(grunt) {
         files: {
           'build/index.html': 'build/index.html'
         }
-      }
-    },
-    inlinedata: {
-      injs: {
-        expand: true,
-        cwd: '.',
-        src: ['build/*.html'],
-        ext: '.html'
       }
     },
     requirejs: {
@@ -151,7 +152,6 @@ module.exports = function exports(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-inline');
-  grunt.loadNpmTasks('grunt-inline-data');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-json-minify');
   grunt.loadNpmTasks('grunt-cache-breaker');
