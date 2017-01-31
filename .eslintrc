@@ -10,3 +10,4 @@ rules:
   "guard-for-in": 0
   "no-undefined": 0
   "no-nested-ternary": 0
+  "no-extend-native": ["error", { "exceptions": ["String"] }]
