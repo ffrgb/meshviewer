@@ -42,24 +42,37 @@ module.exports = function exports(grunt) {
       }
     },
     sass: {
+      files: [{
+        expand: true,
+        cwd: 'scss/',
+        src: '*.scss',
+        dest: 'build/',
+        ext: '.css'
+      }],
       dev: {
         options: {
           sourceMap: true,
           outputStyle: 'expanded'
         },
-        files: {
-          'build/style.css': 'scss/main.scss',
-          'build/night.css': 'scss/night.scss'
-        }
+        files: [{
+          expand: true,
+          cwd: 'scss/',
+          src: '*.scss',
+          dest: 'build/',
+          ext: '.css'
+        }]
       },
       dist: {
         options: {
           outputStyle: 'compressed'
         },
-        files: {
-          'build/style.css': 'scss/main.scss',
-          'build/night.css': 'scss/night.scss'
-        }
+        files: [{
+          expand: true,
+          cwd: 'scss/',
+          src: '*.scss',
+          dest: 'build/',
+          ext: '.css'
+        }]
       }
     },
     postcss: {

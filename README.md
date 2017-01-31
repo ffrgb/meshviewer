@@ -118,7 +118,22 @@ A list of objects describing map layers. Each object has at least `name`, `url` 
 
 #### mode (string)
 
-Allows to load a additional style for a night mode or similar use case. Style is attached to the mapLayer.
+Allows to load a additional style for a night mode or similar use case. Possible are inline style or link. 
+Inline avoids re-rendering and maybe issues with label-layer update. Important are class "css-mode mode-name" and media "not".
+
+_Default is night.css inline in index.html_
+
+```html
+ <link rel="stylesheet" class="css-mode mode-name" media="not" href="mode-name.css">
+```
+
+or
+
+```html
+<style class="css-mode mode-name" media="not">
+   <inline src="mode-name.css" />
+</style>
+```
 
 #### start (integer)
 
