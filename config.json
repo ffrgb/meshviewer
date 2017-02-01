@@ -28,6 +28,7 @@
   "reverseGeocodingApi": "https://nominatim.openstreetmap.org/reverse",
   "siteName": "Freifunk Regensburg",
   "maxAge": 14,
+  "maxAgeAlert": 3,
   "nodeZoom": 18,
   "nodeInfobox": {
     "contact": false,
