@@ -37,4 +37,30 @@
       }
     }
   }
+
+  .filter-node {
+    border: 0;
+    padding: 0 5px;
+    width: 100%;
+
+    &::before {
+      font-size: 1.8em;
+    }
+
+    input {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid $color-primary;
+      font-family: $font-family;
+      font-size: $font-size;
+      margin: 0 15px 0 3px;
+      outline: none;
+      padding: 0 2px;
+      width: 100%;
+    }
+
+    button {
+      display: none;
+    }
+  }
 }

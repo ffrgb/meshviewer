@@ -5,6 +5,7 @@
 
 - Add modes - For example add a night layer and style
 - Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
+- Node filter is implemented
 - Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer

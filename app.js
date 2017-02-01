@@ -1,4 +1,10 @@
 'use strict';
+// Node search polyfill for mobile browsers and IE
+if (!String.prototype.includes) {
+  String.prototype.includes = function () {
+    return String.prototype.indexOf.apply(this, arguments) !== -1;
+  };
+}
 
 require.config({
   baseUrl: 'lib',
