@@ -1,13 +1,15 @@
 // Needed for standalone scss
 // @import 'icon-mixin';
 
+$cache-breaker: unique-id();
+
 @font-face {
   font-family: 'ionicons';
   font-style: normal;
   font-weight: normal;
-  src: url('fonts/icon.woff2') format('woff2'),
-  url('fonts/icon.woff') format('woff'),
-  url('fonts/icon.ttf') format('truetype');
+  src: url('fonts/icon.woff2?rel=#{$cache-breaker}') format('woff2'),
+  url('fonts/icon.woff?rel=#{$cache-breaker}') format('woff'),
+  url('fonts/icon.ttf?rel=#{$cache-breaker}') format('truetype');
 }
 
 [class^='ion-'], [class*=' ion-'] {

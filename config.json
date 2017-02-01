@@ -114,5 +114,6 @@
   "supportedLocale": [
     "en",
     "de"
-  ]
+  ],
+  "cacheBreaker": "y0z"
 }

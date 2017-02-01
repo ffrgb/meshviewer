@@ -261,6 +261,12 @@ Example for `supportedLocale`:
       "en",
       "de"
     ]
+    
+## cacheBreaker (string)
+
+Will be replaced in every build to avoid missing or outdated language strings, because language.json isn't up to date.
+
+_Fixed value (y0z)._
 
 ## Sponsoring / Supporting
 - [BrowserStack](https://www.browserstack.com/) for providing a awesome testing service for hundreds of browsers

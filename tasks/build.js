@@ -149,12 +149,21 @@ module.exports = function exports(grunt) {
       }
     },
     cachebreaker: {
-      default: {
+      js: {
         options: {
           match: ['app.js']
         },
         files: {
           src: ['build/index.html']
+        }
+      },
+      variable: {
+        options: {
+          match: ['y*z'],
+          position: 'overwrite'
+        },
+        files: {
+          src: ['build/config.json']
         }
       }
     }
