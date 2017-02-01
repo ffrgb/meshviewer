@@ -224,11 +224,11 @@ This option allows to show link statistics depending on the following case-sensi
 - `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
 
 To insert the source or target node-id in either `href`, `thumbnail` or `caption`
-you can use the case-sensitive template strings `{SOURCE}`, `{LOCALE}`, `{TARGET}` and `{TIME}` as cache-breaker.
+you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
 
     "linkInfos": [
-      { "href": "stats/dashboard/db/links?var-source={SOURCE}&var-target={TARGET}",
-        "thumbnail": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE}&var-target={TARGET}&_t={TIME}"
+      { "href": "stats/dashboard/db/links?var-source={SOURCE_ID}&var-target={TARGET_ID}",
+        "thumbnail": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE_ID}&var-target={TARGET_ID}&_t={TIME}"
       }
     ]
 
