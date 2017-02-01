@@ -96,6 +96,11 @@ Change this to match your communities' name. It will be used in various places.
 Nodes being online for less than maxAge days are considered "new". Likewise,
 nodes being offline for more than than maxAge days are considered "lost".
 
+## maxAgeAlert (integer)
+
+Nodes being offline for more than than maxAge days are considered "lost".
+Lost will be splitted in alert and lost.
+
 ## nodeZoom (integer)
 
 Max level to be applied by clicking a node or open a node. With value `18` near by buildings and streets should be visible.
