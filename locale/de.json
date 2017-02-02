@@ -52,6 +52,11 @@
     "stats":"Statistiken",
     "about":"Über"
   },
+  "button": {
+    "switchView": "Ansicht wechseln",
+    "location":"Koordinaten wählen",
+    "tracking":"Lokaliserung"
+  },
   "momentjs":{
     "calendar":{
       "sameDay":"[heute um] LT [Uhr]",
