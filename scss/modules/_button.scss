@@ -37,6 +37,30 @@ button {
     }
   }
 
+  // Tooltip
+  &[data-tooltip] {
+    &::after {
+      background:  $color-black;
+      border-radius: 3px;
+      color: $color-white;
+      content: attr(data-tooltip);
+      font-family: $font-family;
+      font-size: $font-size;
+      padding: 0 12px;
+      position: absolute;
+      transform: translate(45px, 52px);
+      visibility: hidden;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      &::after {
+        transition: visibility 0s linear .3s;
+        visibility: visible;
+      }
+    }
+  }
+
   &.close {
     background-color: transparent;
     border-radius: 0;
