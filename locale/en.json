@@ -52,6 +52,11 @@
     "stats": "Statistics",
     "about": "About"
   },
+  "button": {
+    "switchView": "Switch view",
+    "location":"Pick coordinates",
+    "tracking":"Localisation"
+  },
   "momentjs": {
     "calendar": {
       "sameDay": "[Today at] LT",
