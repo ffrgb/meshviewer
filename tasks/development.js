@@ -29,7 +29,7 @@ module.exports = function exports(grunt) {
       },
       sass: {
         files: ['scss/**/*.scss'],
-        tasks: ['sasslint', 'sass', 'postcss']
+        tasks: ['sasslint', 'sass:dev', 'postcss:dev']
       },
       js: {
         files: ['app.js', 'lib/**/*.js'],

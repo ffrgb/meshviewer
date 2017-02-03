@@ -42,13 +42,6 @@ module.exports = function exports(grunt) {
       }
     },
     sass: {
-      files: [{
-        expand: true,
-        cwd: 'scss/',
-        src: '*.scss',
-        dest: 'build/',
-        ext: '.css'
-      }],
       dev: {
         options: {
           sourceMap: true,
@@ -77,15 +70,27 @@ module.exports = function exports(grunt) {
     },
     postcss: {
       options: {
-        map: false,
         processors: [
           require('autoprefixer')({
             browsers: ['> 1% in DE']
           })
         ]
       },
+      dev: {
+        options: {
+          map: true
+        },
+        dist: {
+          src: 'build/*.css'
+        }
+      },
       dist: {
-        src: 'build/*.css'
+        options: {
+          map: false
+        },
+        dist: {
+          src: 'build/*.css'
+        }
       }
     },
     inline: {
