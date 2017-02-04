@@ -52,7 +52,6 @@
     "promise-polyfill": "^6.0.2",
     "rbush": "1.4.3",
     "requirejs": "^2.3.2",
-    "tablesort": "5.0.0",
     "virtual-dom": "^2.1.1"
   }
 }
