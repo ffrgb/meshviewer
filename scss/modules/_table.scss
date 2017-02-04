@@ -35,6 +35,10 @@ th {
 th {
   font-weight: bold;
 
+  &[class*=' ion-'] {
+    font-size: 1.3em;
+  }
+
   &.sort-header {
     cursor: pointer;
 
