@@ -1,9 +1,2 @@
 rules:
-  single-line-per-selector: 0
-  # Allow for new prefixes like -webkit-tap-highlight-color or antialiasing
-  # Can maybe be enabled again with sass-lint 1.8 https://github.com/sasstools/sass-lint/pull/709
-  no-vendor-prefixes: 0
-  # Needed for old 'display: -vendor-prefix-property' for higher browser-support
-  no-duplicate-properties: 0
-  # Needed for unique-id()
-  empty-args: 0
+# No global rules currently

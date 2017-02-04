@@ -1,5 +1,5 @@
 body {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; // sass-lint:disable-line no-vendor-prefixes
   background: $color-white;
   color: $color-black;
   font-family: $font-family;
@@ -12,7 +12,12 @@ header {
   background: transparentize($color-black, .98);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
 }
 
@@ -31,12 +36,16 @@ h3 {
   padding: 1em 0;
 }
 
-h2, h3 {
+h2,
+h3 {
   padding-left: $button-distance;
   padding-right: $button-distance;
 }
 
-p, pre, ul, h4 {
+p,
+pre,
+ul,
+h4 {
   padding: 0 $button-distance 1em;
 }
 

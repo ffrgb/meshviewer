@@ -22,7 +22,8 @@ table {
   }
 }
 
-td, th {
+td,
+th {
   line-height: 1.41em;
   text-align: right;
 
@@ -61,7 +62,8 @@ th {
     }
   }
 
-  &.sort-up, &.sort-down {
+  &.sort-up,
+  &.sort-down {
     &::after {
       opacity: .4;
       visibility: visible;

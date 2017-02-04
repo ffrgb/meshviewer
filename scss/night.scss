@@ -44,7 +44,8 @@ html {
 
   //@import 'modules/sidebar';
   .sidebar {
-    .infobox, .container {
+    .infobox,
+    .container {
       background: transparentize($color-white, .03);
       border-right: 1px solid darken($color-white, 10%);
     }

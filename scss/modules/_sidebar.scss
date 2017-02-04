@@ -21,8 +21,10 @@
     padding-bottom: 15px;
   }
 
-  .node-list, .node-links {
-    th, td {
+  .node-list,
+  .node-links {
+    th,
+    td {
       &:first-child {
         width: 25px;
       }
@@ -38,7 +40,8 @@
   }
 
   .node-links {
-    th, td {
+    th,
+    td {
       &:first-child {
         width: 50px;
       }
@@ -46,7 +49,8 @@
   }
 
   .link-list {
-    th, td {
+    th,
+    td {
       &:nth-child(1) {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -56,7 +60,8 @@
     }
   }
 
-  .infobox, .container {
+  .infobox,
+  .container {
     @if $shadows == 1 {
       @include shadow(2);
     } @else {
@@ -83,7 +88,8 @@
       left: $sidebar-width-small + $button-distance;
     }
 
-    .container, .infobox {
+    .container,
+    .infobox {
       border-radius: 0;
       @if $shadows == 1 {
         box-shadow: none;
