@@ -47,15 +47,15 @@
     "nodeNew": "Node is new",
     "nodeOnline": "Node is online",
     "nodeOffline": "Node is offline",
-    "aboutInfo": "<h2>About Meshviewer</h2><p>You can zoom in with double-click and zoom out with shift+double-click</p>",
+    "aboutInfo": "<h2>About Meshviewer</h2> <p>You can zoom in with double-click and zoom out with shift+double-click</p>",
     "actual": "Actual",
     "stats": "Statistics",
     "about": "About"
   },
   "button": {
     "switchView": "Switch view",
-    "location":"Pick coordinates",
-    "tracking":"Localisation"
+    "location": "Pick coordinates",
+    "tracking": "Localisation"
   },
   "momentjs": {
     "calendar": {
