@@ -12,8 +12,9 @@ $cache-breaker: unique-id();
   url('fonts/icon.ttf?rel=#{$cache-breaker}') format('truetype');
 }
 
-[class^='ion-'], [class*=' ion-'] {
-  &:before {
+[class^='ion-'],
+[class*=' ion-'] {
+  &::before {
     display: inline-block;
     font-family: $font-family-icons;
     font-style: normal;
@@ -27,22 +28,24 @@ $cache-breaker: unique-id();
   }
 }
 
-@include icon('android-add', '\f2c7');
 @include icon('chevron-left', '\f124');
 @include icon('chevron-right', '\f125');
 @include icon('pin', '\f3a3');
 @include icon('wifi', '\f25c');
 @include icon('eye', '\f133');
-@include icon('ios-arrow-thin-left', '\f3d5');
-@include icon('ios-arrow-thin-right', '\f3d6');
-@include icon('arrow-up-b', '\f10d');
-@include icon('arrow-down-b', '\f104');
-@include icon('android-locate', '\f2e9');
-@include icon('android-close', '\f2d7');
-@include icon('android-lock', '\f392');
-@include icon('ios-copy', '\f41c');
+@include icon('up-b', '\f10d');
+@include icon('down-b', '\f104');
+@include icon('locate', '\f2e9');
+@include icon('close', '\f2d7');
 @include icon('location', '\f456');
-@include icon('android-remove', '\f2f4');
-@include icon('ios-person', '\f47e');
 @include icon('layer', '\f229');
 @include icon('filter', '\f38B');
+@include icon('connection-bars', '\f274');
+@include icon('share-alt', '\f3ac');
+@include icon('clipboard', '\f376');
+@include icon('people', '\f39e');
+@include icon('person', '\f3a0');
+@include icon('time', '\f3b3');
+@include icon('arrow-resize', '\f264');
+@include icon('arrow-left-c', '\f108');
+@include icon('arrow-right-c', '\f10b');
