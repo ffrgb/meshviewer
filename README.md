@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ffrgb/meshviewer.svg?branch=develop)](https://travis-ci.org/ffrgb/meshviewer)
+[![Build Status](https://travis-ci.org/ffrgb/meshviewer.svg?branch=develop&style=flat-square)](https://travis-ci.org/ffrgb/meshviewer)
 
 ### Main differences to https://github.com/ffnord/meshviewer
 #### Some features are maybe merged
@@ -8,13 +8,15 @@
 - Node filter is implemented
 - Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
-- Translation support - https://crowdin.com/project/meshviewer
+- Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
 - Grunt inline for some css and js - less requests
 - Icon font with only needed icons
 - Upgrade to grunt v1.x (Tested with Node.js 4 LTS,6 LTS,7 Linux,OSX,W**)
   - Inline some css and js
 - Remove bower in favour of npm/yarn
-  - Load only german locale from 101 languages from moment.js
+  - Load only  moment.js without languages - Languages included in translations
+  - Remove unneeded components (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
+- Rbush v2 - performance boost in last versions. (Positions labels and clients on the map)
 - Right click open layermenu
 - Remove ruby dependency
 - FixedCenter is required
@@ -276,5 +278,6 @@ _Fixed value (y0z)._
 ## Sponsoring / Supporting
 - [BrowserStack](https://www.browserstack.com/) for providing a awesome testing service for hundreds of browsers
 - [Travis CI](https://travis-ci.org/) for testing every push and pull request
+- [Crowdin](https://crowdin.com/) for providing easy non-developer translation environment
 
 These tools need a lot of infrastructure behind and don't charge open source software
