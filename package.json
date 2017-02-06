@@ -50,7 +50,7 @@
     "moment": "^2.17.1",
     "node-polyglot": "^2.2.2",
     "promise-polyfill": "^6.0.2",
-    "rbush": "1.4.3",
+    "rbush": "^2.0.1",
     "requirejs": "^2.3.2",
     "virtual-dom": "^2.1.1"
   }
