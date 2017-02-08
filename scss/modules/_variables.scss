@@ -21,6 +21,7 @@ $button-font-size: 1.6rem !default;
 $button-distance: 16px !default;
 
 // Bootstrap breakpoints
+// In lib/sidebar to avoid render blocking onload
 $grid-breakpoints: (
   // Extra small screen / phone
   xs: 0,
@@ -35,6 +36,7 @@ $grid-breakpoints: (
 ) !default;
 
 // 45% sidebar - based on viewport
+// In lib/sidebar to avoid render blocking onload
 $sidebar-width: map-get($grid-breakpoints, xl) * .45 !default;
 $sidebar-width-small: map-get($grid-breakpoints, lg) * .45 !default;
 
