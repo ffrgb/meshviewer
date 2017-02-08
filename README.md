@@ -159,21 +159,23 @@ Start a time range to put this mapLayer on first position.
 
 End a time range for first map. Stops sort this mapLayer.
 
-## fixedCenter (array, optional)
+## fixedCenter (array[array, array])
 
-This option allows to fix the map at one specific coordinate depending on following case-sensitive parameters:
-
-- `lat` latitude of the center point
-- `lng` longitude of the center point
-- `radius` visible radius around the center in km
+Choose a rectangle that must be displayed on the map. Set 2 Locations and everything between will displayed.
 
 Examples for `fixedCenter`:
 
-    "fixedCenter": {
-      "lat": 50.80,
-      "lng": 12.07,
-      "radius": 30
-    }
+      // Set a visible frame
+      "fixedCenter": [
+        [
+          49.3522,
+          11.7752
+        ],
+        [
+          48.7480,
+          12.8917
+        ]
+      ],
 
 ## nodeInfos (array, optional)
 
