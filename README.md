@@ -108,6 +108,14 @@ Lost will be splitted in alert and lost.
 Max level to be applied by clicking a node or open a node. With value `18` near by buildings and streets should be visible.
 Interesting if one of configured map provider has zoom-level under `18`.
 
+## labelZoom (integer)
+
+Min. level for node labels shown on the map. Labels aren't shown in first zoom levels and need performance.
+
+## clientZoom (integer)
+
+Min. level to set starting layer for client dots on map.
+
 ## nodeInfobox
 
 #### contact (bool)

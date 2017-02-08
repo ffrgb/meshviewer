@@ -30,6 +30,8 @@
   "maxAge": 14,
   "maxAgeAlert": 3,
   "nodeZoom": 18,
+  "labelZoom": 13,
+  "clientZoom": 15,
   "nodeInfobox": {
     "contact": false,
     "hardwareUsage": true
