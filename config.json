@@ -99,11 +99,19 @@
       }
     }
   ],
-  "fixedCenter": {
-    "lat": 49.01722,
-    "lng": 12.0969,
-    "radius": 45
-  },
+  // Set a visible frame
+  "fixedCenter": [
+    // Northwest
+    [
+      49.3522,
+      11.7752
+    ],
+    // Southeast
+    [
+      48.7480,
+      12.8917
+    ]
+  ],
   "siteNames": [
     {
       "site": "ffrgb-bat15",
