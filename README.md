@@ -181,13 +181,13 @@ Examples for `fixedCenter`:
 
 This option allows to show node statistics depending on following case-sensitive parameters:
 
-- `name` caption of statistics segment in infobox
+- `name` header of statistics segment in infobox
 - `href` absolute or relative URL to statistics image
-- `thumbnail` absolute or relative URL to thumbnail image,
+- `image` `(required)` absolute or relative URL to image,
   can be the same like `href`
-- `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
+- `title` for the image
 
-To insert current node-id in either `href`, `thumbnail` or `caption`
+To insert current variables in either `href`, `image` or `title`
 you can use the case-sensitive template string `{NODE_ID}`, `{NODE_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
 
 Examples for `nodeInfos`:
@@ -196,13 +196,13 @@ Examples for `nodeInfos`:
 
       { "name": "Clientstatistik",
         "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&var-host={NODE_NAME}&_t={TIME}",
-        "caption": "Knoten {NODE_ID}"
+        "image": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&var-host={NODE_NAME}&_t={TIME}",
+        "title": "Knoten {NODE_ID}"
       },
       { "name": "Uptime",
         "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&_t={TIME}",
-        "caption": "Knoten {NODE_ID}"
+        "image": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&_t={TIME}",
+        "title": "Knoten {NODE_ID}"
       }
     ]
 
@@ -212,21 +212,21 @@ In order to have statistics images available, you have to set up an instance of 
 
 This option allows to show global statistics on statistics page depending on following case-sensitive parameters:
 
-- `name` caption of statistics segment in infobox
+- `name` header of statistics segment in infobox
 - `href` absolute or relative URL to statistics image
-- `thumbnail` absolute or relative URL to thumbnail image,
+- `image` `(required)` absolute or relative URL to image,
   can be the same like `href`
-- `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
+- `title` for the image
 
-In contrast to `nodeInfos` there is no template substitution in  `href`, `thumbnail` or `caption`.
+In contrast to `nodeInfos` there is no template substitution in  `href`, `image` or `title`.
 
 Examples for `globalInfos` using Grafana server rendering:
 
     "globalInfos": [
       { "name": "Wochenstatistik",
         "href": "stats/render/render/dashboard-solo/db/global?panelId=1&fullscreen&theme=light&width=600&height=300",
-        "thumbnail": "nodes/globalGraph.png",
-        "caption": "Bild mit Wochenstatistik"
+        "image": "nodes/globalGraph.png",
+        "title": "Bild mit Wochenstatistik"
       }
     ]
 
@@ -234,18 +234,20 @@ Examples for `globalInfos` using Grafana server rendering:
 
 This option allows to show link statistics depending on the following case-sensitive parameters:
 
-- `name` caption of statistics segment in infobox
+- `name` header of statistics segment in infobox
 - `href` absolute or relative URL to statistics image
-- `thumbnail` absolute or relative URL to thumbnail image,
+- `image` `(required)` absolute or relative URL to image,
   can be the same like `href`
-- `caption` is shown, if `thumbnail` is not present (no thumbnail in infobox)
+- `title` for the image
 
-To insert the source or target node-id in either `href`, `thumbnail` or `caption`
+To insert the source or target variable in either `href`, `image` or `title`
 you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
 
     "linkInfos": [
-      { "href": "stats/dashboard/db/links?var-source={SOURCE_ID}&var-target={TARGET_ID}",
-        "thumbnail": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE_ID}&var-target={TARGET_ID}&_t={TIME}"
+      { "name": "Linkstatistik",
+        "href": "stats/dashboard/db/links?var-source={SOURCE_ID}&var-target={TARGET_ID}",
+        "image": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE_ID}&var-target={TARGET_ID}&_t={TIME}",
+        "title": "Bild mit Linkstatistik"
       }
     ]
 
