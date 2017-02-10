@@ -1,0 +1,89 @@
+{
+  "node": {
+    "all": "Tous les nœuds",
+    "nodes": "Nœuds",
+    "uptime": "Temps de fonctionnement",
+    "links": "Connexion",
+    "clients": "Clients",
+    "distance": "Distance",
+    "tq": "TQ",
+    "lastOnline": "en ligne, dernier message %{time} (%{date})",
+    "lastOffline": "hors ligne, dernier message %{time} (%{date})",
+    "activated": "activé (%{branch})",
+    "deactivated": "désactivé",
+    "status": "Statut",
+    "firmware": "Version firmware",
+    "hardware": "Modèle matériel",
+    "visible": "Visible sur la carte",
+    "update": "Mise à jour automatique",
+    "site": "Site",
+    "gateway": "Passerelle",
+    "coordinates": "Coordonnées",
+    "contact": "Contact",
+    "primaryMac": "MAC primaire",
+    "id": "ID de nœud",
+    "firstSeen": "Vu pour la première fois",
+    "systemLoad": "Charge moyenne",
+    "ram": "Utilisation de la mémoire",
+    "ipAddresses": "Adresse IP",
+    "selectedGateway": "Passerelle sélectionné",
+    "link": "Connexion |||| Connexions",
+    "node": "Nœud |||| Nœuds",
+    "new": "Nouveaux nœuds",
+    "missing": "Nœuds disparus"
+  },
+  "location": {
+    "location": "Lieu",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "copy": "Copier"
+  },
+  "sidebar": {
+    "nodeFilter": "Filtre de nœud",
+    "nodes": "%{total} nœud, dont %{online} nœuds en ligne",
+    "clients": "avec %{smart_count} client |||| avec %{smart_count} clients",
+    "gateway": "sur %{smart_count} passerelle |||| sur %{smart_count} passerelles",
+    "lastUpdate": "Dernière actualisation",
+    "nodeNew": "Nœud est nouveau",
+    "nodeOnline": "Nœud est en ligne",
+    "nodeOffline": "Nœud hors ligne",
+    "aboutInfo": "<h2>Sur Meshviewer</h2> <p>Vous pouvez zoomer avec double-clic et effectuer un zoom arrière avec shift + double-clic</p>",
+    "actual": "Actuel",
+    "stats": "Statistiques",
+    "about": "À propros"
+  },
+  "button": {
+    "switchView": "Basculer l’affichage",
+    "location": "Choisir les coordonnées",
+    "tracking": "Localisation"
+  },
+  "momentjs": {
+    "calendar": {
+      "sameDay": "[Aujourd'hui à] LT [heures]",
+      "nextDay": "[Demain à] LT [heures]",
+      "nextWeek": "dddd [à] LT [heures]",
+      "lastDay": "[Hier à] LT [heures]",
+      "lastWeek": "[Dernier] dddd [à] LT [heures]",
+      "sameElse": "L"
+    },
+    "relativeTime": {
+      "future": "dans %s",
+      "past": "il y a %s",
+      "s": "quelques secondes",
+      "m": "une minute",
+      "mm": "%d minute",
+      "h": "une heure",
+      "hh": "%d heures",
+      "d": "un jour",
+      "dd": "%d jours",
+      "M": "un mois",
+      "MM": "%d mois",
+      "y": "un an",
+      "yy": "%d ans"
+    }
+  },
+  "yes": "oui",
+  "no": "non",
+  "unknown": "inconnu",
+  "none": "aucun"
+}

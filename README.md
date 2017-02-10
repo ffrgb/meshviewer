@@ -276,7 +276,8 @@ Example for `supportedLocale`:
 
     "supportedLocale": [
       "en",
-      "de"
+      "de",
+      "fr"
     ]
     
 ## cacheBreaker (string)
