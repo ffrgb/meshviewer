@@ -11,11 +11,14 @@ $color-online: #1566a9 !default;
 $color-offline: #cf3e2a !default;
 $color-unseen: #d89100 !default;
 
+$color-map-background: #f8f4f0 !default;
+
 $font-family: Assistant, sans-serif !default;
 $font-family-icons: ionicons !default;
 $font-family-monospace: monospace !default;
 $font-size: 15px !default;
 $font-size-small: 11px !default;
+$font-size-map-control: 12px !default;
 
 $button-font-size: 1.6rem !default;
 $button-distance: 16px !default;
@@ -41,7 +44,7 @@ $sidebar-width: map-get($grid-breakpoints, xl) * .45 !default;
 $sidebar-width-small: map-get($grid-breakpoints, lg) * .45 !default;
 
 // En/disable box-shadows
-$shadows: 1 !default;
+$shadows: 0 !default;
 
 // En/disable included font
 $use-included-font: 1 !default;
