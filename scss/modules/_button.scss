@@ -11,15 +11,14 @@ button {
   opacity: .7;
   outline: none;
   padding: 0;
-  transition: box-shadow .5s, color .5s;
+  transition: box-shadow .5s, background-color .5s, color .5s;
   width: 1.8em;
 
   &.active {
-    color: $color-primary;
+    box-shadow: 0 0 0 2px $color-primary;
   }
 
   &:hover {
-    background: $color-white;
     color: $color-primary;
   }
 

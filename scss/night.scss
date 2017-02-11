@@ -4,6 +4,7 @@
 
 $color-white: #111;
 $color-black: #fefefe;
+$color-map-background: #0d151c;
 
 html {
   //@import 'modules/base';
@@ -18,7 +19,7 @@ html {
 
   //@import 'leaflet';
   .leaflet-container {
-    background: adjust-color($color-white, $blue: 10);
+    background: $color-map-background;
   }
 
   //@import 'modules/leaflet';
@@ -28,7 +29,6 @@ html {
     }
   }
 
-  //@import 'modules/leaflet-layer';
   .leaflet-control-layers {
     &.leaflet-control {
       opacity: .9;
