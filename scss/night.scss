@@ -35,6 +35,14 @@ html {
     }
   }
 
+  .language-switch {
+    color: $color-black;
+
+    option {
+      background: $color-white;
+    }
+  }
+
   //@import 'modules/filter';
   .filter-node {
     input {

@@ -1,3 +1,21 @@
+header {
+  h2 {
+    display: inline-block;
+  }
+}
+
+.language-switch {
+  background: transparent;
+  border: 0;
+  color: $color-black;
+  float: right;
+  margin: 20px 16px 0 0;
+
+  option {
+    background: $color-white;
+  }
+}
+
 .legend {
   .symbol {
     border-radius: 50%;
