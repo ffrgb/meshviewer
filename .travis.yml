@@ -37,5 +37,8 @@ notifications:
     channels:
     - "irc.hackint.org#freifunkR"
     - "irc.hackint.org#meshviewer"
+    template:
+      - "%{repository_slug}#%{build_number} %{message} (%{branch} - %{commit}: %{commit_subject})"
+      - "Change view : %{compare_url} Build details : %{build_url} %{pull_request_url}"
     nick: ci
     use_notice: true
