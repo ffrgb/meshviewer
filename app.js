@@ -17,7 +17,8 @@ require.config({
     'd3': '../node_modules/d3/d3.min',
     'virtual-dom': '../node_modules/virtual-dom/dist/virtual-dom',
     'rbush': '../node_modules/rbush/rbush',
-    'helper': 'utils/helper'
+    'helper': 'utils/helper',
+    'language': 'utils/language'
   },
   shim: {
     'leaflet.label': ['leaflet'],
