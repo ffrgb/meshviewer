@@ -1,48 +1,57 @@
-[![Build Status](https://travis-ci.org/ffrgb/meshviewer.svg?branch=develop&style=flat-square)](https://travis-ci.org/ffrgb/meshviewer)
+# Meshviewer
+[![Build Status](https://img.shields.io/travis/ffrgb/meshviewer/develop.svg?style=flat-square)](https://travis-ci.org/ffrgb/meshviewer)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/ffrgb/meshviewer/develop.svg?style=flat-square)](https://scrutinizer-ci.com/g/ffrgb/meshviewer/?branch=develop)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 
-### Main differences to https://github.com/ffnord/meshviewer
-#### Some features are maybe merged
+Web-app to visualize nodes and links on a map for Freifunk open mesh network.
 
-- Add modes - For example add a night layer and style
-- Updates selected node or list (incl. image stats cache-breaker) - not only overview tables
+#### Main differences to https://github.com/ffnord/meshviewer
+_Some similar features might have been implemented/merged_
+
+- Map layer modes (Allow to set a default layer based on time combined with a stylesheet)
+- Updates for selected node or list (incl. image stats cache-breaker)
 - Node filter is implemented
-- Zoom level if you click a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
+- Zoom level for a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
+  - Currently available: en, de & fr
 - Grunt inline for some css and js - less requests
-- Icon font with only needed icons
-- Upgrade to grunt v1.x (Tested with Node.js 4 LTS,6 LTS,7 Linux,OSX,W**)
-  - Inline some css and js
+- Icon font with needed icons only
+- Upgrade to Grunt v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
+  - Moved css and some js inline
 - Remove bower in favour of npm/yarn
-  - Load only  moment.js without languages - Languages included in translations
+  - Load only moment.js without languages (Languages are included in translations)
   - Remove unneeded components (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
-- Rbush v2 - performance boost in last versions. (Positions labels and clients on the map)
-- Right click open layermenu
+- RBush v2 - performance boost in last versions (Positions labels and clients on the map)
 - Remove ruby dependency
 - FixedCenter is required
-- Rewrite Scss, SASS lint and variables for easy customization/adjustments
+- Rewrite scss, sass-lint and variables for easy customization/adjustments
 - Improved cross browser/device support THX@BrowserStack
 - Leaflet with patch to avoid IE/Edge crashes
-- Add yarn package manager in favor of npm (npm still works)
+- Yarn package manager in favor of npm (npm still works)
 - Configurable reverse geocoding server
-- [A lot more in commit history](https://github.com/ffrgb/meshviewer/commits/develop)
+- [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
 
-# Demo (embedded):
+## Demo:
 
-https://regensburg.freifunk.net/netz/karte/
+Embedded: https://regensburg.freifunk.net/netz/karte/<br>
+Standalone: https://regensburg.freifunk.net/meshviewer/
 
-# Screenshots
+## Known instances
 
-> TODO new uptodate images
+| Community               | Instance                                  | Repo GitHub                                                                             |
+| ---                     | ---                                       | ---                                                                                     |
+| Freifunk Bremen         | https://map.bremen.freifunk.net/          | [FreifunkBremen/meshviewer-ffrgb](https://github.com/FreifunkBremen/meshviewer-ffrgb)   |
 
-# Dependencies
 
-- yarn
+## Dependencies
+
+- yarn (npm fallback)
 - grunt-cli
 
-# Installing dependencies
+### Installing dependencies
 
-### npm is still possible, but yarn is much faster https://yarnpkg.com/
+_npm is still possible to use, but yarn is much faster https://yarnpkg.com/_
 
 Install yarn package-manager:
 
@@ -50,17 +59,21 @@ Install yarn package-manager:
 
 Execute these commands on your server as a normal user to prepare the dependencies:
 
-    git clone https://github.com/ffrgb/meshviewer.git
-    cd meshviewer
-    yarn
-    # Only needed when no global grunt exists
-    yarn global add grunt-cli
+```bash
+git clone https://github.com/ffrgb/meshviewer.git
+cd meshviewer
+yarn
+# Only needed when no global grunt is installed
+yarn global add grunt-cli
+```
 
-# Building
+## Building
 
 Just run the following command from the meshviewer directory:
 
-    grunt
+```bash
+grunt
+```
 
 This will generate `build/` containing all required files.
 
@@ -70,69 +83,68 @@ Use `grunt serve` for development.
 
 ## Support/Help
 
-- IRC: irc.hackint.org #freifunkRGB
-- Feel free to open an issue for a problem or a idea.
-
-# Configure
-
-Change `config.json`to match your community.
-
+- IRC on irc.hackint.org
+    - [#freifunkRGB](irc://irc.hackint.org/freifunkRGB)
+    - [#meshviewer](irc://irc.hackint.org/meshviewer) (development-channel)
+- Feel free to open an [issue](https://github.com/ffrgb/meshviewer/issues/new) for a problem or an idea.
 
 ## Customize style
 
-Start your development and edit files in `scss/custom/`. Additional information in comments.
+Start your development and edit files in `scss/custom/`. Additional information in file comments.
 
-## dataPath (string/array)
+## Configure
+
+Change `config.json`to match your community.
+
+### dataPath (string/array)
 
 `dataPath` can be either a string containing the address of a Nodes.json v2 compatible backend (e.g. ffmap backend) or an array containing multiple addresses.
 Don't forget the trailing slash!
 Also, proxying the data through a webserver will allow GZip and thus will greatly reduce bandwidth consumption.
 It may help with firewall problems too.
 
-## siteName (string)
+### siteName (string)
 
 Change this to match your communities' name. It will be used in various places.
 
-## maxAge (integer)
+### maxAge (integer)
 
 Nodes being online for less than maxAge days are considered "new". Likewise,
 nodes being offline for more than than maxAge days are considered "lost".
 
-## maxAgeAlert (integer)
+### maxAgeAlert (integer)
 
 Nodes being offline for more than than maxAge days are considered "lost".
 Lost will be splitted in alert and lost.
 
-## nodeZoom (integer)
+### nodeZoom (integer)
 
 Max level to be applied by clicking a node or open a node. With value `18` near by buildings and streets should be visible.
 Interesting if one of configured map provider has zoom-level under `18`.
 
-## labelZoom (integer)
+### labelZoom (integer)
 
 Min. level for node labels shown on the map. Labels aren't shown in first zoom levels and need performance.
 
-## clientZoom (integer)
+### clientZoom (integer)
 
 Min. level to set starting layer for client dots on map.
 
-## nodeInfobox
+### nodeInfobox
 
-#### contact (bool)
+#### contact (bool, optional)
 
 Setting this to `false` will hide contact information for nodes.
 
-#### hardwareUsage (bool)
+#### hardwareUsage (bool, optional)
 
 Setting this to `false` will hide bars of memory usage and load avg for nodes.
 
-## mapLayers (List)
+### mapLayers (List)
 
 A list of objects describing map layers. Each object has at least `name`, `url` and `config` properties. [Example layers and configuration](http://leaflet-extras.github.io/leaflet-providers/preview/) (map against config.json).
 
-### Additional arguments
-
-#### mode (string)
+#### mode (string, optional)
 
 Allows to load a additional style for a night mode or similar use case. Possible are inline style or link. 
 Inline avoids re-rendering and maybe issues with label-layer update. Important are class "css-mode mode-name" and media "not".
@@ -151,33 +163,35 @@ or
 </style>
 ```
 
-#### start (integer)
+#### start (integer, optional)
 
 Start a time range to put this mapLayer on first position.
 
-#### end (integer)
+#### end (integer, optional)
 
 End a time range for first map. Stops sort this mapLayer.
 
-## fixedCenter (array[array, array])
+### fixedCenter (array[array, array])
 
 Choose a rectangle that must be displayed on the map. Set 2 Locations and everything between will displayed.
 
 Examples for `fixedCenter`:
 
-      // Set a visible frame
-      "fixedCenter": [
-        [
-          49.3522,
-          11.7752
-        ],
-        [
-          48.7480,
-          12.8917
-        ]
-      ],
+```json
+// Set a visible frame
+"fixedCenter": [
+  [
+    49.3522,
+    11.7752
+  ],
+  [
+    48.7480,
+    12.8917
+  ]
+],
+```
 
-## nodeInfos (array, optional)
+### nodeInfos (array, optional)
 
 This option allows to show node statistics depending on following case-sensitive parameters:
 
@@ -192,23 +206,26 @@ you can use the case-sensitive template string `{NODE_ID}`, `{NODE_NAME}`, `{LOC
 
 Examples for `nodeInfos`:
 
-    "nodeInfos": [
-
-      { "name": "Clientstatistik",
-        "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "image": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&var-host={NODE_NAME}&_t={TIME}",
-        "title": "Knoten {NODE_ID}"
-      },
-      { "name": "Uptime",
-        "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
-        "image": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&_t={TIME}",
-        "title": "Knoten {NODE_ID}"
-      }
-    ]
+```json
+"nodeInfos": [
+  { 
+    "name": "Clientstatistik",
+    "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
+    "image": "stats/render/dashboard-solo/db/node-byid?panelId=1&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&var-host={NODE_NAME}&_t={TIME}",
+    "title": "Knoten {NODE_ID}"
+  },
+  {
+    "name": "Uptime",
+    "href": "stats/dashboard/db/node-byid?var-nodeid={NODE_ID}",
+    "image": "stats/render/dashboard-solo/db/node-byid?panelId=2&fullscreen&theme=light&width=600&height=300&var-nodeid={NODE_ID}&_t={TIME}",
+    "title": "Knoten {NODE_ID}"
+  }
+]
+```
 
 In order to have statistics images available, you have to set up an instance of each [Prometheus](http://prometheus.io/) and [Grafana](http://grafana.org/).
 
-## globalInfos (array, optional)
+### globalInfos (array, optional)
 
 This option allows to show global statistics on statistics page depending on following case-sensitive parameters:
 
@@ -222,15 +239,18 @@ In contrast to `nodeInfos` there is no template substitution in  `href`, `image`
 
 Examples for `globalInfos` using Grafana server rendering:
 
-    "globalInfos": [
-      { "name": "Wochenstatistik",
-        "href": "stats/render/render/dashboard-solo/db/global?panelId=1&fullscreen&theme=light&width=600&height=300",
-        "image": "nodes/globalGraph.png",
-        "title": "Bild mit Wochenstatistik"
-      }
-    ]
+```json
+"globalInfos": [
+  { 
+    "name": "Wochenstatistik",
+    "href": "stats/render/render/dashboard-solo/db/global?panelId=1&fullscreen&theme=light&width=600&height=300",
+    "image": "nodes/globalGraph.png",
+    "title": "Bild mit Wochenstatistik"
+  }
+]
+```
 
-## linkInfos (array, optional)
+### linkInfos (array, optional)
 
 This option allows to show link statistics depending on the following case-sensitive parameters:
 
@@ -243,15 +263,18 @@ This option allows to show link statistics depending on the following case-sensi
 To insert the source or target variable in either `href`, `image` or `title`
 you can use the case-sensitive template strings `{SOURCE_ID}`, `{TARGET_ID}`, `{SOURCE_NAME}`, `{TARGET_NAME}`, `{LOCALE}` and `{TIME}` as cache-breaker.
 
-    "linkInfos": [
-      { "name": "Linkstatistik",
-        "href": "stats/dashboard/db/links?var-source={SOURCE_ID}&var-target={TARGET_ID}",
-        "image": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE_ID}&var-target={TARGET_ID}&_t={TIME}",
-        "title": "Bild mit Linkstatistik"
-      }
-    ]
+```json
+"linkInfos": [
+  {
+    "name": "Linkstatistik",
+    "href": "stats/dashboard/db/links?var-source={SOURCE_ID}&var-target={TARGET_ID}",
+    "image": "stats/render/dashboard-solo/db/links?panelId=1&fullscreen&theme=light&width=800&height=600&var-source={SOURCE_ID}&var-target={TARGET_ID}&_t={TIME}",
+    "title": "Bild mit Linkstatistik"
+  }
+]
+```
 
-## siteNames (array, optional)
+### siteNames (array, optional)
 
 In this array name definitions for site statistics and node info can be saved. This requires one object for each site code. This object must contain:
 
@@ -262,35 +285,44 @@ If neither `siteNames` nor `showSites` are set, site statistics and node info wo
 
 Example for `siteNames`:
 
-    "siteNames": [
-      { "site": "ffhl", "name": "Lübeck" },
-      { "site": "ffeh", "name": "Entenhausen" ),
-      { "site": "ffgt", "name": "Gothamcity" },
-      { "site": "ffal", "name": "Atlantis" }
-    ]
+```json
+  "siteNames": [
+    {
+      "site": "ffrgb",
+      "name": "Regensburg"
+    },
+    {
+      "site": "ffrgb-dummy",
+      "name": "Regensburg Test"
+    }
+  ],
+```
     
     
-## supportedLocale (array)
+### supportedLocale (array)
 
 Add supported locale (with matching language file in locales/*.json) and it will be matched against the browser language setting. Fallback is the first language in the array.
 
 Example for `supportedLocale`:
 
-    "supportedLocale": [
-      "en",
-      "de",
-      "fr"
-    ]
+```json
+"supportedLocale": [
+  "en",
+  "de",
+  "fr"
+]
+```
     
-## cacheBreaker (string)
+### cacheBreaker (string)
 
 Will be replaced in every build to avoid missing or outdated language strings, because language.json isn't up to date.
 
 _Fixed value (y0z)._
 
 ## Sponsoring / Supporting
-- [BrowserStack](https://www.browserstack.com/) for providing a awesome testing service for hundreds of browsers
-- [Travis CI](https://travis-ci.org/) for testing every push and pull request
-- [Crowdin](https://crowdin.com/) for providing easy non-developer translation environment
+- [BrowserStack](https://www.browserstack.com/) for providing an awesome testing service for hundreds of browsers
+- [Travis CI](https://travis-ci.org/) for building meshviewer on every push and pull request
+- [Scrutinizer CI](https://scrutinizer-ci.com/g/ffrgb/meshviewer/) for testing code quality on every push and pull request
+- [Crowdin](https://crowdin.com/) for providing an easy non-developer translation environment
 
-These tools need a lot of infrastructure behind and don't charge open source software
+These tools need a lot of infrastructure and provide a free account for open source software.
