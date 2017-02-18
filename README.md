@@ -9,25 +9,25 @@ Web-app to visualize nodes and links on a map for Freifunk open mesh network.
 _Some similar features might have been implemented/merged_
 
 - Map layer modes (Allow to set a default layer based on time combined with a stylesheet)
-- Updates for selected node or list (incl. image stats cache-breaker)
-- Node filter is implemented
+- Automatic updates for selected node or list (incl. image stats cache-breaker)
+- Node filter
 - Zoom level for a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
   - Currently available: en, de & fr
 - Grunt inline for some css and js - less requests
 - Icon font with needed icons only
-- Upgrade to Grunt v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
-  - Moved css and some js inline
-- Remove bower in favour of npm/yarn
+- Grunt upgraded to v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
+  - css and some js moved inline
+- Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
-  - Remove unneeded components (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
+  - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
 - RBush v2 - performance boost in last versions (Positions labels and clients on the map)
-- Remove ruby dependency
+- Ruby dependency removed
 - FixedCenter is required
-- Rewrite scss, sass-lint and variables for easy customization/adjustments
-- Improved cross browser/device support THX@BrowserStack
-- Leaflet with patch to avoid IE/Edge crashes
+- Sass-lint, scss and variables rewritten for easy customization/adjustments
+- Cross browser/device support improved (THX@BrowserStack)
+- Leaflet fork with a patch to avoid IE/Edge crashes
 - Yarn package manager in favor of npm (npm still works)
 - Configurable reverse geocoding server
 - [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
