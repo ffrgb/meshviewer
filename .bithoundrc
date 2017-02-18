@@ -4,17 +4,15 @@
     ],
     "unused-ignores": [
       "almond",
-      "chroma-js",
-      "d3",
       "d3-*",
       "leaflet",
-      "leaflet-label",
       "moment",
+      "navigo",
       "node-polyglot",
+      "promise-polyfill",
       "rbush",
       "requirejs",
-      "virtual-dom",
-      "promise-polyfill"
+      "snabbdom"
     ]
   },
   "critics": {

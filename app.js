@@ -77,7 +77,7 @@ require.config({
     'd3-force': '../node_modules/d3-force/build/d3-force',
     'd3-zoom': '../node_modules/d3-zoom/build/d3-zoom',
     'd3-drag': '../node_modules/d3-drag/build/d3-drag',
-    'virtual-dom': '../node_modules/virtual-dom/dist/virtual-dom',
+    'snabbdom': '../node_modules/snabbdom/dist/snabbdom-patch',
     'rbush': '../node_modules/rbush/rbush',
     'helper': 'utils/helper'
   },
