@@ -1,5 +1,6 @@
 .sidebar {
   box-sizing: border-box;
+  left: 0;
   position: absolute;
   transition: left .5s;
   width: $sidebar-width;
