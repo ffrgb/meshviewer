@@ -6,7 +6,7 @@
     "links": "Verbindungen",
     "clients": "Nutzer",
     "distance": "Entfernung",
-    "tq": "TQ",
+    "tq": "Übertragungsqualität",
     "lastOnline": "online, letzte Nachricht %{time} (%{date})",
     "lastOffline": "offline, letzte Nachricht %{time} (%{date})",
     "activated": "aktiviert (%{branch})",

@@ -6,7 +6,7 @@
     "links": "Links",
     "clients": "Clients",
     "distance": "Distance",
-    "tq": "TQ",
+    "tq": "Transmit quality",
     "lastOnline": "online, last message %{time} (%{date})",
     "lastOffline": "offline, last message %{time} (%{date})",
     "activated": "activated (%{branch})",

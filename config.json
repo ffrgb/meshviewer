@@ -125,7 +125,8 @@
   "supportedLocale": [
     "en",
     "de",
-    "fr"
+    "fr",
+    "ru"
   ],
   "cacheBreaker": "y0z"
 }
