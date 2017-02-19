@@ -19,15 +19,15 @@ _Some similar features might have been implemented/merged_
 - Icon font with needed icons only
 - Grunt upgraded to v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
   - css and some js moved inline
-- npm/yarn in favour of bower
+- Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
   - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
 - RBush v2 - performance boost in last versions (Positions labels and clients on the map)
-- ruby dependency removed
+- Ruby dependency removed
 - FixedCenter is required
-- scss, sass-lint and variables rewritten for easy customization/adjustments
+- Sass-lint, scss and variables rewritten for easy customization/adjustments
 - Cross browser/device support improved (THX@BrowserStack)
-- Leaflet patch to avoid IE/Edge crashes
+- Leaflet fork with a patch to avoid IE/Edge crashes
 - Yarn package manager in favor of npm (npm still works)
 - Configurable reverse geocoding server
 - [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
