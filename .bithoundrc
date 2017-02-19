@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "mute": [
-      "grunt-inline"
     ]
   }
 }
