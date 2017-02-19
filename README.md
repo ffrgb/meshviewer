@@ -14,7 +14,7 @@ _Some similar features might have been implemented/merged_
 - Zoom level for a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
-  - Currently available: en, de & fr
+  - Currently available: en, de, fr & ru
 - Grunt inline for some css and js - less requests
 - Icon font with needed icons only
 - Grunt upgraded to v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)

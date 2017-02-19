@@ -1,0 +1,89 @@
+{
+  "node": {
+    "all": "Все узлы",
+    "nodes": "Узлы",
+    "uptime": "Время работы",
+    "links": "Ссылки",
+    "clients": "Клиенты",
+    "distance": "Расстояние",
+    "tq": "Транспорт качество",
+    "lastOnline": "в сети, последнее сообщение %{time} (%{date})",
+    "lastOffline": "не в сети, последнее сообщение %{time} (%{date})",
+    "activated": "активировано (%{branch})",
+    "deactivated": "деактивировано",
+    "status": "Статус",
+    "firmware": "Версия прошивки",
+    "hardware": "Тип оборудования",
+    "visible": "Видно на карте",
+    "update": "Автообновление",
+    "site": "Сайт",
+    "gateway": "Шлюз",
+    "coordinates": "Координаты",
+    "contact": "Контакты",
+    "primaryMac": "Основной MAC",
+    "id": "Идентификатор узла",
+    "firstSeen": "Впервые замечен",
+    "systemLoad": "Средняя загрузка",
+    "ram": "Используемая память",
+    "ipAddresses": "IP адреса",
+    "selectedGateway": "Выбранный шлюз",
+    "link": "Ссылка |||| Ссылки",
+    "node": "Узел |||| Узлы",
+    "new": "Новые узлы",
+    "missing": "Исчезнувшие узлы"
+  },
+  "location": {
+    "location": "Расположение",
+    "latitude": "Широта",
+    "longitude": "Долгота",
+    "copy": "Копировать"
+  },
+  "sidebar": {
+    "nodeFilter": "Фильтр узлов",
+    "nodes": "%{total} узлов, включая %{online} узлов онлайн",
+    "clients": "с %{smart_count} клиентом |||| с %{smart_count} клиентами",
+    "gateway": "на %{smart_count} шлюзе |||| на %{smart_count} шлюзах",
+    "lastUpdate": "Последние обновления",
+    "nodeNew": "Узел новый",
+    "nodeOnline": "Узел в сети",
+    "nodeOffline": "Узел не в сети",
+    "aboutInfo": "<h2>О Meshviewer</h2> <p>Вы можете увеличить масштаб двойным щелчком мыши и уменьшить с shift + двойной щелчок</p>",
+    "actual": "Текущее",
+    "stats": "Статистика",
+    "about": "О продукте"
+  },
+  "button": {
+    "switchView": "Переключить вид",
+    "location": "Взять координаты",
+    "tracking": "Локализация"
+  },
+  "momentjs": {
+    "calendar": {
+      "sameDay": "[Сегодня в] LT",
+      "nextDay": "[Завтра в] LT",
+      "nextWeek": "dddd [в] LT",
+      "lastDay": "[Вчера в] LT",
+      "lastWeek": "[Последний] dddd [в] LT",
+      "sameElse": "L"
+    },
+    "relativeTime": {
+      "future": "в %s",
+      "past": "%s назад",
+      "s": "несколько секунд",
+      "m": "минута",
+      "mm": "%d минут",
+      "h": "час",
+      "hh": "%d часов",
+      "d": "день",
+      "dd": "%d дней",
+      "M": "месяц",
+      "MM": "%d месяцев",
+      "y": "год",
+      "yy": "%d лет"
+    }
+  },
+  "yes": "да",
+  "no": "нет",
+  "unknown": "неизвестно",
+  "none": "нет"
+}
