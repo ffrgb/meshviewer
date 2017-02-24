@@ -33,11 +33,15 @@ require.config({
     'd3-drag': '../node_modules/d3-drag/build/d3-drag',
     'virtual-dom': '../node_modules/virtual-dom/dist/virtual-dom',
     'rbush': '../node_modules/rbush/rbush',
+    'd3': 'forcegraph/d3',
     'helper': 'utils/helper',
     'language': 'utils/language'
   },
   shim: {
     'leaflet.label': ['leaflet'],
+    'd3-drag': ['d3-selection'],
+    'd3-force': ['d3-collection', 'd3-dispatch', 'd3-quadtree', 'd3-timer'],
+    'd3-zoom': ['d3-drag', 'd3-ease', 'd3-transition', 'd3-color', 'd3-interpolate'],
     'tablesort': {
       exports: 'Tablesort'
     }
