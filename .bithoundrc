@@ -1,6 +1,25 @@
 {
   "dependencies": {
     "mute": [
+    ],
+    "unused-ignores": [
+      "almond",
+      "chroma-js",
+      "d3",
+      "d3-*",
+      "leaflet",
+      "leaflet-label",
+      "moment",
+      "node-polyglot",
+      "rbush",
+      "requirejs",
+      "virtual-dom",
+      "promise-polyfill"
     ]
+  },
+  "critics": {
+    "wc": {
+      "limit": 5000
+    }
   }
 }
