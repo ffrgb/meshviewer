@@ -33,7 +33,6 @@ require.config({
     'd3-drag': '../node_modules/d3-drag/build/d3-drag',
     'virtual-dom': '../node_modules/virtual-dom/dist/virtual-dom',
     'rbush': '../node_modules/rbush/rbush',
-    'd3': 'forcegraph/d3',
     'helper': 'utils/helper',
     'language': 'utils/language'
   },
