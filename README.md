@@ -3,7 +3,7 @@
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/ffrgb/meshviewer/develop.svg?style=flat-square)](https://scrutinizer-ci.com/g/ffrgb/meshviewer/?branch=develop)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 
-Web-app to visualize nodes and links on a map for Freifunk open mesh network.
+A web-app to visualize nodes and links on a map for Freifunk open mesh network.
 
 #### Main differences to https://github.com/ffnord/meshviewer
 _Some similar features might have been implemented/merged_
@@ -22,19 +22,19 @@ _Some similar features might have been implemented/merged_
 - Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
   - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
-- RBush v2 - performance boost in last versions (Positions labels and clients on the map)
+- RBush v2 - performance boost in last versions (positions, labels and clients on the map)
 - Ruby dependency removed
 - FixedCenter is required
-- Sass-lint, scss and variables rewritten for easy customization/adjustments
+- Sass-lint, scss and variables rewritten for easy customizations/adjustments
 - Cross browser/device support improved (THX@BrowserStack)
 - Leaflet fork with a patch to avoid IE/Edge crashes
-- Yarn package manager in favor of npm (npm still works)
+- Yarn package manager in favour of npm (npm still works)
 - Configurable reverse geocoding server
 - [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
 
 ## Demo:
 
-Embedded: https://regensburg.freifunk.net/netz/karte/<br>
+Embedded: https://regensburg.freifunk.net/netz/karte/  
 Standalone: https://regensburg.freifunk.net/meshviewer/
 
 ## Known instances
@@ -55,7 +55,7 @@ _npm is still possible to use, but yarn is much faster https://yarnpkg.com/_
 
 Install yarn package-manager:
 
-    Chosse your OS and install yarn https://yarnpkg.com/en/docs/install
+    Choose your OS and install yarn https://yarnpkg.com/en/docs/install
 
 Execute these commands on your server as a normal user to prepare the dependencies:
 
@@ -63,7 +63,7 @@ Execute these commands on your server as a normal user to prepare the dependenci
 git clone https://github.com/ffrgb/meshviewer.git
 cd meshviewer
 yarn
-# Only needed when no global grunt is installed
+# Only needed if no global grunt is installed
 yarn global add grunt-cli
 ```
 
@@ -75,7 +75,7 @@ Just run the following command from the meshviewer directory:
 grunt
 ```
 
-This will generate `build/` containing all required files.
+This will generate a folder `build/` that will contain all required files.
 
 ## Development
 
