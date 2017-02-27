@@ -32,7 +32,7 @@ _Some similar features might have been implemented/merged_
 - Configurable reverse geocoding server
 - [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
 
-## Demo:
+## Demo
 
 Embedded: https://regensburg.freifunk.net/netz/karte/  
 Standalone: https://regensburg.freifunk.net/meshviewer/
