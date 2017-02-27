@@ -120,7 +120,6 @@ Lost will be splitted in alert and lost.
 ### nodeZoom (integer)
 
 Max level to be applied by clicking a node or opening a node. Value `18` is a good default, so nearby buildings and streets should be visible.
-Interesting if one of the configured map providers has a zoom-level under `18`.
 
 ### labelZoom (integer)
 
