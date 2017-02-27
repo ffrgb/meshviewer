@@ -11,7 +11,7 @@ _Some similar features might have been implemented/merged_
 - Map layer modes (Allow to set a default layer based on time combined with a stylesheet)
 - Automatic updates for selected node or list (incl. image stats cache-breaker)
 - Node filter
-- Zoom level for a node (`nodeZoom`) - Zoom level 22 available, but it is to close for a click
+- Zoom level for clicking on a node (`nodeZoom`) is definable independently from the maximum zoom level 22
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
   - Currently available: en, de, fr & ru
@@ -119,8 +119,8 @@ Lost will be splitted in alert and lost.
 
 ### nodeZoom (integer)
 
-Max level to be applied by clicking a node or open a node. With value `18` near by buildings and streets should be visible.
-Interesting if one of configured map provider has zoom-level under `18`.
+Max level to be applied by clicking a node or opening a node. Value `18` is a good default, so nearby buildings and streets should be visible.
+Interesting if one of the configured map providers has a zoom-level under `18`.
 
 ### labelZoom (integer)
 
