@@ -19,7 +19,7 @@ _Some similar features might have been implemented/merged_
 - Icon font with needed icons only
 - Grunt upgraded to v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
   - css and some js moved inline
-- Yarn/npm in favor of bower
+- Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
   - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
 - RBush v2 - performance boost in last versions (positions, labels and clients on the map)
