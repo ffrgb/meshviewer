@@ -57,6 +57,7 @@ require.config({
   baseUrl: 'lib',
   paths: {
     'polyglot': '../node_modules/node-polyglot/build/polyglot',
+    'Navigo': '../node_modules/navigo/lib/navigo',
     'leaflet': '../node_modules/leaflet/dist/leaflet',
     'moment': '../node_modules/moment/moment',
     // d3 modules indirect dependencies
@@ -78,8 +79,7 @@ require.config({
     'd3-drag': '../node_modules/d3-drag/build/d3-drag',
     'virtual-dom': '../node_modules/virtual-dom/dist/virtual-dom',
     'rbush': '../node_modules/rbush/rbush',
-    'helper': 'utils/helper',
-    'language': 'utils/language'
+    'helper': 'utils/helper'
   },
   shim: {
     'd3-drag': ['d3-selection'],

@@ -9,6 +9,7 @@ Meshviewer is an online visualization app to represent nodes and links on a map 
 #### Main differences to https://github.com/ffnord/meshviewer
 _Some similar features might have been implemented/merged_
 
+- Replaced router - including language, mode, node, link, location
 - Leaflet upgraded to v1 - faster on mobile
 - Forcegraph rewrite with d3.js v4
 - Map layer modes (Allow to set a default layer based on time combined with a stylesheet)
