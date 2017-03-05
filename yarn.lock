@@ -695,9 +695,9 @@ d3-dispatch@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.2.tgz#5b511e79a46a1f89492841c0a8f656687d5daa0a"
 
-d3-drag@1, d3-drag@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/d3-drag/-/d3-drag-1.0.2.tgz#d634cc3f7689f99dd03fd7eb1af2945c0f4339ad"
+d3-drag@1, d3-drag@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/d3-drag/-/d3-drag-1.0.3.tgz#a016d21c696d130ba758babf1cd9e5f049169d0b"
   dependencies:
     d3-dispatch "1"
     d3-selection "1"
@@ -706,9 +706,9 @@ d3-ease@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-1.0.2.tgz#b486f8f3ca308ca7be38197d65622b6e30983377"
 
-d3-force@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-1.0.4.tgz#f84dcbb3200be41de7bc30fa71923143156758bf"
+d3-force@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-1.0.5.tgz#be8f65ac70688b8d26a9d9bc1e4699c1525f46b1"
   dependencies:
     d3-collection "1"
     d3-dispatch "1"
@@ -725,9 +725,9 @@ d3-quadtree@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-quadtree/-/d3-quadtree-1.0.2.tgz#e7e873af06aaa427eaa4af094cc4cbfb350b9e38"
 
-d3-selection@1, d3-selection@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-1.0.3.tgz#e63e51416172427854c1bcdfa066eb5fe872c108"
+d3-selection@1, d3-selection@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-1.0.4.tgz#b862c7ae22436efe8459b7659ccdae84f09b43a3"
 
 d3-timer@1:
   version "1.0.4"
@@ -744,9 +744,9 @@ d3-transition@1:
     d3-selection "1"
     d3-timer "1"
 
-d3-zoom@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/d3-zoom/-/d3-zoom-1.1.1.tgz#d2362d8f7043c1fc5d96a438de69f4e02ef1e67b"
+d3-zoom@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/d3-zoom/-/d3-zoom-1.1.2.tgz#a8944947e92a12bc5d5a3fb4dccf1a40e7de5fb3"
   dependencies:
     d3-dispatch "1"
     d3-drag "1"
