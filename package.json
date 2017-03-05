@@ -12,9 +12,9 @@
     "test": "node -e \"require('grunt').cli()\" '' clean lint"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
+    "autoprefixer": "^6.7.6",
     "babel-eslint": "^7.1.1",
-    "eslint": "^3.15.0",
+    "eslint": "^3.17.0",
     "eslint-config-airbnb-es5": "^1.1.0",
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-react": "^6.9.0",
