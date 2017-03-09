@@ -77,13 +77,6 @@ html {
     }
   }
 
-  //@import 'modules/proportion';
-  .proportion {
-    span {
-      filter: invert(100%);
-    }
-  }
-
   //@import 'modules/tabs';
   .tabs {
     background: transparentize($color-black, .98);

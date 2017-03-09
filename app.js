@@ -12,7 +12,6 @@ require.config({
     'polyglot': '../node_modules/node-polyglot/build/polyglot',
     'leaflet': '../node_modules/leaflet/dist/leaflet',
     'leaflet.label': '../node_modules/leaflet-label/dist/leaflet.label',
-    'chroma-js': '../node_modules/chroma-js/chroma.min',
     'moment': '../node_modules/moment/moment',
     // d3 modules indirect dependencies
     // by d3-zoom: d3-drag
@@ -40,10 +39,8 @@ require.config({
     'leaflet.label': ['leaflet'],
     'd3-drag': ['d3-selection'],
     'd3-force': ['d3-collection', 'd3-dispatch', 'd3-quadtree', 'd3-timer'],
-    'd3-zoom': ['d3-drag', 'd3-ease', 'd3-transition', 'd3-color', 'd3-interpolate'],
-    'tablesort': {
-      exports: 'Tablesort'
-    }
+    'd3-interpolate': ['d3-color'],
+    'd3-zoom': ['d3-drag', 'd3-ease', 'd3-transition', 'd3-interpolate']
   }
 });
 
