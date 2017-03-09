@@ -22,7 +22,7 @@ _Some similar features might have been implemented/merged_
   - css and some js moved inline
 - Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
-  - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes)
+  - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes, chroma-js)
 - RBush v2 - performance boost in last versions (positions, labels and clients on the map)
 - Ruby dependency removed
 - FixedCenter is required
