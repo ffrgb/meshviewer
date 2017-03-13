@@ -317,7 +317,7 @@ Example for `supportedLocale`:
 
 Will be replaced in every build to avoid missing or outdated language strings, because language.json isn't up to date.
 
-_Fixed value (y0z)._
+_Fixed value (vy0zx)._
 
 ## Sponsoring / Supporting
 - [BrowserStack](https://www.browserstack.com/) for providing an awesome testing service for hundreds of browsers

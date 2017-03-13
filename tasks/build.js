@@ -164,7 +164,7 @@ module.exports = function exports(grunt) {
       },
       variable: {
         options: {
-          match: ['y*z'],
+          match: ['vy*zx'],
           position: 'overwrite'
         },
         files: {
