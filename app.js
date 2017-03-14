@@ -58,7 +58,6 @@ require.config({
   paths: {
     'polyglot': '../node_modules/node-polyglot/build/polyglot',
     'leaflet': '../node_modules/leaflet/dist/leaflet',
-    'leaflet.label': '../node_modules/leaflet-label/dist/leaflet.label',
     'moment': '../node_modules/moment/moment',
     // d3 modules indirect dependencies
     // by d3-zoom: d3-drag
@@ -83,7 +82,6 @@ require.config({
     'language': 'utils/language'
   },
   shim: {
-    'leaflet.label': ['leaflet'],
     'd3-drag': ['d3-selection'],
     'd3-force': ['d3-collection', 'd3-dispatch', 'd3-quadtree', 'd3-timer'],
     'd3-interpolate': ['d3-color'],

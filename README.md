@@ -9,6 +9,7 @@ A web-app to visualize nodes and links on a map for Freifunk open mesh network.
 #### Main differences to https://github.com/ffnord/meshviewer
 _Some similar features might have been implemented/merged_
 
+- Leaflet upgraded to v1 - faster on mobile
 - Forcegraph rewrite with d3.js v4
 - Map layer modes (Allow to set a default layer based on time combined with a stylesheet)
 - Automatic updates for selected node or list (incl. image stats cache-breaker)
@@ -23,13 +24,12 @@ _Some similar features might have been implemented/merged_
   - css and some js moved inline
 - Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
-  - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, jshashes, chroma-js)
+  - unneeded components removed (es6-shim, tablesort, numeraljs, leaflet-providers, leaflet-label jshashes, chroma-js)
 - RBush v2 - performance boost in last versions (positions, labels and clients on the map)
 - Ruby dependency removed
 - FixedCenter is required
 - Sass-lint, scss and variables rewritten for easy customizations/adjustments
 - Cross browser/device support improved (THX@BrowserStack)
-- Leaflet fork with a patch to avoid IE/Edge crashes
 - Yarn package manager in favour of npm (npm still works)
 - Configurable reverse geocoding server
 - [A lot more in the commit history](https://github.com/ffrgb/meshviewer/commits/develop)
