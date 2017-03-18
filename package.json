@@ -54,6 +54,7 @@
     "navigo": "^7.1.2",
     "node-polyglot": "2.2.2",
     "promise-polyfill": "^8.1.0",
+    "raven-js": "^3.27.0",
     "rbush": "^2.0.2",
     "requirejs": "^2.3.6",
     "snabbdom": "^0.7.2"

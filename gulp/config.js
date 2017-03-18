@@ -10,7 +10,7 @@ module.exports = function () {
       json: 'locale/*.json',
       html: ['html/*.html', './config*.js']
     },
-    clean: [build + '/*.map', build + '/vendor', build + '/main.css'],
+    clean: [build + '/*.css.map', build + '/vendor', build + '/main.css'],
     autoprefixer: ['> 1% in DE'],
     browsersync: {
       open: false,
