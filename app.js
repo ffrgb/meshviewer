@@ -90,5 +90,5 @@ require.config({
 });
 
 require(['main'], function (main) {
-  main(jsonData);
+  main();
 });
