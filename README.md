@@ -18,9 +18,9 @@ _Some similar features might have been implemented/merged_
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
   - Currently available: en, de, fr & ru
-- Grunt inline for some css and js - less requests
+- Gulp inline for some css and js - less requests and instant load indicator
 - Icon font with needed icons only
-- Grunt upgraded to v1.x (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
+- Switch to Gulp (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
   - css and some js moved inline
 - Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)

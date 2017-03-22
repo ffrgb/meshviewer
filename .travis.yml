@@ -30,4 +30,4 @@ before_script:
   - if git status | grep -q "modified.   \.travis\.yml"; then echo "Dirty yarn.lock"; exit 1; fi
 
 script:
-  - grunt
+  - gulp
