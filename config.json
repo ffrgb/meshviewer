@@ -1,4 +1,4 @@
-// Grunt will remove all comments
+// Gulp will remove all comments
 {
   // Variables are NODE_ID and NODE_NAME (only a-z0-9\- other chars are replaced with _)
   "nodeInfos": [
@@ -40,7 +40,7 @@
     {
       "name": "Freifunk Regensburg",
       // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
-      "url": "https://{s}.tiles.ffrgb.net/{z}/{x}/{y}{retina}.png",
+      "url": "https://{s}.tiles.ffrgb.net/n/{z}/{x}/{y}{retina}.png",
       "config": {
         "maxZoom": 22,
         "subdomains": "1234",
@@ -128,5 +128,5 @@
     "fr",
     "ru"
   ],
-  "cacheBreaker": "vy0zx"
+  "cacheBreaker": "<!-- inject:cache-breaker -->"
 }

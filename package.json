@@ -8,30 +8,28 @@
   "bugs": {
     "url": "https://github.com/ffrgb/meshviewer/issues"
   },
-  "scripts": {
-    "test": "node -e \"require('grunt').cli()\" '' clean lint"
-  },
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
-    "babel-eslint": "^7.1.1",
-    "eslint": "^3.17.1",
+    "babel-eslint": "^7.2.1",
+    "browser-sync": "^2.18.8",
+    "eslint": "^3.0.0",
     "eslint-config-airbnb-es5": "^1.1.0",
     "eslint-config-defaults": "^9.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "grunt": "^1.0.1",
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-cache-breaker": "^2.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-htmlmin": "^2.3.0",
-    "grunt-contrib-requirejs": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-eslint": "^19.0.0",
-    "grunt-inline": "https://github.com/xf-/grunt-inline.git",
-    "grunt-json-minify": "^1.1.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-sass": "^2.0.0",
-    "grunt-sass-lint": "^0.2.2"
+    "eslint-plugin-react": "^6.10.3",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache-bust": "^1.1.0",
+    "gulp-environments": "^0.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-jsonminify": "^1.0.0",
+    "gulp-kyh-inline-source": "^3.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-requirejs-optimize": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.2",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.1.2"
   },
   "eslintConfig": {
     "env": {
