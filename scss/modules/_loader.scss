@@ -7,17 +7,17 @@
 }
 
 .spinner {
-  animation: .6s spinner ease-in-out infinite alternate;
-  border-bottom: 2px solid $color-primary;
-  border-radius: 50%;
-  display: inline-block;
-  height: 64px;
-  margin-top: 10px;
-  width: 64px;
+  path {
+    &:first-of-type {
+      animation: 1s spinner ease-in-out infinite alternate;
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes spinner {
   to {
-    transform: rotate(360deg);
+    filter: grayscale(.8);
+    opacity: .2;
   }
 }

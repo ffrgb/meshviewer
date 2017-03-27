@@ -1,3 +1,4 @@
+const fs = require('fs');
 module.exports = function (gulp, plugins, config, env) {
   return function html() {
     return gulp.src(env.production() ? config.build + '/*.html' : 'html/*.html')
@@ -13,6 +14,7 @@ module.exports = function (gulp, plugins, config, env) {
         }
       }))
       .pipe(env.production(plugins.kyhInlineSource({ compress: false })))
+      .pipe(plugins.realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.faviconData)).favicon.html_code))
       .pipe(plugins.cacheBust({
         type: 'timestamp'
       }))

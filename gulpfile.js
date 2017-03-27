@@ -14,6 +14,10 @@ function getTask(task) {
   return require('./gulp/tasks/' + task)(gulp, plugins, config, env);
 }
 
+gulp.task('generate-favicon',
+  getTask('favicon')
+);
+
 require('./gulp/serve')(gulp, plugins, config, env);
 gulp.task('serve',
   gulp.series(
