@@ -3,6 +3,7 @@ module.exports = function () {
 
   return {
     build: build,
+    faviconData: 'assets/faviconData.json',
     src: {
       sass: 'scss/**/*.scss',
       javascript: ['app.js', 'lib/**/*.js'],
