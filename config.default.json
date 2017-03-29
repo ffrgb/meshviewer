@@ -1,0 +1,20 @@
+// Gulp will remove all comments
+{
+  "reverseGeocodingApi": "https://nominatim.openstreetmap.org/reverse",
+  "maxAge": 14,
+  "maxAgeAlert": 3,
+  "nodeZoom": 18,
+  "labelZoom": 13,
+  "clientZoom": 15,
+  "nodeInfobox": {
+    "contact": false,
+    "hardwareUsage": true
+  },
+  "supportedLocale": [
+    "en",
+    "de",
+    "fr",
+    "ru"
+  ],
+  "cacheBreaker": "<!-- inject:cache-breaker -->"
+}

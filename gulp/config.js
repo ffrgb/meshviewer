@@ -8,7 +8,7 @@ module.exports = function () {
       sass: 'scss/**/*.scss',
       javascript: ['app.js', 'lib/**/*.js'],
       json: 'locale/*.json',
-      html: ['html/index.html', 'config.json']
+      html: ['html/index.html', 'config.json', 'config.default.json']
     },
     clean: [build + '/*.map', build + '/vendor', build + '/main.css'],
     autoprefixer: ['> 1% in DE'],

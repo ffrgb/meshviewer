@@ -25,17 +25,7 @@
   ],
   // String or array of data provider are supported
   "dataPath": "https://regensburg.freifunk.net/data/",
-  "reverseGeocodingApi": "https://nominatim.openstreetmap.org/reverse",
   "siteName": "Freifunk Regensburg",
-  "maxAge": 14,
-  "maxAgeAlert": 3,
-  "nodeZoom": 18,
-  "labelZoom": 13,
-  "clientZoom": 15,
-  "nodeInfobox": {
-    "contact": false,
-    "hardwareUsage": true
-  },
   "mapLayers": [
     {
       "name": "Freifunk Regensburg",
@@ -44,7 +34,7 @@
       "config": {
         "maxZoom": 22,
         "subdomains": "1234",
-        "attribution": "<a href=\'https://www.mapbox.com/about/maps/\' target=\'_blank\'>&copy; Mapbox</a> <a href=\'https://openstreetmap.org/about/\' target=\'_blank\'>&copy; OpenStreetMap</a> <a class=\'mapbox-improve-map\' href=\'https://www.mapbox.com/map-feedback/\' target=\'_blank\'>Improve this map</a>",
+        "attribution": "<a href=\"https://www.mapbox.com/about/maps/\" target=\"_blank\">&copy; Mapbox</a> <a href=\"https://openstreetmap.org/about/\" target=\"_blank\">&copy; OpenStreetMap</a> <a class=\"mapbox-improve-map\" href=\"https://www.mapbox.com/map-feedback/\" target=\"_blank\">Improve this map</a>",
         "start": 6
       }
     },
@@ -55,7 +45,7 @@
       "config": {
         "maxZoom": 22,
         "subdomains": "1234",
-        "attribution": "<a href=\'https://www.mapbox.com/about/maps/\' target=\'_blank\'>&copy; Mapbox</a> <a href=\'https://openstreetmap.org/about/\' target=\'_blank\'>&copy; OpenStreetMap</a> <a class=\'mapbox-improve-map\' href=\'https://www.mapbox.com/map-feedback/\' target=\'_blank\'>Improve this map</a>",
+        "attribution": "<a href=\"https://www.mapbox.com/about/maps/\" target=\"_blank\">&copy; Mapbox</a> <a href=\"https://openstreetmap.org/about/\" target=\"_blank\">&copy; OpenStreetMap</a> <a class=\"mapbox-improve-map\" href=\"https://www.mapbox.com/map-feedback/\" target=\"_blank\">Improve this map</a>",
         "mode": "night",
         "start": 19,
         "end": 7
@@ -121,12 +111,5 @@
       "site": "ffrgb",
       "name": "Regensburg"
     }
-  ],
-  "supportedLocale": [
-    "en",
-    "de",
-    "fr",
-    "ru"
-  ],
-  "cacheBreaker": "<!-- inject:cache-breaker -->"
+  ]
 }
