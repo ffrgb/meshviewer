@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, config, env) {
       .pipe(plugins.inject(gulp.src(['config.json']), {
         starttag: '<!-- inject:config -->',
         transform: function (filePath, file) {
-          return '<script>var jsonData =' +
+          return '<script>var config =' +
             file.contents.toString('utf8')
               .replace('<!-- inject:cache-breaker -->',
                 Math.random().toString(12).substring(7)) +
