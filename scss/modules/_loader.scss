@@ -5,19 +5,3 @@
   margin: 30vh auto;
   text-align: center;
 }
-
-.spinner {
-  path {
-    &:first-of-type {
-      animation: 1s spinner ease-in-out infinite alternate;
-      opacity: 1;
-    }
-  }
-}
-
-@keyframes spinner {
-  to {
-    filter: grayscale(.8);
-    opacity: .2;
-  }
-}
