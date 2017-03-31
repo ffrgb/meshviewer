@@ -6,9 +6,9 @@ module.exports = function () {
     faviconData: 'assets/faviconData.json',
     src: {
       sass: 'scss/**/*.scss',
-      javascript: ['app.js', 'lib/**/*.js'],
+      javascript: ['./app.js', 'lib/**/*.js'],
       json: 'locale/*.json',
-      html: ['html/index.html', 'config.json', 'config.default.json']
+      html: ['html/*.html', './config*.json']
     },
     clean: [build + '/*.map', build + '/vendor', build + '/main.css'],
     autoprefixer: ['> 1% in DE'],
