@@ -6,7 +6,7 @@ module.exports = function () {
     faviconData: 'assets/faviconData.json',
     src: {
       sass: 'scss/**/*.scss',
-      javascript: ['./app.js', 'lib/**/*.js'],
+      javascript: ['./app.js', './service-worker.js', 'lib/**/*.js'],
       json: 'locale/*.json',
       html: ['html/*.html', './config*.js']
     },
