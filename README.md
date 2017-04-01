@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/gitbooks.io-documentation-brightgreen.svg?style=flat-square)](https://meshviewer.gitbooks.io/documentation/content/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 
-A web-app to visualize nodes and links on a map for Freifunk open mesh network.
+Meshviewer is an online visualizaiton app to represent nodes and links on a map for Freifunk open mesh network.
 
 #### Main differences to https://github.com/ffnord/meshviewer
 _Some similar features might have been implemented/merged_
