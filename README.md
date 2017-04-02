@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/gitbooks.io-documentation-brightgreen.svg?style=flat-square)](https://meshviewer.gitbooks.io/documentation/content/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 
-Meshviewer is an online visualizaiton app to represent nodes and links on a map for Freifunk open mesh network.
+Meshviewer is an online visualization app to represent nodes and links on a map for Freifunk open mesh network.
 
 #### Main differences to https://github.com/ffnord/meshviewer
 _Some similar features might have been implemented/merged_
@@ -18,7 +18,7 @@ _Some similar features might have been implemented/merged_
 - Formatted Code
 - Translation support - https://crowdin.com/project/meshviewer - Contact us for new languages
   - Currently available: en, de, fr & ru
-- Gulp inline for some css and js - less requests and instant load indicator
+- Gulp inline for some css and js - fewer requests and instant load indicator
 - Icon font with needed icons only
 - Switch to Gulp (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
   - css and some js moved inline
@@ -60,4 +60,4 @@ Documentation moved to [meshviewer.gitbooks.io](https://meshviewer.gitbooks.io/d
 - [Scrutinizer CI](https://scrutinizer-ci.com/g/ffrgb/meshviewer/) for testing code quality on every push and pull request
 - [Crowdin](https://crowdin.com/) for providing an easy non-developer translation environment
 
-These tools need a lot of infrastructure and provide a free account for open source software.
+These tools need a lot of infrastructures and provide a free account for open source software.
