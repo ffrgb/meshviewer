@@ -15,6 +15,7 @@ html {
 
   header {
     background: transparentize($color-black, .98);
+    border-bottom-color: lighten($color-white, 10%);
   }
 
   //@import 'modules/leaflet';
@@ -87,7 +88,7 @@ html {
   //@import 'modules/tabs';
   .tabs {
     background: transparentize($color-black, .98);
-    border-color: lighten($color-white, 10%);
+    border-bottom-color: lighten($color-white, 10%);
 
     li {
       color: transparentize($color-black, .5);

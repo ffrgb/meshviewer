@@ -2,8 +2,8 @@
   @if $shadows == 1 {
     @include shadow(1);
   } @else {
-    border: solid darken($color-white, 10%);
-    border-width: 1px 0;
+    border: 0 solid darken($color-white, 10%);
+    border-bottom-width: 1px;
   }
   background: transparentize($color-black, .98);
   display: flex;

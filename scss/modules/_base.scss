@@ -10,6 +10,7 @@ body {
 
 header {
   background: transparentize($color-black, .98);
+  border-bottom: 1px solid darken($color-white, 10%);
 }
 
 h1,
@@ -67,5 +68,5 @@ strong {
 }
 
 .hide {
-  display: none;
+  display: none !important; // sass-lint:disable-line no-important
 }

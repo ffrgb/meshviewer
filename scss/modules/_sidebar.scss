@@ -63,7 +63,6 @@
     }
   }
 
-  .infobox,
   .container {
     @if $shadows == 1 {
       @include shadow(2);
@@ -73,9 +72,7 @@
     background: transparentize($color-white, .03);
     min-height: 100vh;
     overflow-y: visible;
-  }
 
-  .container {
     &.hidden {
       display: none;
     }
