@@ -16,5 +16,37 @@
     "fr",
     "ru"
   ],
+  "icon": {
+    "base": {
+      "fillOpacity": 0.6,
+      "opacity": 0.6,
+      "weight": 2,
+      "radius": 6,
+      "className": "stroke-first"
+    },
+    "online": {
+      "color": "#1566A9",
+      "fillColor": "#1566A9"
+    },
+    "offline": {
+      "color": "#D43E2A",
+      "fillColor": "#D43E2A",
+      "radius": 3
+    },
+    "lost": {
+      "color": "#D43E2A",
+      "fillColor": "#D43E2A",
+      "radius": 4
+    },
+    "alert": {
+      "color": "#D43E2A",
+      "fillColor": "#D43E2A",
+      "radius": 5
+    },
+    "new": {
+      "color": "#1566A9",
+      "fillColor": "#93E929"
+    }
+  },
   "cacheBreaker": "<!-- inject:cache-breaker -->"
 }
