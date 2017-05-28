@@ -16,9 +16,10 @@
     }
 
     @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
-      right: -1rem;
+      right: 0.1rem;
       top: 0;
       transform: scale(.8);
+      transform-origin: right;
     }
   }
 
