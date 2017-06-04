@@ -7,7 +7,7 @@ module.exports = function (gulp, plugins, config) {
       design: {
         ios: {
           pictureAspect: 'backgroundAndMargin',
-          backgroundColor: '#000000',
+          backgroundColor: '#ffffff',
           margin: '14%',
           assets: {
             ios6AndPriorIcons: false,
@@ -19,7 +19,7 @@ module.exports = function (gulp, plugins, config) {
         },
         desktopBrowser: {},
         windows: {
-          pictureAspect: 'noChange',
+          pictureAspect: 'whiteSilhouette',
           backgroundColor: '#dc0067',
           onConflict: 'override',
           assets: {
@@ -39,7 +39,7 @@ module.exports = function (gulp, plugins, config) {
           manifest: {
             name: 'Meshviewer',
             display: 'standalone',
-            orientation: 'notSet',
+            orientation: 'portrait',
             onConflict: 'override',
             declared: true
           },
