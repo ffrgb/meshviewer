@@ -3,7 +3,7 @@ sudo: false
 language: node_js
 
 node_js:
-  - "7"
+  - "8"
 
 os:
   - linux
@@ -12,7 +12,7 @@ os:
 
 matrix:
   include:
-  - node_js: 7
+  - node_js: 8
     os: linux
     env: USE_NPM=true
   - node_js: 6

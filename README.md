@@ -21,7 +21,7 @@ _Some similar features might have been implemented/merged_
   - Currently available: en, de, fr & ru
 - Gulp inline for some css and js - fewer requests and instant load indicator
 - Icon font with needed icons only
-- Switch to Gulp (Tested with Node.js 4/6 LTS, 7 on Linux, 7 OSX & W**)
+- Switch to Gulp (Tested with Node.js 4/6 LTS, 8 on Linux, OSX & W**)
   - css and some js moved inline
 - Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
