@@ -15,7 +15,7 @@ module.exports = function (gulp, plugins, config, env) {
               .replace('<!-- inject:cache-breaker -->',
                 Math.random().toString(12).substring(7)) +
             ';</script>'
-            ;
+          ;
         }
       }))
       .pipe(env.production(plugins.kyhInlineSource({ compress: false })))
