@@ -54,6 +54,6 @@
     "promise-polyfill": "^6.0.2",
     "rbush": "^2.0.1",
     "requirejs": "^2.3.2",
-    "snabbdom": "^0.6.9"
+    "snabbdom": "^0.7.0"
   }
 }
