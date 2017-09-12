@@ -24,7 +24,7 @@
     }
   ],
   // String or array of data provider are supported
-  "dataPath": "https://regensburg.freifunk.net/data/",
+  "dataPath": "./",
   "siteName": "Freifunk Regensburg",
   "mapLayers": [
     {

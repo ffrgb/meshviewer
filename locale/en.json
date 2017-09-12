@@ -6,6 +6,7 @@
     "links": "Links",
     "clients": "Clients",
     "distance": "Distance",
+    "connectionType": "Connection type",
     "tq": "Transmit quality",
     "lastOnline": "online, last message %{time} (%{date})",
     "lastOffline": "offline, last message %{time} (%{date})",
