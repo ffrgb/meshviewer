@@ -30,7 +30,12 @@
     "link": "Connexion |||| Connexions",
     "node": "Nœud |||| Nœuds",
     "new": "Nouveaux nœuds",
-    "missing": "Nœuds disparus"
+    "missing": "Nœuds disparus",
+    "uplink": "Liaison montante",
+    "wifi_channel_2": "Channel 2,4 GHz",
+    "wifi_channel_5": "Channel 5 GHz",
+    "wifi_airtime_2": "Airtime 2,4 GHz",
+    "wifi_airtime_5": "Airtime 5 GHz"
   },
   "location": {
     "location": "Lieu",
@@ -85,5 +90,6 @@
   "yes": "oui",
   "no": "non",
   "unknown": "inconnu",
-  "none": "aucun"
+  "none": "aucun",
+  "clients_in_cloud": "dans le nuage local"
 }

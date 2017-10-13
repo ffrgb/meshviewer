@@ -30,7 +30,12 @@
     "link": "Ссылка |||| Ссылки",
     "node": "Узел |||| Узлы",
     "new": "Новые узлы",
-    "missing": "Исчезнувшие узлы"
+    "missing": "Исчезнувшие узлы",
+    "uplink": "восходящей линии связи",
+    "wifi_channel_2": "Channel 2,4 GHz",
+    "wifi_channel_5": "Channel 5 GHz",
+    "wifi_airtime_2": "Airtime 2,4 GHz",
+    "wifi_airtime_5": "Airtime 5 GHz"
   },
   "location": {
     "location": "Расположение",
@@ -85,5 +90,6 @@
   "yes": "да",
   "no": "нет",
   "unknown": "неизвестно",
-  "none": "нет"
+  "none": "нет",
+  "clients_in_cloud": "в локальном облаке"
 }
