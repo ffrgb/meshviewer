@@ -23,7 +23,7 @@
     "primaryMac": "Primäre MAC",
     "id": "Knoten ID",
     "firstSeen": "Erstmals gesehen",
-    "systemLoad": "Load average",
+    "systemLoad": "Systemlast",
     "ram": "Speicherauslastung",
     "ipAddresses": "IP Adressen",
     "selectedGateway": "Gewähltes Gateway",
