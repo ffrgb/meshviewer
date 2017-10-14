@@ -2,7 +2,7 @@
 [![Build Status](https://img.shields.io/travis/ffrgb/meshviewer/develop.svg?style=flat-square)](https://travis-ci.org/ffrgb/meshviewer)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/ffrgb/meshviewer/develop.svg?style=flat-square)](https://scrutinizer-ci.com/g/ffrgb/meshviewer/?branch=develop)
 [![Documentation](https://img.shields.io/badge/gitbooks.io-documentation-brightgreen.svg?style=flat-square)](https://meshviewer.gitbooks.io/documentation/content/)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
+[![License: AGPL v3](https://img.shields.io/github/license/ffrgb/meshviewer.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 
 Meshviewer is an online visualization app to represent nodes and links on a map for Freifunk open mesh network.
 
@@ -21,7 +21,7 @@ _Some similar features might have been implemented/merged_
   - Currently available: en, de, fr & ru
 - Gulp inline for some css and js - fewer requests and instant load indicator
 - Icon font with needed icons only
-- Switch to Gulp (Tested with Node.js 4/6 LTS, 8 on Linux, OSX & W**)
+- Switch to Gulp (Tested with Node.js 6 LTS, 8 on Linux, OSX & W**)
   - css and some js moved inline
 - Yarn/npm in favour of bower
   - Load only moment.js without languages (Languages are included in translations)
