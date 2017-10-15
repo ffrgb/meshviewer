@@ -86,5 +86,6 @@
   "yes": "yes",
   "no": "no",
   "unknown": "unknown",
+  "others": "others",
   "none": "none"
 }

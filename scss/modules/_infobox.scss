@@ -1,7 +1,15 @@
 .infobox {
   .clients {
-    color: $color-online;
-    font-family: $font-family-icons;
+    display: flex;
+
+    span {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .ion-people {
+      font-size: 1.5em;
+    }
   }
 
   input,
