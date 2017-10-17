@@ -24,13 +24,18 @@
     "id": "Knoten ID",
     "firstSeen": "Erstmals gesehen",
     "systemLoad": "Systemlast",
-    "ram": "Speicherauslastung",
+    "ram": "Arbeitsspeicher",
     "ipAddresses": "IP Adressen",
     "selectedGateway": "Gewähltes Gateway",
     "link": "Verbindung |||| Verbindungen",
     "node": "Knoten",
     "new": "Neue Knoten",
-    "missing": "Verschwundene Knoten"
+    "missing": "Verschwundene Knoten",
+    "uplink": "Uplink",
+    "wifi_channel_2": "Kanal 2,4 GHz",
+    "wifi_channel_5": "Kanal 5 GHz",
+    "wifi_airtime_2": "Airtime 2,4 GHz",
+    "wifi_airtime_5": "Airtime 5 GHz"
   },
   "location": {
     "location": "Standort",
@@ -85,5 +90,6 @@
   "yes": "ja",
   "no": "nein",
   "unknown": "unbekannt",
-  "none": "keine"
+  "none": "keine",
+  "clients_in_cloud": "in der lokalen Wolke"
 }

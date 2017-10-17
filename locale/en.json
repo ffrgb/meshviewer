@@ -30,7 +30,12 @@
     "link": "Link |||| Links",
     "node": "Node |||| Nodes",
     "new": "New nodes",
-    "missing": "Disappeared nodes"
+    "missing": "Disappeared nodes",
+    "uplink": "Uplink",
+    "wifi_channel_2": "Channel 2,4 GHz",
+    "wifi_channel_5": "Channel 5 GHz",
+    "wifi_airtime_2": "Airtime 2,4 GHz",
+    "wifi_airtime_5": "Airtime 5 GHz"
   },
   "location": {
     "location": "Location",
@@ -85,5 +90,6 @@
   "yes": "yes",
   "no": "no",
   "unknown": "unknown",
-  "none": "none"
+  "none": "none",
+  "clients_in_cloud": "in local cloud"
 }
