@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "10080:80"
+        volumes:
+            - ./build:/code
+            - ./site.conf:/etc/nginx/conf.d/default.conf
