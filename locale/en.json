@@ -51,7 +51,8 @@
     "aboutInfo": "<h2>About Meshviewer</h2> <p>You can zoom in with double-click and zoom out with shift+double-click</p>",
     "actual": "Current",
     "stats": "Statistics",
-    "about": "About"
+    "about": "About",
+    "toggle" : "Toggle Sidebar"
   },
   "button": {
     "switchView": "Switch view",
@@ -87,5 +88,7 @@
   "no": "no",
   "unknown": "unknown",
   "others": "others",
-  "none": "none"
+  "none": "none",
+  "remove": "remove",
+  "close": "close"
 }

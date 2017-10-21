@@ -22,11 +22,7 @@ h6 {
   font-weight: bold;
 }
 
-h1 {
-  font-size: 2em;
-  padding: .67em 0;
-}
-
+h1,
 h2 {
   font-size: 1.5em;
   padding: .83em 0;
@@ -37,6 +33,7 @@ h3 {
   padding: 1em 0;
 }
 
+h1,
 h2,
 h3 {
   padding-left: $button-distance;
@@ -57,6 +54,10 @@ img {
 a {
   color: $color-online;
   text-decoration: none;
+
+  &:focus {
+    color: darken($color-online, 15%);
+  }
 }
 
 p {
@@ -69,4 +70,16 @@ strong {
 
 .hide {
   display: none !important; // sass-lint:disable-line no-important
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
