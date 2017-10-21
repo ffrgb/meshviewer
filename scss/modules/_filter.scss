@@ -57,6 +57,10 @@
       outline: none;
       padding: 0 2px;
       width: 100%;
+
+      &:focus {
+        background: transparentize($color-primary, .95);
+      }
     }
 
     button {
