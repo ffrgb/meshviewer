@@ -27,7 +27,7 @@
     "systemLoad": "Load average",
     "ram": "Memory usage",
     "ipAddresses": "IP addresses",
-    "selectedNexthop": "Selected nexthop",
+    "nexthop": "Nexthop",
     "selectedGatewayIPv4": "Selected ipv4-gateway",
     "selectedGatewayIPv6": "Selected ipv6-gateway",
     "link": "Link |||| Links",
