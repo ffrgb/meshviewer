@@ -1,11 +1,7 @@
 .tabs {
-  @if $shadows == 1 {
-    @include shadow(1);
-  } @else {
-    border: 0 solid darken($color-white, 10%);
-    border-bottom-width: 1px;
-  }
   background: transparentize($color-black, .98);
+  border: 0 solid darken($color-white, 10%);
+  border-bottom-width: 1px;
   display: flex;
   display: -webkit-flex; // sass-lint:disable-line no-vendor-prefixes no-duplicate-properties
   list-style: none;

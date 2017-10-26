@@ -43,8 +43,5 @@ $grid-breakpoints: (
 $sidebar-width: map-get($grid-breakpoints, xl) * .45 !default;
 $sidebar-width-small: map-get($grid-breakpoints, lg) * .45 !default;
 
-// En/disable box-shadows
-$shadows: 0 !default;
-
 // En/disable included font
 $use-included-font: 1 !default;
