@@ -64,12 +64,8 @@
   }
 
   .container {
-    @if $shadows == 1 {
-      @include shadow(2);
-    } @else {
-      border-right: 1px solid darken($color-white, 10%);
-    }
     background: transparentize($color-white, .03);
+    border-right: 1px solid darken($color-white, 10%);
     min-height: 100vh;
     overflow-y: visible;
 
@@ -91,9 +87,6 @@
     .container,
     .infobox {
       border-radius: 0;
-      @if $shadows == 1 {
-        box-shadow: none;
-      }
       margin: 0;
     }
   }
@@ -120,7 +113,7 @@
   left: $sidebar-width + 2 * $button-distance;
   position: fixed;
   top: $button-distance;
-  transition: left .5s, box-shadow .5s, color .5s, transform .5s;
+  transition: left .5s, color .5s, transform .5s;
   z-index: 1010;
 
   &::after {
