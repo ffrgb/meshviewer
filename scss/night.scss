@@ -93,7 +93,9 @@ html {
     li {
       color: transparentize($color-black, .5);
 
-      &:hover {
+      &:hover,
+      &.visible {
+        background-color: $color-white;
         color: $color-black;
       }
     }
