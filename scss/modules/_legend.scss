@@ -22,14 +22,14 @@ header {
       margin-left: 1em;
     }
   }
+}
 
-  .symbol {
-    border-radius: 50%;
-    display: inline-block;
-    height: 1em;
-    vertical-align: -5%;
-    width: 1em;
-  }
+.symbol {
+  border-radius: 50%;
+  display: inline-block;
+  height: 1em;
+  vertical-align: -5%;
+  width: 1em;
 }
 
 // Dot looks compared to thin font a bit darker - lighten it 10%
