@@ -26,6 +26,7 @@
     "systemLoad": "Charge moyenne",
     "ram": "Utilisation de la mémoire",
     "ipAddresses": "Adresse IP",
+    "selectedGateway": "Passerelle sélectionné",
     "link": "Connexion |||| Connexions",
     "node": "Nœud |||| Nœuds",
     "new": "Nouveaux nœuds",
