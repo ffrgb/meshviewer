@@ -17,6 +17,12 @@ header {
 }
 
 .legend {
+  span {
+    &:not(:first-child) {
+      margin-left: 1em;
+    }
+  }
+
   .symbol {
     border-radius: 50%;
     display: inline-block;
@@ -45,7 +51,20 @@ header {
   }
 }
 
-.legend-online,
-.legend-offline {
-  margin-left: 1em;
+.legend-24ghz {
+  .symbol {
+    background-color: $color-24ghz;
+  }
+}
+
+.legend-5ghz {
+  .symbol {
+    background-color: $color-5ghz;
+  }
+}
+
+.legend-others {
+  .symbol {
+    background-color: $color-others;
+  }
 }
