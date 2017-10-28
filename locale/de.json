@@ -44,9 +44,9 @@
     "clients": "mit %{smart_count} Nutzer |||| mit %{smart_count} Nutzern",
     "gateway": "auf %{smart_count} Gateway |||| auf %{smart_count} Gateways",
     "lastUpdate": "Letzte Aktualisierung",
-    "nodeNew": "neu",
-    "nodeOnline": "online",
-    "nodeOffline": "offline",
+    "nodeNew": "Knoten ist neu",
+    "nodeOnline": "Knoten ist online",
+    "nodeOffline": "Knoten ist offline",
     "aboutInfo": "<h2>Über Meshviewer</h2><p>Mit Doppelklick kann man in die Karte hinein zoomen und Shift+Doppelklick heraus zoomen.</p>",
     "actual": "Aktuell",
     "stats": "Statistiken",
@@ -85,8 +85,5 @@
   "yes": "ja",
   "no": "nein",
   "unknown": "unbekannt",
-  "others": "andere",
-  "none": "keine",
-  "remove": "entfernen",
-  "close": "schließen"
+  "none": "keine"
 }
