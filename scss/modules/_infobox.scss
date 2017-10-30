@@ -14,6 +14,18 @@
     }
   }
 
+  .node-links {
+    table-layout: fixed;
+
+    th,
+    td {
+      &:nth-child(3),
+      &:nth-child(5) {
+        width: 12%;
+      }
+    }
+  }
+
   input,
   textarea {
     border: 1px solid $color-gray-light;
