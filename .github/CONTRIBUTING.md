@@ -1,5 +1,6 @@
 ## Contributing is welcome
 
-Pull requests are welcome without an opening an issue. If you unsure about the feature or implementation open an issue and
-discuss your suggested changes. Meshviewer is a frontend application and the code needs to be loaded and 
-perform on slow mobile devices with many nodes and clients.
+Pull requests are welcome without the need of opening an issue. If you're unsure
+about your feature or your implementation open an issue and discuss your
+suggested changes. Meshviewer is a frontend application and the code needs to be
+loaded fast and perform with many nodes and clients on slow mobile devices.
