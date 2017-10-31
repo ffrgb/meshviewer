@@ -23,8 +23,10 @@
       "title": "Jahresstatistik - weiteren Statistiken"
     }
   ],
-  // String or array of data provider are supported
-  "dataPath": "https://regensburg.freifunk.net/data/",
+  // Array of data provider are supported
+  "dataPath": [
+    "https://regensburg.freifunk.net/data/"
+  ],
   "siteName": "Freifunk Regensburg",
   "mapLayers": [
     {
