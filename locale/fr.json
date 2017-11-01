@@ -6,6 +6,7 @@
     "links": "Connexion",
     "clients": "Clients",
     "distance": "Distance",
+    "connectionType": "Type de connexion",
     "tq": "Qualité de transmission",
     "lastOnline": "en ligne, dernier message %{time} (%{date})",
     "lastOffline": "hors ligne, dernier message %{time} (%{date})",
@@ -26,7 +27,9 @@
     "systemLoad": "Charge moyenne",
     "ram": "Utilisation de la mémoire",
     "ipAddresses": "Adresse IP",
-    "selectedGateway": "Passerelle sélectionné",
+    "nexthop": "Nexthop",
+    "selectedGatewayIPv4": "Selected ipv4-gateway",
+    "selectedGatewayIPv6": "Selected ipv6-gateway",
     "link": "Connexion |||| Connexions",
     "node": "Nœud |||| Nœuds",
     "new": "Nouveaux nœuds",
@@ -50,7 +53,8 @@
     "aboutInfo": "<h2>Sur Meshviewer</h2> <p>Vous pouvez zoomer avec double-clic et effectuer un zoom arrière avec shift + double-clic</p>",
     "actual": "Actuel",
     "stats": "Statistiques",
-    "about": "À propros"
+    "about": "À propros",
+    "toggle": "Toggle Sidebar"
   },
   "button": {
     "switchView": "Basculer l’affichage",
@@ -85,5 +89,8 @@
   "yes": "oui",
   "no": "non",
   "unknown": "inconnu",
-  "none": "aucun"
+  "others": "autres",
+  "none": "aucun",
+  "remove": "supprimer",
+  "close": "fermer"
 }

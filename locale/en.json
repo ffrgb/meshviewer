@@ -54,7 +54,7 @@
     "actual": "Current",
     "stats": "Statistics",
     "about": "About",
-    "toggle" : "Toggle Sidebar"
+    "toggle": "Toggle Sidebar"
   },
   "button": {
     "switchView": "Switch view",
