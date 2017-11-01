@@ -25,7 +25,7 @@
   ],
   // Array of data provider are supported
   "dataPath": [
-    "https://regensburg.freifunk.net/data/"
+    "https://regensburg.freifunk.net/data-dev/"
   ],
   "siteName": "Freifunk Regensburg",
   "mapLayers": [
