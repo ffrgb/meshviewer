@@ -37,5 +37,7 @@ require.config({
 });
 
 require(['main'], function (main) {
-  main(jsonData);
+  /** global: config */
+  window.config = jsonData;
+  main();
 });
