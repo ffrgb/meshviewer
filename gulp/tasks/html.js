@@ -10,7 +10,7 @@ module.exports = function (gulp, plugins, config, env) {
             JSON.parse(JSON.minify(defaultConfig)),
             JSON.parse(JSON.minify(customConfig.contents.toString('utf8')))
           );
-          return '<script>var jsonData =' +
+          return '<script>window.config =' +
             JSON.stringify(buildConfig)
               .replace('<!-- inject:cache-breaker -->',
                 Math.random().toString(12).substring(7)) +
