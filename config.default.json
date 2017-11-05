@@ -75,6 +75,7 @@
     "fr",
     "ru"
   ],
+  // Color configs
   "icon": {
     "base": {
       "fillOpacity": 0.6,
@@ -105,6 +106,63 @@
     "new": {
       "color": "#1566A9",
       "fillColor": "#93E929"
+    }
+  },
+  "client": {
+    "wifi24": "rgba(220, 0, 103, 0.7)",
+    "wifi5": "rgba(10, 156, 146, 0.7)",
+    "other": "rgba(227, 166, 25, 0.7)"
+  },
+  "map": {
+    "labelNewColor": "#459c18",
+    "tqFrom": "#F02311",
+    "tqTo": "#04C714",
+    "highlightNode": {
+      "color": "#ad2358",
+      "weight": 8,
+      "fillOpacity": 1,
+      "opacity": 0.4,
+      "className": "stroke-first"
+    },
+    "highlightLink": {
+      "weight": 4,
+      "opacity": 1,
+      "dashArray": "5, 10"
+    }
+  },
+  "forceGraph": {
+    "nodeColor": "#fff",
+    "highlightColor": "rgba(255, 255, 255, 0.2)",
+    "labelColor": "#fff",
+    "tqFrom": "#770038",
+    "tqTo": "#dc0067"
+  },
+  "locate": {
+    "outerCircle": {
+      "stroke": false,
+      "color": "#4285F4",
+      "opacity": 1,
+      "fillOpacity": 0.3,
+      "clickable": false,
+      "radius": 16
+    },
+    "innerCircle": {
+      "stroke:": true,
+      "color": "#ffffff",
+      "fillColor": "#4285F4",
+      "weight": 1.5,
+      "clickable": false,
+      "opacity": 1,
+      "fillOpacity": 1,
+      "radius": 7
+    },
+    "accuracyCircle": {
+      "stroke": true,
+      "color": "#4285F4",
+      "weight": 1,
+      "clickable": false,
+      "opacity": 0.7,
+      "fillOpacity": 0.2
     }
   },
   "cacheBreaker": "<!-- inject:cache-breaker -->"
