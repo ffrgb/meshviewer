@@ -55,5 +55,8 @@
     "rbush": "^2.0.1",
     "requirejs": "^2.3.5",
     "snabbdom": "^0.7.0"
+  },
+  "scripts": {
+    "gulp": "./node_modules/gulp-cli/bin/gulp.js"
   }
 }
