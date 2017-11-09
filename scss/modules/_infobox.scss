@@ -20,8 +20,13 @@
     th,
     td {
       &:nth-child(3),
-      &:nth-child(5) {
-        width: 12%;
+      &:nth-child(5),
+      &:nth-child(6) {
+        width: 9%;
+      }
+
+      &:nth-child(4) {
+        white-space: nowrap;
       }
     }
   }
