@@ -22,6 +22,12 @@ table {
   }
 }
 
+@media screen and (max-width: map-get($grid-breakpoints, sm) - 1) {
+  table{
+    padding: 0 7px 0 3px;
+  }
+}
+
 td,
 th {
   line-height: 1.41em;
@@ -29,6 +35,14 @@ th {
 
   &:first-child {
     text-align: left;
+  }
+}
+
+
+@media screen and (min-width: map-get($grid-breakpoints, sm)) {
+  table.node-list td,
+  table.node-links td{
+    padding-right: 1em;
   }
 }
 
