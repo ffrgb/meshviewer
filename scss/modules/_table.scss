@@ -22,6 +22,12 @@ table {
   }
 }
 
+tr {
+  &.header {
+    font-size: 1.2em;
+  }
+}
+
 td,
 th {
   line-height: 1.41em;
