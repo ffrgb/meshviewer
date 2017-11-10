@@ -34,7 +34,7 @@
     th,
     td {
       &:first-child {
-        width: 25px;
+        width: 15px;
       }
 
       &:nth-child(2) {
@@ -47,17 +47,6 @@
     }
   }
 
-  .node-links {
-    padding-bottom: 15px;
-
-    th,
-    td {
-      &:first-child {
-        width: 25px;
-      }
-    }
-  }
-
   .link-list {
     th,
     td {
@@ -65,7 +54,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 60%;
+        width: 55%;
       }
 
       &:nth-child(2) {
