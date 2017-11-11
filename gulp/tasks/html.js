@@ -26,7 +26,8 @@ module.exports = function (gulp, plugins, config, env) {
           delete require.cache[require.resolve('../../config.default')];
           delete require.cache[require.resolve('../../config')];
           var buildConfig = Object.assign({}, require('../../config.default')(), require('../../config')());
-          return '<script>window.config =' +
+          return '<title>' + buildConfig.siteName + ' - loading...</title>' +
+            '<script>window.config =' +
             stringify(buildConfig)
               .replace('<!-- inject:cache-breaker -->',
                 Math.random().toString(12).substring(7)) +
