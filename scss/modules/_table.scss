@@ -6,10 +6,6 @@ table {
 
   &.attributes {
     line-height: 1.41em;
-    
-    tr.header td {
-      padding-top: 1em;
-    }
 
     th {
       font-weight: bold;
@@ -29,6 +25,10 @@ table {
 tr {
   &.header {
     font-size: 1.2em;
+
+    td {
+      padding-top: 1em;
+    }
   }
 }
 
