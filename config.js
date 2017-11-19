@@ -95,7 +95,11 @@ module.exports = function () {
       }, {
         'site': 'ffwp',
         'name': 'Westpfalz'
+      }, {
+        'site': 'fftr',
+        'name': 'Trier'
       }
+ 
     ]
   };
 };
