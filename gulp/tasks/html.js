@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // stringify functions https://gist.github.com/cowboy/3749767
-var stringify = function (obj, prop) {
+var stringify = function (obj) {
   var placeholder = '____PLACEHOLDER____';
   var fns = [];
   var json = JSON.stringify(obj, function (key, value) {
@@ -14,7 +14,7 @@ var stringify = function (obj, prop) {
   json = json.replace(new RegExp('"' + placeholder + '"', 'g'), function () {
     return fns.shift();
   });
-  return 'this["' + prop + '"] = ' + json + ';';
+  return json;
 };
 
 module.exports = function (gulp, plugins, config, env) {
