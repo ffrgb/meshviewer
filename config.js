@@ -50,6 +50,9 @@ module.exports = function () {
         'site': 'ffac',
         'name': 'Aachen'
       }, {
+        'site': 'ffbin',
+        'name': 'Bingen'
+      }, {
         'site': 'ffhb',
         'name': 'Bremen'
       }, {
@@ -95,17 +98,29 @@ module.exports = function () {
         'site': 'ffki',
         'name': 'Kiel'
       }, {
+        'site': 'ffmz',
+        'name': 'Mainz'
+      }, {
         'site': 'ffrgb',
         'name': 'Regensburg'
       }, {
         'site': 'ffrgb-bat15',
         'name': 'Regensburg'
       }, {
+        'site': 'ffrhg',
+        'name': 'Rheingau'
+      }, {
+        'site': 'ffta',
+        'name': 'Taunus'
+      }, {
         'site': 'fftr',
         'name': 'Trier'
       }, {
         'site': 'ffwp',
         'name': 'Westpfalz'
+      }, {
+        'site': 'ffwi',
+        'name': 'Wiesbaden'
       }
     ]
   };
