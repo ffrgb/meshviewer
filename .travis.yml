@@ -13,9 +13,6 @@ os:
 
 matrix:
   include:
-  - node_js: 9
-    os: linux
-    env: USE_NPM=true
   - node_js: 8
     os: linux
   - node_js: 6
@@ -23,9 +20,6 @@ matrix:
 
 cache:
   yarn: true
-
-before_install:
-  - if [ "$USE_NPM" == "true" ]; then rm yarn.lock; fi
 
 before_script:
   - if git status | grep -q "modified.   \.travis\.yml"; then echo "Dirty yarn.lock"; exit 1; fi
