@@ -91,6 +91,7 @@ module.exports = function () {
       'en',
       'de',
       'fr',
+      'cz',
       'ru'
     ],
     // Color configs
