@@ -90,8 +90,9 @@ module.exports = function () {
     'supportedLocale': [
       'en',
       'de',
-      'fr',
       'cz',
+      'fr',
+      'tr',
       'ru'
     ],
     // Color configs
