@@ -9,8 +9,8 @@
     "url": "https://github.com/ffrgb/meshviewer/issues"
   },
   "devDependencies": {
-    "babel-eslint": "^8.1.1",
-    "browser-sync": "^2.19.0",
+    "babel-eslint": "^8.1.2",
+    "browser-sync": "^2.22.0",
     "eslint": "^4.14.0",
     "eslint-config-airbnb-es5": "^1.2.0",
     "eslint-config-defaults": "^9.0.0",
