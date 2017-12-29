@@ -2,6 +2,7 @@
   .clients,
   .gateway {
     display: flex;
+    flex-flow: wrap;
 
     span {
       flex-grow: 1;
