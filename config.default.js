@@ -155,7 +155,8 @@ module.exports = function () {
       'highlightColor': 'rgba(255, 255, 255, 0.2)',
       'labelColor': '#fff',
       'tqFrom': '#770038',
-      'tqTo': '#dc0067'
+      'tqTo': '#dc0067',
+      'zoomModifier': 1
     },
     'locate': {
       'outerCircle': {
