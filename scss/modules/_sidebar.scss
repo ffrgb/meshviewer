@@ -30,7 +30,8 @@
   }
 
   .node-list,
-  .node-links {
+  .node-links,
+  .link-list {
     th,
     td {
       &:first-child {
@@ -47,25 +48,22 @@
     }
   }
 
+  .link-list {
+    th,
+    td {
+      &:nth-child(2) {
+        width: 60%;
+      }
+    }
+  }
+
   .node-links {
     padding-bottom: 15px;
 
     th,
     td {
       &:first-child {
-        width: 25px;
-      }
-    }
-  }
-
-  .link-list {
-    th,
-    td {
-      &:nth-child(1) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 60%;
+        width: 35px;
       }
     }
   }
