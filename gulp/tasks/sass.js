@@ -6,6 +6,9 @@ module.exports = function (gulp, plugins, config, env) {
         outputStyle: 'compressed',
         sourceMap: false
       }))
+      .on('error', function () {
+        this.emit('end');
+      })
       .pipe(plugins.autoprefixer({
         browsers: config.autoprefixer
       }))
