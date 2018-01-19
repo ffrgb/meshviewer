@@ -152,6 +152,7 @@ module.exports = function () {
     },
     'forceGraph': {
       'nodeColor': '#fff',
+      'nodeOfflineColor': '#D43E2A',
       'highlightColor': 'rgba(255, 255, 255, 0.2)',
       'labelColor': '#fff',
       'tqFrom': '#770038',
