@@ -20,7 +20,7 @@ require.config({
     'd3-timer': '../node_modules/d3-timer/build/d3-timer',
     // by d3-drag: d3-selection
     // d3 modules dependencies
-    'd3-selection': '../node_modules/d3-selection/build/d3-selection',
+    'd3-selection': '../node_modules/d3-selection/dist/d3-selection',
     'd3-force': '../node_modules/d3-force/build/d3-force',
     'd3-zoom': '../node_modules/d3-zoom/build/d3-zoom',
     'd3-drag': '../node_modules/d3-drag/build/d3-drag',
