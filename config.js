@@ -5,22 +5,27 @@ module.exports = function () {
       {
         'name': 'Clientstatistik',
         'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=1&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light&_t={TIME}',
+        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=1&var-node={NODE_ID}&from=now-7d&width=650&height=350&theme=light&_t={TIME}',
         'title': 'Knoten {NODE_ID} - weiteren Statistiken'
       },
       {
         'name': 'Trafficstatistik',
         'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-all-nodes?panelId=2&from=now-7d&var-nodeid={NODE_ID}&var-host={NODE_NAME}&width=650&height=350&theme=light&_t={TIME}',
+        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=2&from=now-7d&var-node={NODE_ID}&width=650&height=350&theme=light&_t={TIME}',
+        'title': 'Knoten {NODE_ID} - weiteren Statistiken'
+      },
+      {
+        'name': 'Airtime',
+        'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
+        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=5&from=now-7d&var-node={NODE_ID}&width=650&height=350&theme=light&_t={TIME}',
         'title': 'Knoten {NODE_ID} - weiteren Statistiken'
       }
     ],
-    'globalInfos': [
+    'linkInfos': [
       {
-        'name': 'Statistik',
-        'href': 'https://regensburg.freifunk.net/netz/statistik/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/dashboard-solo/db/ffrgb-network-wide-stats?panelId=11&from=now-1y&width=600&height=350&theme=light',
-        'title': 'Jahresstatistik - weiteren Statistiken'
+        'name': 'Statistik für alle Links zwischen diese Knoten',
+        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=7&var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&from=now-7d&&width=650&height=350&theme=light&_t={TIME}',
+        'title': 'Linkstatistik des letzten Tages, min und max aller Links zwischen diesen Knoten'
       }
     ],
     // Array of data provider are supported
