@@ -1,5 +1,6 @@
 {
     "name": "Meshviewer",
+    "short_name": "Meshviewer",
     "icons": [
         {
             "src": "./android-chrome-192x192.png",
@@ -14,6 +15,8 @@
     ],
     "theme_color": "#dc0067",
     "background_color": "#dc0067",
+    "start_url": ".",
     "display": "standalone",
     "orientation": "portrait"
 }
+
