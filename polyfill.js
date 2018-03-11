@@ -48,3 +48,7 @@ if (typeof Object.assign !== 'function') {
 
   window.CustomEvent = CustomEvent;
 })();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
