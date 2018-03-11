@@ -14,3 +14,7 @@ insert_final_newline = true
 [*.{js,html,scss,json,yml,md}]
 indent_size = 2
 indent_style = space
+
+
+[assets/favicon/manifest.json]
+indent_size = 4
