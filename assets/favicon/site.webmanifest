@@ -1,6 +1,6 @@
 {
-    "name": "Meshviewer",
-    "short_name": "Meshviewer",
+    "name": "Freifunk Meshviewer",
+    "short_name": "Freifunk Meshviewer",
     "icons": [
         {
             "src": "./android-chrome-192x192.png",

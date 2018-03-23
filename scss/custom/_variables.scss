@@ -2,3 +2,21 @@
 //$color-black: #fff;
 //$color-white: invert($color-white);
 //$color-primary: invert($color-primary);
+
+$color-freifunk-primary: #e32d6d;
+$color-freifunk-secondary: #f4c72f;
+$color-freifunk-gray-light: #e9e9e9;
+$color-freifunk-gray: #504f4e;
+$color-freifunk-gray-dark: #3f3f3e;
+$color-freifunk-gray-darker: #373636;
+
+$color-black: $color-freifunk-gray-darker;
+$color-primary: $color-freifunk-primary;
+$color-gray-dark: $color-freifunk-gray-dark;
+
+$font-family: 'Exo 2', sans-serif;
+$font-family-secondary: 'Exo 2', sans-serif;
+
+$shadows: 0;
+
+$use-included-font: 0;

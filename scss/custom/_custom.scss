@@ -8,3 +8,88 @@
 
 // SCSS supports css with a lot of additional features like variables or mixins.
 // Autoprefixer runs in postcss, no need to add browser-prefixes like -webkit, -moz or -ms
+
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 300;
+  src: local('Exo 2 Light'),
+  local('Exo2-Light'),
+  url('/typo3conf/ext/freifunk_regensburg/Resources/Public/Fonts/Exo2.0-Light-webfont.woff2') format('woff2'),
+  url('/typo3conf/ext/freifunk_regensburg/Resources/Public/Fonts/Exo2.0-Light-webfont.woff') format('woff'),
+  url('/typo3conf/ext/freifunk_regensburg/Resources/Public/Fonts/Exo2.0-Light-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 800;
+  src: local('Exo 2 Black'),
+  local('Exo2-Black'),
+  url('/typo3conf/ext/freifunk_regensburg/Resources/Public/Fonts/Exo2.0-Black-webfont.woff2') format('woff2'),
+  url('/typo3conf/ext/freifunk_regensburg/Resources/Public/Fonts/Exo2.0-Black-webfont.woff') format('woff'),
+  url('/typo3conf/ext/freifunk_regensburg/Resources/Public/Fonts/Exo2.0-Black-webfont.ttf') format('truetype');
+}
+
+a {
+  color: $color-freifunk-primary;
+}
+
+%leaflet-button {
+  background-color: $color-freifunk-primary;
+  color: $color-freifunk-secondary;
+  opacity: .9;
+
+  &.active,
+  &:hover {
+    color: $color-white;
+    opacity: 1;
+  }
+}
+
+button {
+  @extend %leaflet-button;
+
+  &.close {
+    &.active,
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.leaflet-control-zoom {
+  opacity: 1;
+
+  a {
+    @extend %leaflet-button;
+  }
+}
+
+.leaflet-control-layers {
+  &.leaflet-control {
+    opacity: 1;
+  }
+}
+
+.leaflet-container {
+  .leaflet-control-layers-toggle {
+    @extend %leaflet-button;
+  }
+}
+
+.ion-location {
+  color: $color-freifunk-primary;
+}
+
+.leaflet-label {
+  &.leaflet-label-right {
+    background-color: $color-white;
+    border: 2px solid $color-freifunk-primary;
+    border-radius: 0;
+    font-weight: normal;
+    opacity: .8;
+
+    &::before {
+      display: none;
+    }
+  }
+}
