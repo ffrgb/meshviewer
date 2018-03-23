@@ -46,17 +46,31 @@ module.exports = function () {
     'dataPath': [
       'https://regensburg.freifunk.net/data/'
     ],
+    'reverseGeocodingApi': 'https://regensburg.freifunk.net/geocoding/reverse',
     'siteName': 'Freifunk Regensburg',
     'mapLayers': [
       {
         'name': 'Wikimedia OSM Map',
         // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
-        'url': 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
+        'url': 'https://regensburg.freifunk.net/d/{z}/{x}/{y}{r}.png',
         'config': {
           'maxZoom': 20,
-          'subdomains': '1234',
-          'attribution': '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use" rel="noopener" target="_blank">Wikimedia maps</a><a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank" rel="noopener">&copy; OpenStreetMap contributors</a>',
+          'subdomains': '1',
+          'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>',
           'start': 6
+        }
+      },
+      {
+        'name': 'Freifunk Regensburg Night',
+        // Please ask Freifunk Regensburg before using its tile server - example with retina and dark tiles
+        'url': 'https://regensburg.freifunk.net/n/{z}/{x}/{y}{r}.png',
+        'config': {
+          'maxZoom': 20,
+          'subdomains': '1',
+          'attribution': ' <a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>',
+          'mode': 'night',
+          'start': 19,
+          'end': 7
         }
       }
     ],
@@ -75,12 +89,12 @@ module.exports = function () {
     ],
     'domainNames': [
       {
-        'domain': 'ffrgb-bat15',
-        'name': 'Regensburg'
+        'domain': 'ffrgb_cty',
+        'name': 'Regensburg Stadt'
       },
       {
-        'domain': 'ffrgb',
-        'name': 'Regensburg'
+        'domain': 'ffrgb_uml',
+        'name': 'Regensburg Umland'
       }
     ],
     'linkList': [
