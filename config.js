@@ -118,6 +118,16 @@ module.exports = function () {
         'site': 'ffrgb',
         'name': 'Regensburg'
       }
+    ],
+    'linkList': [
+      {
+        'title': 'Impressum',
+        'href': '/verein/impressum/'
+      },
+      {
+        'title': 'Datenschutz',
+        'href': '/verein/datenschutz/'
+      }
     ]
   };
 };

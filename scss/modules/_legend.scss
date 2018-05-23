@@ -17,6 +17,10 @@ header {
 }
 
 .legend {
+  a {
+    margin-right: 10px;
+  }
+
   span {
     &:not(:first-child) {
       margin-left: 1em;
