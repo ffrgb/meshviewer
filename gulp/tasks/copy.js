@@ -4,8 +4,10 @@ module.exports = function (gulp, plugins, config) {
       .pipe(gulp.dest(config.build));
     gulp.src(['assets/logo.svg', 'service-worker.js'])
       .pipe(gulp.dest(config.build));
-    gulp.src(['node_modules/promise-polyfill/dist/promise.js', 'polyfill.js'])
+    gulp.src(['polyfill.js'])
       .pipe(gulp.dest(config.build + '/vendor'));
+    gulp.src(['node_modules/promise-polyfill/dist/polyfill.js'])
+      .pipe(gulp.dest(config.build + '/vendor/promise'));
     return gulp.src(['assets/fonts/*', 'assets/icons/fonts/*'])
       .pipe(gulp.dest(config.build + '/fonts'));
   };
