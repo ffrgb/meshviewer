@@ -1,3 +1,9 @@
+---
+name: Bug report
+about: Create a report to help us improve
+
+---
+
 <!--- Provide a general summary of the issue in the Title above -->
 <!--- This template should help to improve the report, unneeded parts can be remvoed -->
 
@@ -13,7 +19,7 @@
 <!--- Not obligatory, but suggest a fix/reason for the bug, -->
 <!--- or ideas how to implement the addition or change -->
 
-## Steps to Reproduce (for bugs)
+## Steps to Reproduce
 <!--- Provide a link to a live example, or an unambiguous set of steps to -->
 <!--- reproduce this bug. Include code to reproduce, if relevant -->
 1.
@@ -31,3 +37,6 @@
 * Browser Name and version:
 * Operating System and version (desktop or mobile):
 * Link to your project:
+
+## Screenshots
+<!--- If applicable, add screenshots to help explain your problem. -->
