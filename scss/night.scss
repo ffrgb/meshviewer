@@ -2,13 +2,17 @@
 @import 'modules/variables';
 @import 'custom/variables';
 
-$color-white: #111;
+$color-white: #1c1c13;
 $color-black: #fefefe;
 $color-map-background: #0d151c;
 
+$color-online: lighten($color-online, 25%);
+
 html {
   //@import 'modules/base';
-  body {
+  body,
+  textarea,
+  input {
     background: $color-white;
     color: lighten($color-black, 100);
   }
@@ -16,6 +20,15 @@ html {
   header {
     background: transparentize($color-black, .98);
     border-bottom-color: lighten($color-white, 10%);
+  }
+
+  a {
+    color: $color-online;
+    text-decoration: none;
+
+    &:focus {
+      color: darken($color-online, 15%);
+    }
   }
 
   //@import 'modules/leaflet';
