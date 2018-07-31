@@ -6,6 +6,8 @@ module.exports = function () {
     'nodeZoom': 18,
     'labelZoom': 13,
     'clientZoom': 15,
+    'fullscreen': true,
+    'fullscreenFrame': true,
     'nodeAttr': [
       // value can be a node attribute (1 depth) or a a function in utils/node with prefix show
       {

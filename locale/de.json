@@ -59,7 +59,8 @@
   "button": {
     "switchView": "Ansicht wechseln",
     "location": "Koordinaten wählen",
-    "tracking": "Lokalisierung"
+    "tracking": "Lokalisierung",
+    "fullscreen": "Vollbildmodus wechseln"
   },
   "momentjs": {
     "calendar": {
