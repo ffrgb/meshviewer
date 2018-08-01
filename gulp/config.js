@@ -13,6 +13,7 @@ module.exports = function () {
     clean: [build + '/*.map', build + '/vendor', build + '/main.css'],
     autoprefixer: ['> 1% in DE'],
     browsersync: {
+      open: false,
       server: {
         baseDir: build
       },
