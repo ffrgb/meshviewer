@@ -20,6 +20,7 @@ var stringify = function (obj) {
 module.exports = function (gulp, plugins, config, env) {
   return function html() {
     return gulp.src(env.production() ? config.build + '/*.html' : 'html/*.html')
+      .pipe(env.production(plugins.kyhInlineSource({ compress: false })))
       .pipe(plugins.realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.faviconData)).favicon.html_code))
       .pipe(plugins.inject(gulp.src(['config.js']), {
         removeTags: true,
@@ -46,7 +47,6 @@ module.exports = function (gulp, plugins, config, env) {
           return buildConfig.siteName;
         }
       }))
-      .pipe(env.production(plugins.kyhInlineSource({ compress: false })))
       .pipe(plugins.cacheBust({
         type: 'timestamp'
       }))
