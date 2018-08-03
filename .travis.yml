@@ -8,8 +8,7 @@ node_js:
 
 os:
   - linux
-  - macosx
-  - windows
+  - osx
 
 matrix:
   include:
