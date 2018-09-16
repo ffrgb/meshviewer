@@ -109,13 +109,13 @@ module.exports = function () {
         12.8917
       ]
     ],
-    'siteNames': [
+    'domainNames': [
       {
-        'site': 'ffrgb-bat15',
+        'domain': 'ffrgb-bat15',
         'name': 'Regensburg'
       },
       {
-        'site': 'ffrgb',
+        'domain': 'ffrgb',
         'name': 'Regensburg'
       }
     ],
@@ -131,4 +131,3 @@ module.exports = function () {
     ]
   };
 };
-

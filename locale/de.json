@@ -17,7 +17,7 @@
     "hardware": "Geräte-Modell",
     "visible": "Auf der Karte sichtbar",
     "update": "Auto-Update",
-    "site": "Site",
+    "domain": "Domain",
     "gateway": "Gateway",
     "coordinates": "Koordinaten",
     "contact": "Kontakt",

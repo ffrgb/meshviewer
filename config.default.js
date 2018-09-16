@@ -81,8 +81,8 @@ module.exports = function () {
         'value': 'Autoupdate'
       },
       {
-        'name': 'node.site',
-        'value': 'Site'
+        'name': 'node.domain',
+        'value': 'Domain'
       },
       {
         'name': 'node.clients',
