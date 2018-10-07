@@ -10,9 +10,9 @@
     "url": "https://github.com/ffrgb/meshviewer/issues"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "browser-sync": "^2.24.7",
-    "eslint": "^5.4.0",
+    "babel-eslint": "^10.0.1",
+    "browser-sync": "^2.26.0",
+    "eslint": "^5.6.1",
     "eslint-config-airbnb-es5": "^1.2.0",
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-react": "^7.11.1",
@@ -22,7 +22,7 @@
     "gulp-cli": "^2.0.1",
     "gulp-environments": "^0.1.2",
     "gulp-eslint": "^5.0.0",
-    "gulp-htmlmin": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-inject": "^4.3.2",
     "gulp-jsonminify": "^1.1.0",
     "gulp-kyh-inline-source": "^3.0.2",
@@ -55,7 +55,7 @@
     "promise-polyfill": "^8.1.0",
     "rbush": "^2.0.2",
     "requirejs": "^2.3.6",
-    "snabbdom": "^0.7.1"
+    "snabbdom": "^0.7.2"
   },
   "scripts": {
     "gulp": "./node_modules/gulp-cli/bin/gulp.js"
