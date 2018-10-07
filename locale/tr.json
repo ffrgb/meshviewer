@@ -17,7 +17,7 @@
     "hardware": "Donanım modeli",
     "visible": "Harita üzerinde görünür",
     "update": "Otomatik güncelleme",
-    "site": "Site",
+    "domain": "Domain",
     "gateway": "Geçit",
     "coordinates": "Koordinatlar",
     "contact": "İlişki",

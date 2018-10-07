@@ -17,7 +17,7 @@
     "hardware": "Hardware model",
     "visible": "Visible on the map",
     "update": "Auto update",
-    "site": "Site",
+    "domain": "Domain",
     "gateway": "Gateway",
     "coordinates": "Coordinates",
     "contact": "Contact",
