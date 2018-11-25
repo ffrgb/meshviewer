@@ -1,2 +1,17 @@
+# Generic temp files
+*~
+.~*
+*.tmp
+*.temp
+*.lock
+*.DS_Store
+.*.swp
+*.out
+Thumbs.db
+
+# Build files
 node_modules/
 build/
+
+# Configuration
+config.js
