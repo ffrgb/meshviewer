@@ -17,18 +17,20 @@ var stringify = function (obj) {
   return json;
 };
 
+var configFile = fs.existsSync('config.js') ? 'config' : 'config.ffrgb';
+
 module.exports = function (gulp, plugins, config, env) {
   return function html() {
     return gulp.src(env.production() ? config.build + '/*.html' : 'html/*.html')
       .pipe(plugins.realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.faviconData)).favicon.html_code))
       .pipe(env.production(plugins.inlineSource({ compress: false, attribute: 'inline=""' })))
-      .pipe(plugins.inject(gulp.src(['config.js']), {
+      .pipe(plugins.inject(gulp.src([configFile + '.js']), {
         removeTags: true,
         starttag: '<!-- inject:config -->',
         transform: function () {
           delete require.cache[require.resolve('../../config.default')];
-          delete require.cache[require.resolve('../../config')];
-          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../config')());
+          delete require.cache[require.resolve('../../' + configFile)];
+          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../' + configFile)());
           return '<title>' + buildConfig.siteName + ' - loading...</title>' +
             '<script>window.config =' +
             stringify(buildConfig)
@@ -37,13 +39,13 @@ module.exports = function (gulp, plugins, config, env) {
             ';</script>';
         }
       }))
-      .pipe(plugins.inject(gulp.src(['config.js']), {
+      .pipe(plugins.inject(gulp.src([configFile + '.js']), {
         removeTags: true,
         starttag: '<!-- inject:title -->',
         transform: function () {
           delete require.cache[require.resolve('../../config.default')];
-          delete require.cache[require.resolve('../../config')];
-          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../config')());
+          delete require.cache[require.resolve('../../' + configFile)];
+          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../' + configFile)());
           return buildConfig.siteName;
         }
       }))

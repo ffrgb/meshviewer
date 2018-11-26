@@ -1,2 +1,6 @@
-node_modules/
-build/
+# Build files
+/node_modules/
+/build/
+
+# Configuration
+/config.js
