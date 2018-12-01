@@ -35,6 +35,5 @@ Documentation moved to [doc.meshviewer.org](https://doc.meshviewer.org/).
 - [Travis CI](https://travis-ci.com/) for building meshviewer on every push and pull request
 - [Scrutinizer CI](https://scrutinizer-ci.com/g/ffrgb/meshviewer/) for testing code quality on every push and pull request
 - [POEditor](https://poeditor.com/join/project/VZBjPNNic9) for providing an easy non-developer translation environment
-- [Netlify](https://app.netlify.com/sites/meshviewer/deploys) preview for every PR and also provide a [page with current develop branch](https://meshviewer.netlify.com/)
 
 These tools need a lot of infrastructures and provide a free account for open source software.
