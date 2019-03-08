@@ -3,6 +3,7 @@
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/ffrgb/meshviewer/develop.svg?style=flat-square)](https://scrutinizer-ci.com/g/ffrgb/meshviewer/?branch=develop)
 [![Documentation](https://img.shields.io/badge/documentation-online-brightgreen.svg?style=flat-square)](https://doc.meshviewer.org/)
 [![License: AGPL v3](https://img.shields.io/github/license/ffrgb/meshviewer.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fffrgb%2Fmeshviewer.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fffrgb%2Fmeshviewer?ref=badge_shield)
 
 Meshviewer is an online visualization app to represent nodes and links on a map for Freifunk open mesh network.
 
@@ -37,3 +38,7 @@ Documentation moved to [doc.meshviewer.org](https://doc.meshviewer.org/).
 - [POEditor](https://poeditor.com/join/project/VZBjPNNic9) for providing an easy non-developer translation environment
 
 These tools need a lot of infrastructures and provide a free account for open source software.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fffrgb%2Fmeshviewer.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fffrgb%2Fmeshviewer?ref=badge_large)
