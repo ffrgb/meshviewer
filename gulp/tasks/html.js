@@ -21,7 +21,7 @@ module.exports = function (gulp, plugins, config, env) {
   return function html() {
     return gulp.src(env.production() ? config.build + '/*.html' : 'html/*.html')
       .pipe(plugins.realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.faviconData)).favicon.html_code))
-      .pipe(env.production(plugins.inlineSource({ compress: false, attribute: 'inline=""' })))
+      .pipe(env.production(plugins.inlineSource({ compress: false })))
       .pipe(plugins.inject(gulp.src(['config.js']), {
         removeTags: true,
         starttag: '<!-- inject:config -->',
