@@ -9,7 +9,7 @@ module.exports = function () {
     'fullscreen': true,
     'fullscreenFrame': true,
     'nodeAttr': [
-      // value can be a node attribute (1 depth) or a a function in utils/node with prefix show
+      // value can be set to any node attribute (depth 1) or any of the functions in lib/utils/node.js omitting the prefix "show")
       {
         'name': 'node.status',
         'value': 'Status'
@@ -29,13 +29,13 @@ module.exports = function () {
 
       // Examples for functions
       // {
-      //   // no name will remove first column
+      //   // if a node has no name, the first column will be removed
       //   'value': function (d) {
       //     var moment = require('moment');
       //     var V = require('snabbdom').default;
       //     return V.h('td', { props: { colSpan: 2 }, style: { background: '#49a' } },
       //       _.t('sidebar.nodeOnline') + ' translate, ' + moment(d.firstseen).get('month') +
-      //       ' Month require libs like moment, access config ' + config.siteName);
+      //       ' Month requires libs like moment, access config ' + config.siteName);
       //   }
       // },
       // {
