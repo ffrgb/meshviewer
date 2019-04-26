@@ -13,6 +13,12 @@ header {
   border-bottom: 1px solid darken($color-white, 10%);
 }
 
+textarea,
+input {
+  background: transparent;
+  color: $color-black, 100;
+}
+
 h1,
 h2,
 h3,
