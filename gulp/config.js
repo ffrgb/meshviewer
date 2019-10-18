@@ -11,7 +11,6 @@ module.exports = function () {
       html: ['html/*.html', './config*.js']
     },
     clean: [build + '/*.map', build + '/vendor', build + '/main.css'],
-    autoprefixer: ['> 1% in DE'],
     browsersync: {
       open: false,
       server: {
