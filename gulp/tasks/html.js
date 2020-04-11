@@ -22,19 +22,13 @@ module.exports = function (gulp, plugins, config, env) {
     return gulp.src(env.production() ? config.build + '/*.html' : 'html/*.html')
       .pipe(plugins.realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.faviconData)).favicon.html_code))
       .pipe(env.production(plugins.inlineSource({ compress: false })))
-      .pipe(plugins.inject(gulp.src(['config.js']), {
+      .pipe(plugins.inject(gulp.src(['config.default.js']), {
         removeTags: true,
         starttag: '<!-- inject:config -->',
         transform: function () {
           delete require.cache[require.resolve('../../config.default')];
-          delete require.cache[require.resolve('../../config')];
-          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../config')());
-          return '<title>' + buildConfig.siteName + ' - loading...</title>' +
-            '<script>window.config =' +
-            stringify(buildConfig)
-              .replace('<!-- inject:cache-breaker -->',
-                Math.random().toString(12).substring(7)) +
-            ';</script>';
+          var buildConfig = Object.assign({}, require('../../config.default')());
+          return 'defaultConfig=' + stringify(buildConfig) + ';';
         }
       }))
       .pipe(plugins.cacheBust({

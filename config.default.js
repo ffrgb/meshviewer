@@ -188,7 +188,6 @@ module.exports = function () {
         'opacity': 0.7,
         'fillOpacity': 0.2
       }
-    },
-    'cacheBreaker': '<!-- inject:cache-breaker -->'
+    }
   };
 };
