@@ -1,0 +1,77 @@
+{
+    "dataPath": [
+      "https://yanic.batman15.ffffm.net/"
+    ],
+    "siteName": "Freifunk Frankfurt",
+    "maxAge": 21,
+    "nodeZoom": 19,
+    "mapLayers": [
+      {
+        "name": "OpenStreetMap",
+        "url": "https://tiles.ffm.freifunk.net/{z}/{x}/{y}.png",
+        "config": {
+          "type": "osm",
+          "maxZoom": 19,
+          "attribution": "Map data (c) <a href\"http://openstreetmap.org\">OpenStreetMap</a> contributor"
+        }
+      }
+    ],
+    "fixedCenter": [
+      [
+        50.5099,
+        8.1393
+      ],
+      [
+        49.9282,
+        9.3164
+      ]
+    ],
+    "siteNames": [
+      { "site": "ffffm_60431", "name": "60431 Frankfurt am Main" } ,
+      { "site": "ffffm_default", "name": "Default" }
+    ],
+    "domainNames": [
+      { "site": "ffffm_60431", "name": "60431 Frankfurt am Main" } ,
+      { "site": "ffffm_default", "name": "Default" }
+    ],
+    "nodeInfos": [
+      {
+        "name": "Clientstatistik",
+        "href": "https://freifunk.fail/dashboard/db/nodes?var-name={NODE_NAME}&from=now-7d&to=now",
+        "image": "https://freifunk.fail/render/dashboard-solo/db/node-details-for-map?panelId=7&var-id={NODE_ID}&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
+        "title": "Knoten {NODE_ID} ({NODE_NAME})"
+      },
+      {
+        "name": "Traffic",
+        "href": "https://freifunk.fail/dashboard/db/nodes?var-name={NODE_NAME}&from=now-7d&to=now",
+        "image": "https://freifunk.fail/render/dashboard-solo/db/node-details-for-map?panelId=1&var-id={NODE_ID}&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
+        "title": "Knoten {NODE_ID} ({NODE_NAME})"
+      },
+      {
+        "name": "Uptime",
+        "href": "https://freifunk.fail/dashboard/db/nodes?var-name={NODE_NAME}&from=now-7d&to=now",
+        "image": "https://freifunk.fail/render/dashboard-solo/db/node-details-for-map?panelId=5&var-id={NODE_ID}&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
+        "title": "Knoten {NODE_ID} ({NODE_NAME})"
+      },
+      {
+        "name": "CPU Auslastung",
+        "href": "https://freifunk.fail/dashboard/db/nodes?var-name={NODE_NAME}&from=now-7d&to=now",
+        "image": "https://freifunk.fail/render/dashboard-solo/db/node-details-for-map?panelId=2&var-id={NODE_ID}&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
+        "title": "Knoten {NODE_ID} ({NODE_NAME})"
+      },
+      {
+        "name": "Neighbours",
+        "href": "https://freifunk.fail/dashboard/db/nodes?var-name={NODE_NAME}&from=now-7d&to=now",
+        "image": "https://freifunk.fail/render/dashboard-solo/db/node-details-for-map?panelId=4&var-id={NODE_ID}&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
+        "title": "Knoten {NODE_ID} ({NODE_NAME})"
+      }
+    ],
+    "globalInfos": [
+      {
+        "name": "Wochenstatistik",
+        "href": "https://freifunk.fail/dashboard/db/deck?from=now-7d&to=now",
+        "image": "https://freifunk.fail/render/dashboard-solo/db/deck?&panelId=22&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
+        "title": "Bild der Wochenstatistik"
+      }
+    ]
+  }
