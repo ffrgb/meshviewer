@@ -41,7 +41,7 @@ button {
   // Tooltip
   &[data-tooltip] {
     &::after {
-      background:  $color-black;
+      background: $color-black;
       border-radius: 3px;
       color: $color-white;
       content: attr(data-tooltip);
@@ -76,7 +76,6 @@ button {
 }
 
 // Tooltip
-// sass-lint:disable-block nesting-depth
 .content,
 .sidebar > {
   button {

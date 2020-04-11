@@ -13,13 +13,13 @@
       left: $button-distance;
       transform: scale(-1, 1);
 
-      // sass-lint:disable-block nesting-depth
       &[aria-label] {
         &::after {
-          transform: scale(-1, 1) translate(105px, 52px) !important; // sass-lint:disable-line no-important
+          transform: scale(-1, 1) translate(105px, 52px) !important;
         }
       }
     }
+
     @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
       width: auto;
     }
@@ -128,7 +128,7 @@
 
   &[aria-label] {
     &::after {
-      transform: translate(-45px, 52px) !important; // sass-lint:disable-line no-important
+      transform: translate(-45px, 52px) !important;
     }
   }
 }

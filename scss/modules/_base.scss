@@ -1,5 +1,5 @@
 body {
-  -webkit-tap-highlight-color: transparent; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-tap-highlight-color: transparent;
   background: $color-white;
   color: $color-black;
   font-family: $font-family;
@@ -75,7 +75,7 @@ strong {
 }
 
 .hide {
-  display: none !important; // sass-lint:disable-line no-important
+  display: none !important;
 }
 
 .sr-only {

@@ -3,13 +3,13 @@
   border: 0 solid darken($color-white, 10%);
   border-bottom-width: 1px;
   display: flex;
-  display: -webkit-flex; // sass-lint:disable-line no-vendor-prefixes no-duplicate-properties
+  display: -webkit-flex;
   list-style: none;
   margin: 0;
   padding: 0;
 
   li {
-    -webkit-flex: 1 1 auto; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-flex: 1 1 auto;
     color: transparentize($color-black, .5);
     cursor: pointer;
     flex: 1 1 auto;

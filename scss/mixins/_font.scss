@@ -4,14 +4,16 @@ $font-path: 'fonts' !default;
   @if $alias == '' {
     $alias: $name;
   }
+
   @font-face {
     font-family: '#{$alias}';
     font-style: $style;
     font-weight: $weight;
-    src: local('#{$name} #{$type}'),
-    local('#{$name}-#{$type}'),
-    url('#{$font-path}/#{$name}-#{$type}.woff2') format('woff2'),
-    url('#{$font-path}/#{$name}-#{$type}.woff') format('woff'),
-    url('#{$font-path}/#{$name}-#{$type}.ttf') format('truetype');
+    src:
+      local('#{$name} #{$type}'),
+      local('#{$name}-#{$type}'),
+      url('#{$font-path}/#{$name}-#{$type}.woff2') format('woff2'),
+      url('#{$font-path}/#{$name}-#{$type}.woff') format('woff'),
+      url('#{$font-path}/#{$name}-#{$type}.ttf') format('truetype');
   }
 }

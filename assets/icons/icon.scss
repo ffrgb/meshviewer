@@ -7,9 +7,10 @@ $cache-breaker: unique-id();
   font-family: 'ionicons';
   font-style: normal;
   font-weight: normal;
-  src: url('fonts/meshviewer.woff2?rel=#{$cache-breaker}') format('woff2'),
-  url('fonts/meshviewer.woff?rel=#{$cache-breaker}') format('woff'),
-  url('fonts/meshviewer.ttf?rel=#{$cache-breaker}') format('truetype');
+  src:
+    url('fonts/meshviewer.woff2?rel=#{$cache-breaker}') format('woff2'),
+    url('fonts/meshviewer.woff?rel=#{$cache-breaker}') format('woff'),
+    url('fonts/meshviewer.ttf?rel=#{$cache-breaker}') format('truetype');
 }
 
 [class^='ion-'],
