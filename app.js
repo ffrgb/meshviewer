@@ -36,6 +36,7 @@ require.config({
   }
 });
 
-require(['main'], function (main) {
-  main();
+
+require(['load'], function (load) {
+  load();
 });
