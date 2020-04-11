@@ -37,16 +37,6 @@ module.exports = function (gulp, plugins, config, env) {
             ';</script>';
         }
       }))
-      .pipe(plugins.inject(gulp.src(['config.js']), {
-        removeTags: true,
-        starttag: '<!-- inject:title -->',
-        transform: function () {
-          delete require.cache[require.resolve('../../config.default')];
-          delete require.cache[require.resolve('../../config')];
-          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../config')());
-          return buildConfig.siteName;
-        }
-      }))
       .pipe(plugins.cacheBust({
         type: 'timestamp'
       }))
