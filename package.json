@@ -4,10 +4,10 @@
   "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ffrgb/meshviewer.git"
+    "url": "https://github.com/freifunk-ffm/meshviewer.git"
   },
   "bugs": {
-    "url": "https://github.com/ffrgb/meshviewer/issues"
+    "url": "https://github.com/freifunk-ffm/meshviewer/issues"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
