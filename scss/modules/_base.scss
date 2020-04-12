@@ -93,20 +93,23 @@ strong {
 .deprecated {
   padding-left: $button-distance;
   padding-right: $button-distance;
+
   div {
-    background: rgba(194,0,0,1);
+    background: $color-warning;
     border-radius: 5px;
+    color: $color-white;
     font-size: 110%;
-    color:white;
-    padding: 10px;
-    text-align:center;
     font-weight: bold;
+    padding: 10px;
+    text-align: center;
+
     a {
-      color: white;
+      color: $color-white;
       text-decoration: underline;
-    }
-    a:hover {
-      text-decoration: none;
+
+      &:hover { // sass-lint:disable-line nesting-depth
+        text-decoration: none;
+      }
     }
   }
 }
