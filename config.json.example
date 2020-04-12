@@ -73,5 +73,7 @@
         "image": "https://freifunk.fail/render/dashboard-solo/db/deck?&panelId=22&from=now-7d&to=now&width=600&height=300&theme=light&_t={TIME}",
         "title": "Bild der Wochenstatistik"
       }
-    ]
+    ],
+    "deprecation_text": "Hier kann ein eigener Text für die Deprecation Warning (inkl. HTML) stehen!",
+    "deprecation_enabled": true
   }

@@ -19,3 +19,11 @@ This fork of the new meshviewer has a new installation method:
 - Run `npm install`
 - Run `npm run build`
 - A production build will be in /build
+
+## Configuration
+The configuration documentation is nowhere near finished.
+
+#### Deprecation Warning
+The deprecation warning can be turned of with `"deprecation_enabled": false` - but we wouldn't suggest it.
+
+You can insert your own HTML into the deprecation warning via `"deprecation_text":""`.

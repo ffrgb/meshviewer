@@ -89,3 +89,24 @@ strong {
   white-space: nowrap;
   width: 1px;
 }
+
+.deprecated {
+  padding-left: $button-distance;
+  padding-right: $button-distance;
+  div {
+    background: rgba(194,0,0,1);
+    border-radius: 5px;
+    font-size: 110%;
+    color:white;
+    padding: 10px;
+    text-align:center;
+    font-weight: bold;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
