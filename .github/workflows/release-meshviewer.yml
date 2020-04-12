@@ -19,7 +19,7 @@ jobs:
     - run: npm install
     - run: npm run gulp
     - name: Package Build
-        run: zip -r -j meshviewer-build.zip build/*
+        run: "zip -r -j meshviewer-build.zip build/*"
     - name: Create Release
         id: create_release
         uses: actions/create-release@v1
