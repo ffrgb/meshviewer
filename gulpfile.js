@@ -29,6 +29,15 @@ gulp.task('serve',
   )
 );
 
+gulp.task('ci',
+  gulp.series(
+    gulp.parallel(getTask('eslint-fail'), getTask('sasslint')),
+    gulp.parallel(getTask('copy'), getTask('javascript'), getTask('sass'), getTask('jsonMinify')),
+    getTask('html'),
+    getTask('clean')
+  )
+);
+
 gulp.task('default',
   gulp.series(
     gulp.parallel(getTask('eslint'), getTask('sasslint')),

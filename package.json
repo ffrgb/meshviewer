@@ -59,7 +59,8 @@
     "snabbdom": "^0.7.4"
   },
   "scripts": {
-    "gulp": "gulp --production"
+    "gulp": "gulp --production",
+    "gulp-ci": "gulp ci"
   },
   "browserslist": [
     "> 1% in DE"
