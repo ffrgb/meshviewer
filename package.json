@@ -10,6 +10,7 @@
     "url": "https://github.com/freifunk-ffm/meshviewer/issues"
   },
   "devDependencies": {
+    "audit-ci": "^2.5.1",
     "babel-eslint": "^10.0.1",
     "browser-sync": "^2.26.5",
     "del": "^5.1.0",
@@ -60,7 +61,8 @@
   },
   "scripts": {
     "gulp": "gulp --production",
-    "gulp-ci": "gulp ci"
+    "gulp-ci": "gulp ci",
+    "audit": "audit-ci -m -p npm"
   },
   "browserslist": [
     "> 1% in DE"
