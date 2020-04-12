@@ -12,7 +12,7 @@
         "config": {
           "type": "osm",
           "maxZoom": 19,
-          "attribution": "Map data (c) <a href\"http://openstreetmap.org\">OpenStreetMap</a> contributor"
+          "attribution": "<a href='https://github.com/freifunk-ffm/meshviewer/issues' target='_blank'>Report Bug</a> | Map data &copy; <a href\"http://openstreetmap.org\">OpenStreetMap</a> contributor"
         }
       }
     ],
