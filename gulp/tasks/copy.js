@@ -1,5 +1,7 @@
 module.exports = function (gulp, plugins, config) {
   return function copy() {
+    gulp.src(['config.json.example'])
+      .pipe(gulp.dest(config.build));
     gulp.src(['html/*.html', 'assets/favicon/*'])
       .pipe(gulp.dest(config.build));
     gulp.src(['assets/logo.svg', 'service-worker.js'])
@@ -12,4 +14,3 @@ module.exports = function (gulp, plugins, config) {
       .pipe(gulp.dest(config.build + '/fonts'));
   };
 };
-
