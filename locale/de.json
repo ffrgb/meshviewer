@@ -93,5 +93,6 @@
   "others": "andere",
   "none": "keine",
   "remove": "entfernen",
-  "close": "schließen"
+  "close": "schließen",
+  "loading": "%{name} graoh (wird generiert)"
 }

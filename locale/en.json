@@ -93,5 +93,6 @@
   "others": "other",
   "none": "none",
   "remove": "remove",
-  "close": "close"
+  "close": "close",
+  "loading": "%{name} graph (is generated)"
 }

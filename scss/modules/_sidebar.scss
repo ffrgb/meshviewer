@@ -29,6 +29,11 @@
     padding-bottom: 15px;
   }
 
+  img {
+    padding: 0 $button-distance 1em;
+    box-sizing: border-box;
+  }
+
   .node-list,
   .node-links,
   .link-list {
