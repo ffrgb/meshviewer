@@ -17,11 +17,11 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-es5": "^1.2.0",
     "eslint-config-defaults": "^9.0.0",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "^7.20.0",
     "gulp": "^4.0.1",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cache-bust": "^1.4.0",
-    "gulp-cli": "^2.2.0",
+    "gulp-cli": "^2.3.0",
     "gulp-environments": "^1.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-htmlmin": "^5.0.1",
@@ -31,7 +31,7 @@
     "gulp-load-plugins": "^2.0.1",
     "gulp-real-favicon": "^0.3.2",
     "gulp-requirejs-optimize": "^1.3.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2"
@@ -62,7 +62,7 @@
   "scripts": {
     "gulp": "gulp --production",
     "gulp-ci": "gulp ci",
-    "audit": "audit-ci -m -p npm"
+    "audit": "audit-ci -m -p npm -a 1486"
   },
   "browserslist": [
     "> 1% in DE"
