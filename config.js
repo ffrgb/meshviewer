@@ -62,7 +62,6 @@ module.exports = function () {
     'mapLayers': [
       {
         'name': 'Wikimedia OSM Map',
-        // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
         'url': 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
         'config': {
           'maxZoom': 20,
