@@ -4,7 +4,7 @@ dist: trusty
 language: node_js
 
 node_js:
-  - "13"
+  - "14"
 
 os:
   - linux
@@ -12,8 +12,6 @@ os:
 
 matrix:
   include:
-  - node_js: "10"
-    os: linux
   - node_js: "12"
     os: linux
 cache:
