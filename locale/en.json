@@ -94,5 +94,6 @@
   "none": "none",
   "remove": "remove",
   "close": "close",
-  "deprecation": "This node is deprecated, and will be out of support soon. More information under <a href='https://openwrt.org/supported_devices/432_warning'>4/32 warning</a>.<br>If you're the owner, please replace it with an modern device!"
+  "deprecation": "This node is deprecated, and will be out of support soon. More information under <a href='https://openwrt.org/supported_devices/432_warning'>4/32 warning</a>.<br>If you're the owner, please replace it with an modern device!",
+  "loading": "%{name} graph (is generated)"
 }

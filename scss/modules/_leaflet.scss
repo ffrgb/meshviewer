@@ -50,15 +50,15 @@
   }
 
   &.leaflet-touch-zoom {
-    -ms-touch-action: pan-x pan-y; // sass-lint:disable-line no-vendor-prefixes
+    -ms-touch-action: pan-x pan-y;
     touch-action: pan-x pan-y;
   }
 
   &.leaflet-touch-drag {
-    -ms-touch-action: pinch-zoom; // sass-lint:disable-line no-vendor-prefixes
+    -ms-touch-action: pinch-zoom;
 
     &.leaflet-touch-drag {
-      -ms-touch-action: none; // sass-lint:disable-line no-vendor-prefixes
+      -ms-touch-action: none;
       touch-action: none;
     }
   }
@@ -84,7 +84,7 @@
 
     &::before {
       content: '\f229';
-      font-family: ionicons;
+      font-family: $font-family-icons;
       speak: none;
       text-rendering: auto;
     }
@@ -113,12 +113,12 @@
 ///* Safari renders non-retina tile on retina better with this, but Chrome is worse */
 .leaflet-safari {
   .leaflet-tile {
-    image-rendering: -webkit-optimize-contrast; // sass-lint:disable-line no-vendor-prefixes
+    image-rendering: -webkit-optimize-contrast;
   }
 
   ///* hack that prevents hw layers "stretching" when loading new tiles */
   .leaflet-tile-container {
-    -webkit-transform-origin: 0 0; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-transform-origin: 0 0;
     height: 1600px;
     width: 1600px;
   }
@@ -139,7 +139,7 @@
 }
 
 .leaflet-zoom-box {
-  -moz-box-sizing: border-box; // sass-lint:disable-line no-vendor-prefixes
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 0;
   width: 0;
@@ -151,7 +151,7 @@
   z-index: 400;
 
   svg {
-    -moz-user-select: none; // sass-lint:disable-line no-vendor-prefixes
+    -moz-user-select: none;
   }
 }
 
@@ -232,7 +232,6 @@
 
 .leaflet-bottom {
   bottom: 0;
-
 }
 
 .leaflet-left {
@@ -273,7 +272,6 @@
   .leaflet-zoom-hide {
     visibility: hidden;
   }
-
 }
 
 .leaflet-zoom-anim,
@@ -288,8 +286,8 @@
 }
 
 .leaflet-grab {
-  cursor: -webkit-grab; // sass-lint:disable-line no-vendor-prefixes
-  cursor: -moz-grab; // sass-lint:disable-line no-vendor-prefixes no-duplicate-properties
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
 }
 
 .leaflet-crosshair {
@@ -310,8 +308,8 @@
     &,
     &.leaflet-interactive {
       cursor: move;
-      cursor: -webkit-grabbing; // sass-lint:disable-line no-vendor-prefixes no-duplicate-properties
-      cursor: -moz-grabbing; // sass-lint:disable-line no-vendor-prefixes no-duplicate-properties
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
     }
   }
 }
@@ -363,7 +361,6 @@
   overflow-y: scroll;
   padding-right: 5px;
 }
-
 
 .leaflet-control-layers-selector {
   display: none;

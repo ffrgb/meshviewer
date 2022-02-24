@@ -1,12 +1,11 @@
 'use strict';
 
 require.config({
-  baseUrl: 'lib',
   paths: {
     'polyglot': '../node_modules/node-polyglot/build/polyglot',
     'Navigo': '../node_modules/navigo/lib/navigo',
     'leaflet': '../node_modules/leaflet/dist/leaflet',
-    'moment': '../node_modules/moment/moment',
+    'moment': '../node_modules/moment/min/moment.min',
     // d3 modules indirect dependencies
     // by d3-zoom: d3-drag
     'd3-ease': '../node_modules/d3-ease/dist/d3-ease',
