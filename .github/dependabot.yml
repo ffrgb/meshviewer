@@ -6,11 +6,7 @@ updates:
   - package-ecosystem: yarn
     directory: /
     schedule: {interval: monthly}
-    reviewers: [freifunkMUC/salt-stack]
-    assignees: [freifunkMUC/salt-stack]
 
   - package-ecosystem: github-actions
     directory: /
     schedule: {interval: monthly}
-    reviewers: [freifunkMUC/salt-stack]
-    assignees: [freifunkMUC/salt-stack]
