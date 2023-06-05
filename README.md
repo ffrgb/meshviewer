@@ -16,8 +16,10 @@ This fork of the new meshviewer has a new installation method:
 ### Build yourself
 - Clone this repository
 - Run `npm install`
-- Run `npm run build`
-- A production build will be in /build
+- Run `npm run gulp`
+- A production build can then be found in [`/build`](./build)
+
+Hint: You can start a development server with `npm run serve`
 
 ### Build & Run using Docker
 Static local test instance:
