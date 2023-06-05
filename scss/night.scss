@@ -114,10 +114,10 @@ html {
 
   //@import 'modules/node';
   .bar {
-    background: mix($color-new, $color-white, 60);
+    background: mix($color-new, $color-white, 60%);
 
     &.warning {
-      background: mix($color-offline, $color-white, 60);
+      background: mix($color-offline, $color-white, 60%);
     }
 
     label {

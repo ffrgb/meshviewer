@@ -1,11 +1,11 @@
 .bar {
-  background: mix($color-new, $color-white, 60);
+  background: mix($color-new, $color-white, 60%);
   display: block;
   height: 1.4em;
   position: relative;
 
   &.warning {
-    background: mix($color-offline, $color-white, 60);
+    background: mix($color-offline, $color-white, 60%);
 
     span {
       background: $color-offline;
