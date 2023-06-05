@@ -10,14 +10,13 @@
     "url": "https://github.com/freifunk-ffm/meshviewer/issues"
   },
   "devDependencies": {
-    "audit-ci": "^2.5.1",
     "babel-eslint": "^10.0.1",
     "browser-sync": "^2.27.4",
     "del": "^6.0.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-es5": "^1.2.0",
     "eslint-config-defaults": "^9.0.0",
-    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react": "^7.32.2",
     "gulp": "^4.0.1",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-cache-bust": "^1.4.0",
@@ -49,10 +48,11 @@
   },
   "dependencies": {
     "almond": "^0.3.3",
-    "d3-drag": "^1.2.5",
-    "d3-force": "^1.2.1",
-    "d3-selection": "^1.4.2",
-    "d3-zoom": "^1.8.3",
+    "d3-collection": "^1.0.7",
+    "d3-drag": "^3.0.0",
+    "d3-force": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
     "leaflet": "^1.7.1",
     "moment": "^2.29.4",
     "navigo": "^7.1.2",
@@ -62,13 +62,30 @@
     "requirejs": "^2.3.6",
     "snabbdom": "^0.7.4"
   },
+  "overrides": {
+    "gulp": {
+      "glob-watcher": "^6.0.0"
+    },
+    "gulp-cache-bust": {
+      "nth-check": "^2.1.1"
+    },
+    "gulp-inject": {
+      "set-value": "^4.1.0"
+    },
+    "gulp-inline-source": {
+      "inline-source": "^8.0.0",
+      "nth-check": "^2.1.1"
+    },
+    "vinyl-fs": {
+      "glob-stream": "^8.0.0"
+    }
+  },
   "optionalDependencies": {
     "fsevents": "^2.0.7"
   },
   "scripts": {
     "gulp": "./node_modules/gulp-cli/bin/gulp.js",
-    "gulp-ci": "gulp ci",
-    "audit": "audit-ci -m -p npm -a 1486"
+    "gulp-ci": "gulp ci"
   },
   "browserslist": [
     "> 1% in DE"
