@@ -85,7 +85,8 @@
   },
   "scripts": {
     "gulp": "./node_modules/gulp-cli/bin/gulp.js",
-    "gulp-ci": "gulp ci"
+    "gulp-ci": "gulp ci",
+    "serve": "gulp serve"
   },
   "browserslist": [
     "> 1% in DE"

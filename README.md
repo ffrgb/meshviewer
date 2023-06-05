@@ -20,6 +20,8 @@ This fork of the new meshviewer has a new installation method:
 - Run `npm run gulp`
 - A production build can then be found in [`/build`](./build)
 
+Hint: You can start a development server with `npm run serve`
+
 ## Configuration
 The configuration documentation is nowhere near finished.
 
