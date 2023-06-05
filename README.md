@@ -20,6 +20,22 @@ This fork of the new meshviewer has a new installation method:
 - Run `npm run build`
 - A production build will be in /build
 
+### Build & Run using Docker
+Static local test instance:
+```bash
+docker  run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node npm install
+docker  run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node npm run gulp-ci
+docker run -it --rm -v "$PWD/build":/usr/share/nginx/html -p 8080:80 --name nginx nginx
+```
+The map is reachable at [localhost:8080](http://localhost:8080).
+You have to copy `config.json.example` as `build/config.json`.
+
+Live build / development env:
+```bash
+docker  run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app -e NODE_ENV=development -p 3000:3000 node npm run gulp serve
+```
+The map is reachable at [localhost:3000](http://localhost:3000).
+
 ## Configuration
 The configuration documentation is nowhere near finished.
 
